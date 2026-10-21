@@ -144,3 +144,4 @@ select, input[type=number] {
 
 .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
 .done { text-align: center; padding: 40px 20px; }
+#sync-badge { flex: 1; }

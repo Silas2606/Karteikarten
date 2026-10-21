@@ -10,7 +10,8 @@ const app = document.getElementById('app');
 let DECKS = []; // [{id, name, prefix, color, cards: [...]}]
 
 function defaultProgress() {
-  return { version: 1, cards: {}, log: {}, newIntroduced: {}, settings: { newPerDay: 20 } };
+  // log: Lernstatistik dieses Geräts, otherLogs: die der anderen Geräte (per Sync)
+  return { version: 1, cards: {}, log: {}, otherLogs: {}, newIntroduced: {}, settings: { newPerDay: 20, updatedAt: 0 } };
 }
 
 function loadProgress() {
@@ -34,6 +35,19 @@ function saveProgress() {
   } catch (e) {
     console.warn('Fortschritt konnte nicht gespeichert werden', e);
   }
+}
+
+// Tageslog aller Geräte zusammengezählt
+function combinedLog() {
+  const out = {};
+  for (const log of [progress.log, ...Object.values(progress.otherLogs || {})]) {
+    for (const [day, l] of Object.entries(log || {})) {
+      const o = out[day] || (out[day] = { reviews: 0, correct: 0 });
+      o.reviews += l.reviews;
+      o.correct += l.correct;
+    }
+  }
+  return out;
 }
 
 function todayKey(ts = Date.now()) {
@@ -106,6 +120,7 @@ function recordReview(deckId, card, rating) {
     n[deckId] = (n[deckId] || 0) + 1;
   }
   saveProgress();
+  scheduleSync();
 }
 
 // ---------- Daten laden ----------
@@ -206,17 +221,18 @@ function topicsOf(deck) {
 }
 
 function streak() {
+  const log = combinedLog();
   let n = 0;
   let t = Date.now();
-  if (!progress.log[todayKey(t)]) t -= DAY; // heute noch nicht gelernt: Serie zählt ab gestern
-  while (progress.log[todayKey(t)]) { n += 1; t -= DAY; }
+  if (!log[todayKey(t)]) t -= DAY; // heute noch nicht gelernt: Serie zählt ab gestern
+  while (log[todayKey(t)]) { n += 1; t -= DAY; }
   return n;
 }
 
 // ---------- Seiten ----------
 
 function viewOverview() {
-  const today = progress.log[todayKey()] || { reviews: 0 };
+  const today = combinedLog()[todayKey()] || { reviews: 0 };
   const totals = DECKS.reduce((acc, d) => {
     const s = deckStats(d);
     for (const k in s) acc[k] = (acc[k] || 0) + s[k];
@@ -404,18 +420,19 @@ function viewStudy(deckId) {
 }
 
 function viewStats() {
+  const log = combinedLog();
   const days = 7 * 20;
   const start = Date.now() - (days - 1) * DAY;
   const cells = [];
   for (let i = 0; i < days; i++) {
     const k = todayKey(start + i * DAY);
-    const n = progress.log[k]?.reviews || 0;
+    const n = log[k]?.reviews || 0;
     const lvl = n === 0 ? '' : n < 10 ? 'l1' : n < 30 ? 'l2' : n < 60 ? 'l3' : 'l4';
     cells.push(`<div class="${lvl}" title="${k}: ${n} Karten"></div>`);
   }
   let rev30 = 0, cor30 = 0;
   for (let i = 0; i < 30; i++) {
-    const l = progress.log[todayKey(Date.now() - i * DAY)];
+    const l = log[todayKey(Date.now() - i * DAY)];
     if (l) { rev30 += l.reviews; cor30 += l.correct; }
   }
   const upcoming = Array.from({ length: 7 }, (_, i) => {
@@ -464,29 +481,83 @@ function viewStats() {
 }
 
 function viewSettings() {
+  const sync = syncConfig();
   app.innerHTML = `
     <h1>Einstellungen</h1>
     <div class="panel" style="display:flex;flex-direction:column;gap:16px">
       <label>Neue Karten pro Tag und Modul:
         <input type="number" id="newPerDay" min="0" max="500" value="${progress.settings.newPerDay}" style="width:90px">
       </label>
-      <div>
-        <p class="small muted" style="margin:0 0 8px">Dein Fortschritt wird nur in diesem Browser gespeichert. Exportiere ihn, um ihn zu sichern oder auf ein anderes Gerät zu übertragen.</p>
-        <div class="toolbar" style="margin:0">
-          <button id="export">Fortschritt exportieren</button>
-          <label class="btn">Fortschritt importieren<input type="file" id="import" accept="application/json" hidden></label>
-          <button id="reset" style="color:var(--again)">Fortschritt zurücksetzen</button>
-        </div>
-      </div>
-      <p class="small muted" id="msg" style="margin:0"></p>
     </div>
+
+    <h2>Synchronisierung zwischen Geräten</h2>
+    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+      ${sync ? `
+        <p style="margin:0">Aktiv – der Fortschritt wird in einem privaten GitHub Gist gespeichert und nach dem Lernen automatisch abgeglichen.</p>
+        <p class="small muted" style="margin:0" id="syncInfo">${esc(syncStatusText())}</p>
+        <div class="toolbar" style="margin:0">
+          <button class="primary" id="syncNow">Jetzt synchronisieren</button>
+          <button id="syncOff">Sync auf diesem Gerät beenden</button>
+        </div>`
+      : `
+        <p class="small muted" style="margin:0">Einmal pro Gerät einrichten: Erstelle auf GitHub einen
+          <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Fine-grained Token</a>
+          mit der Berechtigung <b>Account permissions → Gists: Read and write</b> (sonst nichts) und füge ihn hier ein.
+          Auf allen Geräten denselben Token (oder je Gerät einen eigenen) verwenden – der Fortschritt landet im selben privaten Gist.</p>
+        <div class="toolbar" style="margin:0">
+          <input type="password" id="token" placeholder="github_pat_…" autocomplete="off"
+            style="flex:1;min-width:200px;font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text)">
+          <button class="primary" id="syncOn">Verbinden</button>
+        </div>`}
+    </div>
+
+    <h2>Sicherung</h2>
+    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+      <p class="small muted" style="margin:0">Fortschritt als Datei sichern oder wiederherstellen.${sync ? ' Import und Zurücksetzen gelten wegen der Synchronisierung für alle Geräte.' : ''}</p>
+      <div class="toolbar" style="margin:0">
+        <button id="export">Fortschritt exportieren</button>
+        <label class="btn">Fortschritt importieren<input type="file" id="import" accept="application/json" hidden></label>
+        <button id="reset" style="color:var(--again)">Fortschritt zurücksetzen</button>
+      </div>
+    </div>
+    <p class="small muted" id="msg"></p>
   `;
   const msg = app.querySelector('#msg');
+  const say = (text) => { msg.textContent = text; };
+
   app.querySelector('#newPerDay').addEventListener('change', (e) => {
     progress.settings.newPerDay = Math.max(0, parseInt(e.target.value, 10) || 0);
+    progress.settings.updatedAt = Date.now();
     saveProgress();
-    msg.textContent = 'Gespeichert.';
+    scheduleSync();
+    say('Gespeichert.');
   });
+
+  app.querySelector('#syncOn')?.addEventListener('click', async () => {
+    const token = app.querySelector('#token').value.trim();
+    if (!token) return say('Bitte zuerst einen Token einfügen.');
+    say('Verbinde …');
+    try {
+      await connectSync(token);
+      viewSettings();
+      app.querySelector('#msg').textContent = 'Verbunden und synchronisiert.';
+    } catch (err) {
+      say(`Verbindung fehlgeschlagen: ${err.message}`);
+    }
+  });
+  app.querySelector('#syncNow')?.addEventListener('click', async () => {
+    say('Synchronisiere …');
+    await runSync();
+    say(syncState.error ? `Fehler: ${syncState.error}` : 'Synchronisiert.');
+    const info = app.querySelector('#syncInfo');
+    if (info) info.textContent = syncStatusText();
+  });
+  app.querySelector('#syncOff')?.addEventListener('click', () => {
+    if (!confirm('Sync auf diesem Gerät beenden? Der Fortschritt bleibt hier und im Gist erhalten.')) return;
+    setSyncConfig(null);
+    viewSettings();
+  });
+
   app.querySelector('#export').addEventListener('click', () => {
     const blob = new Blob([JSON.stringify(progress, null, 2)], { type: 'application/json' });
     const a = document.createElement('a');
@@ -503,22 +574,227 @@ function viewSettings() {
       if (!data.cards || !data.log) throw new Error('Unbekanntes Format');
       progress = { ...defaultProgress(), ...data };
       saveProgress();
-      msg.textContent = 'Fortschritt importiert.';
+      if (syncConfig()) await runSync({ overwrite: true });
+      say('Fortschritt importiert.');
     } catch (err) {
-      msg.textContent = `Import fehlgeschlagen: ${err.message}`;
+      say(`Import fehlgeschlagen: ${err.message}`);
     }
   });
-  app.querySelector('#reset').addEventListener('click', () => {
-    if (!confirm('Wirklich den gesamten Lernfortschritt löschen?')) return;
+  app.querySelector('#reset').addEventListener('click', async () => {
+    if (!confirm(`Wirklich den gesamten Lernfortschritt löschen?${syncConfig() ? ' Das gilt für alle synchronisierten Geräte.' : ''}`)) return;
     progress = defaultProgress();
     saveProgress();
-    msg.textContent = 'Fortschritt zurückgesetzt.';
+    if (syncConfig()) await runSync({ overwrite: true });
+    say('Fortschritt zurückgesetzt.');
   });
 }
 
 function viewNotFound() {
   app.innerHTML = '<p>Seite nicht gefunden. <a href="#/">Zur Übersicht</a></p>';
 }
+
+// ---------- Synchronisierung über einen privaten GitHub Gist ----------
+//
+// Jedes Gerät hält seinen Fortschritt lokal. Beim Sync wird der Gist geladen, mit dem lokalen
+// Stand zusammengeführt (pro Karte gewinnt die zuletzt gelernte Version, Lernstatistik pro Gerät)
+// und das Ergebnis wieder hochgeladen.
+
+const SYNC_KEY = 'karteikarten-sync-v1';
+const DEVICE_KEY = 'karteikarten-device-id';
+const GIST_FILE = 'karteikarten-fortschritt.json';
+const syncState = { running: null, last: 0, error: '' };
+let syncTimer = null;
+
+function syncConfig() {
+  try { return JSON.parse(localStorage.getItem(SYNC_KEY)); } catch { return null; }
+}
+
+function setSyncConfig(cfg) {
+  try {
+    if (cfg) localStorage.setItem(SYNC_KEY, JSON.stringify(cfg));
+    else localStorage.removeItem(SYNC_KEY);
+  } catch (e) { console.warn(e); }
+  renderSyncBadge();
+}
+
+function deviceId() {
+  try {
+    let id = localStorage.getItem(DEVICE_KEY);
+    if (!id) {
+      id = Math.random().toString(36).slice(2, 10);
+      localStorage.setItem(DEVICE_KEY, id);
+    }
+    return id;
+  } catch { return 'unbekannt'; }
+}
+
+async function gh(token, path, options = {}) {
+  const res = await fetch(`https://api.github.com${path}`, {
+    ...options,
+    cache: 'no-store',
+    headers: {
+      Accept: 'application/vnd.github+json',
+      Authorization: `Bearer ${token}`,
+      'X-GitHub-Api-Version': '2022-11-28',
+      ...(options.body ? { 'Content-Type': 'application/json' } : {}),
+    },
+  });
+  if (res.status === 401) throw new Error('Token ungültig oder abgelaufen');
+  if (res.status === 403 || res.status === 404) throw new Error('Kein Zugriff – hat der Token die Berechtigung „Gists: Read and write“?');
+  if (!res.ok) throw new Error(`GitHub antwortet mit HTTP ${res.status}`);
+  return res.json();
+}
+
+function toRemote(p) {
+  return {
+    version: 1,
+    updated: new Date().toISOString(),
+    epoch: p.epoch || 0,
+    cards: p.cards,
+    logs: { ...p.otherLogs, [deviceId()]: p.log },
+    newIntroduced: p.newIntroduced,
+    settings: p.settings,
+  };
+}
+
+function mergeRemote(local, remote) {
+  const me = deviceId();
+  // Auf einem anderen Gerät wurde importiert/zurückgesetzt: dessen Stand gilt, der lokale wird verworfen
+  if ((remote.epoch || 0) > (local.epoch || 0)) {
+    const { [me]: ownLog = {}, ...otherLogs } = remote.logs || {};
+    return {
+      ...defaultProgress(),
+      cards: remote.cards || {},
+      log: ownLog,
+      otherLogs,
+      newIntroduced: remote.newIntroduced || {},
+      settings: { ...defaultProgress().settings, ...(remote.settings || {}) },
+      epoch: remote.epoch,
+    };
+  }
+  const cards = { ...remote.cards };
+  for (const [k, st] of Object.entries(local.cards)) {
+    if (!cards[k] || (st.last || 0) >= (cards[k].last || 0)) cards[k] = st;
+  }
+  const newIntroduced = JSON.parse(JSON.stringify(remote.newIntroduced || {}));
+  for (const [day, decks] of Object.entries(local.newIntroduced)) {
+    const d = newIntroduced[day] || (newIntroduced[day] = {});
+    for (const [deck, n] of Object.entries(decks)) d[deck] = Math.max(d[deck] || 0, n);
+  }
+  const otherLogs = { ...(remote.logs || {}) };
+  delete otherLogs[me];
+  const remoteSettings = remote.settings || {};
+  const settings = (remoteSettings.updatedAt || 0) > (local.settings.updatedAt || 0)
+    ? { ...local.settings, ...remoteSettings } : local.settings;
+  return { ...local, cards, newIntroduced, otherLogs, settings };
+}
+
+async function findOrCreateGist(token) {
+  for (let page = 1; page <= 10; page++) {
+    const gists = await gh(token, `/gists?per_page=100&page=${page}`);
+    const hit = gists.find((g) => g.files && g.files[GIST_FILE]);
+    if (hit) return hit.id;
+    if (gists.length < 100) break;
+  }
+  const created = await gh(token, '/gists', {
+    method: 'POST',
+    body: JSON.stringify({
+      description: 'Karteikarten – Lernfortschritt (automatisch synchronisiert)',
+      public: false,
+      files: { [GIST_FILE]: { content: JSON.stringify(toRemote(progress)) } },
+    }),
+  });
+  return created.id;
+}
+
+async function readGist(token, gistId) {
+  const gist = await gh(token, `/gists/${gistId}`);
+  const file = gist.files[GIST_FILE];
+  if (!file) return null;
+  if (file.truncated) {
+    const res = await fetch(file.raw_url, { cache: 'no-store' });
+    return res.json();
+  }
+  return JSON.parse(file.content);
+}
+
+async function connectSync(token) {
+  const gistId = await findOrCreateGist(token);
+  setSyncConfig({ token, gistId });
+  await runSync();
+  if (syncState.error) throw new Error(syncState.error);
+}
+
+// overwrite: lokalen Stand ohne Zusammenführen hochladen (nach Import/Zurücksetzen)
+function runSync({ overwrite = false } = {}) {
+  const cfg = syncConfig();
+  if (!cfg) return Promise.resolve(false);
+  if (syncState.running) return syncState.running.then(() => runSync({ overwrite }));
+  clearTimeout(syncTimer);
+  syncTimer = null;
+  syncState.running = (async () => {
+    renderSyncBadge('läuft');
+    const before = JSON.stringify(progress);
+    try {
+      if (!overwrite) {
+        const remote = await readGist(cfg.token, cfg.gistId);
+        if (remote) progress = mergeRemote(progress, remote);
+      } else {
+        progress.otherLogs = {};
+        progress.epoch = Date.now();
+      }
+      saveProgress();
+      await gh(cfg.token, `/gists/${cfg.gistId}`, {
+        method: 'PATCH',
+        body: JSON.stringify({ files: { [GIST_FILE]: { content: JSON.stringify(toRemote(progress)) } } }),
+      });
+      syncState.last = Date.now();
+      syncState.error = '';
+    } catch (e) {
+      console.warn('Sync fehlgeschlagen', e);
+      syncState.error = e.message;
+    } finally {
+      syncState.running = null;
+      renderSyncBadge();
+    }
+    return JSON.stringify(progress) !== before;
+  })();
+  return syncState.running;
+}
+
+// nach dem Lernen gebündelt synchronisieren statt nach jeder Karte
+function scheduleSync() {
+  if (!syncConfig()) return;
+  clearTimeout(syncTimer);
+  syncTimer = setTimeout(runSync, 5000);
+}
+
+function syncStatusText() {
+  if (syncState.error) return `Letzter Sync fehlgeschlagen: ${syncState.error}`;
+  if (!syncState.last) return 'Noch nicht synchronisiert.';
+  return `Zuletzt synchronisiert um ${new Date(syncState.last).toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })}.`;
+}
+
+function renderSyncBadge(state) {
+  const el = document.getElementById('sync-badge');
+  if (!el) return;
+  if (!syncConfig()) { el.textContent = ''; return; }
+  el.textContent = state === 'läuft' ? '⟳ Sync …' : syncState.error ? '⚠ Sync-Fehler' : syncState.last ? '✓ Synchron' : '';
+  el.title = syncStatusText();
+  el.style.color = syncState.error ? 'var(--again)' : 'var(--muted)';
+}
+
+// Nach einem Sync mit neuen Daten neu zeichnen – aber nie mitten in einer Lernrunde
+async function syncAndRefresh() {
+  const changed = await runSync();
+  if (changed && !location.hash.startsWith('#/lernen/') && !location.hash.startsWith('#/einstellungen')) route();
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (!syncConfig()) return;
+  if (document.visibilityState === 'hidden') { if (syncTimer) runSync(); }
+  else syncAndRefresh();
+});
 
 // ---------- Router ----------
 
@@ -538,7 +814,7 @@ function route() {
 window.addEventListener('hashchange', route);
 
 loadDecks()
-  .then(route)
+  .then(() => { route(); syncAndRefresh(); })
   .catch((e) => {
     app.innerHTML = `<div class="panel"><p><b>Karten konnten nicht geladen werden.</b></p>
       <p class="small muted">${esc(e.message)}</p>

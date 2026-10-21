@@ -20,7 +20,17 @@ Lern-App mit Spaced Repetition für meine Module – die Karten erstellt Claude 
 - **Spaced Repetition:** Nach dem Aufdecken bewertest du mit *Nochmal / Schwer / Gut / Einfach* (Tasten 1–4). Daraus wird berechnet, wann die Karte wieder fällig ist.
 - **Modi:** fällige Karten, alle Karten (z. B. vor der Klausur), schwierige Karten (≥ 2× vergessen); jeweils filterbar nach Thema.
 - **Fortschritt:** pro Modul und Thema *neu / lernend / gefestigt* (Intervall ≥ 21 Tage), Tagesserie, Aktivitäts-Heatmap, Trefferquote, Vorschau der fälligen Karten.
-- Der Fortschritt liegt im Browser (localStorage). Unter *Einstellungen* lässt er sich exportieren/importieren, z. B. zum Übertragen zwischen Laptop und Handy.
+- Der Fortschritt liegt im Browser und lässt sich unter *Einstellungen* als Datei exportieren/importieren.
+
+## Synchronisierung zwischen Geräten
+
+Der Fortschritt wird automatisch über einen **privaten GitHub Gist** abgeglichen (nach dem Lernen, beim Öffnen der App und beim Zurückwechseln in den Tab).
+
+Einrichten – einmal pro Gerät:
+1. Auf GitHub einen [Fine-grained Token](https://github.com/settings/personal-access-tokens/new) erstellen: unter *Account permissions* nur **Gists → Read and write** auswählen.
+2. In der App unter *Einstellungen → Synchronisierung* den Token einfügen und *Verbinden* klicken. Das erste Gerät legt den Gist an, alle weiteren finden ihn automatisch.
+
+Beim Zusammenführen gewinnt pro Karte der zuletzt gelernte Stand; die Lernstatistik wird über alle Geräte addiert. *Importieren* und *Zurücksetzen* gelten bei aktivem Sync für alle Geräte. Der Token wird nur im Browser des jeweiligen Geräts gespeichert.
 
 ## Struktur
 
