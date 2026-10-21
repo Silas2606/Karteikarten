@@ -13,6 +13,7 @@ Lern-App mit Spaced Repetition für meine Module – die Karten erstellt Claude 
 ## App öffnen
 
 - **Online (empfohlen, auch am Handy):** GitHub Pages aktivieren: *Settings → Pages → Deploy from a branch → `main` / root*. Die App läuft dann unter `https://silas2606.github.io/Karteikarten/`.
+- **Als App aufs Handy:** Seite in Chrome öffnen → Menü ⋮ → *App installieren* bzw. *Zum Startbildschirm hinzufügen* (iPhone: Teilen → *Zum Home-Bildschirm*). Die App öffnet sich dann im Vollbild mit eigenem Symbol und funktioniert auch offline. Sync-Token danach einmal in der installierten App eingeben.
 - **Lokal:** `python3 -m http.server` im Repo-Ordner starten und `http://localhost:8000` öffnen (direktes Öffnen der `index.html` als Datei funktioniert nicht).
 
 ## Lernen & Fortschritt
@@ -36,6 +37,8 @@ Beim Zusammenführen gewinnt pro Karte der zuletzt gelernte Stand; die Lernstati
 
 ```
 index.html, app.js, style.css   Lern-App (ohne Build-Schritt)
+manifest.webmanifest, sw.js     Installierbar als App, offline nutzbar
+icons/                          App-Symbol
 decks/index.json                Liste der Module
 decks/<modul>.json              Karten je Modul
 scripts/validate.mjs            Prüft Format, IDs und Duplikate

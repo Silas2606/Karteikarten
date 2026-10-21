@@ -821,5 +821,10 @@ loadDecks()
       <p class="small">Die App muss über einen Webserver geöffnet werden (z.&nbsp;B. GitHub Pages oder <code>python3 -m http.server</code>), nicht direkt als Datei.</p></div>`;
   });
 
+// Offline-Fähigkeit und Installierbarkeit als App
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch((e) => console.warn('Service Worker nicht registriert', e));
+}
+
 // KaTeX wird per defer geladen und ist evtl. erst nach dem ersten Rendern verfügbar
 window.addEventListener('load', () => renderMath(app));
