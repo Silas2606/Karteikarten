@@ -1,5 +1,482 @@
 {
   "deck": "externes-rechnungswesen",
   "name": "Externes Rechnungswesen",
-  "cards": []
+  "cards": [
+    {
+      "id": "erw-0001",
+      "front": "Welche Aufgabe hat das Rechnungswesen allgemein?",
+      "back": "Geschäftsvorfälle **dokumentarisch festhalten** und daraus zahlenmäßige Berichte für alle erstellen, die sich für die wirtschaftliche Lage interessieren – als Grundlage, um den Wertschöpfungsprozess zu planen, durchzuführen und zu kontrollieren.",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 1"
+    },
+    {
+      "id": "erw-0002",
+      "front": "Warum wird das Rechnungswesen in einen externen und einen internen Teil getrennt?",
+      "back": "Weil die Informationsempfänger unterschiedliche Informationswünsche haben: **externe** Adressaten haben andere Bedürfnisse als **interne**.",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 1"
+    },
+    {
+      "id": "erw-0003",
+      "front": "Was bildet das externe Rechnungswesen ab – und was steht im Mittelpunkt des internen?",
+      "back": "**Extern:** den Güterverbrauch und die Güterentstehung sowie alle finanziellen Vorgänge **zwischen Unternehmen und Umwelt**.\n\n**Intern:** die Vorgänge im Unternehmen (Leistungserstellungsprozess), die von den Mitarbeitern beeinflusst/gesteuert werden – v. a. über die **Kosten- und Leistungsrechnung**.",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 1"
+    },
+    {
+      "id": "erw-0004",
+      "front": "Was besagt der Stakeholder-Ansatz im Zusammenhang mit dem Jahresabschluss?",
+      "back": "Das Unternehmen ist ein Zusammenschluss verschiedener Interessengruppen. Es gibt Interessenkonflikte **zwischen den Adressaten** und **zwischen Unternehmensleitung und Adressaten**. Der Jahresabschluss soll durch objektive Darstellung zeigen, ob die Interessen der Gruppen ausreichend vertreten sind.",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 2"
+    },
+    {
+      "id": "erw-0005",
+      "front": "Welchen Gedanken hat der Gesetzgeber in den Vorschriften zum Jahresabschluss verankert – und warum?",
+      "back": "Den **Gläubiger- und Anlegerschutz**: Fremdkapitalgeber und Minderheitsgesellschafter haben wenig wirtschaftlichen Einfluss und sollen vor Vermögensverlusten geschützt werden.",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 2"
+    },
+    {
+      "id": "erw-0006",
+      "front": "Welche zwei Aufgaben des handelsrechtlichen Jahresabschlusses werden unterschieden?",
+      "back": "1. **Zahlungsbemessungsfunktion**\n2. **Informationsfunktion**",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 2"
+    },
+    {
+      "id": "erw-0007",
+      "front": "Was ist die Zahlungsbemessungsfunktion und welchen Stellenwert hat sie?",
+      "back": "Ermittlung des **ausschüttbaren Jahresüberschusses**. Nach herrschender Auffassung (Literatur und Rechtsprechung) das **primäre Ziel** der Jahresabschlusserstellung.",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 2"
+    },
+    {
+      "id": "erw-0008",
+      "front": "Welchen Konflikt muss der Gesetzgeber bei der Zahlungsbemessungsfunktion lösen?",
+      "back": "**Gläubiger** wollen eine möglichst **niedrige** Ausschüttung (Haftungssubstanz bleibt im Unternehmen), **Anleger** eine möglichst **hohe**.",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 2"
+    },
+    {
+      "id": "erw-0009",
+      "front": "Was ist das Ziel der Informationsfunktion und in welche Teilfunktionen lässt sie sich zerlegen?",
+      "back": "Die Ergebnisse des Wirtschaftens der vergangenen Periode sollen **möglichst realistisch** abgebildet werden.\n\nTeilfunktionen (je nach Empfänger):\n- Dokumentationsaufgabe\n- Rechenschaftsfunktion\n- Publizitätsfunktion",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 2"
+    },
+    {
+      "id": "erw-0010",
+      "front": "Was umfasst die Dokumentationsaufgabe des Jahresabschlusses?",
+      "back": "- Dokumentation der wirtschaftlichen Lage (Ursprung: merkantilistisches Frankreich – Pflicht zum Jahresabschluss als **Selbstschutz der Kaufleute**)\n- **Schuldendeckungskontrolle** (Zahlungsfähigkeit, Insolvenzwahrscheinlichkeit)\n- **Beweissicherungsinstrument** im Konfliktfall zwischen Interessengruppen",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 2–3"
+    },
+    {
+      "id": "erw-0011",
+      "front": "Warum liefert der Jahresabschluss für die Schuldendeckungskontrolle nur Anhaltspunkte?",
+      "back": "Weil er eine **vergangenheitsbezogene** Rechnung ist – über die zukünftige Liquidität lassen sich daraus nur Anhaltspunkte ableiten.",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 3"
+    },
+    {
+      "id": "erw-0012",
+      "front": "Was ist die Rechenschaftsfunktion und welcher Ansatz begründet sie?",
+      "back": "Die Unternehmensleitung verwaltet das Vermögen der Eigenkapitalgeber und muss diese **periodisch über den Stand ihres Vermögens unterrichten**, damit sie den Wert ihres Kapitalanteils einschätzen können.\n\nBegründung: Trennung von Eigentum und Leitung, v. a. in Kapitalgesellschaften (**Principal-Agent-Ansatz**).",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 3"
+    },
+    {
+      "id": "erw-0013",
+      "front": "Was ist die Publizitätsfunktion des Jahresabschlusses?",
+      "back": "Der Jahresabschluss informiert die **übrigen Adressaten** mit berechtigtem Interesse an den wirtschaftlichen Verhältnissen des Unternehmens (z. B. Fremdkapitalgeber, Lieferanten, Kunden, Arbeitnehmer).",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 3"
+    },
+    {
+      "id": "erw-0014",
+      "front": "Welches Informationsinteresse haben Fremdkapitalgeber, Lieferanten, Kunden und Arbeitnehmer am Jahresabschluss?",
+      "back": "- **Fremdkapitalgeber:** Kreditvergabe – werden bestimmte Kennzahlen eingehalten?\n- **Lieferanten:** Sind ihre Forderungen gefährdet?\n- **Kunden:** Ist die Bezugsbasis auch künftig gesichert?\n- **Arbeitnehmer:** Wie sicher sind ihre Arbeitsplätze?",
+      "topic": "Aufgaben des externen Rechnungswesens",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 3"
+    },
+    {
+      "id": "erw-0015",
+      "front": "Wann muss der Kaufmann nach § 240 HGB Vermögen und Schulden feststellen (Inventur)?",
+      "back": "- bei **Gründung oder Übernahme** eines Unternehmens\n- zum **Abschluss jedes Geschäftsjahres**\n- bei **Auflösung oder Veräußerung** eines Unternehmens",
+      "topic": "Inventur und Inventar",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 4"
+    },
+    {
+      "id": "erw-0016",
+      "front": "Was ist eine Inventur?",
+      "back": "Die Erfassung **aller Vermögensteile und Schulden** des Unternehmens, jeweils **einzeln nach Art, Menge und Wert** zu einem bestimmten Zeitpunkt.",
+      "topic": "Inventur und Inventar",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 4"
+    },
+    {
+      "id": "erw-0017",
+      "front": "Was ist der Unterschied zwischen körperlicher Inventur und Buchinventur?",
+      "back": "**Körperliche Inventur:** mengenmäßige Aufnahme der körperlichen Vermögensgegenstände (z. B. Maschinen, Fahrzeuge, Rohstoffe) durch **Zählen, Messen, Wiegen**, danach Bewertung in Euro.\n\n**Buchinventur:** für **nicht körperliche** Vermögensgegenstände und Schulden (Forderungen, Bankguthaben, alle Schulden) – wertmäßig anhand **buchhalterischer Aufzeichnungen und Belege**.",
+      "topic": "Inventur und Inventar",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 4"
+    },
+    {
+      "id": "erw-0018",
+      "front": "Was gilt, wenn Inventurwerte und Buchwerte voneinander abweichen?",
+      "back": "**Vorrang der Inventurwerte** gegenüber den Buchwerten.",
+      "topic": "Inventur und Inventar",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 4"
+    },
+    {
+      "id": "erw-0019",
+      "front": "Was ist das Inventar und aus welchen drei Teilen besteht es?",
+      "back": "Das **Bestandsverzeichnis**, in dem die per Inventur ermittelten Bestände zusammengefasst werden:\n1. Vermögen\n2. Schulden\n3. Reinvermögen (Eigenkapital)",
+      "topic": "Inventur und Inventar",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 5"
+    },
+    {
+      "id": "erw-0020",
+      "front": "Wie ergibt sich das Reinvermögen (Eigenkapital) im Inventar?",
+      "back": "$$\\text{Eigenkapital} = \\text{Vermögen} - \\text{Schulden}$$",
+      "topic": "Inventur und Inventar",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 5"
+    },
+    {
+      "id": "erw-0021",
+      "front": "Welchen Nachteil hat das Inventar?",
+      "back": "Es ist eine ausführliche Aufstellung aller Vermögensteile und Schulden nach Art, Menge und Wert und kann ganze Bände umfassen → **geringe Übersichtlichkeit**.",
+      "topic": "Inventur und Inventar",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 5"
+    },
+    {
+      "id": "erw-0022",
+      "front": "Was zeigen die Aktiv- und die Passivseite der Bilanz?",
+      "back": "**Aktiva = Mittelverwendung** (wofür das Kapital eingesetzt ist)\n\n**Passiva = Mittelherkunft** (woher das Kapital stammt)",
+      "topic": "Bilanz",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 6"
+    },
+    {
+      "id": "erw-0023",
+      "front": "Wie ist die Bilanz (vereinfacht) gegliedert?",
+      "back": "**Aktiva:**\n1. Anlagevermögen (z. B. Grundstücke und Gebäude, technische Anlagen, Fuhrpark, BGA)\n2. Umlaufvermögen (z. B. Vorräte, Forderungen, Bank, Kasse)\n\n**Passiva:**\n1. Eigenkapital\n2. Fremdkapital (z. B. Darlehen, Lieferverbindlichkeiten)",
+      "topic": "Bilanz",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 6"
+    },
+    {
+      "id": "erw-0024",
+      "front": "Welche Gleichung gilt immer für die Bilanz?",
+      "back": "$$\\text{Summe Aktiva} = \\text{Summe Passiva}$$\n\nbzw. Vermögen = Eigenkapital + Fremdkapital. Im Skriptbeispiel: 1.000 = 400 + 600.",
+      "topic": "Bilanz",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 6"
+    },
+    {
+      "id": "erw-0025",
+      "front": "Ordne zu: Anlage- oder Umlaufvermögen?\n\nGrundstücke und Gebäude, Vorräte, Fuhrpark, Forderungen, Technische Anlagen, Kasse, BGA, Bank",
+      "back": "**Anlagevermögen:** Grundstücke und Gebäude, Technische Anlagen, Fuhrpark, Betriebs- und Geschäftsausstattung (BGA)\n\n**Umlaufvermögen:** Vorräte, Forderungen, Bank, Kasse",
+      "topic": "Bilanz",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 6"
+    },
+    {
+      "id": "erw-0026",
+      "front": "Worin unterscheiden sich Inventar und Bilanz?",
+      "back": "- **Inventar:** ausführlich, mit Mengen, Einzel- und Gesamtwerten; Vermögen und Kapital **untereinander (Staffelform)**\n- **Bilanz:** kurz und überschaubar, nur Gesamtwerte der Posten; Vermögen und Kapital **nebeneinander (Kontenform)**",
+      "topic": "Bilanz",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 7"
+    },
+    {
+      "id": "erw-0027",
+      "front": "Welche vier Arten von Wertänderungen in der Bilanz gibt es?",
+      "back": "1. **Aktivtausch** – nur Aktivseite, Bilanzsumme konstant\n2. **Passivtausch** – nur Passivseite, Bilanzsumme konstant\n3. **Aktiv-Passiv-Mehrung** – beide Seiten, Bilanzsumme steigt\n4. **Aktiv-Passiv-Minderung** – beide Seiten, Bilanzsumme sinkt",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 8–9"
+    },
+    {
+      "id": "erw-0028",
+      "front": "Was ist ein Aktivtausch? Nenne das Beispiel aus dem Skript.",
+      "back": "Der Geschäftsfall betrifft **nur die Aktivseite**, die Bilanzsumme bleibt gleich.\n\nBeispiel: Kauf eines Computers für 1.000 gegen Kasse → BGA +1.000, Kasse −1.000.",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 8"
+    },
+    {
+      "id": "erw-0029",
+      "front": "Was ist ein Passivtausch? Nenne das Beispiel aus dem Skript.",
+      "back": "Der Geschäftsfall betrifft **nur die Passivseite**, die Bilanzsumme bleibt gleich.\n\nBeispiel: Umwandlung einer kurzfristigen Verbindlichkeit von 30.000 in ein langfristiges Darlehen → Darlehen +30.000, Verbindlichkeiten −30.000.",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 8"
+    },
+    {
+      "id": "erw-0030",
+      "front": "Was ist eine Aktiv-Passiv-Mehrung? Nenne das Beispiel aus dem Skript.",
+      "back": "Ein Aktivposten und ein Passivposten **steigen** um denselben Betrag → Bilanzsumme steigt auf beiden Seiten.\n\nBeispiel: Kauf eines Gebäudes für 300.000 auf Ziel → Gebäude +300.000, Verbindlichkeiten +300.000.",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 9"
+    },
+    {
+      "id": "erw-0031",
+      "front": "Was ist eine Aktiv-Passiv-Minderung? Nenne das Beispiel aus dem Skript.",
+      "back": "Ein Aktivposten und ein Passivposten **sinken** um denselben Betrag → Bilanzsumme sinkt auf beiden Seiten.\n\nBeispiel: Begleichung der Verbindlichkeit von 300.000 per Banküberweisung → Bank −300.000, Verbindlichkeiten −300.000.",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 9"
+    },
+    {
+      "id": "erw-0032",
+      "front": "Welche Art von Wertänderung liegt jeweils vor?\n\n1. Kauf einer Maschine auf Ziel\n2. Barabhebung vom Bankkonto\n3. Tilgung eines Darlehens per Bank\n4. Umwandlung einer Lieferantenverbindlichkeit in ein Darlehen",
+      "back": "1. Aktiv-Passiv-Mehrung\n2. Aktivtausch\n3. Aktiv-Passiv-Minderung\n4. Passivtausch",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 8–9"
+    },
+    {
+      "id": "erw-0033",
+      "front": "Wie ist ein Aktivkonto aufgebaut (Soll/Haben)?",
+      "back": "**Soll:** Anfangsbestand, Zugänge\n\n**Haben:** Abgänge, Schlussbestand (Saldo)\n\nBeispiel Rohstoffe: AB 7.000 + Zugänge 3.000 − Abgänge 6.000 = SB 4.000.",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 10"
+    },
+    {
+      "id": "erw-0034",
+      "front": "Wie ist ein Passivkonto aufgebaut (Soll/Haben)?",
+      "back": "**Soll:** Abgänge, Schlussbestand (Saldo)\n\n**Haben:** Anfangsbestand, Zugänge\n\nBeispiel Verbindlichkeiten: AB 5.000 + Zugänge 6.000 − Abgänge 3.000 = SB 8.000.",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 10"
+    },
+    {
+      "id": "erw-0035",
+      "front": "Wie berechnet man den Schlussbestand eines Bestandskontos?",
+      "back": "$$\\text{SB} = \\text{AB} + \\text{Zugänge} - \\text{Abgänge}$$\n\nDer SB steht auf der **kleineren Seite** und gleicht das Konto aus (beim Aktivkonto im Haben, beim Passivkonto im Soll).",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 10"
+    },
+    {
+      "id": "erw-0036",
+      "front": "Über welches Konto werden die Schlussbestände der Bestandskonten abgeschlossen?",
+      "back": "Über das **Schlussbilanzkonto (SBK)**.\n\n- Aktivkonten: SBK an Aktivkonto\n- Passivkonten: Passivkonto an SBK",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 10"
+    },
+    {
+      "id": "erw-0037",
+      "front": "Wie ist ein Buchungssatz aufgebaut?",
+      "back": "**Soll an Haben**: Zuerst das Konto, auf dem im Soll gebucht wird, dann „an“ und das Konto, auf dem im Haben gebucht wird – jeweils mit Betrag. Soll-Summe = Haben-Summe.\n\nBeispiel: BGA 900 an Kasse 900.",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 11"
+    },
+    {
+      "id": "erw-0038",
+      "front": "Buchungssatz: Zieleinkauf einer Geige für 3.000 (Musikschule).",
+      "back": "**Musikinstrumente 3.000 an Verbindlichkeiten 3.000**\n\n(Aktiv-Passiv-Mehrung)",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 11, Aufgabe 1"
+    },
+    {
+      "id": "erw-0039",
+      "front": "Buchungssatz: Kauf eines Computers gegen Kasse für 900.",
+      "back": "**BGA 900 an Kasse 900**\n\n(Aktivtausch)",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 11, Aufgabe 1"
+    },
+    {
+      "id": "erw-0040",
+      "front": "Buchungssatz: Barabhebung vom Bankkonto 4.600.",
+      "back": "**Kasse 4.600 an Bank 4.600**\n\n(Aktivtausch)",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 11, Aufgabe 1"
+    },
+    {
+      "id": "erw-0041",
+      "front": "Buchungssatz: Ein Kunde begleicht seine Rechnung durch Banküberweisung über 600.",
+      "back": "**Bank 600 an Forderungen 600**\n\n(Aktivtausch)",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 11, Aufgabe 1"
+    },
+    {
+      "id": "erw-0042",
+      "front": "Buchungssatz: Ausgleich einer fälligen Lieferantenrechnung per Banküberweisung über 5.000.",
+      "back": "**Verbindlichkeiten 5.000 an Bank 5.000**\n\n(Aktiv-Passiv-Minderung)",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 11, Aufgabe 1"
+    },
+    {
+      "id": "erw-0043",
+      "front": "Buchungssatz: Tilgungsrate des Darlehens per Bank 4.000.",
+      "back": "**Darlehen 4.000 an Bank 4.000**\n\n(Aktiv-Passiv-Minderung)",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 11, Aufgabe 1"
+    },
+    {
+      "id": "erw-0044",
+      "front": "Aufgabe 1 (Adriano GmbH 2006): Welche Schlussbestände ergeben sich im SBK und wie hoch ist die Bilanzsumme?\n\nEB: Gebäude 140.000, Musikinstr. 16.000, BGA 40.000, Ford. 9.000, Bank 50.000, Kasse 26.000 | EK 141.000, Darlehen 20.000, Verb. 120.000\n\nFälle: Geige auf Ziel 3.000; Computer bar 900; Barabhebung 4.600; Cello bar 4.600; Kunde zahlt per Bank 600; Lieferant per Bank 5.000; Darlehenstilgung per Bank 4.000",
+      "back": "**Soll (Aktiva):** Gebäude 140.000, Musikinstrumente 23.600, BGA 40.900, Forderungen 8.400, Bank 37.000, Kasse 25.100\n\n**Haben (Passiva):** Eigenkapital 141.000, Darlehen 16.000, Verbindlichkeiten 118.000\n\n**Summe: 275.000**",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 11–14, Aufgabe 1"
+    },
+    {
+      "id": "erw-0045",
+      "front": "Aufgabe 2 (2007): Bilde die Buchungssätze.\n\n1. Barkauf Aktenschrank 5.000\n2. Bareinzahlung auf Bankkonto 300\n3. Kunde zahlt Rechnung 580 per Überweisung\n4. Darlehensaufnahme 24.000, Gutschrift auf Bank\n5. Lieferantenrechnung 4.000 per Bank\n6. Klavier auf Ziel 24.000\n7. Überweisung der Klavierrechnung 24.000\n8. Darlehenstilgung per Bank 2.000",
+      "back": "1. BGA 5.000 an Kasse 5.000\n2. Bank 300 an Kasse 300\n3. Bank 580 an Forderungen 580\n4. Bank 24.000 an Darlehen 24.000\n5. Verbindlichkeiten 4.000 an Bank 4.000\n6. Musikinstrumente 24.000 an Verbindlichkeiten 24.000\n7. Verbindlichkeiten 24.000 an Bank 24.000\n8. Darlehen 2.000 an Bank 2.000",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 15, Aufgabe 2"
+    },
+    {
+      "id": "erw-0046",
+      "front": "Aufgabe 2 (2007): Welche Schlussbestände ergeben sich im SBK?\n\nEröffnung = SBK 2006 aus Aufgabe 1 (Gebäude 140.000, Musikinstr. 23.600, BGA 40.900, Ford. 8.400, Bank 37.000, Kasse 25.100 | EK 141.000, Darlehen 16.000, Verb. 118.000)",
+      "back": "**Soll (Aktiva):** Gebäude 140.000, Musikinstrumente 47.600, BGA 45.900, Forderungen 7.820, Bank 31.880, Kasse 19.800\n\n**Haben (Passiva):** Eigenkapital 141.000, Darlehen 38.000, Verbindlichkeiten 114.000\n\n**Summe: 293.000**",
+      "topic": "Buchen auf Bestandskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 1, S. 15, Aufgabe 2"
+    },
+    {
+      "id": "erw-0047",
+      "front": "Worin unterscheiden sich erfolgswirksame Geschäftsfälle von den bisherigen Buchungen auf Bestandskonten?",
+      "back": "Buchungen auf Bestandskonten verändern nur Vermögens- und Schuldposten, **nicht das Eigenkapital**. Erfolgswirksame Geschäftsfälle (aus Leistungserstellung und Verkauf) **mindern oder erhöhen das Eigenkapital**.",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 1"
+    },
+    {
+      "id": "erw-0048",
+      "front": "Was ist ein Aufwand und wie wirkt er auf das Eigenkapital?",
+      "back": "Ein **Werteverzehr** (z. B. Verbrauch von Rohstoffen im Produktionsprozess).\n\n**Aufwand = Minderung des Eigenkapitals**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 1"
+    },
+    {
+      "id": "erw-0049",
+      "front": "Was ist ein Ertrag und wie wirkt er auf das Eigenkapital?",
+      "back": "Ein Wertzuwachs, z. B. durch den **Verkauf von Fertigerzeugnissen**.\n\n**Ertrag = Mehrung des Eigenkapitals**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 1"
+    },
+    {
+      "id": "erw-0050",
+      "front": "Wolle im Wert von 1.000 wird im Produktionsprozess verbraucht. Wie wirkt sich das auf die Bilanz aus?",
+      "back": "**Aktiva:** Rohstoffe −1.000\n\n**Passiva:** Eigenkapital −1.000\n\nEs entsteht ein **Aufwand** (Werteverzehr), die Bilanzsumme sinkt.",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 1"
+    },
+    {
+      "id": "erw-0051",
+      "front": "Wollmützen werden für 3.000 auf Ziel verkauft. Wie wirkt sich das auf die Bilanz aus?",
+      "back": "**Aktiva:** Forderungen +3.000\n\n**Passiva:** Eigenkapital +3.000\n\nEs entsteht ein **Ertrag**, die Bilanzsumme steigt.",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 1"
+    },
+    {
+      "id": "erw-0052",
+      "front": "Wie ist das Eigenkapitalkonto aufgebaut?",
+      "back": "**Soll:** Minderungen, Schlussbestand\n\n**Haben:** Anfangsbestand, Mehrungen\n\n(Passivkonto)",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 2"
+    },
+    {
+      "id": "erw-0053",
+      "front": "Warum werden Aufwendungen und Erträge nicht direkt auf dem Eigenkapitalkonto gebucht?",
+      "back": "Das Eigenkapitalkonto wird in **Erfolgskonten** (Aufwands- und Ertragskonten) aufgelöst. So bleibt sichtbar, woraus sich der Erfolg zusammensetzt; das Eigenkapitalkonto würde sonst unübersichtlich.",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 2"
+    },
+    {
+      "id": "erw-0054",
+      "front": "Auf welcher Kontoseite werden Aufwendungen und Erträge gebucht – und warum?",
+      "back": "- **Aufwandskonten: im Soll** – Aufwand mindert das EK, Minderungen stehen beim EK-Konto im Soll.\n- **Ertragskonten: im Haben** – Ertrag mehrt das EK, Mehrungen stehen beim EK-Konto im Haben.",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 2"
+    },
+    {
+      "id": "erw-0055",
+      "front": "Was ist das G+V-Konto und wie werden die Erfolgskonten darüber abgeschlossen?",
+      "back": "Das G+V-Konto ist die **Gegenüberstellung von Aufwand und Ertrag**.\n\n- Soll: Aufwendungen (Buchung: G+V an Aufwandskonto)\n- Haben: Erträge (Buchung: Ertragskonto an G+V)",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 2"
+    },
+    {
+      "id": "erw-0056",
+      "front": "Wie wird das G+V-Konto abgeschlossen? Wie lautet die Buchung bei Gewinn und bei Verlust?",
+      "back": "Über das **Eigenkapitalkonto**.\n\n- **Gewinn** (Erträge > Aufwendungen): G+V an Eigenkapital\n- **Verlust** (Aufwendungen > Erträge): Eigenkapital an G+V",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 2"
+    },
+    {
+      "id": "erw-0057",
+      "front": "Buchungssatz: Wir erhalten eine Stromrechnung über 5.000.",
+      "back": "**Energieaufwand 5.000 an Verbindlichkeiten 5.000**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 3, Aufgabe 3"
+    },
+    {
+      "id": "erw-0058",
+      "front": "Buchungssatz: Wir stellen Kunde Schmidt Musikunterricht über 3.000 in Rechnung.",
+      "back": "**Forderungen 3.000 an Umsatzerlöse 3.000**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 3, Aufgabe 3"
+    },
+    {
+      "id": "erw-0059",
+      "front": "Buchungssatz: Banküberweisung der Gehälter unserer Musiklehrer 10.000.",
+      "back": "**Gehälter 10.000 an Bank 10.000**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 3, Aufgabe 3"
+    },
+    {
+      "id": "erw-0060",
+      "front": "Buchungssatz: Herr Meier zahlt 12 Einzelstunden Gesangsunterricht über 900 bar.",
+      "back": "**Kasse 900 an Umsatzerlöse 900**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 3, Aufgabe 3"
+    },
+    {
+      "id": "erw-0061",
+      "front": "Buchungssatz: Eingangsrechnung für die Reparatur unseres Klaviers 5.000.",
+      "back": "**Reparatur 5.000 an Verbindlichkeiten 5.000**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 3, Aufgabe 3"
+    },
+    {
+      "id": "erw-0062",
+      "front": "Aufgabe 3 (Adriano GmbH 2006): Bilde die Buchungssätze.\n\n1. Stromrechnung 5.000\n2. Rechnung an Kunde Schmidt für Unterricht 3.000\n3. Gehälter per Bank 10.000\n4. Saxophon auf Ziel 5.000\n5. Schmidt zahlt 3.000 per Bank\n6. Meier zahlt Gesangsunterricht 900 bar\n7. Eingangsrechnung Klavierreparatur 5.000",
+      "back": "1. Energieaufwand 5.000 an Verbindlichkeiten 5.000\n2. Forderungen 3.000 an Umsatzerlöse 3.000\n3. Gehälter 10.000 an Bank 10.000\n4. Musikinstrumente 5.000 an Verbindlichkeiten 5.000\n5. Bank 3.000 an Forderungen 3.000\n6. Kasse 900 an Umsatzerlöse 900\n7. Reparatur 5.000 an Verbindlichkeiten 5.000",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 3, Aufgabe 3"
+    },
+    {
+      "id": "erw-0063",
+      "front": "Aufgabe 3: Wie sieht das G+V-Konto aus und wie wird es abgeschlossen?",
+      "back": "**Soll (Aufwendungen):** Energieaufwand 5.000, Gehälter 10.000, Reparatur 5.000 = **20.000**\n\n**Haben (Erträge):** Umsatzerlöse 3.900\n\nAufwendungen > Erträge → **Verlust 16.100**\n\nBuchung: **Eigenkapital 16.100 an G+V 16.100** → EK sinkt von 141.000 auf **124.900**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 3, Aufgabe 3"
+    },
+    {
+      "id": "erw-0064",
+      "front": "Aufgabe 3: Welche Schlussbestände ergeben sich im SBK?\n\nEB 2006: Gebäude 140.000, Musikinstr. 16.000, BGA 40.000, Ford. 9.000, Bank 50.000, Kasse 26.000 | EK 141.000, Darlehen 20.000, Verb. 120.000",
+      "back": "**Soll (Aktiva):** Gebäude 140.000, Musikinstrumente 21.000, BGA 40.000, Forderungen 9.000, Bank 43.000, Kasse 26.900\n\n**Haben (Passiva):** Eigenkapital 124.900, Darlehen 20.000, Verbindlichkeiten 135.000\n\n**Summe: 279.900**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 3, Aufgabe 3"
+    },
+    {
+      "id": "erw-0065",
+      "front": "Aufgabe 4 (2007): Bilde die Buchungssätze.\n\n1. Honorar Dozent Meier 2.000 per Bank\n2. Rechnung für Werbeanzeige 400\n3. Darlehen der Sparkasse 70.000, Gutschrift auf Bank\n4. Erlöse aus Instrumentenverleih 7.000 bar\n5. Rechnung über Reparatur eines Dachfensters 4.000\n6. Mieterträge 23.000 per Bank",
+      "back": "1. Honorar 2.000 an Bank 2.000\n2. Werbeaufwand 400 an Verbindlichkeiten 400\n3. Bank 70.000 an Darlehen 70.000\n4. Kasse 7.000 an Umsatzerlöse 7.000\n5. Reparatur 4.000 an Verbindlichkeiten 4.000\n6. Bank 23.000 an Mieterträge 23.000",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 8, Aufgabe 4"
+    },
+    {
+      "id": "erw-0066",
+      "front": "Aufgabe 4 (2007): Wie sieht das G+V-Konto aus und wie wird es abgeschlossen?\n\n(Eröffnung = Schlussbilanz 2006 aus Aufgabe 3, EK 124.900)",
+      "back": "**Soll (Aufwendungen):** Honorar 2.000, Werbeaufwand 400, Reparatur 4.000 = **6.400**\n\n**Haben (Erträge):** Umsatzerlöse 7.000, Mieterträge 23.000 = **30.000**\n\nErträge > Aufwendungen → **Gewinn 23.600**\n\nBuchung: **G+V 23.600 an Eigenkapital 23.600** → EK steigt von 124.900 auf **148.500**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 8, Aufgabe 4"
+    },
+    {
+      "id": "erw-0067",
+      "front": "Aufgabe 4 (2007): Welche Schlussbestände ergeben sich im SBK?\n\nEröffnung = SBK 2006 aus Aufgabe 3 (Gebäude 140.000, Musikinstr. 21.000, BGA 40.000, Ford. 9.000, Bank 43.000, Kasse 26.900 | EK 124.900, Darlehen 20.000, Verb. 135.000)",
+      "back": "**Soll (Aktiva):** Gebäude 140.000, Musikinstrumente 21.000, BGA 40.000, Forderungen 9.000, Bank 134.000, Kasse 33.900\n\n**Haben (Passiva):** Eigenkapital 148.500, Darlehen 90.000, Verbindlichkeiten 139.400\n\n**Summe: 377.900**",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 8, Aufgabe 4"
+    },
+    {
+      "id": "erw-0068",
+      "front": "Was gilt für die Eröffnungsbilanz eines neuen Geschäftsjahres?",
+      "back": "Die **Schlussbilanz des Vorjahres ist zugleich die Eröffnungsbilanz** des neuen Jahres (Bilanzidentität).",
+      "topic": "Buchen auf Erfolgskonten",
+      "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 8"
+    }
+  ]
 }
