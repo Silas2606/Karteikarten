@@ -118,8 +118,8 @@ select, input[type=number] {
 .card table { border-collapse: collapse; }
 .card td, .card th { border: 1px solid var(--border); padding: 4px 8px; }
 
-.answer-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 14px; }
-.answer-row button { padding: 12px 6px; font-weight: 600; }
+.answer-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.answer-row button { padding: 16px 6px; font-weight: 600; font-size: 1.05rem; }
 .answer-row small { display: block; font-weight: 400; color: var(--muted); font-size: 0.75rem; }
 .r-again { border-color: var(--again); color: var(--again); }
 .r-hard { border-color: var(--hard); color: var(--hard); }
@@ -145,3 +145,9 @@ select, input[type=number] {
 .toolbar { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; margin-bottom: 14px; }
 .done { text-align: center; padding: 40px 20px; }
 #sync-badge { flex: 1; }
+
+.card-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 30px; }
+.mark { font-size: 0.85rem; padding: 4px 10px; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+.mark.on { color: #ca8a04; border-color: #ca8a04; }
+.star { color: #ca8a04; }
+button.small { font-size: 0.85rem; padding: 4px 10px; }
