@@ -2,6 +2,10 @@
 
 Dieses Repo ist eine statische Lern-App (`index.html`, `app.js`, `style.css`). Die Karten liegen als JSON in `decks/`, der Lernfortschritt im Browser (localStorage) – Claude ändert nur die Karten.
 
+## Pull Requests
+
+Nach **jeder** Änderung (Karten, App, Doku) ohne Nachfrage einen Pull Request nach `main` erstellen und den Link nennen – die App auf GitHub Pages zeigt nur, was auf `main` liegt. Ist der vorherige PR des Arbeitsbranches schon gemergt, den Branch vorher neu von `main` aufsetzen.
+
 ## Module
 
 | Modul | Datei | ID-Präfix |
@@ -18,7 +22,7 @@ Dieses Repo ist eine statische Lern-App (`index.html`, `app.js`, `style.css`). D
 3. **Bestehendes Set lesen**, damit keine Frage doppelt entsteht. Vorhandene Karten nicht verändern oder löschen (ihre IDs hängen am Lernfortschritt), außer der Nutzer bittet ausdrücklich darum.
 4. **Karten erstellen** und ans Ende von `cards` anhängen. IDs fortlaufend weiterzählen (höchste vorhandene Nummer + 1, vierstellig: `irw-0001`, `irw-0002`, …).
 5. `node scripts/validate.mjs` ausführen und Fehler beheben.
-6. Committen (`Karten: <Modul> – <Dokument/Thema> (+N)`) und pushen.
+6. Committen (`Karten: <Modul> – <Dokument/Thema> (+N)`) und pushen, danach einen Pull Request nach `main` erstellen (siehe oben).
 7. Dem Nutzer kurz berichten: wie viele Karten, welche Themen.
 
 ## Kartenformat
