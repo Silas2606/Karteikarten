@@ -1,6 +1,6 @@
 # Karteikarten
 
-Lern-App mit Spaced Repetition für meine Module – die Karten erstellt Claude aus hochgeladenen Dokumenten.
+Lern-App für meine Module – die Karten erstellt Claude aus hochgeladenen Dokumenten.
 
 **Module:** Internes Rechnungswesen · Externes Rechnungswesen · Marketing · Analogtechnik
 
@@ -18,9 +18,10 @@ Lern-App mit Spaced Repetition für meine Module – die Karten erstellt Claude 
 
 ## Lernen & Fortschritt
 
-- **Spaced Repetition:** Nach dem Aufdecken bewertest du mit *Nochmal / Schwer / Gut / Einfach* (Tasten 1–4). Daraus wird berechnet, wann die Karte wieder fällig ist.
-- **Modi:** fällige Karten, alle Karten (z. B. vor der Klausur), schwierige Karten (≥ 2× vergessen); jeweils filterbar nach Thema.
-- **Fortschritt:** pro Modul und Thema *neu / lernend / gefestigt* (Intervall ≥ 21 Tage), Tagesserie, Aktivitäts-Heatmap, Trefferquote, Vorschau der fälligen Karten.
+- **Lernen:** Antwort aufdecken (Leertaste) und mit *Wiederholen* oder *Kann ich* bewerten (Tasten 1 / 2). *Kann ich* nimmt die Karte aus dem Zyklus, *Wiederholen* lässt sie in der Runde bald wiederkommen.
+- **Markieren:** Jede Karte lässt sich beim Lernen (Taste M) oder in der Kartenliste mit ★ markieren.
+- **Modi:** offene Karten (Standard), alle Karten (auch gekonnte) und markierte Karten; jeweils filterbar nach Thema. Wer eine gekonnte Karte im Modus „Alle“ mit *Wiederholen* bewertet, holt sie zurück in den Zyklus – oder in der Kartenliste über *Wieder in den Zyklus*.
+- **Fortschritt:** pro Modul und Thema *neu / wiederholen / gekonnt*, Markierungen, Tagesserie, Aktivitäts-Heatmap und „Kann ich“-Quote.
 - Der Fortschritt liegt im Browser und lässt sich unter *Einstellungen* als Datei exportieren/importieren.
 
 ## Synchronisierung zwischen Geräten

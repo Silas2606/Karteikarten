@@ -4,14 +4,13 @@
 
 const STORAGE_KEY = 'karteikarten-progress-v1';
 const DAY = 24 * 60 * 60 * 1000;
-const MASTERED_DAYS = 21; // ab diesem Intervall gilt eine Karte als "gefestigt"
 
 const app = document.getElementById('app');
 let DECKS = []; // [{id, name, prefix, color, cards: [...]}]
 
 function defaultProgress() {
   // log: Lernstatistik dieses Geräts, otherLogs: die der anderen Geräte (per Sync)
-  return { version: 1, cards: {}, log: {}, otherLogs: {}, newIntroduced: {}, settings: { newPerDay: 20, updatedAt: 0 } };
+  return { version: 1, cards: {}, log: {}, otherLogs: {}, newIntroduced: {}, settings: { updatedAt: 0 } };
 }
 
 function loadProgress() {
@@ -58,69 +57,50 @@ function todayKey(ts = Date.now()) {
 function cardKey(deckId, cardId) { return `${deckId}/${cardId}`; }
 function stateOf(deckId, cardId) { return progress.cards[cardKey(deckId, cardId)]; }
 
+// Kartenzustand: { reps, lapses, known, marked, last }
+// reps = wie oft beantwortet, lapses = wie oft "Wiederholen", known = "Kann ich" (raus aus dem Zyklus)
+function isKnown(st) {
+  if (!st) return false;
+  if (typeof st.known === 'boolean') return st.known;
+  return st.interval >= 21; // Stand aus der früheren Spaced-Repetition-Version
+}
+
 function status(st) {
-  if (!st) return 'new';
-  return st.interval >= MASTERED_DAYS ? 'mastered' : 'learning';
+  if (isKnown(st)) return 'mastered';
+  return st && (st.reps || st.lapses) ? 'learning' : 'new';
 }
-const STATUS_LABEL = { new: 'neu', learning: 'lernend', mastered: 'gefestigt' };
+const STATUS_LABEL = { new: 'neu', learning: 'wiederholen', mastered: 'gekonnt' };
 
-// ---------- Spaced Repetition (vereinfachtes SM-2) ----------
-
-function schedule(st, rating) {
-  const now = Date.now();
-  const s = st ? { ...st } : { interval: 0, ease: 2.5, reps: 0, lapses: 0 };
-  switch (rating) {
-    case 'again':
-      s.lapses += st ? 1 : 0;
-      s.reps = 0;
-      s.interval = 0;
-      s.ease = Math.max(1.3, s.ease - 0.2);
-      s.due = now + 10 * 60 * 1000;
-      break;
-    case 'hard':
-      s.interval = Math.max(1, Math.round(s.interval * 1.2));
-      s.ease = Math.max(1.3, s.ease - 0.15);
-      s.reps += 1;
-      s.due = now + s.interval * DAY;
-      break;
-    case 'good':
-      s.interval = s.reps === 0 ? 1 : s.reps === 1 ? 3 : Math.round(s.interval * s.ease);
-      s.reps += 1;
-      s.due = now + s.interval * DAY;
-      break;
-    case 'easy':
-      s.interval = s.reps === 0 ? 4 : Math.round(Math.max(s.interval, 1) * s.ease * 1.3);
-      s.ease += 0.15;
-      s.reps += 1;
-      s.due = now + s.interval * DAY;
-      break;
-  }
-  s.last = now;
-  return s;
+function updateCard(deckId, cardId, change) {
+  const key = cardKey(deckId, cardId);
+  const st = { reps: 0, lapses: 0, ...progress.cards[key] };
+  change(st);
+  st.last = Date.now();
+  progress.cards[key] = st;
+  saveProgress();
+  scheduleSync();
+  return st;
 }
 
-function intervalLabel(st, rating) {
-  const s = schedule(st, rating);
-  if (s.interval === 0) return '10 Min';
-  if (s.interval < 31) return `${s.interval} T`;
-  if (s.interval < 365) return `${Math.round(s.interval / 30)} Mon`;
-  return `${(s.interval / 365).toFixed(1)} J`;
-}
-
-function recordReview(deckId, card, rating) {
-  const key = cardKey(deckId, card.id);
-  const wasNew = !progress.cards[key];
-  progress.cards[key] = schedule(progress.cards[key], rating);
+function recordAnswer(deckId, card, knew) {
+  updateCard(deckId, card.id, (st) => {
+    st.reps += 1;
+    st.known = knew;
+    if (!knew) st.lapses += 1;
+  });
   const t = todayKey();
   const log = progress.log[t] || (progress.log[t] = { reviews: 0, correct: 0 });
   log.reviews += 1;
-  if (rating !== 'again') log.correct += 1;
-  if (wasNew) {
-    const n = progress.newIntroduced[t] || (progress.newIntroduced[t] = {});
-    n[deckId] = (n[deckId] || 0) + 1;
-  }
+  if (knew) log.correct += 1;
   saveProgress();
-  scheduleSync();
+}
+
+function toggleMark(deckId, cardId) {
+  return updateCard(deckId, cardId, (st) => { st.marked = !st.marked; }).marked;
+}
+
+function relearn(deckId, cardId) {
+  updateCard(deckId, cardId, (st) => { st.known = false; });
 }
 
 // ---------- Daten laden ----------
@@ -183,26 +163,21 @@ function renderMath(el) {
 }
 
 function deckStats(deck, topic) {
-  const now = Date.now();
-  const r = { total: 0, new: 0, learning: 0, mastered: 0, due: 0 };
+  const r = { total: 0, new: 0, learning: 0, mastered: 0, open: 0, marked: 0 };
   for (const c of deck.cards) {
     if (topic && c.topic !== topic) continue;
     const st = stateOf(deck.id, c.id);
     r.total += 1;
     r[status(st)] += 1;
-    if (st && st.due <= now) r.due += 1;
+    if (!isKnown(st)) r.open += 1;
+    if (st?.marked) r.marked += 1;
   }
   return r;
 }
 
-function newRemainingToday(deckId) {
-  const used = (progress.newIntroduced[todayKey()] || {})[deckId] || 0;
-  return Math.max(0, progress.settings.newPerDay - used);
-}
-
 function progressBar(s) {
   const pct = (n) => (s.total ? (n / s.total) * 100 : 0);
-  return `<div class="bar" title="${s.mastered} gefestigt, ${s.learning} lernend, ${s.new} neu">
+  return `<div class="bar" title="${s.mastered} gekonnt, ${s.learning} wiederholen, ${s.new} neu">
     <span class="mastered" style="width:${pct(s.mastered)}%"></span>
     <span class="learning" style="width:${pct(s.learning)}%"></span>
   </div>`;
@@ -210,10 +185,22 @@ function progressBar(s) {
 
 function legend() {
   return `<div class="legend">
-    <span><i style="background:var(--good)"></i>gefestigt</span>
-    <span><i style="background:var(--hard)"></i>lernend</span>
+    <span><i style="background:var(--good)"></i>gekonnt</span>
+    <span><i style="background:var(--hard)"></i>wiederholen</span>
     <span><i style="background:var(--border)"></i>neu</span>
   </div>`;
+}
+
+function studyHref(deckId, topic, mode) {
+  const params = new URLSearchParams();
+  if (topic) params.set('thema', topic);
+  if (mode) params.set('modus', mode);
+  const q = params.toString();
+  return `#/lernen/${deckId}${q ? `?${q}` : ''}`;
+}
+
+function linkBtn(href, label, { primary = false, disabled = false } = {}) {
+  return `<a class="btn${primary ? ' primary' : ''}" href="${href}"${disabled ? ' aria-disabled="true" style="opacity:.45;pointer-events:none"' : ''}>${label}</a>`;
 }
 
 function topicsOf(deck) {
@@ -242,24 +229,23 @@ function viewOverview() {
   app.innerHTML = `
     <h1>Deine Module</h1>
     <div class="panel stats" style="margin-bottom:18px">
-      <div class="stat"><b>${totals.due || 0}</b><span>heute fällig</span></div>
+      <div class="stat"><b>${totals.open || 0}</b><span>offen</span></div>
       <div class="stat"><b>${today.reviews}</b><span>heute gelernt</span></div>
       <div class="stat"><b>${streak()}</b><span>Tage Serie</span></div>
-      <div class="stat"><b>${totals.mastered || 0} / ${totals.total || 0}</b><span>Karten gefestigt</span></div>
+      <div class="stat"><b>${totals.mastered || 0} / ${totals.total || 0}</b><span>Karten gekonnt</span></div>
     </div>
     <div class="grid">
       ${DECKS.map((d) => {
         const s = deckStats(d);
-        const startable = s.due + Math.min(s.new, newRemainingToday(d.id));
         return `<div class="panel deck" style="--deck:${d.color}">
           <h3>${esc(d.name)}</h3>
           ${d.error ? `<p class="small" style="color:var(--again)">Fehler beim Laden: ${esc(d.error)}</p>` : ''}
           ${s.total === 0
             ? '<p class="muted small">Noch keine Karten. Lade ein Dokument bei Claude hoch, um Karten zu erzeugen.</p>'
-            : `<div class="small muted">${s.total} Karten · ${s.due} fällig · ${s.new} neu</div>${progressBar(s)}`}
+            : `<div class="small muted">${s.total} Karten · ${s.open} offen · ${s.mastered} gekonnt${s.marked ? ` · ★ ${s.marked}` : ''}</div>${progressBar(s)}`}
           <div class="actions">
-            <a class="btn primary" href="#/lernen/${d.id}" ${startable ? '' : 'aria-disabled="true" style="opacity:.45;pointer-events:none"'}>Lernen${startable ? ` (${startable})` : ''}</a>
-            <a class="btn" href="#/deck/${d.id}">Karten</a>
+            ${linkBtn(studyHref(d.id), `Lernen${s.open ? ` (${s.open})` : ''}`, { primary: true, disabled: !s.open })}
+            ${linkBtn(`#/deck/${d.id}`, 'Karten')}
           </div>
         </div>`;
       }).join('')}
@@ -268,16 +254,31 @@ function viewOverview() {
   `;
 }
 
+const FILTERS = { '': 'Alle Karten', offen: 'Offen', gekonnt: 'Gekonnt', markiert: 'Markiert' };
+
 function viewDeck(deckId) {
   const deck = deckById(deckId);
   if (!deck) return viewNotFound();
   const params = new URLSearchParams(location.hash.split('?')[1] || '');
   const topic = params.get('thema') || '';
+  const filter = params.get('filter') || '';
   const topics = topicsOf(deck);
   const s = deckStats(deck, topic);
-  const cards = deck.cards.filter((c) => !topic || c.topic === topic);
-  const q = topic ? `?thema=${encodeURIComponent(topic)}` : '';
-  const hard = cards.filter((c) => (stateOf(deck.id, c.id)?.lapses || 0) >= 2).length;
+  const cards = deck.cards.filter((c) => {
+    if (topic && c.topic !== topic) return false;
+    const st = stateOf(deck.id, c.id);
+    if (filter === 'offen') return !isKnown(st);
+    if (filter === 'gekonnt') return isKnown(st);
+    if (filter === 'markiert') return !!st?.marked;
+    return true;
+  });
+
+  const navigate = (t, f) => {
+    const q = new URLSearchParams();
+    if (t) q.set('thema', t);
+    if (f) q.set('filter', f);
+    location.hash = `#/deck/${deck.id}${q.toString() ? `?${q}` : ''}`;
+  };
 
   app.innerHTML = `
     <h1>${esc(deck.name)}</h1>
@@ -292,34 +293,51 @@ function viewDeck(deckId) {
     <div class="panel" style="display:flex;flex-direction:column;gap:12px">
       <div class="stats">
         <div class="stat"><b>${s.total}</b><span>Karten</span></div>
-        <div class="stat"><b>${s.due}</b><span>fällig</span></div>
-        <div class="stat"><b>${s.new}</b><span>neu</span></div>
-        <div class="stat"><b>${s.learning}</b><span>lernend</span></div>
-        <div class="stat"><b>${s.mastered}</b><span>gefestigt</span></div>
+        <div class="stat"><b>${s.open}</b><span>offen</span></div>
+        <div class="stat"><b>${s.mastered}</b><span>gekonnt</span></div>
+        <div class="stat"><b>${s.marked}</b><span>markiert</span></div>
       </div>
       ${progressBar(s)}
       <div class="toolbar" style="margin:0">
-        <a class="btn primary" href="#/lernen/${deck.id}${q}">Fällige lernen</a>
-        <a class="btn" href="#/lernen/${deck.id}${q}${q ? '&' : '?'}modus=alle">Alle durchgehen</a>
-        ${hard ? `<a class="btn" href="#/lernen/${deck.id}${q}${q ? '&' : '?'}modus=schwer">Schwierige (${hard})</a>` : ''}
+        ${linkBtn(studyHref(deck.id, topic), `Offene lernen (${s.open})`, { primary: true, disabled: !s.open })}
+        ${linkBtn(studyHref(deck.id, topic, 'alle'), `Alle Karten lernen (${s.total})`, { disabled: !s.total })}
+        ${linkBtn(studyHref(deck.id, topic, 'markiert'), `★ Markierte lernen (${s.marked})`, { disabled: !s.marked })}
       </div>
     </div>
-    <h2>Karten</h2>
+    <div class="toolbar" style="margin:28px 0 12px;justify-content:space-between">
+      <h2 style="margin:0">Karten</h2>
+      <select id="filter">
+        ${Object.entries(FILTERS).map(([k, v]) => `<option value="${k}" ${k === filter ? 'selected' : ''}>${v}</option>`).join('')}
+      </select>
+    </div>
     <div class="card-list">
       ${cards.length === 0 ? '<p class="muted">Keine Karten vorhanden.</p>' : cards.map((c) => {
-        const st = status(stateOf(deck.id, c.id));
-        return `<details>
-          <summary><span>${esc(c.front.split('\n')[0])}</span><span class="pill ${st}">${STATUS_LABEL[st]}</span></summary>
+        const st = stateOf(deck.id, c.id);
+        const stat = status(st);
+        return `<details data-id="${esc(c.id)}">
+          <summary><span>${st?.marked ? '<span class="star">★</span> ' : ''}${esc(c.front.split('\n')[0])}</span><span class="pill ${stat}">${STATUS_LABEL[stat]}</span></summary>
           <div class="content">${md(c.back)}
             <p class="small muted" style="margin-top:8px">${esc([c.topic, c.source].filter(Boolean).join(' · '))}</p>
+            <div class="toolbar" style="margin:8px 0 0">
+              <button class="small" data-action="mark">${st?.marked ? 'Markierung entfernen' : '☆ Markieren'}</button>
+              ${isKnown(st) ? '<button class="small" data-action="relearn">Wieder in den Zyklus</button>' : ''}
+            </div>
           </div>
         </details>`;
       }).join('')}
     </div>
   `;
-  app.querySelector('#topic').addEventListener('change', (e) => {
-    location.hash = `#/deck/${deck.id}${e.target.value ? `?thema=${encodeURIComponent(e.target.value)}` : ''}`;
-  });
+  app.querySelector('#topic').addEventListener('change', (e) => navigate(e.target.value, filter));
+  app.querySelector('#filter').addEventListener('change', (e) => navigate(topic, e.target.value));
+  app.querySelectorAll('[data-action]').forEach((b) => b.addEventListener('click', () => {
+    const id = b.closest('details').dataset.id;
+    if (b.dataset.action === 'mark') toggleMark(deck.id, id);
+    else relearn(deck.id, id);
+    const y = window.scrollY;
+    viewDeck(deck.id);
+    app.querySelector(`details[data-id="${CSS.escape(id)}"]`)?.setAttribute('open', '');
+    window.scrollTo(0, y);
+  }));
   renderMath(app);
 }
 
@@ -331,20 +349,15 @@ function shuffle(arr) {
   return arr;
 }
 
+// offen (Standard): alles, was noch nicht "Kann ich" ist; alle: jede Karte; markiert: nur markierte
 function buildQueue(deck, topic, mode) {
-  const now = Date.now();
   const pool = deck.cards.filter((c) => !topic || c.topic === topic);
   if (mode === 'alle') return shuffle([...pool]);
-  if (mode === 'schwer') return shuffle(pool.filter((c) => (stateOf(deck.id, c.id)?.lapses || 0) >= 2));
-  const due = pool
-    .filter((c) => { const st = stateOf(deck.id, c.id); return st && st.due <= now; })
-    .sort((a, b) => stateOf(deck.id, a.id).due - stateOf(deck.id, b.id).due);
-  const fresh = pool.filter((c) => !stateOf(deck.id, c.id)).slice(0, newRemainingToday(deck.id));
-  // neue Karten zwischen die Wiederholungen mischen
-  const queue = [...due];
-  fresh.forEach((c, i) => queue.splice(Math.min(queue.length, i * 3 + 1), 0, c));
-  return queue;
+  if (mode === 'markiert') return shuffle(pool.filter((c) => stateOf(deck.id, c.id)?.marked));
+  return shuffle(pool.filter((c) => !isKnown(stateOf(deck.id, c.id))));
 }
+
+const MODE_LABEL = { offen: 'Offene Karten', alle: 'Alle Karten', markiert: 'Markierte Karten' };
 
 let keyHandler = null;
 
@@ -353,20 +366,27 @@ function viewStudy(deckId) {
   if (!deck) return viewNotFound();
   const params = new URLSearchParams(location.hash.split('?')[1] || '');
   const topic = params.get('thema') || '';
-  const mode = params.get('modus') || 'faellig';
+  const mode = params.get('modus') || 'offen';
   const queue = buildQueue(deck, topic, mode);
-  const total = queue.length;
-  let done = 0;
+  let knewCount = 0;
+  let repeatCount = 0;
   let revealed = false;
 
   const backHref = `#/deck/${deck.id}${topic ? `?thema=${encodeURIComponent(topic)}` : ''}`;
 
   function finish() {
+    const s = deckStats(deck, topic);
     app.innerHTML = `<div class="panel done">
-      <h1>Geschafft! 🎉</h1>
-      <p class="muted">${done ? `${done} Karten bearbeitet.` : 'Gerade ist nichts fällig.'} ${
-        mode === 'faellig' ? 'Neue Wiederholungen werden automatisch fällig.' : ''}</p>
-      <p><a class="btn primary" href="#/">Zur Übersicht</a> <a class="btn" href="${backHref}">Zum Modul</a></p>
+      <h1>${knewCount + repeatCount ? 'Runde geschafft! 🎉' : 'Nichts zu lernen'}</h1>
+      <p class="muted">${knewCount + repeatCount
+        ? `${knewCount} Karten gekonnt, ${repeatCount}× wiederholt.`
+        : mode === 'markiert' ? 'Keine markierten Karten.' : 'Alle Karten sind als „Kann ich“ markiert.'}</p>
+      <p class="muted small">${s.mastered} von ${s.total} Karten gekonnt${topic ? ` (${esc(topic)})` : ''}.</p>
+      <p class="toolbar" style="justify-content:center">
+        ${s.total ? linkBtn(studyHref(deck.id, topic, 'alle'), 'Alle Karten lernen') : ''}
+        ${linkBtn(backHref, 'Zum Modul')}
+        ${linkBtn('#/', 'Zur Übersicht', { primary: true })}
+      </p>
     </div>`;
   }
 
@@ -377,43 +397,54 @@ function viewStudy(deckId) {
     app.innerHTML = `
       <div class="study-head">
         <a href="${backHref}">← ${esc(deck.name)}${topic ? ` · ${esc(topic)}` : ''}</a>
-        <span class="muted small">${done} / ${total}${queue.length > total - done ? ' (+ Wiederholungen)' : ''} · ${STATUS_LABEL[status(st)]}</span>
+        <span class="muted small">${MODE_LABEL[mode] || ''} · noch ${queue.length} · ${knewCount} gekonnt</span>
       </div>
       <div class="card" style="border-top:4px solid ${deck.color}">
-        ${card.topic ? `<div class="topic">${esc(card.topic)}</div>` : ''}
+        <div class="card-top">
+          <div class="topic">${esc(card.topic || '')}</div>
+          <button class="mark ${st?.marked ? 'on' : ''}" id="mark" title="Markieren (Taste M)">${st?.marked ? '★ Markiert' : '☆ Markieren'}</button>
+        </div>
         <div class="front">${md(card.front)}</div>
         ${revealed ? `<div class="back">${md(card.back)}</div>` : ''}
         ${revealed && card.source ? `<div class="source">Quelle: ${esc(card.source)}</div>` : ''}
       </div>
       ${revealed ? `
         <div class="answer-row">
-          <button class="r-again" data-r="again">Nochmal<small>${intervalLabel(st, 'again')}</small></button>
-          <button class="r-hard" data-r="hard">Schwer<small>${intervalLabel(st, 'hard')}</small></button>
-          <button class="r-good" data-r="good">Gut<small>${intervalLabel(st, 'good')}</small></button>
-          <button class="r-easy" data-r="easy">Einfach<small>${intervalLabel(st, 'easy')}</small></button>
+          <button class="r-again" data-knew="0">Wiederholen</button>
+          <button class="r-good" data-knew="1">Kann ich</button>
         </div>
-        <p class="kbd-hint muted small">Tasten 1–4</p>`
+        <p class="kbd-hint muted small">Tasten 1 / 2 · M = markieren</p>`
       : `<button class="primary reveal" id="reveal">Antwort zeigen</button>
-         <p class="kbd-hint muted small">Leertaste</p>`}
+         <p class="kbd-hint muted small">Leertaste · M = markieren</p>`}
     `;
     renderMath(app);
     app.querySelector('#reveal')?.addEventListener('click', () => { revealed = true; show(); });
-    app.querySelectorAll('[data-r]').forEach((b) => b.addEventListener('click', () => rate(b.dataset.r)));
+    app.querySelector('#mark').addEventListener('click', mark);
+    app.querySelectorAll('[data-knew]').forEach((b) => b.addEventListener('click', () => answer(b.dataset.knew === '1')));
   }
 
-  function rate(rating) {
+  function mark() {
+    toggleMark(deck.id, queue[0].id);
+    show();
+  }
+
+  function answer(knew) {
     const card = queue.shift();
-    recordReview(deck.id, card, rating);
-    if (rating === 'again') queue.splice(Math.min(queue.length, 3), 0, card);
-    else done += 1;
+    recordAnswer(deck.id, card, knew);
+    if (knew) knewCount += 1;
+    else {
+      repeatCount += 1;
+      queue.splice(Math.min(queue.length, 4), 0, card); // kommt in dieser Runde bald wieder
+    }
     revealed = false;
     show();
   }
 
   keyHandler = (e) => {
-    if (queue.length === 0) return;
-    if (!revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); revealed = true; show(); }
-    else if (revealed && ['1', '2', '3', '4'].includes(e.key)) rate(['again', 'hard', 'good', 'easy'][+e.key - 1]);
+    if (queue.length === 0 || e.ctrlKey || e.metaKey || e.altKey) return;
+    if (e.key === 'm' || e.key === 'M') mark();
+    else if (!revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); revealed = true; show(); }
+    else if (revealed && (e.key === '1' || e.key === '2')) answer(e.key === '2');
   };
   document.addEventListener('keydown', keyHandler);
   show();
@@ -435,29 +466,16 @@ function viewStats() {
     const l = log[todayKey(Date.now() - i * DAY)];
     if (l) { rev30 += l.reviews; cor30 += l.correct; }
   }
-  const upcoming = Array.from({ length: 7 }, (_, i) => {
-    const end = new Date(); end.setHours(23, 59, 59, 999);
-    const until = end.getTime() + i * DAY;
-    let n = 0;
-    for (const d of DECKS) for (const c of d.cards) {
-      const st = stateOf(d.id, c.id);
-      if (st && st.due <= until && (i === 0 || st.due > until - DAY)) n += 1;
-    }
-    return n;
-  });
-  const weekday = (i) => (i === 0 ? 'Heute' : new Date(Date.now() + i * DAY).toLocaleDateString('de-DE', { weekday: 'short' }));
 
   app.innerHTML = `
     <h1>Fortschritt</h1>
     <div class="panel stats">
       <div class="stat"><b>${streak()}</b><span>Tage Serie</span></div>
-      <div class="stat"><b>${rev30}</b><span>Wiederholungen (30 T)</span></div>
-      <div class="stat"><b>${rev30 ? Math.round((cor30 / rev30) * 100) : '–'}%</b><span>gewusst (30 T)</span></div>
+      <div class="stat"><b>${rev30}</b><span>Antworten (30 T)</span></div>
+      <div class="stat"><b>${rev30 ? Math.round((cor30 / rev30) * 100) : '–'}%</b><span>„Kann ich“ (30 T)</span></div>
     </div>
     <h2>Aktivität (20 Wochen)</h2>
     <div class="panel"><div class="heatmap">${cells.join('')}</div></div>
-    <h2>Fällig in den nächsten 7 Tagen</h2>
-    <div class="panel stats">${upcoming.map((n, i) => `<div class="stat"><b>${n}</b><span>${weekday(i)}</span></div>`).join('')}</div>
     <h2>Pro Modul</h2>
     <div class="grid">
       ${DECKS.map((d) => {
@@ -465,9 +483,9 @@ function viewStats() {
         const pct = s.total ? Math.round((s.mastered / s.total) * 100) : 0;
         return `<div class="panel deck" style="--deck:${d.color}">
           <h3>${esc(d.name)}</h3>
-          <div class="small muted">${s.total} Karten · ${pct}% gefestigt</div>
+          <div class="small muted">${s.total} Karten · ${pct}% gekonnt</div>
           ${progressBar(s)}
-          <div class="small">${s.new} neu · ${s.learning} lernend · ${s.mastered} gefestigt · ${s.due} fällig</div>
+          <div class="small">${s.new} neu · ${s.learning} wiederholen · ${s.mastered} gekonnt · ★ ${s.marked} markiert</div>
           ${topicsOf(d).length ? `<details class="small"><summary>Nach Thema</summary>
             <table style="width:100%;margin-top:6px">${topicsOf(d).map((t) => {
               const ts = deckStats(d, t);
@@ -484,11 +502,6 @@ function viewSettings() {
   const sync = syncConfig();
   app.innerHTML = `
     <h1>Einstellungen</h1>
-    <div class="panel" style="display:flex;flex-direction:column;gap:16px">
-      <label>Neue Karten pro Tag und Modul:
-        <input type="number" id="newPerDay" min="0" max="500" value="${progress.settings.newPerDay}" style="width:90px">
-      </label>
-    </div>
 
     <h2>Synchronisierung zwischen Geräten</h2>
     <div class="panel" style="display:flex;flex-direction:column;gap:12px">
@@ -524,14 +537,6 @@ function viewSettings() {
   `;
   const msg = app.querySelector('#msg');
   const say = (text) => { msg.textContent = text; };
-
-  app.querySelector('#newPerDay').addEventListener('change', (e) => {
-    progress.settings.newPerDay = Math.max(0, parseInt(e.target.value, 10) || 0);
-    progress.settings.updatedAt = Date.now();
-    saveProgress();
-    scheduleSync();
-    say('Gespeichert.');
-  });
 
   app.querySelector('#syncOn')?.addEventListener('click', async () => {
     const token = app.querySelector('#token').value.trim();
