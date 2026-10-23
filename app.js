@@ -103,6 +103,50 @@ function relearn(deckId, cardId) {
   updateCard(deckId, cardId, (st) => { st.known = false; });
 }
 
+// Gelöschte Karten bleiben in decks/*.json, werden aber überall ausgeblendet (per Sync auf allen Geräten)
+function setDeleted(deckId, cardId, deleted) {
+  updateCard(deckId, cardId, (st) => { st.deleted = deleted; });
+}
+
+function activeCards(deck) {
+  return deck.cards.filter((c) => !stateOf(deck.id, c.id)?.deleted);
+}
+
+// Löschen mit doppelter Bestätigung in einem Dialog; ruft onDeleted() nach dem zweiten "Ja"
+function confirmDelete(deckId, card, onDeleted) {
+  const overlay = document.createElement('div');
+  overlay.className = 'modal-overlay';
+  document.body.appendChild(overlay);
+  const close = () => { overlay.remove(); document.removeEventListener('keydown', onKey, true); };
+  // Tasten nicht an den Lernmodus durchreichen, solange der Dialog offen ist
+  const onKey = (e) => { e.stopPropagation(); if (e.key === 'Escape') close(); };
+  document.addEventListener('keydown', onKey, true);
+  overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+
+  const step = (n) => {
+    overlay.innerHTML = `<div class="modal" role="dialog" aria-modal="true">
+      <h3>${n === 1 ? 'Karte löschen?' : 'Wirklich endgültig löschen?'}</h3>
+      <p class="front-preview">${esc(card.front.split('\n')[0])}</p>
+      <p class="small muted">${n === 1
+        ? 'Die Karte verschwindet aus allen Lernmodi, der Kartenliste und der Statistik.'
+        : 'Bitte bestätige ein zweites Mal. Die Löschung gilt auch auf deinen anderen Geräten. Wiederherstellen kannst du sie nur noch unter Einstellungen → Gelöschte Karten.'}</p>
+      <div class="toolbar" style="justify-content:flex-end;margin:0">
+        <button id="cancel">Abbrechen</button>
+        <button class="danger" id="confirm">${n === 1 ? 'Löschen' : 'Endgültig löschen'}</button>
+      </div>
+    </div>`;
+    overlay.querySelector('#cancel').addEventListener('click', close);
+    overlay.querySelector('#confirm').addEventListener('click', () => {
+      if (n === 1) return step(2);
+      setDeleted(deckId, card.id, true);
+      close();
+      onDeleted();
+    });
+    overlay.querySelector('#cancel').focus();
+  };
+  step(1);
+}
+
 // ---------- Daten laden ----------
 
 async function fetchJson(url) {
@@ -164,7 +208,7 @@ function renderMath(el) {
 
 function deckStats(deck, topic) {
   const r = { total: 0, new: 0, learning: 0, mastered: 0, open: 0, marked: 0 };
-  for (const c of deck.cards) {
+  for (const c of activeCards(deck)) {
     if (topic && c.topic !== topic) continue;
     const st = stateOf(deck.id, c.id);
     r.total += 1;
@@ -204,7 +248,7 @@ function linkBtn(href, label, { primary = false, disabled = false } = {}) {
 }
 
 function topicsOf(deck) {
-  return [...new Set(deck.cards.map((c) => c.topic).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'de'));
+  return [...new Set(activeCards(deck).map((c) => c.topic).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'de'));
 }
 
 function streak() {
@@ -264,7 +308,7 @@ function viewDeck(deckId) {
   const filter = params.get('filter') || '';
   const topics = topicsOf(deck);
   const s = deckStats(deck, topic);
-  const cards = deck.cards.filter((c) => {
+  const cards = activeCards(deck).filter((c) => {
     if (topic && c.topic !== topic) return false;
     const st = stateOf(deck.id, c.id);
     if (filter === 'offen') return !isKnown(st);
@@ -321,6 +365,7 @@ function viewDeck(deckId) {
             <div class="toolbar" style="margin:8px 0 0">
               <button class="small" data-action="mark">${st?.marked ? 'Markierung entfernen' : '☆ Markieren'}</button>
               ${isKnown(st) ? '<button class="small" data-action="relearn">Wieder in den Zyklus</button>' : ''}
+              <button class="small danger-outline" data-action="delete">🗑 Löschen</button>
             </div>
           </div>
         </details>`;
@@ -331,12 +376,16 @@ function viewDeck(deckId) {
   app.querySelector('#filter').addEventListener('change', (e) => navigate(topic, e.target.value));
   app.querySelectorAll('[data-action]').forEach((b) => b.addEventListener('click', () => {
     const id = b.closest('details').dataset.id;
+    const rerender = (keepOpen) => {
+      const y = window.scrollY;
+      viewDeck(deck.id);
+      if (keepOpen) app.querySelector(`details[data-id="${CSS.escape(id)}"]`)?.setAttribute('open', '');
+      window.scrollTo(0, y);
+    };
+    if (b.dataset.action === 'delete') return confirmDelete(deck.id, deck.cards.find((c) => c.id === id), () => rerender(false));
     if (b.dataset.action === 'mark') toggleMark(deck.id, id);
     else relearn(deck.id, id);
-    const y = window.scrollY;
-    viewDeck(deck.id);
-    app.querySelector(`details[data-id="${CSS.escape(id)}"]`)?.setAttribute('open', '');
-    window.scrollTo(0, y);
+    rerender(true);
   }));
   renderMath(app);
 }
@@ -351,7 +400,7 @@ function shuffle(arr) {
 
 // offen (Standard): alles, was noch nicht "Kann ich" ist; alle: jede Karte; markiert: nur markierte
 function buildQueue(deck, topic, mode) {
-  const pool = deck.cards.filter((c) => !topic || c.topic === topic);
+  const pool = activeCards(deck).filter((c) => !topic || c.topic === topic);
   if (mode === 'alle') return shuffle([...pool]);
   if (mode === 'markiert') return shuffle(pool.filter((c) => stateOf(deck.id, c.id)?.marked));
   return shuffle(pool.filter((c) => !isKnown(stateOf(deck.id, c.id))));
@@ -402,7 +451,10 @@ function viewStudy(deckId) {
       <div class="card" style="border-top:4px solid ${deck.color}">
         <div class="card-top">
           <div class="topic">${esc(card.topic || '')}</div>
-          <button class="mark ${st?.marked ? 'on' : ''}" id="mark" title="Markieren (Taste M)">${st?.marked ? '★ Markiert' : '☆ Markieren'}</button>
+          <div class="card-actions">
+            <button class="mark ${st?.marked ? 'on' : ''}" id="mark" title="Markieren (Taste M)">${st?.marked ? '★ Markiert' : '☆ Markieren'}</button>
+            <button class="mark danger-outline" id="delete" title="Karte löschen" aria-label="Karte löschen">🗑</button>
+          </div>
         </div>
         <div class="front">${md(card.front)}</div>
         ${revealed ? `<div class="back">${md(card.back)}</div>` : ''}
@@ -420,6 +472,12 @@ function viewStudy(deckId) {
     renderMath(app);
     app.querySelector('#reveal')?.addEventListener('click', () => { revealed = true; show(); });
     app.querySelector('#mark').addEventListener('click', mark);
+    app.querySelector('#delete').addEventListener('click', () => confirmDelete(deck.id, card, () => {
+      queue.shift(); // samt evtl. weiterer Vorkommen in der Runde entfernen
+      for (let i = queue.length - 1; i >= 0; i--) if (queue[i].id === card.id) queue.splice(i, 1);
+      revealed = false;
+      show();
+    }));
     app.querySelectorAll('[data-knew]').forEach((b) => b.addEventListener('click', () => answer(b.dataset.knew === '1')));
   }
 
@@ -498,6 +556,12 @@ function viewStats() {
   `;
 }
 
+function deletedCards() {
+  return DECKS.flatMap((deck) => deck.cards
+    .filter((c) => stateOf(deck.id, c.id)?.deleted)
+    .map((card) => ({ deck, card })));
+}
+
 function viewSettings() {
   const sync = syncConfig();
   app.innerHTML = `
@@ -524,6 +588,15 @@ function viewSettings() {
         </div>`}
     </div>
 
+    <h2>Gelöschte Karten</h2>
+    <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+      ${deletedCards().length === 0 ? '<p class="small muted" style="margin:0">Keine gelöschten Karten.</p>'
+        : deletedCards().map(({ deck, card }) => `<div class="deleted-row">
+          <span><span class="small muted">${esc(deck.name)} · </span>${esc(card.front.split('\n')[0])}</span>
+          <button class="small" data-restore="${esc(deck.id)}/${esc(card.id)}">Wiederherstellen</button>
+        </div>`).join('')}
+    </div>
+
     <h2>Sicherung</h2>
     <div class="panel" style="display:flex;flex-direction:column;gap:12px">
       <p class="small muted" style="margin:0">Fortschritt als Datei sichern oder wiederherstellen.${sync ? ' Import und Zurücksetzen gelten wegen der Synchronisierung für alle Geräte.' : ''}</p>
@@ -537,6 +610,13 @@ function viewSettings() {
   `;
   const msg = app.querySelector('#msg');
   const say = (text) => { msg.textContent = text; };
+
+  app.querySelectorAll('[data-restore]').forEach((b) => b.addEventListener('click', () => {
+    const [deckId, cardId] = b.dataset.restore.split('/');
+    setDeleted(deckId, cardId, false);
+    viewSettings();
+    app.querySelector('#msg').textContent = 'Karte wiederhergestellt.';
+  }));
 
   app.querySelector('#syncOn')?.addEventListener('click', async () => {
     const token = app.querySelector('#token').value.trim();

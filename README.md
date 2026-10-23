@@ -20,6 +20,7 @@ Lern-App für meine Module – die Karten erstellt Claude aus hochgeladenen Doku
 
 - **Lernen:** Antwort aufdecken (Leertaste) und mit *Wiederholen* oder *Kann ich* bewerten (Tasten 1 / 2). *Kann ich* nimmt die Karte aus dem Zyklus, *Wiederholen* lässt sie in der Runde bald wiederkommen.
 - **Markieren:** Jede Karte lässt sich beim Lernen (Taste M) oder in der Kartenliste mit ★ markieren.
+- **Löschen:** Unwichtige Karten beim Lernen (🗑) oder in der Kartenliste löschen – mit doppelter Bestätigung. Sie verschwinden auf allen Geräten aus Lernen, Liste und Statistik und lassen sich unter *Einstellungen → Gelöschte Karten* wiederherstellen.
 - **Modi:** offene Karten (Standard), alle Karten (auch gekonnte) und markierte Karten; jeweils filterbar nach Thema. Wer eine gekonnte Karte im Modus „Alle“ mit *Wiederholen* bewertet, holt sie zurück in den Zyklus – oder in der Kartenliste über *Wieder in den Zyklus*.
 - **Fortschritt:** pro Modul und Thema *neu / wiederholen / gekonnt*, Markierungen, Tagesserie, Aktivitäts-Heatmap und „Kann ich“-Quote.
 - Der Fortschritt liegt im Browser und lässt sich unter *Einstellungen* als Datei exportieren/importieren.
