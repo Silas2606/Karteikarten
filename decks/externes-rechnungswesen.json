@@ -477,6 +477,125 @@
       "back": "Die **Schlussbilanz des Vorjahres ist zugleich die Eröffnungsbilanz** des neuen Jahres (Bilanzidentität).",
       "topic": "Buchen auf Erfolgskonten",
       "source": "Skript ERW WS 2025 (Bernhardt), Teil 2, S. 8"
+    },
+    {
+      "id": "erw-0069",
+      "front": "Wie hoch ist der normale Umsatzsteuersatz und wie berechnet man USt und Rechnungsbetrag aus dem Nettobetrag?",
+      "back": "Normaler Satz: **19 %**\n\n$$\\text{USt} = \\text{netto} \\cdot 0{,}19$$\n$$\\text{Rechnungsbetrag (brutto)} = \\text{netto} + \\text{USt} = \\text{netto} \\cdot 1{,}19$$\n\nBeispiel: 2.000 netto → 380 USt → 2.380 brutto",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.1 / 6.3, S. 1 und 5"
+    },
+    {
+      "id": "erw-0070",
+      "front": "Was wird beim **Einkauf** aus der Umsatzsteuer und welche Art Konto ist das?",
+      "back": "Beim Einkauf wird die Umsatzsteuer zur **Vorsteuer (VSt)**.\n\n- **Forderung** gegenüber den Finanzbehörden (Finanzamt)\n- Konto Vorsteuer ist ein **Aktivkonto** (Zugang im Soll)",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.1, S. 1–2"
+    },
+    {
+      "id": "erw-0071",
+      "front": "Buchungssatz: Die Möbelwerke kaufen Holz (Rohstoffe) für 2.000 + 19 % USt auf Ziel.",
+      "back": "Rechnung: 2.000 netto + 380 USt = 2.380\n\n**Rohstoffe 2.000**\n**Vorsteuer 380**\n**an Verbindlichkeiten 2.380**",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.1, S. 1"
+    },
+    {
+      "id": "erw-0072",
+      "front": "Was wird beim **Verkauf** aus der Umsatzsteuer und welche Art Konto ist das?",
+      "back": "Beim Verkauf bleibt sie **Umsatzsteuer (USt)**.\n\n- **Verbindlichkeit** gegenüber den Finanzbehörden (Finanzamt)\n- Konto Umsatzsteuer ist ein **Passivkonto** (Zugang im Haben)",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.2, S. 2–3"
+    },
+    {
+      "id": "erw-0073",
+      "front": "Buchungssatz: Verkauf eines Schranks für 6.500 + 19 % USt auf Ziel.",
+      "back": "Rechnung: 6.500 netto + 1.235 USt = 7.735\n\n**Forderungen 7.735**\n**an Umsatzerlöse 6.500**\n**an Umsatzsteuer 1.235**",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.2, S. 2"
+    },
+    {
+      "id": "erw-0074",
+      "front": "Welcher Betrag (netto oder brutto) wird bei einem Kauf/Verkauf mit USt auf welchem Konto gebucht?",
+      "back": "- **Netto**: auf dem Sach-/Erfolgskonto (z. B. Rohstoffe, Umsatzerlöse)\n- **USt-Betrag**: auf Vorsteuer (Einkauf) bzw. Umsatzsteuer (Verkauf)\n- **Brutto** (Rechnungsbetrag): auf Verbindlichkeiten bzw. Forderungen (oder Bank/Kasse)",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.1–6.1.2, S. 1–2"
+    },
+    {
+      "id": "erw-0075",
+      "front": "Was ist die Umsatzsteuer-Zahllast und wie wird sie ermittelt?",
+      "back": "Die **Zahllast** ist der Betrag, den das Unternehmen an das Finanzamt abführen muss, wenn die Umsatzsteuer größer ist als die Vorsteuer:\n\n$$\\text{Zahllast} = \\text{USt} - \\text{VSt}$$\n\nErmittlung: Das Vorsteuerkonto wird über das Umsatzsteuerkonto abgeschlossen; der Saldo im USt-Konto ist die Zahllast.",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.3, S. 3"
+    },
+    {
+      "id": "erw-0076",
+      "front": "Wie werden die Konten Vorsteuer und Umsatzsteuer abgeschlossen, wenn die **USt größer als die VSt** ist?",
+      "back": "Das Konto **VSt wird über das Konto USt** abgeschlossen:\n\n**Umsatzsteuer an Vorsteuer** (in Höhe der VSt)\n\nDer verbleibende Saldo im USt-Konto (Soll-Seite) ist die **Zahllast**.",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.3, S. 3"
+    },
+    {
+      "id": "erw-0077",
+      "front": "Wie läuft die monatliche Abwicklung der USt-Zahllast mit dem Finanzamt ab?",
+      "back": "1. VSt-Konto über USt-Konto abschließen → Zahllast ermitteln\n2. **USt-Voranmeldung** an das Finanzamt für den Monat\n3. Zahllast wird im **Folgemonat bis zum 10.** an das Finanzamt überwiesen\n\nBuchung der Zahlung: **Umsatzsteuer an Bank**",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.3, S. 3"
+    },
+    {
+      "id": "erw-0078",
+      "front": "Mai: Vorsteuer 380, Umsatzsteuer 1.235. Wie hoch ist die Zahllast und welche Buchungen sind nötig?",
+      "back": "Zahllast = 1.235 − 380 = **855**\n\n1. Abschluss VSt: **USt an VSt 380**\n2. Überweisung (bis 10. Juni): **USt an Bank 855**",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.1.3, S. 3"
+    },
+    {
+      "id": "erw-0079",
+      "front": "Wie wird eine USt-Zahllast zum **Jahresende** bilanziert (Passivierung der Zahllast)?",
+      "back": "1. **USt an VSt** (VSt-Konto über USt-Konto abschließen)\n2. **USt an SBK** (Saldo = Zahllast als Schlussbestand)\n\nIn der Bilanz erscheint die Zahllast unter **Sonstige Verbindlichkeiten**.",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.2 a), S. 4"
+    },
+    {
+      "id": "erw-0080",
+      "front": "Dezember: VSt 400, USt 3.000. Was wird am Jahresende gebucht und was steht in der Bilanz?",
+      "back": "Zahllast = 3.000 − 400 = **2.600**\n\n1. **USt an VSt 400**\n2. **USt an SBK 2.600**\n\nBilanz: 2.600 unter **Sonstige Verbindlichkeiten** (Passivseite)",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.2 a), S. 4"
+    },
+    {
+      "id": "erw-0081",
+      "front": "Was ist ein **Vorsteuerüberhang** und wie werden die Konten dann abgeschlossen?",
+      "back": "Vorsteuerüberhang: **VSt größer als USt** → Erstattungsanspruch gegenüber dem Finanzamt.\n\nDann wird das Konto **USt über das Konto VSt** abgeschlossen:\n1. **USt an VSt** (in Höhe der USt)\n2. **SBK an VSt** (Saldo = Überhang)\n\nIn der Bilanz erscheint der Überhang unter **Sonstige Forderungen** (Aktivierung).",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.2 b), S. 5"
+    },
+    {
+      "id": "erw-0082",
+      "front": "Dezember: VSt 4.000, USt 3.000. Was wird am Jahresende gebucht und was steht in der Bilanz?",
+      "back": "Vorsteuerüberhang = 4.000 − 3.000 = **1.000**\n\n1. **USt an VSt 3.000**\n2. **SBK an VSt 1.000**\n\nBilanz: 1.000 unter **Sonstige Forderungen** (Aktivseite)",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.2 b), S. 5"
+    },
+    {
+      "id": "erw-0083",
+      "front": "Abgrenzung: Zahllast vs. Vorsteuerüberhang – welches Konto wird worüber abgeschlossen und wo stehen sie in der Bilanz?",
+      "back": "**Zahllast** (USt > VSt): VSt über USt abschließen → *USt an VSt*, *USt an SBK* → **Sonstige Verbindlichkeiten** (Passiva)\n\n**VSt-Überhang** (VSt > USt): USt über VSt abschließen → *USt an VSt*, *SBK an VSt* → **Sonstige Forderungen** (Aktiva)\n\nMerke: Immer wird das **kleinere** Konto über das größere abgeschlossen.",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.2, S. 4–5"
+    },
+    {
+      "id": "erw-0084",
+      "front": "Was gilt bei einer Umsatzsteuerbefreiung für den Vorsteuerabzug und die Buchung?",
+      "back": "- Bei einer USt-Befreiung liegt **keine Vorsteuerabzugsberechtigung** vor (Ausschluss des Vorsteuerabzugs).\n- Die Beträge werden **brutto** verbucht (die gezahlte USt wird Teil des Aufwands/der Anschaffungskosten, kein VSt-Konto).",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Kap. 6.3, S. 5"
+    },
+    {
+      "id": "erw-0085",
+      "front": "Wie wird die Umsatzsteuer beim Jahresabschluss mit Bestands- und Erfolgskonten berücksichtigt? (klausurrelevant)",
+      "back": "- Bei jedem Geschäftsfall mit USt den Steuerbetrag separat auf **VSt** (Einkauf, auch Anlagen/Reparaturen) bzw. **USt** (Verkauf) buchen; Erfolgs- und Sachkonten nur **netto**.\n- VSt und USt sind **Bestandskonten** – sie gehen nicht in die G+V.\n- Am Jahresende: kleineres Steuerkonto über das größere abschließen, Saldo ins **SBK** (Zahllast auf der Habenseite bzw. VSt-Überhang auf der Sollseite).",
+      "topic": "Umsatzsteuer",
+      "source": "REWE Vorlesung 3, Übungsaufgabe Umsatzsteuer, S. 6–11"
     }
   ]
 }
