@@ -1,5 +1,426 @@
 {
   "deck": "marketing",
   "name": "Marketing",
-  "cards": []
+  "cards": [
+    {
+      "id": "mkt-0001",
+      "front": "Wie definiert Heribert Meffert den Begriff **Marketing**?",
+      "back": "„Marketing bedeutet **Planung, Koordination und Kontrolle** aller auf die **aktuellen und potenziellen Märkte** ausgerichteten Unternehmensaktivitäten. Durch eine **dauerhafte Befriedigung der Kundenbedürfnisse** sollen die **Unternehmensziele** verwirklicht werden.“",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 4"
+    },
+    {
+      "id": "mkt-0002",
+      "front": "Welche Kernaussagen stecken in Mefferts Marketing-Definition, und warum ist sie sinnvoll? (klausurrelevant)",
+      "back": "- **Planung, Koordination, Kontrolle** → planvolles, systematisches Vorgehen = **Marketingkonzept**\n- **alle** Unternehmensaktivitäten, nicht nur Werbung\n- **aktuelle und potenzielle** Märkte → auch künftige Kunden im Blick (Zukunftsorientierung)\n- **dauerhafte** Befriedigung der Kundenbedürfnisse ist das **Mittel** …\n- … um die **Unternehmensziele** zu erreichen (der **Zweck**)",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 4"
+    },
+    {
+      "id": "mkt-0003",
+      "front": "Welche fünf Orientierungen (Funktionen) des Marketings ergeben sich aus der Definition?",
+      "back": "1. Kundenorientierung (Leitidee des Marketings)\n2. Wettbewerbsorientierung\n3. Umwelt-/Gesellschaftsorientierung\n4. Unternehmensorientierung\n5. Zukunftsorientierung",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 5"
+    },
+    {
+      "id": "mkt-0004",
+      "front": "Was bedeutet **Kundenorientierung** im Marketing?",
+      "back": "Ausrichtung an den **Problemen/Bedürfnissen der Kunden** – **nicht** an den bestehenden Produkten oder anderen betrieblichen Aspekten.\n\nSie ist die **Leitidee des Marketings**.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 5"
+    },
+    {
+      "id": "mkt-0005",
+      "front": "Was bedeutet **Wettbewerbsorientierung**, und was ist ein USP?",
+      "back": "Sich von der Konkurrenz **unterscheiden**, um die Gefahr der **Austauschbarkeit** zu minimieren.\n\nDazu wird ein **USP** (Unique Selling Proposition = **einzigartiges Verkaufsversprechen**) herausgearbeitet.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 5"
+    },
+    {
+      "id": "mkt-0006",
+      "front": "Was bedeutet **Umwelt-/Gesellschaftsorientierung** im Marketing?",
+      "back": "**Nachhaltiges und wirtschaftliches Handeln** sowie Pflege des **öffentlichen Bildes** des Unternehmens.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 5"
+    },
+    {
+      "id": "mkt-0007",
+      "front": "Was bedeutet **Unternehmensorientierung** im Marketing?",
+      "back": "Das **„Leben des Marketinggedankens“ nach innen** im Unternehmen – verankert in der Unternehmensphilosophie bzw. **Corporate Identity**.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 5"
+    },
+    {
+      "id": "mkt-0008",
+      "front": "Was bedeutet **Zukunftsorientierung** im Marketing?",
+      "back": "Entwicklungen **frühzeitig erkennen**, z. B. mithilfe der **SWOT-Analyse**.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 5"
+    },
+    {
+      "id": "mkt-0009",
+      "front": "Wie sollte Marketing in die Unternehmensfunktionen eingeordnet sein – und warum?",
+      "back": "**Gleichberechtigt** neben den übrigen Funktionsbereichen, **nicht** als beratende **Stabsstelle**.\n\nGrund: Nur ein **abgestimmtes Verhalten aller Unternehmensbereiche** führt zu Kundenzufriedenheit und damit zur Erreichung der Marketingziele **und** der Unternehmensziele.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 6"
+    },
+    {
+      "id": "mkt-0010",
+      "front": "Welche zwei Konsequenzen hat die Kundenorientierung für das ganze Unternehmen?",
+      "back": "1. Die **Unternehmensphilosophie** (Leitbild, innere Haltung) muss die Kundenorientierung **mittragen**.\n2. Marketing muss **nach außen und innen gelebt** werden → **Corporate Identity** (Corporate Behaviour, Corporate Design, Corporate Communication).",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 7"
+    },
+    {
+      "id": "mkt-0011",
+      "front": "Was versteht man unter **Corporate Identity (CI)**?",
+      "back": "Das **übereinstimmende Denken und Handeln** bezüglich der Unternehmensnormen und -werte – sowohl der **Mitarbeiter** als auch der **Unternehmensleitung**, und zwar **nach innen und nach außen**.\n\nDazu gehören die Einzigartigkeit, die Stärken und die Schwerpunkte des Unternehmens.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 8"
+    },
+    {
+      "id": "mkt-0012",
+      "front": "Wozu dient eine Corporate Identity (Unternehmensidentität)?",
+      "back": "- Sie macht das **Besondere** des Unternehmens erkennbar.\n- Sie **unterstützt die Mitarbeiter**, sich mit ihrem Unternehmen zu **identifizieren**.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 8"
+    },
+    {
+      "id": "mkt-0013",
+      "front": "Aus welchen drei Elementen besteht ein CI-Konzept?",
+      "back": "1. **Corporate Design**\n2. **Corporate Communication**\n3. **Corporate Behaviour**",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 8–9"
+    },
+    {
+      "id": "mkt-0014",
+      "front": "Was ist **Corporate Design**?",
+      "back": "**Einheitliches Auftreten am Markt** durch Logo, Slogan usw., um die Firmenphilosophie nach außen zu vermitteln → **Wiedererkennbarkeit**.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 9"
+    },
+    {
+      "id": "mkt-0015",
+      "front": "Was ist **Corporate Communication**?",
+      "back": "Abstimmung von **Werbung, Öffentlichkeitsarbeit und interner/externer Kommunikation** (Korrespondenz, Newsletter, Social Media etc.) auf die Firmenphilosophie.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 9"
+    },
+    {
+      "id": "mkt-0016",
+      "front": "Was ist **Corporate Behaviour**, und woran zeigt es sich?",
+      "back": "Das **Verhalten** gegenüber der Öffentlichkeit und den Anspruchsgruppen (Kunden, Lieferanten, Partner, Mitarbeiter).\n\nEs zeigt sich u. a. in der **Mitarbeiterführung**, im **realen Umgangston** und in der **Reaktion auf Kritik**.",
+      "topic": "Begriff und Einordnung",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 9"
+    },
+    {
+      "id": "mkt-0017",
+      "front": "Welche drei Grundformen des Marketings gibt es?",
+      "back": "1. **Konsumgütermarketing** (B2C)\n2. **Investitionsgütermarketing** (B2B)\n3. **Dienstleistungsmarketing**",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 11"
+    },
+    {
+      "id": "mkt-0018",
+      "front": "Was ist **Konsumgütermarketing**?",
+      "back": "Marketing, das sich an die **letzte Stufe des Wirtschaftsprozesses** richtet, d. h. an die **privaten Konsumenten** bzw. Verwender – **B2C** (Business-to-Consumer).",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 11"
+    },
+    {
+      "id": "mkt-0019",
+      "front": "Was ist **Investitionsgütermarketing**?",
+      "back": "Die Vermarktung von **Wiedereinsatzfaktoren**, die in Industriebetrieben bzw. Organisationen eingesetzt werden – **B2B** (Business-to-Business).",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 11"
+    },
+    {
+      "id": "mkt-0020",
+      "front": "Wie unterscheiden sich Konsumgüter- und Investitionsgütermarketing bei **Kunden, Markt und Umsatz**?",
+      "back": "**Konsumgüter (B2C):** private Endkunden, oft **Massenmärkte**, oft **kleinere** Umsatzvolumen.\n\n**Investitionsgüter (B2B):** Unternehmen, Organisationen, Verwaltung; **weniger Kunden, höhere Transparenz**; **größere** Umsatzvolumen.",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 12"
+    },
+    {
+      "id": "mkt-0021",
+      "front": "Wie unterscheiden sich Konsumgüter- und Investitionsgütermarketing bei **Güterkomplexität, Kundenansprache und Instrumenten**?",
+      "back": "**Konsumgüter (B2C):** geringe Komplexität der Güter; Ansprache oft über **Massenmedien**; **gesamtes absatzpolitisches Instrumentarium**.\n\n**Investitionsgüter (B2B):** hohe Komplexität; Ansprache verstärkt über **Messen und Mailings**; **Produkt- und Preispolitik** im Fokus, **Servicebündel**.",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 12"
+    },
+    {
+      "id": "mkt-0022",
+      "front": "Wie unterscheiden sich Käufer und Entscheider im Konsumgüter- und im Investitionsgütermarketing?",
+      "back": "**B2C:** Der Käufer ist oftmals **auch der Entscheider**.\n\n**B2B:** Käufer ist das **Unternehmen**; entschieden wird von mehreren Personen (Benutzer, Einkäufer …) mit Informationsselektion → **Buying-Center**.",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 13"
+    },
+    {
+      "id": "mkt-0023",
+      "front": "Welche Kaufanlässe gibt es im Investitionsgütermarketing (im Gegensatz zum Konsumgütermarketing)?",
+      "back": "**B2B:** **Erst-**, **Ersatz-** oder **Erweiterungsinvestition**.\n\n**B2C:** Der Kaufanlass ist **privat**.",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 13"
+    },
+    {
+      "id": "mkt-0024",
+      "front": "Was ist ein **Buying-Center**, und welche Rollen gehören dazu?",
+      "back": "Die Gruppe von Personen, die im Unternehmen an einer **Kaufentscheidung** beteiligt ist (typisch im B2B).\n\nRollen:\n- **Initiator** (stößt den Kauf an)\n- **Anwender** (nutzt das Produkt)\n- **Einkäufer** (wickelt den Kauf ab)\n- **Entscheider** (trifft die Entscheidung)\n- **Beeinflusser** (z. B. Fachexperten)",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 13–14"
+    },
+    {
+      "id": "mkt-0025",
+      "front": "Was sind Dienstleistungen? Nenne Beispiele.",
+      "back": "**Selbstständige, marktfähige Leistungen**; sie sind sehr **heterogen und vielfältig**.\n\nBeispiele: Reisebüro, Versicherungen, Beratungsleistungen im IT-Bereich.",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 11, 15"
+    },
+    {
+      "id": "mkt-0026",
+      "front": "Welche Merkmale der Dienstleistung muss das Dienstleistungsmarketing berücksichtigen?",
+      "back": "- **Leistungsmerkmale hervorheben** (z. B. Fachwissen, Ausstattung)\n- **externer Faktor** (Kunde bringt etwas ein, z. B. Auto, IT-Ausstattung)\n- **Immaterialität** (weder lager- noch transportierbar)\n- **Uno-actu-Prinzip** (Produktion und Konsum zeitgleich)\n- **Abhängigkeit von den Mitarbeitern** (Motivation, Schulung)",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 15"
+    },
+    {
+      "id": "mkt-0027",
+      "front": "Was besagt das **Uno-actu-Prinzip** bei Dienstleistungen?",
+      "back": "**Produktion und Konsum** der Dienstleistung finden **zeitgleich** statt.",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 15"
+    },
+    {
+      "id": "mkt-0028",
+      "front": "Was ist der **externe Faktor** bei Dienstleistungen? Nenne ein Beispiel.",
+      "back": "Der Kunde bringt etwas in die Leistungserstellung ein, z. B. sein **Auto** in die Werkstatt oder seine **IT-Ausstattung** für eine IT-Dienstleistung.",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 15"
+    },
+    {
+      "id": "mkt-0029",
+      "front": "Was bedeutet die **Immaterialität** von Dienstleistungen?",
+      "back": "Die Leistung ist nicht greifbar und kann daher **weder gelagert noch transportiert** werden.",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 15"
+    },
+    {
+      "id": "mkt-0030",
+      "front": "Warum ist die **Corporate Identity** im Dienstleistungsmarketing besonders wichtig?",
+      "back": "Weil der **Mitarbeiter das Unternehmen und damit die Marke repräsentiert**. Der Marketinggedanke muss nach innen gelebt werden – mit Blick auf **Mitarbeitermotivation und -zufriedenheit**.",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 16"
+    },
+    {
+      "id": "mkt-0031",
+      "front": "Was hat im Dienstleistungsmarketing neben der CI eine besonders hohe Bedeutung?",
+      "back": "- die **persönliche Kommunikation** mit dem Kunden\n- **Referenzen** bei der Kaufentscheidung",
+      "topic": "Grundformen des Marketings",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 16"
+    },
+    {
+      "id": "mkt-0032",
+      "front": "Aus welchen Stufen besteht ein Marketingkonzept, und welche Rolle spielt die Marktforschung?",
+      "back": "1. Situationsanalyse\n2. Marketingziele\n3. Marketingstrategie\n4. Marketingmaßnahmen\n5. Marketingcontrolling\n\nDie **Marktforschung** begleitet alle Stufen von der Situationsanalyse bis zum Controlling.",
+      "topic": "Marketingkonzept",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 17"
+    },
+    {
+      "id": "mkt-0033",
+      "front": "Was wird an den aufeinander aufbauenden Stufen des Marketingkonzepts deutlich?",
+      "back": "Das **planvolle und systematische Vorgehen** und die **Zukunftsorientierung** des Marketings.",
+      "topic": "Marketingkonzept",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 18"
+    },
+    {
+      "id": "mkt-0034",
+      "front": "Welche Funktion hat die **Situationsanalyse** im Marketingkonzept?",
+      "back": "Sie ist der **Ausgangspunkt** für alle weiteren Marketingentscheidungen und -maßnahmen. Beurteilt werden die **Ausgangssituation** und **kommende Entwicklungen**.",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 19"
+    },
+    {
+      "id": "mkt-0035",
+      "front": "Wovon hängt die Genauigkeit der Situationsanalyse ab?",
+      "back": "Davon, wie viele **Informationen** zu **Zielgruppe, Konkurrenz, Markt- und Branchensituation** und zum **eigenen Unternehmen** vorliegen. Je mehr Informationen, desto genauer sind die Analyse und alle darauf aufbauenden Entscheidungen.",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 19"
+    },
+    {
+      "id": "mkt-0036",
+      "front": "Was ist das **strategische Dreieck**, und was umfasst es?",
+      "back": "Es wird in der Situationsanalyse betrachtet und auch **betriebliche Marktforschung** genannt.\n\n- Ecken: **Zielgruppe**, **Markt/Branche**, **Wettbewerber**\n- Mitte: **eigenes Unternehmen**\n\nUntersucht wird es mit Instrumenten wie SWOT-, Produktlebenszyklus- und Portfolio-Analyse.",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 20 + Notiz"
+    },
+    {
+      "id": "mkt-0037",
+      "front": "Welche Leitfragen stellt man in der Situationsanalyse zu **Markt/Branche**?",
+      "back": "- Welche **Trends** gibt es?\n- Welche **politischen und demografischen Entwicklungen** beeinflussen Branche und Markt?\n- **Wachstums-** oder **Schrumpfmarkt**?",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 21"
+    },
+    {
+      "id": "mkt-0038",
+      "front": "Welche Leitfragen stellt man in der Situationsanalyse zu **Kunden/Zielgruppe**?",
+      "back": "- Wer sind meine Kunden?\n- Was wollen meine Kunden?\n- Wie groß ist das **Volumen**?\n- Sollen **neue Zielgruppen** erschlossen werden?",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 21"
+    },
+    {
+      "id": "mkt-0039",
+      "front": "Welche Leitfragen stellt man in der Situationsanalyse zur **Konkurrenz**?",
+      "back": "- Wer sind meine Konkurrenten?\n- Was **bieten** sie an?\n- Was **planen** sie?",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 21"
+    },
+    {
+      "id": "mkt-0040",
+      "front": "Welche Leitfragen stellt man in der Situationsanalyse zum **eigenen Unternehmen/Standort**?",
+      "back": "- Was sind meine **Stärken und Schwächen**?\n- Gibt es **Chancen und Risiken**?\n- Sind **Potenziale** erkennbar?",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 21"
+    },
+    {
+      "id": "mkt-0041",
+      "front": "Nenne Instrumente der Situationsanalyse.",
+      "back": "1. SWOT-Analyse\n2. Produktlebenszyklus\n3. Portfolio-Analyse\n4. Balanced Scorecard\n5. Wettbewerbsstrategien nach Porter\n6. Wettbewerbsanalyse\n7. Zielgruppenanalyse\n8. Markt- und Branchenanalyse",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 22"
+    },
+    {
+      "id": "mkt-0042",
+      "front": "Wofür stehen die Buchstaben **SWOT**, und welche Faktoren sind intern bzw. extern?",
+      "back": "- **S**trengths (Stärken) → intern\n- **W**eaknesses (Schwächen) → intern\n- **O**pportunities (Chancen) → extern\n- **T**hreats (Risiken) → extern\n\nEine Chance ist z. B. eine Möglichkeit, mit der man Geld verdienen kann.",
+      "topic": "SWOT-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 23–24"
+    },
+    {
+      "id": "mkt-0043",
+      "front": "Worin unterscheiden sich interne und externe Faktoren der SWOT-Analyse?",
+      "back": "**Interne Faktoren** (Stärken, Schwächen) sind vom Unternehmen **beeinflussbar**.\n\n**Externe Faktoren** (Chancen, Risiken) sind **kaum oder nicht beeinflussbar**.",
+      "topic": "SWOT-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 24"
+    },
+    {
+      "id": "mkt-0044",
+      "front": "Was ist die **PESTEL-Analyse**, und wofür wird sie in der SWOT-Analyse genutzt?",
+      "back": "Sie hilft, die **externen Faktoren** (Chancen/Risiken) zu ermitteln:\n\n- **P**olitical\n- **E**conomic\n- **S**ocial\n- **T**echnology\n- **E**nvironment (Klimawandel)\n- **L**egal (rechtliche Aspekte)",
+      "topic": "SWOT-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 23"
+    },
+    {
+      "id": "mkt-0045",
+      "front": "Welche vier Standardstrategien leitet man aus der SWOT-Analyse ab? (klausurrelevant)",
+      "back": "- **Stärken/Chancen:** Stärken betonen, um Chancen zu nutzen\n- **Schwächen/Chancen:** Schwächen abbauen, um Chancen künftig nutzen zu können\n- **Stärken/Risiken:** Stärken nutzen, um Risiken zu minimieren/abzusichern\n- **Schwächen/Risiken:** Schwächen abbauen, um Risiken zu minimieren/meiden",
+      "topic": "SWOT-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 25"
+    },
+    {
+      "id": "mkt-0046",
+      "front": "**Übung:** Continental – Stärken: hohe Bekanntheit, hohe Innovationskraft; Schwächen: viel Produktionsabfall, hoher interner Bürokratieaufwand; Chancen: guter Ausbildungsstandard in DE, politischer Schutz vor Billigherstellern; Risiken: hohe Bürokratie in DE, starker Wettbewerb/Preisdruck. Leite die vier SWOT-Strategien ab.",
+      "back": "- **Stärken/Chancen:** Innovationskraft + gut ausgebildete Fachkräfte → Probleme mit hochwertigen, innovativen Lösungen angehen\n- **Schwächen/Chancen:** gut ausgebildete Fachkräfte nutzen, um den **Abfallanteil** in der Produktion zu senken\n- **Stärken/Risiken:** den **bekannten Namen** nutzen, um im harten Wettbewerb konkurrenzfähig zu bleiben\n- **Schwächen/Risiken:** **interne Bürokratie abbauen**, damit Entscheidungen schneller fallen",
+      "topic": "SWOT-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 26 (Übung, Notizen 20.10.26)"
+    },
+    {
+      "id": "mkt-0047",
+      "front": "Was macht die **Portfolio-Analyse**?",
+      "back": "Alle Produkte werden in **strategische Geschäftseinheiten (SGE)** (= Zielgruppe + Leistung) eingeteilt und nach **Marktwachstum** und **relativem Marktanteil** beurteilt. Daraus leitet man Strategien ab.",
+      "topic": "Portfolio-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 27"
+    },
+    {
+      "id": "mkt-0048",
+      "front": "Wie sind die vier Felder der Portfolio-Matrix (Marktwachstum × relativer Marktanteil) belegt?",
+      "back": "- **Question Mark:** hohes Wachstum, niedriger Marktanteil\n- **Star:** hohes Wachstum, hoher Marktanteil\n- **Cash Cow:** niedriges Wachstum, hoher Marktanteil\n- **Poor Dog:** niedriges Wachstum, niedriger Marktanteil",
+      "topic": "Portfolio-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 27"
+    },
+    {
+      "id": "mkt-0049",
+      "front": "Welche Normstrategien gelten für die vier Felder der Portfolio-Analyse?",
+      "back": "- **Poor Dog:** deinvestieren (Achtung Synergieeffekte)\n- **Question Mark:** investieren **oder** deinvestieren\n- **Star:** investieren\n- **Cash Cow:** abschöpfen/nutzen",
+      "topic": "Portfolio-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 28"
+    },
+    {
+      "id": "mkt-0050",
+      "front": "Warum sollte man bei einem **Poor Dog** vor dem Deinvestieren auf **Synergieeffekte** achten?",
+      "back": "Ein Poor Dog kann andere Produkte stützen, etwa als Ergänzungsprodukt, durch gemeinsame Kunden oder Anlagen. Gibt man ihn auf, können auch **andere Geschäftseinheiten** darunter leiden.",
+      "topic": "Portfolio-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 28"
+    },
+    {
+      "id": "mkt-0051",
+      "front": "Auf welche Achse der Portfolio-Matrix hat ein Unternehmen Einfluss – den relativen Marktanteil oder das Marktwachstum?",
+      "back": "- **Relativer Marktanteil** (eigener Marktanteil im Verhältnis zum stärksten Konkurrenten): durch eigene Maßnahmen **beeinflussbar** → interner Faktor\n- **Marktwachstum** (Wachstum des Gesamtmarkts): **kaum beeinflussbar** → externer Faktor",
+      "topic": "Portfolio-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 29 (Aufgabe)"
+    },
+    {
+      "id": "mkt-0052",
+      "front": "Warum sollten alle Felder der Portfolio-Matrix besetzt sein, und was hat die **Innenfinanzierung** damit zu tun?",
+      "back": "- **Cash Cows** erwirtschaften Überschüsse, mit denen **Stars und Question Marks** finanziert werden (**Innenfinanzierung**, ohne fremdes Kapital).\n- Heutige Stars werden zu den Cash Cows von morgen, heutige Question Marks zu künftigen Stars.\n- Ein **ausgewogenes Portfolio** sichert also Gegenwart **und** Zukunft des Unternehmens.",
+      "topic": "Portfolio-Analyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 29 (Aufgabe)"
+    },
+    {
+      "id": "mkt-0053",
+      "front": "Welche Phasen hat der Produktlebenszyklus?",
+      "back": "1. Einführung\n2. Wachstum\n3. Reife\n4. Sättigung\n5. Degeneration",
+      "topic": "Produktlebenszyklus",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 30"
+    },
+    {
+      "id": "mkt-0054",
+      "front": "Wodurch ist die **Einführungsphase** im Produktlebenszyklus gekennzeichnet?",
+      "back": "- **hohe Investitionen**\n- **keine Wettbewerber**\n- **geringe Umsätze**\n- **kein Gewinn**",
+      "topic": "Produktlebenszyklus",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 31"
+    },
+    {
+      "id": "mkt-0055",
+      "front": "Wodurch ist die **Wachstumsphase** im Produktlebenszyklus gekennzeichnet?",
+      "back": "- **Umsatz steigt**; Marketingmaßnahmen erhöhen die Bekanntheit → Zuwachsraten\n- am Übergang von Einführung zu Wachstum liegt der **Break-even-Point**\n- **erste Konkurrenten**\n- weiterhin **hohe Investitionen**",
+      "topic": "Produktlebenszyklus",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 31"
+    },
+    {
+      "id": "mkt-0056",
+      "front": "Wodurch ist die **Reifephase** im Produktlebenszyklus gekennzeichnet?",
+      "back": "- am Übergang von Wachstum zu Reife liegt das **Gewinnmaximum**\n- **längste Phase**\n- **Umsatz- und Gewinnwachstum flachen ab**",
+      "topic": "Produktlebenszyklus",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 32"
+    },
+    {
+      "id": "mkt-0057",
+      "front": "Wodurch ist die **Sättigungsphase** im Produktlebenszyklus gekennzeichnet?",
+      "back": "- **Umsatz stagniert**, **Gewinn rückläufig**\n- der Markt ist **gesättigt**\n- **Ersatzkäufe** werden wichtiger",
+      "topic": "Produktlebenszyklus",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 32"
+    },
+    {
+      "id": "mkt-0058",
+      "front": "Wodurch ist die **Degenerationsphase** im Produktlebenszyklus gekennzeichnet?",
+      "back": "- **Umsatzrückgang**\n- **keine Gewinne mehr** (Gewinngrenze wird erreicht)\n- **Substitute** sind nun sehr stark",
+      "topic": "Produktlebenszyklus",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 32"
+    },
+    {
+      "id": "mkt-0059",
+      "front": "Wo liegen im Produktlebenszyklus der **Break-even-Point**, das **Gewinnmaximum** und das **Umsatzmaximum**?",
+      "back": "- **Break-even-Point:** Ende der Einführungs-/Beginn der Wachstumsphase\n- **Gewinnmaximum:** Übergang von Wachstums- zu Reifephase\n- **Umsatzmaximum:** später, am Übergang von Reife- zu Sättigungsphase\n\nDer Gewinn erreicht seinen Höhepunkt also **vor** dem Umsatz.",
+      "topic": "Produktlebenszyklus",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 30–32"
+    },
+    {
+      "id": "mkt-0060",
+      "front": "Wie hängen Produktlebenszyklus und Portfolio-Analyse zusammen?",
+      "back": "- **Einführung** → Question Marks\n- **Wachstum und Reife** → Stars\n- **Sättigung** → Cash Cows\n- **Degeneration** → Poor Dogs",
+      "topic": "Produktlebenszyklus",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 30"
+    }
+  ]
 }
