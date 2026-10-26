@@ -1,5 +1,839 @@
 {
   "deck": "internes-rechnungswesen",
   "name": "Internes Rechnungswesen",
-  "cards": []
+  "cards": [
+    {
+      "id": "irw-0001",
+      "front": "Welche Zielsetzungen verfolgt die Vorlesung Internes Rechnungswesen?",
+      "back": "- Rechnungswesen als **Datenquelle** nutzen können\n- **Kosten** von Produkten/Dienstleistungen ermitteln bzw. kalkulieren\n- **Entscheidungen** auf Basis von Kosten vorbereiten\n- Grundlagen für weitere Fächer (z.B. **Controlling**)\n- als Führungskraft die **Kostenstruktur** unterstellter Bereiche verstehen",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 4"
+    },
+    {
+      "id": "irw-0002",
+      "front": "Was ist das **Rechnungswesen** und aus welchen Teilbereichen besteht es?",
+      "back": "Das Rechenwerk, welches das Unternehmensgeschehen in **monetären Größen** abbildet.\n\nTeilbereiche:\n- Geschäfts- und Finanzbuchhaltung\n- Kosten- und Leistungsrechnung\n- Statistik\n- Planung\n\nWegen der grundsätzlich anderen Aufgabenstellung unterscheidet man **externes** und **internes** Rechnungswesen.",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 5"
+    },
+    {
+      "id": "irw-0003",
+      "front": "Welche Inhalte hat das **externe** Rechnungswesen (Finanz-/Geschäftsbuchhaltung) und wer sind seine Informationsempfänger?",
+      "back": "**Inhalte:**\n- Feststellung des Vermögens und der Schulden\n- Erfassung aller Geschäftsfälle\n- Erstellung des Jahresabschlusses\n- Ermittlung des Unternehmensergebnisses\n\n**Empfänger:** Anteilseigner/Aktionäre, Lieferanten, Finanzbehörden, Gläubiger, Management",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 6"
+    },
+    {
+      "id": "irw-0004",
+      "front": "Welche Inhalte hat das **interne** Rechnungswesen (Betriebsbuchhaltung) und wer sind seine Informationsempfänger?",
+      "back": "**Inhalte:**\n- Kalkulation bestehender und zukünftiger Produkte\n- Lieferung von Kosteninformationen\n- Ermittlung des Betriebsergebnisses\n- Erfolgs- und Entscheidungsrechnungen\n- Kontrolle der Wirtschaftlichkeit\n- Liquiditätsrechnungen, Statistiken\n\n**Empfänger:** interne Nachrichtenempfänger (Management & Anteilseigner)",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 6"
+    },
+    {
+      "id": "irw-0005",
+      "front": "Erklären Sie die Unterschiede zwischen internem und externem Rechnungswesen. (klausurrelevant)",
+      "back": "- **Zweck/Empfänger:** extern Transaktionen mit der Außenwelt (Liquidität, Vermögens-, Ertragslage), gesetzliche Vorgaben, Info diverser Stakeholder – intern Anteilseigner & Management\n- **Hauptaugenmerk:** extern Zahlungsstrom (Aus-/Einzahlungen, Ausgaben/Einnahmen, Aufwendungen/Erträge) – intern der „entgegengesetzte“ Leistungsstrom (Kosten & Leistungen)\n- **Öffentlichkeit:** extern Veröffentlichung des Jahresabschlusses (publizitätspflichtige Unternehmen) – intern Betriebsgeheimnis (außer öffentliche Aufträge, Betriebsvergleiche)\n- **Vorschriften:** extern Bewertungs-/Gliederungsvorschriften (HGB, Steuergesetze) – intern keine gesetzlichen Vorschriften (Ausnahme: Preisermittlung bei öffentlichen Aufträgen, LSP)\n- **Form:** extern doppelte Buchführung vorgeschrieben – intern statistisch-tabellarisch, auch in Kontenrahmen/Doppik möglich\n- **Periode:** extern ein Jahr – intern kurzfristig (monatlich, quartalsweise)",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 7"
+    },
+    {
+      "id": "irw-0006",
+      "front": "Welche gesetzlichen Vorschriften gelten für das interne Rechnungswesen?",
+      "back": "Grundsätzlich **keine**.\n\nGelegentliche Ausnahme: **Preisermittlung bei öffentlichen Aufträgen** (Leitsätze für die Preisermittlung auf Grund von Selbstkosten).",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 7"
+    },
+    {
+      "id": "irw-0007",
+      "front": "Warum ist Kostenrechnung zugleich immer auch Leistungsrechnung?",
+      "back": "Kosten sind die **Kehrseite der Leistungen**: Leistungen sind ohne gleichzeitigen Güterverbrauch nicht möglich, beide gehören zusammen (Merkmal der **Leistungsbezogenheit** im Kostenbegriff).\n\nEine eigenständige Leistungsrechnung existiert daher in der Regel nicht, sie ist in die Kostenrechnung integriert. Nur der rein mengenmäßige Aspekt wird in der **Leistungsstatistik** erfasst (liefert die Kostenträger als Bezugsgrößen der Kalkulation).",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 8"
+    },
+    {
+      "id": "irw-0008",
+      "front": "Wie wird die Kosten- und Leistungsrechnung in Perioden- und Stückrechnung unterteilt?",
+      "back": "- **Periodenrechnung** (Kosten pro Periode) = **Betriebsabrechnung** (nicht: Betriebsbuchhaltung – diese umfasst auch die Stückrechnung)\n- **Stückrechnung** (Kosten pro Stück/Leistungseinheit) = Kostenträgerstückrechnung, Selbstkostenrechnung oder **Kalkulation**",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 8"
+    },
+    {
+      "id": "irw-0009",
+      "front": "In welchen drei Stufen erfolgt die Betriebsabrechnung?",
+      "back": "1. **Kostenartenrechnung**\n2. **Kostenstellenrechnung**\n3. **Kostenträgerzeit- und Betriebsergebnisrechnung**",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 8"
+    },
+    {
+      "id": "irw-0010",
+      "front": "Welche Frage beantwortet die **Kostenartenrechnung** und was ist ihre Aufgabe?",
+      "back": "Frage: **Welche** Kosten sind in der betreffenden Periode in welcher Höhe angefallen?\n\nSie erfasst die Kosten der Abrechnungsperiode, gegliedert nach Kostenarten. Neben der Grundlage für die übrigen Bestandteile dient sie bereits der Kostenbeobachtung und -kontrolle (im Zeitvergleich).",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 9"
+    },
+    {
+      "id": "irw-0011",
+      "front": "Welche Frage beantwortet die **Kostenstellenrechnung** und welche zwei Aufgaben hat sie?",
+      "back": "Frage: **Wo** sind während der Periode welche Kosten in welcher Höhe angefallen?\n\nVerteilung der Kostenarten auf die Orte der Kostenentstehung (Kostenstellen).\n\nAufgaben:\n1. **Kostenkontrolle**\n2. Errechnung von **Kalkulationssätzen** für die Zurechnung der Kostenträgergemeinkosten",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 9"
+    },
+    {
+      "id": "irw-0012",
+      "front": "Welche Frage beantwortet die **Kostenträgerzeit- und Betriebsergebnisrechnung** und wozu dient sie?",
+      "back": "Frage: **Wofür** sind welche Kosten in der Periode angefallen, und wie groß ist die Differenz (Erfolg, Ergebnis) zu den entsprechenden Erlösen?\n\nDie (Selbst-)Kosten der Leistungen der Periode werden – ggf. nach Leistungsarten – ermittelt und den **Erlösen gegenübergestellt**, um den Erfolg der Leistungen(-sarten) zu beurteilen.\n\nDaraus folgen Konsequenzen für **Produktionsprogramm** und **Absatzpolitik** (Aufnahme, Ausdehnung, Einschränkung, Aufgabe von Produkten, Preispolitik, Werbemaßnahmen).",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 9"
+    },
+    {
+      "id": "irw-0013",
+      "front": "Welche Frage beantwortet die **Kalkulation (Kostenträgerstückrechnung)**? Was ist Vor- und Nachkalkulation?",
+      "back": "Frage: **Was** kostet eine Leistungseinheit?\n\nAufbauend auf Kostenarten-, Kostenstellen- und Kostenträgerzeitrechnung werden die Kosten der einzelnen Leistungseinheit ermittelt.\n\n- **Vorkalkulation:** vor der Leistungserstellung\n- **Nachkalkulation:** nach Abschluss der Leistungserstellung",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 10"
+    },
+    {
+      "id": "irw-0014",
+      "front": "Warum kann die Frage „Was kostet die Leistungseinheit?“ im Mehrproduktbetrieb nicht objektiv beantwortet werden?",
+      "back": "- Die Aufteilung von **Gemeinkosten** und die Proportionalisierung **fixer Kosten** ist willkürlich/subjektiv.\n- Verzichtet man auf deren Zurechnung, trägt die Leistungseinheit nicht mehr alle Kosten, die zu ihrer Entstehung nötig sind.\n\n→ Daraus entstand die Unterscheidung von **Voll- und Teilkostenrechnungssystemen**.",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 10"
+    },
+    {
+      "id": "irw-0015",
+      "front": "Was sind die **ständigen** Aufgaben der Kosten- und Leistungsrechnung?",
+      "back": "- Kostenbeobachtung und Kostenkontrolle\n- Ermittlung und Beurteilung des Betriebserfolges nach Leistungs-(Produkt-)arten\n- Grundlage für **Angebotspreise**\n- Grundlage für die Bewertung von **selbsterstellten** Vorratsgütern und Anlagen (z.B. Hallen, die man selbst baut)",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 11"
+    },
+    {
+      "id": "irw-0016",
+      "front": "Nennen Sie **fallweise** Aufgaben der Kosten- und Leistungsrechnung.",
+      "back": "- Entscheidung über **Stilllegungsfragen**\n- **Make-or-Buy**-Entscheidungen (Eigenherstellung oder Fremdbezug)\n- optimaler **Ersatzzeitpunkt** von Anlagen\n- optimale **Bestellmengen** und Seriengrößen\n- langfristiges **Produktionsprogramm**\n- Wahl der **Absatzmethode**\n- langfristige **Preisuntergrenzen**",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 11"
+    },
+    {
+      "id": "irw-0017",
+      "front": "Wie sind **Kosten** nach dem wertmäßigen Kostenbegriff definiert?",
+      "back": "**Kosten** = bewerteter Verbrauch der im Prozess der Leistungserstellung eingesetzten Wirtschaftsgüter.\n\nWichtig: **„Kosten“ ist nicht gleich „Geldfluss“!**",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 12"
+    },
+    {
+      "id": "irw-0018",
+      "front": "Welche drei Merkmale haben alle Kostendefinitionen?",
+      "back": "1. **Leistungsbezogenheit** des Güterverbrauchs\n2. **Verbrauch** von Wirtschaftsgütern\n3. **Bewertung**",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 12"
+    },
+    {
+      "id": "irw-0019",
+      "front": "Was versteht man unter dem **pagatorischen Kostenbegriff** und wie unterscheidet er sich vom wertmäßigen?",
+      "back": "**Pagatorisch** (ital. *pagare* = zahlen): Kosten basieren auf **tatsächlich erfolgten Auszahlungsströmen**.\n\n- Pro: eindeutige, nicht willkürliche Bewertung; keine Trennung von Verbrauchsmenge und Wert nötig\n- Folge: definitionsgemäß **keine kalkulatorischen Kosten** möglich\n\nDer **wertmäßige** Kostenbegriff erlaubt dagegen eine von Auszahlungen abweichende, **zweckabhängig gestaltbare Bewertung** (seine Vertreter sehen darin seine Stärke).",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 13"
+    },
+    {
+      "id": "irw-0020",
+      "front": "Wie sind **Leistungen** definiert und welche Merkmale haben sie?",
+      "back": "**Leistungen** = bewertete, im Produktionsprozess (i.w.S.) entstandene Wirtschaftsgüter (Ergebnis betrieblicher Tätigkeit; Mengen- × Wertkomponente).\n\nMerkmale:\n1. **Entstehung** von Wirtschaftsgütern\n2. **Bezogenheit** auf den Produktionsprozess\n3. **Bewertung**",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 14"
+    },
+    {
+      "id": "irw-0021",
+      "front": "Wie werden Leistungen gegliedert? Nennen Sie jeweils Beispiele.",
+      "back": "- **Abgesetzte Leistungen**\n- **Nicht abgesetzte Leistungen** (innerbetriebliche Leistungen i.w.S.):\n  - **absatzbestimmte** Leistungen – z.B. noch lagernde Fertigerzeugnisse\n  - **nicht absatzbestimmte** Leistungen (innerbetriebliche Leistungen i.e.S.) – z.B. lagernde unfertige Erzeugnisse, Leistungen von Personalabteilung, Buchhaltung, Facility Management",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 15"
+    },
+    {
+      "id": "irw-0022",
+      "front": "Wie werden abgesetzte und nicht abgesetzte Leistungen bewertet?",
+      "back": "- **Abgesetzte** Leistungen: i.d.R. mit den erzielten **Absatzpreisen** (= Erlös, Umsatz), ausnahmsweise mit Verrechnungspreisen\n- **Nicht abgesetzte** Leistungen: i.d.R. mit ihren **Herstellkosten**\n- **Innerbetriebliche Leistungen i.e.S.**: auch mit **Verrechnungspreisen** (z.B. Marktpreise bei Verkauf oder Fremdbeschaffung), je nach Rechnungszweck (z.B. Vergleich mit Fremdbezug)",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 15"
+    },
+    {
+      "id": "irw-0023",
+      "front": "Welche Teilbereiche umfasst der **neutrale Aufwand**, und wie hängen Aufwand und Kosten zusammen?",
+      "back": "- **Aufwand** = neutraler Aufwand + **Zweckaufwand**\n- **Neutraler Aufwand**: betriebsfremd, außerordentlich, periodenfremd → keine Kosten\n- **Zweckaufwand = Grundkosten**: hier sind Aufwand und Kosten identisch\n- **Kosten** = Grundkosten + **kalkulatorische Kosten** (Anderskosten + Zusatzkosten)",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 36 (Übersicht 3.4)"
+    },
+    {
+      "id": "irw-0024",
+      "front": "Was ist der Unterschied zwischen **Anderskosten** und **Zusatzkosten**?",
+      "back": "Beides sind **kalkulatorische Kosten**:\n- **Anderskosten**: einem Aufwand steht Kosten in **anderer Höhe** gegenüber (z.B. kalk. Abschreibungen statt bilanzieller Abschreibungen)\n- **Zusatzkosten**: Kosten, denen **überhaupt kein Aufwand** gegenübersteht (z.B. kalk. Unternehmerlohn, kalk. Zinsen auf das Eigenkapital)",
+      "topic": "Grundlagen",
+      "source": "Skript Internes ReWe (Richter), Folie 36 (Übersicht 3.4)"
+    },
+    {
+      "id": "irw-0025",
+      "front": "Was ist das Grundproblem der Kostentheorie und wie wird es formal dargestellt?",
+      "back": "Die Kostentheorie versucht, die Auswirkungen von Veränderungen der **Kosteneinflussgrößen** (Kostenbestimmungsfaktoren) auf die Kostenhöhe zu erklären und funktional darzustellen.\n\n$$K = f(a, b, c, \\dots, z)$$\n\nGesamtkosten $K$ = abhängige Variable, Einflussgrößen = unabhängige Variablen. Am weitesten verbreitet ist das System von **Erich Gutenberg**.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 16"
+    },
+    {
+      "id": "irw-0026",
+      "front": "Nennen Sie die fünf Haupteinflussgrößen auf Kosten nach Gutenberg. Welches ist die wichtigste? (klausurrelevant)",
+      "back": "1. **Faktorqualitäten**\n2. **Faktorpreise**\n3. **Beschäftigung** (= Output)\n4. **Produktionsprogramm**\n5. **Betriebsgröße**\n\nWichtigste Einflussgröße: die **Beschäftigung** → reduziert sich auf $K = f(x)$ mit $x$ = Beschäftigung.\n\nHinweis: Das Modell gilt **nur kurzfristig** (alle anderen Größen werden als konstant betrachtet).",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 17"
+    },
+    {
+      "id": "irw-0027",
+      "front": "Definieren Sie **Kapazität**. (klausurrelevant)",
+      "back": "**Kapazität** ist der **größtmögliche Ausstoß** bzw. das maximale Produktionsvermögen einer Fabrik oder Produktionseinheit (in der betrachteten Periode konstant).\n\nKapazitätskennziffern können quantitative (z.B. Stückzahl pro Zeiteinheit) und qualitative Faktoren (z.B. Bandbreite der Güter nach Art/Größe) berücksichtigen.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 18"
+    },
+    {
+      "id": "irw-0028",
+      "front": "Was versteht man unter **Beschäftigung** und **Beschäftigungsgrad**? (klausurrelevant)",
+      "back": "- **Beschäftigung**: die tatsächliche Leistungsmenge in einem Zeitabschnitt\n- **Beschäftigungsgrad** (Kapazitätsausnutzungsgrad): Verhältnis der Beschäftigung zur maximal produzierbaren Leistungsmenge (Periodenkapazität) in Prozent = Grad der Ausnutzung einer vorhandenen Leistungsmöglichkeit\n\n$$\\text{Beschäftigungsgrad} = \\frac{\\text{Ist-Leistungsmenge}}{\\text{Kapazität}} \\cdot 100\\,\\%$$",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 18"
+    },
+    {
+      "id": "irw-0029",
+      "front": "Was drücken die Einflussgrößen **Faktorqualität** und **Faktorpreise** aus?",
+      "back": "- **Faktorqualität**: technisch-organisatorische Bedingungen der Produktion, ergibt sich aus der Qualität der Einsatzgüter. Änderungen können **oszillativ** (um einen Mittelwert schwankend), **stetig** (allmählich, anhaltend) oder **mutativ** (sprunghaft) sein.\n- **Faktorpreise**: Preise der Produktionsfaktoren; bilden sich durch Angebot und Nachfrage. Ihre Änderungen verursachen Kostenänderungen.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 18"
+    },
+    {
+      "id": "irw-0030",
+      "front": "Definieren Sie **variable** und **fixe** Kosten. (klausurrelevant)",
+      "back": "- **Variable (beschäftigungsabhängige) Kosten**: ändern ihre Höhe, wenn mehr oder weniger Leistungen erstellt werden.\n- **Fixe (beschäftigungsunabhängige) Kosten**: ändern ihre Höhe **nicht** dadurch, dass die Leistungsmenge variiert; zu ihrer Veränderung bedarf es anderer Dispositionen.\n\nDiese Einteilung ist auch auf den **Kostenstellen** sinnvoll.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 19"
+    },
+    {
+      "id": "irw-0031",
+      "front": "Was sind **Durchschnittskosten** und **Grenzkosten** und wie berechnet man sie?",
+      "back": "- **Durchschnitts-/Stückkosten**: $k = \\frac{K}{x}$\n- **Grenzkosten**: Kosten, die mit jeder **zusätzlichen** Leistungseinheit zusätzlich anfallen bzw. mit jeder wegfallenden wegfallen.\n\n$$K' = \\frac{dK}{dx}$$\n\nRechnungspraktisch als Differenzenquotient (durchschnittlicher Kostenzuwachs je Einheit):\n$$K' = \\frac{K_2 - K_1}{x_2 - x_1}$$",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 20"
+    },
+    {
+      "id": "irw-0032",
+      "front": "Beschreiben Sie den **proportionalen** Kostenverlauf (K, k, K') mit Beispiel.",
+      "back": "Jede relative Beschäftigungsänderung führt zur **gleichen** relativen Kostenänderung (Beschäftigung ×2 → Kosten ×2).\n\n- $K$: linear durch den Ursprung\n- $k$: **konstant**\n- $K'$: **konstant** ($= k$)\n\nBeispiel: Verbrauch an **Fertigungsmaterial**.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 21"
+    },
+    {
+      "id": "irw-0033",
+      "front": "Beschreiben Sie den **degressiven** Kostenverlauf (K, k, K') mit Beispiel.",
+      "back": "Jede relative Beschäftigungsänderung führt zu einer **geringeren** relativen Kostenänderung (Beschäftigung +10 % → Kosten z.B. +5 %).\n\n- $K$: degressiv steigend\n- $k$: degressiv fallend\n- $K'$: degressiv fallend\n\nBeispiel: Energiekosten bei **Schmelzaggregaten**.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 22"
+    },
+    {
+      "id": "irw-0034",
+      "front": "Beschreiben Sie den **progressiven** Kostenverlauf (K, k, K') mit Beispiel.",
+      "back": "Jede relative Beschäftigungsänderung führt zu einer **größeren** relativen Kostenänderung (Beschäftigung +10 % → Kosten z.B. +15 %).\n\n- $K$: progressiv steigend\n- $k$: progressiv steigend\n- $K'$: progressiv steigend\n\nBeispiel: Energiekosten für **Heizung bei Erhöhung der Raumtemperatur**.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 23"
+    },
+    {
+      "id": "irw-0035",
+      "front": "Berechnen Sie $k$ und $K'$: $x$ = 200 → $K$ = 4.000; $x$ = 300 → $K$ = 5.100. Welcher Kostenverlauf liegt (mit 400 → 6.000; 500 → 6.500) vor?",
+      "back": "- $k(200) = 4.000/200 = 20$; $k(300) = 5.100/300 = 17$\n- $K' = \\frac{5.100 - 4.000}{300 - 200} = 11$\n\nWeitere Werte: $k$ = 15 / 13, $K'$ = 9 / 5 → $k$ und $K'$ fallen → **degressiver** Verlauf.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 22"
+    },
+    {
+      "id": "irw-0036",
+      "front": "Was ist der Unterschied zwischen **absolut fixen** und **intervallfixen (sprungfixen)** Kosten?",
+      "back": "Fixe Kosten ändern sich innerhalb der gegebenen Kapazität…\n- **absolut fix**: **gar nicht**\n- **intervallfix / relativ fix / sprungfix**: nur jeweils nach Überschreiten gewisser **Beschäftigungsintervalle** (Intervallbreite und Sprunghöhe können variieren)\n\nUrsachen: technische, ökonomische und rechtliche Gründe.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 24"
+    },
+    {
+      "id": "irw-0037",
+      "front": "Wie verlaufen K, k und K' bei **absolut fixen** Kosten? Nennen Sie Beispiele.",
+      "back": "- $K$: konstant (waagerecht)\n- $k$: **degressiv fallend** (Fixkostendegression)\n- $K'$: **null**\n\nBeispiele: Zinsen, Mieten, Versicherungen, Abschreibungen auf Betriebsgebäude.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 24"
+    },
+    {
+      "id": "irw-0038",
+      "front": "Wie verlaufen K, k und K' bei **intervallfixen** Kosten? Warum ist die Differenzenformel für K' hier nicht anwendbar?",
+      "back": "- $K$: treppenförmig\n- $k$: degressiv fallend **mit Sprüngen**\n- $K'$: **null mit Sprüngen**\n\nBeispiel: Gehälter von zusätzlich eingestelltem Personal.\n\nGrenzkosten in Höhe des Kostensprungs entstehen nur für die **erste** Einheit über der bisherigen Kapazitätsgrenze, für die folgenden Einheiten des neuen Intervalls nicht mehr → die durchschnittliche Grenzkostenformel passt nicht.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 25"
+    },
+    {
+      "id": "irw-0039",
+      "front": "Welcher Kostenverlauf wird für Industriebetriebe als repräsentativ angenommen?",
+      "back": "Für die üblichen Beschäftigungsintervalle (ca. **80–95 %**): **linearer (proportionaler) Verlauf der variablen Kosten** plus (vereinfachend) **absolut fixe Kosten**:\n\n$$K = K_f + k_v \\cdot x$$\n\n- $K$: linear, nicht durch den Ursprung (beginnt bei $K_f$)\n- $k$: fällt und nähert sich $k_v$ an\n- $k_v = K'$: konstant\n\nGilt bis zur Kapazitätsgrenze $x_{max}$; Grundlage der **Grenzkostenrechnung**.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 26"
+    },
+    {
+      "id": "irw-0040",
+      "front": "Gegeben $K = 3.000 + 20x$. Berechnen Sie für $x$ = 300: $K_v$, $K$, $k$, $k_f$, $K'$.",
+      "back": "- $K_v = 20 \\cdot 300 = 6.000$\n- $K = 3.000 + 6.000 = 9.000$\n- $k = 9.000/300 = 30$\n- $k_f = 3.000/300 = 10$\n- $K' = k_v = 20$",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 26"
+    },
+    {
+      "id": "irw-0041",
+      "front": "Gilt der lineare Kostenverlauf auch für Mehrproduktbetriebe?",
+      "back": "Er gilt in der dargestellten Form nur für **Einproduktbetriebe**, ist aber übertragbar auf Mehrproduktbetriebe, die sich in **Teilbereiche mit einheitlichen Leistungen** zerlegen lassen (z.B. stark differenzierte Kostenstellen). Mit steigendem Differenzierungsgrad lassen sich die Leistungen über **Äquivalenzziffern** gleichnamig machen.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 27"
+    },
+    {
+      "id": "irw-0042",
+      "front": "Was sind **Nutzkosten** und **Leerkosten**? (klausurrelevant)",
+      "back": "Die fixen Kosten lassen sich (künstlich) aufteilen:\n$$K_f = K_n + K_l$$\n\nAufteilung **proportional zum Beschäftigungsgrad**: bei 90 % Beschäftigung sind 90 % der $K_f$ **Nutzkosten** (genutzte Kapazität) und 10 % **Leerkosten** (ungenutzte Kapazität).\n\nDie Proportionalität ist willkürlich (Fixkosten sind ja beschäftigungsunabhängig). Hohe oder steigende Leerkosten weisen auf mögliche Kosteneinsparung durch **Abbaumaßnahmen** hin.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 28"
+    },
+    {
+      "id": "irw-0043",
+      "front": "Was versteht man unter **Kostenremanenz**? (klausurrelevant)",
+      "back": "Kostenremanenz (lat. *remanere* = zurückbleiben) liegt vor, wenn bei **rückläufiger Beschäftigung kostensenkende Anpassungsmaßnahmen unterbleiben** (die Kosten sinken nicht im gleichen Maß wie sie gestiegen sind).\n\nMöglich bei variablen und intervallfixen Kosten, praktisch relevant v.a. bei **intervallfixen** Kosten → es entstehen **abbaufähige Leerkosten**.\n\nUrsachen: Kündigungsfristen, soziale Gründe, Erwartung baldiger Beschäftigungszunahme, Unkenntnis über Abbaumöglichkeiten.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 28"
+    },
+    {
+      "id": "irw-0044",
+      "front": "Welche **Anpassungsformen** der Produktion an Absatzänderungen gibt es?",
+      "back": "- **zeitliche** Anpassung\n- **intensitätsmäßige** Anpassung\n- **quantitative** Anpassung\n- **Kombinationen**, z.B. zeitlich-quantitative Anpassung\n\nDer Kostenverlauf hängt davon ab, welche Anpassungsform gewählt wird.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 28"
+    },
+    {
+      "id": "irw-0045",
+      "front": "Welches kostentheoretische Problem zeigt das Beispiel VW ID Buzz im Werk Hannover?",
+      "back": "Geplant > 100.000 Einheiten/Jahr, tatsächlich ca. 60.000 → **geringe Auslastung** bei sehr hohen **Fixkosten** des Standorts.\n\n→ hohe Leerkosten / hohe Fixkosten pro Stück; das Werk gilt als zu teuer und steht auf der Liste möglicher Schließungen (Abbau von Fixkosten, ggf. Verlagerung an günstigere Standorte); ein neues Modell zur Auslastung fehlt.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 29"
+    },
+    {
+      "id": "irw-0046",
+      "front": "Definieren Sie: Fixkosten, remanente Kosten, Nutzkosten, Leerkosten, variable Kosten, Beschäftigungsgrad, Kapazität. (Klausuraufgabe)",
+      "back": "- **Fixkosten**: ändern sich nicht mit der Leistungsmenge\n- **remanente Kosten**: bleiben bei rückläufiger Beschäftigung bestehen, weil Anpassungsmaßnahmen unterbleiben\n- **Nutzkosten**: Anteil der Fixkosten für die genutzte Kapazität ($K_f \\cdot$ Beschäftigungsgrad)\n- **Leerkosten**: Anteil der Fixkosten für die ungenutzte Kapazität\n- **variable Kosten**: ändern sich mit der Leistungsmenge\n- **Beschäftigungsgrad**: Ist-Leistungsmenge / Kapazität in %\n- **Kapazität**: größtmöglicher Ausstoß einer Produktionseinheit",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 31"
+    },
+    {
+      "id": "irw-0047",
+      "front": "Max. Kapazität 100.000 Stück, Beschäftigungsgrad 90 %, $K = 9.000 + 2x$. Berechnen Sie Gesamtkosten, $k_v$, $k_f$, $K'$, $k$ und Nutzkosten.",
+      "back": "$x = 0{,}9 \\cdot 100.000 = 90.000$\n\n- $K_v = 2 \\cdot 90.000 = 180.000$\n- **Gesamtkosten** $K = 9.000 + 180.000 = 189.000$\n- $k_v = 2$\n- $k_f = 9.000 / 90.000 = 0{,}10$\n- **Grenzkosten** $K' = 2$\n- $k = 189.000/90.000 = 2{,}10$\n- **Nutzkosten** $= 90\\,\\% \\cdot 9.000 = 8.100\\,€$ (Leerkosten 900 €)\n\nSkizze von $K$, $K'$, $k$: in der Klausur nur ganz grob.",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 32"
+    },
+    {
+      "id": "irw-0048",
+      "front": "Kostenfunktion $K = 750 + 25x$, Auslastung 10 Stück. Wie hoch sind Durchschnitts- und Grenzkosten?",
+      "back": "- $K(10) = 750 + 25 \\cdot 10 = 1.000$\n- **Durchschnittskosten** $k = 1.000 / 10 = 100$\n- **Grenzkosten** $K' = 25$",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 33"
+    },
+    {
+      "id": "irw-0049",
+      "front": "Drei Maschinen (max. 800 Stück): $K_1 = 1.200 + 1{,}5x$, $K_2 = 700 + 3{,}5x$, $K_3 = 100 + 4x$. Welche lohnt sich bei 25 % Auslastung?",
+      "back": "$x = 25\\,\\% \\cdot 800 = 200$\n\n- $K_1 = 1.200 + 300 = 1.500$\n- $K_2 = 700 + 700 = 1.400$\n- $K_3 = 100 + 800 = 900$\n\n→ **Maschine 3** anschaffen (geringste Kosten).\n\n(Zum Vergleich bei 600 Stück: 2.100 / 2.800 / 2.500 → dann Maschine 1.)",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 33"
+    },
+    {
+      "id": "irw-0050",
+      "front": "Maschine $K = 40.000 + 5x$, max. 20.000 Stück. Um wie viel % steigen die Stückkosten, wenn die Beschäftigung um 20 % sinkt?",
+      "back": "- Volle Auslastung: $K(20.000) = 140.000$ → $k = 7{,}00\\,€$/Stk.\n- −20 %: $x = 16.000$ → $K = 120.000$ → $k = 7{,}50\\,€$/Stk.\n\n$$\\frac{7{,}50}{7{,}00} = 1{,}0714$$\n\n→ Die Stückkosten steigen um **7,14 %** (Fixkostendegression wirkt umgekehrt).",
+      "topic": "Kostentheorie",
+      "source": "Skript Internes ReWe (Richter), Folie 33-34"
+    },
+    {
+      "id": "irw-0051",
+      "front": "Welche Aufgaben hat die **Kostenartenrechnung**?",
+      "back": "1. **Vollständige Erfassung und Gliederung** der in der Abrechnungsperiode angefallenen Kosten\n2. **Abgrenzung von Aufwendungen und Kosten**\n3. **Information und Kontrolle der Kostenartenstruktur** (Entwicklung im Zeitverlauf, Anteile am Gesamtvolumen)\n\nKein selbständiger Rechnungszweig, sondern geordnete Erfassung in Zusammenarbeit mit FiBu, Lohn-/Gehalts-, Material- und Anlagenrechnung.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 36"
+    },
+    {
+      "id": "irw-0052",
+      "front": "Wie werden Kostenarten nach der **Art der verbrauchten Kostengüter** eingeteilt?",
+      "back": "- **Personalkosten** (Löhne, Gehälter, Sozialkosten)\n- **Materialkosten** (Rohstoffe, bezogene Teile, Wasser, Energie, Brennstoffe)\n- **Fremdleistungskosten** (Fremdreparaturen, Transporte, Versicherungen, Mieten, Fremd-EDV …)\n- **öffentliche Abgaben** (Steuern, Gebühren, Zölle)\n- **Kapitalkosten** (Zinsen, Abschreibungen)",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 37"
+    },
+    {
+      "id": "irw-0053",
+      "front": "Nennen Sie Einteilungskriterien für Kostenarten.",
+      "back": "1. Art der verbrauchten Kostengüter (Personal, Material, …)\n2. **Funktionsbereiche** (Verwaltung, Fertigung, Vertrieb, Beschaffung, Sonstiges)\n3. Art der **Kostenerfassung** (aufwandsgleich / aufwandsungleich = kalkulatorisch)\n4. **Herkunft** der Kostengüter (primär / sekundär)\n5. Art der **Verrechnung** (Einzel-, Gemein-, unechte Gemeinkosten)\n6. Abhängigkeit von der **Leistungsmenge** (beschäftigungsabhängig / -unabhängig)\n7. **Ausgabewirksamkeit** (kurzfristig mit Ausgaben verbunden, z.B. Löhne / nicht, z.B. Abschreibungen)\n8. **Abbaufähigkeit** (kurzfristig abbaufähig, z.B. Material / nicht, z.B. Abschreibungen)",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 37-38"
+    },
+    {
+      "id": "irw-0054",
+      "front": "Was ist der Unterschied zwischen **primären** und **sekundären** Kosten?",
+      "back": "- **Primäre Kosten**: bewerteter Verbrauch von Kostengütern, die **von außen** (von den Beschaffungsmärkten) bezogen werden – z.B. Material, Fremdleistungen\n- **Sekundäre Kosten**: bewerteter Verbrauch von **innerbetrieblichen (selbst erstellten) Leistungen** – z.B. selbst erzeugter Strom, selbst durchgeführte Reparaturen. Sie werden den empfangenden Kostenstellen belastet und lassen sich wieder auf primäre Kosten zurückführen.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 39"
+    },
+    {
+      "id": "irw-0055",
+      "front": "Welche Kosten sollen in der Kostenartenrechnung erfasst werden?",
+      "back": "**Nur primäre Kosten.** Sekundäre Kosten entstehen erst in der **Kostenstellenrechnung** (innerbetriebliche Leistungsverrechnung).\n\nAuch Funktionsbereiche und Abhängigkeit von der Leistungsmenge (im Mehrproduktbetrieb) bekommen erst in der Kostenstelle konkreten Inhalt.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 42"
+    },
+    {
+      "id": "irw-0056",
+      "front": "Was sind **Einzelkosten**? Nennen Sie ein Beispiel.",
+      "back": "Einzelkosten lassen sich **direkt** auf das Zurechnungsobjekt verrechnen, weil ihre Entstehung auf **dieselbe Entscheidung** zurückgeht wie die Entstehung des Zurechnungsobjekts (fällt das Objekt weg, fallen auch diese Kosten weg).\n\nBeispiel: **Materialverbrauch**, direkt den erzeugten Produkten zurechenbar.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 40"
+    },
+    {
+      "id": "irw-0057",
+      "front": "Was sind **Sondereinzelkosten**? Nennen Sie Beispiele.",
+      "back": "Kosten, die sich einzelnen **Aufträgen** zurechnen lassen.\n\n- **Fertigung**: Modelle, Spezialwerkzeuge, Lizenzgebühren\n- **Vertrieb**: Verpackungsmaterial, Frachten",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 40"
+    },
+    {
+      "id": "irw-0058",
+      "front": "Was sind **Gemeinkosten**? Nennen Sie Beispiele.",
+      "back": "Gemeinkosten lassen sich **nicht direkt**, sondern nur **indirekt (über Schlüsselgrößen)** auf das Zurechnungsobjekt verrechnen, weil ihre Entstehung auf Entscheidungen zurückgeht, die auch andere Objekte betreffen (fällt das Objekt weg, fallen die Kosten nicht weg).\n\nBeispiele: Gehälter der Unternehmensleitung, kalkulatorische Zinsen → anteilige Aufteilung (z.B. Durchschnittsprinzip).",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 41"
+    },
+    {
+      "id": "irw-0059",
+      "front": "Was sind **unechte Gemeinkosten**? Nennen Sie Beispiele.",
+      "back": "Eigentlich **Einzelkosten**, die aus **Wirtschaftlichkeits-/Vereinfachungsgründen** wie Gemeinkosten behandelt (geschlüsselt) werden.\n\n- unechte **Stellen**-Gemeinkosten: Stromverbrauch einer Maschine (eigener Zähler wäre möglich, aber zu aufwendig → Verteilung nach installierter kW)\n- unechte **Träger**-Gemeinkosten: **Hilfsstoffe** (Schrauben, Nägel, Leim)",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 41"
+    },
+    {
+      "id": "irw-0060",
+      "front": "Warum gewinnen die Begriffe Einzel- und Gemeinkosten erst durch die Nennung des Zurechnungsobjekts Inhalt? Nennen Sie Beispiele.",
+      "back": "Zurechnungsobjekte (Kostenträger i.w.S.) sind nicht nur Produkte, sondern auch Aufträge, Kostenstellen, Absatzgebiete, Produkt-/Kundengruppen oder Zeitabschnitte. Dieselben Kosten können je nach Objekt Einzel- oder Gemeinkosten sein:\n\n- Erzeugniseinzel-/-gemeinkosten\n- Auftragseinzel-/-gemeinkosten\n- Kostenstelleneinzel-/-gemeinkosten\n- **Monatseinzelkosten** (z.B. Monatsmiete) / **Monatsgemeinkosten** (z.B. Grundsteuer, Gewerbesteuer, Kfz-Steuer)",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 41-42"
+    },
+    {
+      "id": "irw-0061",
+      "front": "Was ist ein **Kostenartenplan**?",
+      "back": "Er legt fest, welche Kostenarten ein Betrieb im Einzelnen unterscheidet – mit genauer **Bezeichnung** und **Kostenartennummer**. Zuordnungsvorschriften mit Regeln und Beispielen sichern die zweifelsfreie Zuordnung von Belegen zu Kostenarten.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 42"
+    },
+    {
+      "id": "irw-0062",
+      "front": "Welche primären Kostenarten sind hinsichtlich der Erfassung besonders bedeutend/problematisch?",
+      "back": "1. Stoffkosten\n2. Personalkosten\n3. Kostensteuern\n4. **Kalkulatorische Kosten** (Schwerpunkt, da aufwandsgleiche Kosten kaum Erfassungsprobleme machen)\n5. Instandhaltungskosten",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 43"
+    },
+    {
+      "id": "irw-0063",
+      "front": "Was sind **Stoffkosten** und wie unterscheiden sich Roh-, Hilfs- und Betriebsstoffe?",
+      "back": "**Stoffkosten** = bewertete Verbrauchsmengen an Roh-, Hilfs-, Betriebsstoffen, fremdbezogenen Fertigteilen und Handelswaren.\n\n- **Rohstoffe**: wesentlicher Bestandteil des Erzeugnisses (z.B. Tiefziehbleche der Karosserie)\n- **Hilfsstoffe**: unwesentlicher Bestandteil (z.B. Blechschrauben)\n- **Betriebsstoffe**: gehen nicht ins Produkt ein (z.B. Antriebsenergie → oft eigene Kostenart „Energie“)\n- **Fremdbezogene Fertigteile**: wesentlich oder unwesentlich (z.B. Lichtmaschine, Batterie, Reifen)",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 44"
+    },
+    {
+      "id": "irw-0064",
+      "front": "In welchen zwei Schritten werden Stoffkosten ermittelt, und wie werden die Verbrauchsmengen bewertet?",
+      "back": "1. **Verbrauchsmengen** feststellen\n2. Verbrauchsmengen **bewerten**\n\nBewertung zu **Istpreisen** (aus den Zahlungsvorgängen am Beschaffungsmarkt) oder zu **nicht pagatorischen Verrechnungspreisen** (in Anlehnung an Marktpreise, z.B. **Durchschnittspreis**).",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 44-45"
+    },
+    {
+      "id": "irw-0065",
+      "front": "Wie ermittelt man den Verbrauch bei der **Zugangsrechnung (Festwertrechnung)**? Nachteile?",
+      "back": "**Verbrauch = Zugang**\n\nNachteile:\n- fehlende Überprüfbarkeit der Annahme\n- keine Trennung von plan- und außerplanmäßigem Verbrauch\n- allenfalls für **geringwertiges Verbrauchsmaterial**",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 45"
+    },
+    {
+      "id": "irw-0066",
+      "front": "Wie ermittelt man den Verbrauch bei der **Inventurrechnung (Befundrechnung)**? Nachteile?",
+      "back": "**Verbrauch = Anfangsbestand + Zugang − Endbestand**\n\nNachteile:\n- monatliche Inventur nötig (Arbeitsaufwand)\n- keine Trennung von plan- und außerplanmäßigem Verbrauch\n- keine Ermittlung des Verbrauchs an den Orten der Kostenentstehung\n- nur bei weitgehendem Fehlen außerplanmäßigen Verbrauchs einsetzbar",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 45"
+    },
+    {
+      "id": "irw-0067",
+      "front": "Wie funktioniert die **Skontrationsrechnung (Fortschreibung)**? Bewertung?",
+      "back": "Erfassung der ordentlichen Lagerabgänge mit **Lagerentnahmescheinen**; Ermittlung des **Soll-Endbestands** mit der Lagerhaltungsformel.\n\nMonatliche Inventur → Vergleich Soll- und Ist-Endbestand sondert den **außerplanmäßigen Verbrauch** aus.\n\n→ **genaue, aber sehr aufwendige** Methode.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 45"
+    },
+    {
+      "id": "irw-0068",
+      "front": "Wie funktioniert die **retrograde Methode (Rückrechnung)**? Bewertung?",
+      "back": "Rekonstruktion des Materialverbrauchs anhand von **Stücklisten und Rezepturen** (Soll-Verbrauch) unter Berücksichtigung von Verschnitt und Ausschuss.\n\n- erfordert zusätzlich die Erfassung des tatsächlichen Verbrauchs (Inventur- oder Skontrationsmethode)\n- erlaubt eine **Wirtschaftlichkeitsvorgabe**\n- aufwendige, **controlling-orientierte** Methode",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 45"
+    },
+    {
+      "id": "irw-0069",
+      "front": "Was regelt § 240 Abs. 1 HGB zum Inventar, und was ist eine Inventur?",
+      "back": "Jeder Kaufmann muss **zu Beginn** seines Handelsgewerbes, **zum Schluss jedes Geschäftsjahres** und bei Geschäftsaufgabe ein **Inventar** aufstellen (Grundstücke, Forderungen, Schulden, Bargeld, sonstige Vermögensgegenstände mit Wert).\n\n**Inventur** = körperliche Bestandsaufnahme aller Vermögens- und Schuldenbestände (Art, Menge, Wert), mit der das Inventar erstellt wird – grundsätzlich zum Bilanzstichtag (i.d.R. 31.12.), nicht zwingend, aber **zeitnah**.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 46"
+    },
+    {
+      "id": "irw-0070",
+      "front": "Was sind **Personalkosten** und welche Hauptgruppen gibt es?",
+      "back": "Bewertete Güterverbräuche, die mittelbar und unmittelbar für den Einsatz menschlicher Arbeitskräfte (Betriebsangehörige) erforderlich sind. (Der kalk. Unternehmerlohn gehört auch dazu, wird aber bei den kalk. Kosten behandelt.)\n\nHauptgruppen:\n- **Löhne** (Produktion)\n- **Gehälter** (Büro)\n- gesetzliche Sozialkosten\n- tarifliche Sozialkosten\n- betriebliche (freiwillige) Sozialkosten\n- sonstige Personalkosten",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 47"
+    },
+    {
+      "id": "irw-0071",
+      "front": "Warum ist die Unterscheidung von Löhnen und Gehältern für die KLR relevant?",
+      "back": "Weil **Löhne** (Produktion) **Kostenträgereinzel- oder -gemeinkosten** sein können, während **Gehälter** (Büro) in der Regel **Kostenträgergemeinkosten** sind.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 47"
+    },
+    {
+      "id": "irw-0072",
+      "front": "Welche Lohnformen gibt es? Was ist Akkordlohn?",
+      "back": "- **Zeitlohn**\n- **Akkordlohn (Stücklohn)** = Bezahlung nach **verrichteter Arbeit**; berechnet als **Zeit-** oder **Geldakkord**\n- Mischformen, z.B. **Prämienlohn**",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 47"
+    },
+    {
+      "id": "irw-0073",
+      "front": "Was ist der Unterschied zwischen **Fertigungslöhnen** und **Hilfslöhnen**?",
+      "back": "- **Fertigungslöhne**: Löhne für Arbeiten, die **unmittelbar** der Herstellung des Enderzeugnisses dienen → direkte Zuordnung (zumindest der Akkordlöhne) auf die Erzeugnisse als **Einzelkosten**; Akkord- oder Zeitlohn\n- **Hilfslöhne**: Löhne für Arbeiten, die den Enderzeugnissen **nicht unmittelbar** zurechenbar sind, z.B. Betriebselektriker, -schlosser, Putzkräfte",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 48"
+    },
+    {
+      "id": "irw-0074",
+      "front": "Welche Arten von **Sozialkosten** werden unterschieden?",
+      "back": "- **gesetzliche**: Arbeitgeberanteile zur Sozialversicherung\n- **tarifliche**: Weihnachtsgeld, Urlaubsgeld\n- **primäre freiwillige**: direkte Zusatzleistungen, z.B. freiwillige Pensionszusagen, zinsgünstige Darlehen\n- **sekundäre freiwillige**: indirekte Nutzung ohne Ausschließlichkeit, z.B. Kantine, Werksarzt, Sport- und Freizeiteinrichtungen",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 48"
+    },
+    {
+      "id": "irw-0075",
+      "front": "Was zählt zu den **sonstigen Personalkosten**?",
+      "back": "Kosten für Stelleninserate, Vorstellungs-, Umzugs- und Abfindungskosten, Aus-, Fort- und Weiterbildung sowie Personalberatung und -auswahl.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 48"
+    },
+    {
+      "id": "irw-0076",
+      "front": "Vergleichen Sie Akkordlohn und Zeitlohn/Gehalt hinsichtlich Zurechenbarkeit, Abhängigkeit von der Leistungsmenge und Abbaubarkeit.",
+      "back": "**Akkordlohn:**\n- Zurechenbarkeit: durch Akkordschein → **Einzelkosten**\n- Leistungsmenge: **variabel**\n- Abbaubarkeit: nach gesetzlicher Kündigungsfrist\n\n**Zeitlohn & Gehalt:**\n- Zurechenbarkeit: durch Zeitlohnscheine o.ä. Einzelkosten, sonst **Gemeinkosten**\n- Leistungsmenge: **fix**\n- Abbaubarkeit: nach gesetzlicher oder vertraglicher Kündigungsfrist",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 49"
+    },
+    {
+      "id": "irw-0077",
+      "front": "Woraus setzen sich die **Arbeitskosten** zusammen, und sind hohe Arbeitskosten gleichbedeutend mit schlechter Wettbewerbsfähigkeit?",
+      "back": "Arbeitskosten = **Bruttoverdienste + Lohnnebenkosten** (u.a. Arbeitgeberbeiträge zur Sozialversicherung).\n\nNein: Hohe Arbeitskosten können z.B. durch eine **höhere Produktivität** ausgeglichen werden.\n\n(Spiegel 2018: DE 34,50 €/Std. 2017, EU-Platz 6; Industrie 40,20 €)",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 51"
+    },
+    {
+      "id": "irw-0078",
+      "front": "Welche Steuern haben unumstritten **Kostencharakter**?",
+      "back": "Grundsteuer, Kfz-Steuer, Versicherungsteuer, Wechselsteuer, (Vermögensteuer auf betriebsnotwendiges Vermögen von Kapitalgesellschaften – seit 1992 abgeschafft), spezielle Verbrauchsteuern (z.B. Mineralölsteuer) und Zölle.\n\nSind Verbrauchsteuern bereits im Preis der verbrauchten Güter enthalten, erfolgt **kein gesonderter Ausweis** als Kostenart.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 52"
+    },
+    {
+      "id": "irw-0079",
+      "front": "Warum sind Lohn- und Kirchensteuer sowie die Mehrwertsteuer **keine Kosten**?",
+      "back": "- **Lohn-/Kirchensteuer**: Der Betrieb ist nur „verlängerter Arm des Finanzamts“, Träger der Steuer ist der **Mitarbeiter**.\n- **Mehrwertsteuer**: nach h.M. **durchlaufender Posten** – die Zahllast (MwSt − Vorsteuer) wird voll vom **Kunden** finanziert.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 52"
+    },
+    {
+      "id": "irw-0080",
+      "front": "Haben gewinnabhängige Steuern (Einkommen-, Körperschaft-, Gewerbesteuer) Kostencharakter?",
+      "back": "**Umstritten.**\n- **Einkommen-/Körperschaftsteuer**: nach h.M. **keine Kosten**, da nicht leistungsbezogen (Gewinn ist keine Voraussetzung der Leistungserstellung). Gegenargument: Bei Gewinnerzielung ist die Steuerzahlung zwangsläufig.\n- **Gewerbesteuer**: in der Praxis als Kosten anerkannt; in der Theorie umstritten, soweit sie sich auf den gewinnabhängigen **Gewerbeertrag** bezieht.",
+      "topic": "Kostenartenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 52"
+    },
+    {
+      "id": "irw-0081",
+      "front": "Was sind **kalkulatorische Kosten**? Nennen Sie die fünf Arten.",
+      "back": "Bewertete Güterverbräuche, denen entweder **überhaupt keine Aufwendungen** entsprechen (kalk. Unternehmerlohn, kalk. Zinsen auf das Eigenkapital) oder deren Aufwandshöhe für die Kostenrechnung **ungeeignet** ist (kalk. Abschreibungen, kalk. Wagnisse, kalk. Zinsen auf das Fremdkapital).\n\n1. kalk. Abschreibungen\n2. kalk. Zinsen\n3. kalk. Wagnisse\n4. kalk. Unternehmerlohn\n5. sonstige kalk. Kosten",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 53"
+    },
+    {
+      "id": "irw-0082",
+      "front": "Was versteht man unter **kalkulatorischen Abschreibungen**, und warum weichen sie von den bilanziellen ab? (kommt 100 % dran)",
+      "back": "Kalkulatorische Abschreibungen = **Wertverzehr mehrperiodisch nutzbarer**, zur Leistungserstellung eingesetzter **abnutzbarer Betriebsmittel**.\n\nSie werden abweichend von den bilanziellen Abschreibungen ermittelt, weil das externe Rechnungswesen **andere Zwecke** verfolgt:\n- bilanziell: **vorsichtige Bewertung des Vermögens**\n- kalkulatorisch: **Ermittlung vergleichbarer Betriebsergebnisse**",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 55"
+    },
+    {
+      "id": "irw-0083",
+      "front": "Vergleichen Sie bilanzielle und kalkulatorische Abschreibung nach Basis, Verfahren und Dauer. (kommt 100 % dran)",
+      "back": "**Abschreibungsbasis:**\n- bilanziell: Anschaffungs-/Herstellungskosten\n- kalkulatorisch: Tageswerte, **Wiederbeschaffungswert**, AK/HK\n\n**Verfahren:**\n- bilanziell: nach handels- und steuerrechtlichen Vorgaben\n- kalkulatorisch: nach erwartetem **Nutzenverlauf** (häufig linear oder **leistungsabhängig**)\n\n**Dauer:**\n- bilanziell: konservative (kurze) Schätzung gemäß **AfA-Tabellen**\n- kalkulatorisch: **realistische** Schätzung der Nutzungsdauer",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 55"
+    },
+    {
+      "id": "irw-0084",
+      "front": "Worin unterscheiden sich kalkulatorische und bilanzielle Abschreibungen im **Abschreibungsgegenstand**? (kommt 100 % dran)",
+      "back": "- **Kalkulatorisch**: beschränkt auf den Werteverzehr der zur Leistungserstellung eingesetzten (**betriebsnotwendigen**) Betriebsmittel\n- **Bilanziell**: planmäßig/außerplanmäßig auf Anlage- und Umlaufvermögen, **egal ob betriebsnotwendig**; außerplanmäßig auch auf **nicht abnutzbare** Gegenstände (z.B. Grundstücke)",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 56"
+    },
+    {
+      "id": "irw-0085",
+      "front": "Welche **Zielsetzung** verfolgen bilanzielle bzw. kalkulatorische Abschreibungen? (kommt 100 % dran)",
+      "back": "- **Bilanziell**: Anschaffungs-/Herstellungsausgaben als Aufwand auf die Nutzungsjahre verteilen, damit sie über Umsätze zurückfließen → **nominale Kapitalerhaltung**. Höhe wird zusätzlich durch **bilanzpolitische** Gesichtspunkte beeinflusst (Gewinnausweis, stille Reserven, Steuerstundung …).\n- **Kalkulatorisch**: leistungsbedingten Wertverzehr **periodengerecht** erfassen, damit die Nutzungspotentiale aus Umsatzrückflüssen **wiederbeschafft** werden können → **reale Kapitalerhaltung (Substanzerhaltung)**.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 56"
+    },
+    {
+      "id": "irw-0086",
+      "front": "In welchen sechs Punkten unterscheiden sich bilanzielle und kalkulatorische Abschreibungen? (klausurrelevant)",
+      "back": "Abschreibungs…\n1. **-gegenstand** (nur betriebsnotwendige Betriebsmittel vs. alles)\n2. **-zielsetzung** (Substanzerhaltung vs. nominale Kapitalerhaltung)\n3. **-ausgangswert** (Wiederbeschaffungskosten vs. AK/HK)\n4. **-methode**\n5. **-dauer**\n6. **Überabschreibung** (kalkulatorisch wird abgeschrieben, solange das Betriebsmittel genutzt wird – auch über die WBK hinaus / unter null; bilanziell darf die Summe die AK/HK nicht überschreiten)",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 57"
+    },
+    {
+      "id": "irw-0087",
+      "front": "Was ist eine **Überabschreibung** (Unter-Null-Abschreibung) und warum ist sie kalkulatorisch zulässig?",
+      "back": "Kalkulatorisch werden Abschreibungen verrechnet, **solange das Betriebsmittel zur Leistungserstellung genutzt wird**, auch wenn die Wiederbeschaffungskosten dadurch überschritten werden.\n\nGrund: **Stetigkeit** der Kostenrechnung (vergleichbare Kosten je Periode).\n\nBilanziell darf die Summe der Abschreibungen die ursprünglichen AK/HK **nicht** überschreiten.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 57"
+    },
+    {
+      "id": "irw-0088",
+      "front": "Von welchen vier Faktoren hängt die Höhe der Abschreibung in einer Periode ab? (klausurrelevant)",
+      "back": "1. **Umfang und Abgrenzung des Abschreibungsobjekts** (z.B. Einzelgegenstände eines Bereichs wie ein Röntgenlabor als ein Objekt zusammenfassen – gilt nur für die kalk. Abschreibung)\n2. **Abschreibungsausgangswert** (Oberkategorie von Anschaffungs-/Wiederbeschaffungswert)\n3. **Abschreibungsdauer** (Nutzungsdauer)\n4. **Abschreibungsmethode**",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 58"
+    },
+    {
+      "id": "irw-0089",
+      "front": "Was ist das Abschreibungsobjekt und nach welchen Kriterien wird es abgegrenzt?",
+      "back": "Abschreibungsobjekt ist die **„Anlageeinheit“** – z.B. nicht nur das gekaufte Röntgengerät, sondern inkl. aller Kosten bis zur Betriebsbereitschaft (Strahlenschutz, Elektroinstallation, Sicherheitsprüfung, Abnahme) = handelsrechtlich **Anschaffungsnebenkosten**.\n\nAbgrenzungskriterien:\n1. **Marktüblichkeit** (selbständige Preisgestaltung)\n2. Zusammenfügung zu einer **produktionstechnischen Einheit**\n\n(steuerrechtlich: selbständige Bewertungs- und Nutzungsfähigkeit)",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 59"
+    },
+    {
+      "id": "irw-0090",
+      "front": "Warum ist die Abgrenzung der Anlageeinheit für die Behandlung von Ersatzteilen wichtig?",
+      "back": "Davon hängt ab, ob ein Ersatz **Anlagenunterhaltung** (Instandhaltung, Reparatur → Kosten der laufenden Periode) oder ein **zu aktivierender und abzuschreibender Anlagenzugang** ist.\n\nDie Praxis neigt aus Vorsichtsgründen dazu, die Anlageeinheit **weit** auszulegen und den Einbau von Anlageteilen als **Reparatur** zu behandeln.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 59"
+    },
+    {
+      "id": "irw-0091",
+      "front": "Mit welchem Wert wird das Abschreibungsobjekt in der KLR bewertet, und warum?",
+      "back": "Mit den **Wiederbeschaffungskosten** – zum Zweck der **Substanzerhaltung**.\n\nDa die WBK am tatsächlichen Wiederbeschaffungstag kaum schätzbar sind, nimmt man praktikabel den am Tag der Abschreibungsermittlung gültigen (fiktiven) **Wiederbeschaffungspreis** (z.B. aus Preislisten oder Preisindizes, etwa des VDMA).",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 60"
+    },
+    {
+      "id": "irw-0092",
+      "front": "Wie berechnet man die **Wiederbeschaffungskosten** mit Preisindizes?",
+      "back": "$$\\text{WBK} = \\text{Anschaffungskosten} \\cdot \\frac{\\text{Index Wiederbeschaffungsjahr}}{\\text{Index Anschaffungsjahr}}$$\n\n(Die Indexwerte werden in der Klausur gegeben.)",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 60"
+    },
+    {
+      "id": "irw-0093",
+      "front": "Wie ermittelt man den **Abschreibungsausgangswert** A?",
+      "back": "$$A = \\text{WBK} - V + Ab$$\n\n- $V$ = voraussichtliche Verkaufserlöse beim Ausscheiden\n- $Ab$ = Ausbaukosten\n\nMit dem **Restwert** $R = V - Ab$:\n$$A = \\text{WBK} - R$$\n\nSind V und Ab schwer schätzbar oder heben sich auf, verzichtet man auf ihren Ansatz.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 61"
+    },
+    {
+      "id": "irw-0094",
+      "front": "Was ist die **Abschreibung mit Nachholwirkung**, und wie wird in der Praxis gerechnet?",
+      "back": "Werden steigende WBK immer nur für die aktuelle Periode angesetzt, reicht die Summe der Abschreibungen am Ende nicht für die WBK (frühere Perioden zu niedrig abgeschrieben).\n\n**Mit Nachholwirkung**: Die Differenz zwischen WBK und bisheriger Abschreibungssumme wird auf die **Restnutzungsdauer** verteilt → kein Substanzverlust.\n\nPraxis: meist Abschreibung vom WBK **ohne Nachholwirkung**; die Lücke wird teils dadurch ausgeglichen, dass andere Objekte (z.B. EDV-Hardware) im Preis fallen.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 61"
+    },
+    {
+      "id": "irw-0095",
+      "front": "Welches Entscheidungsproblem stellt sich bei jeder Reparatur, und wie wird es gelöst?",
+      "back": "**Reparatur und Weiterbetrieb der alten Anlage** oder **keine Reparatur und Ersatz durch eine neue Anlage**?\n\n(Technisch lässt sich die Nutzungsdauer durch Reparatur fast unendlich verlängern – entscheidend ist die Wirtschaftlichkeit.)\n\nLösung: **Investitionskalküle** („optimaler Ersatzzeitpunkt“).",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 62"
+    },
+    {
+      "id": "irw-0096",
+      "front": "Wie wird die Nutzungsdauer festgelegt, und in welche Gruppen lassen sich Entwertungsursachen einteilen?",
+      "back": "Zu Beginn durch systematische Analyse der **Abschreibungsursachen**:\n- **verbrauchsbedingt**\n- **wirtschaftlich bedingt**\n- **zeitlich bedingt**\n\nIn der Praxis: festgelegte Nutzungsdauern für Gruppen (z.B. Pkw 5 J., Betriebsanlagen 10 J., Gebäude 25 J.), Verbandsempfehlungen oder betriebsgewöhnliche Nutzungsdauern des BMF.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 62"
+    },
+    {
+      "id": "irw-0097",
+      "front": "Was ist eine Über- bzw. Unterschätzung der Nutzungsdauer, und welche vier Fälle der Fehlschätzung gibt es?",
+      "back": "$n_e$ = ursprünglich geschätzte, $n_t$ = tatsächliche Nutzungsdauer\n- **Unterschätzung** (zu kurz): $n_e < n_t$\n- **Überschätzung** (zu lang): $n_e > n_t$\n\nFälle:\n1. Unterschätzung, erkannt **nach** Ablauf von $n_e$\n2. Unterschätzung, erkannt **vor** Ablauf von $n_e$\n3. Überschätzung, erkannt erst am **Ende von $n_t$**\n4. Überschätzung, erkannt **vor** Ende von $n_t$\n\n(Überschätzung, erkannt nach $n_e$: logisch nicht möglich)",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 62-63"
+    },
+    {
+      "id": "irw-0098",
+      "front": "Wie wird **Fall 1** der Nutzungsdauerfehlschätzung berichtigt? (Beispiel: A = 10.000 €, $n_e$ = 10, $n_t$ = 15, linear)",
+      "back": "Für die Perioden **nach Ende der ursprünglich geschätzten Nutzungsdauer** wird der Abschreibungsbetrag verrechnet, den man bei von Anfang an richtiger Schätzung hätte ansetzen müssen.\n\n$$\\frac{10.000\\,€}{15\\ \\text{Jahre}} = 666{,}67\\,€/\\text{Jahr}$$\n\n10 Jahre × 1.000 € + 5 Jahre × 666,67 € = 13.333,33 € → **Überabschreibung 3.333,33 €**.\n\n(wahrscheinlichster Fall bei vorsichtiger Schätzung)",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 64"
+    },
+    {
+      "id": "irw-0099",
+      "front": "Wie wird **Fall 2** der Nutzungsdauerfehlschätzung berichtigt? (Beispiel: A = 10.000 €, $n_e$ = 10, $n_t$ = 15, Fehler nach 7 Jahren erkannt)",
+      "back": "Ab dem **Erkenntniszeitpunkt** wird ebenfalls der Betrag angesetzt, der bei richtiger Schätzung angefallen wäre.\n\n- bereits abgeschrieben: 7 × 1.000 € = 7.000 €\n- Rest: $8 \\cdot \\frac{10.000\\,€}{15} = 5.333{,}33\\,€$\n- gesamt: **12.333,33 €** → Überabschreibung 2.333,33 €\n\nDie Überabschreibung ist umso **geringer**, je **eher** man die Fehlschätzung bemerkt.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 65"
+    },
+    {
+      "id": "irw-0100",
+      "front": "Wie werden **Fall 3** und **Fall 4** der Nutzungsdauerfehlschätzung behandelt?",
+      "back": "- **Fall 3** (Überschätzung, erst am Ende von $n_t$ erkannt): **keine Berichtigungsmöglichkeit** → **Unterabschreibung**, umso größer, je früher das tatsächliche Ende eintritt.\n- **Fall 4** (Überschätzung, vorher erkannt): Der im Erkenntniszeitpunkt vorhandene kalkulatorische **Restwert wird auf die Folgeperioden verteilt** → Unterabschreibung wird vermieden, Substanz (bedingt) erhalten.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 65"
+    },
+    {
+      "id": "irw-0101",
+      "front": "Was ist das **Abschreibungswagnis**?",
+      "back": "Vorschlag, Über- und Unterabschreibungen **kostenneutral** zu verbuchen und stattdessen gleichmäßige Raten als Abschreibungswagnis (Teil des **Anlagewagnisses**) zu verrechnen. Dann könnte auch Fall 4 wie Fall 1 und 2 behandelt werden.\n\nIn der Praxis aus Vereinfachungsgründen **selten** verwendet und theoretisch umstritten.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 65"
+    },
+    {
+      "id": "irw-0102",
+      "front": "Welche Abschreibungsmethoden kommen in Frage?",
+      "back": "**Nach Maßgabe der Zeit:**\n- mit **konstanten** Beträgen (**lineare** Abschreibung)\n- mit **fallenden** Beträgen (**degressive** Abschreibung)\n  - arithmetisch fallend (**digitale** Abschreibung)\n  - geometrisch fallend (vom **Restbuchwert**)\n- mit **steigenden** Beträgen (**progressive** Abschreibung)\n  - arithmetisch steigend\n  - geometrisch steigend\n\n**Nach Maßgabe der Inanspruchnahme** (**Leistungsabschreibung**)",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 66"
+    },
+    {
+      "id": "irw-0103",
+      "front": "Welche Symbole werden bei den Abschreibungsformeln verwendet?",
+      "back": "- $A$ = Abschreibungsausgangswert\n- $a_t$ = Abschreibungsbetrag der Periode $t$\n- $t$ = Ziffer der Periode\n- $n$ = Nutzungsdauer in Perioden (vereinfachend Jahre)\n- $R_t$ = Restwert (Restbuchwert) am Ende der Periode $t$\n- $p$ = Abschreibungsprozentsatz\n- $R_n$ = Restwert am Ende der Nutzungsdauer",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 67"
+    },
+    {
+      "id": "irw-0104",
+      "front": "Formel und Beispiel der **linearen** Abschreibung (A = 10.000, n = 4)?",
+      "back": "$$a_t = \\frac{A}{n}$$\n\n$a_t = 10.000 / 4 = 2.500$ pro Jahr\n\n$R_t$: 7.500 → 5.000 → 2.500 → 0",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 68"
+    },
+    {
+      "id": "irw-0105",
+      "front": "Formel und Beispiel der **arithmetisch-fallenden (digitalen)** Abschreibung (A = 10.000, n = 4)?",
+      "back": "$$a_t = \\frac{2A}{n(n+1)} \\cdot (n + 1 - t)$$\n\n$\\frac{2 \\cdot 10.000}{4 \\cdot 5} = 1.000$\n\n- Jahr 1: 1.000 × 4 = 4.000 → $R_1$ = 6.000\n- Jahr 2: 1.000 × 3 = 3.000 → $R_2$ = 3.000\n- Jahr 3: 1.000 × 2 = 2.000 → $R_3$ = 1.000\n- Jahr 4: 1.000 × 1 = 1.000 → $R_4$ = 0",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 69"
+    },
+    {
+      "id": "irw-0106",
+      "front": "Formel und Beispiel der **geometrisch-fallenden** Abschreibung (A = 10.000, p = 25 %, n = 4)?",
+      "back": "Abschreibung vom **Restbuchwert** mit konstantem Prozentsatz:\n$$a_t = R_{t-1} \\cdot \\frac{p}{100}$$\n\n- Jahr 1: 0,25 · 10.000 = 2.500 → 7.500\n- Jahr 2: 0,25 · 7.500 = 1.875 → 5.625\n- Jahr 3: 0,25 · 5.625 = 1.406 → 4.219\n- Jahr 4: 0,25 · 4.219 = 1.055 → **3.164** (Restwert bleibt!)\n\nProzentsatz für gewünschten Restwert: $p = 100 \\left(1 - \\sqrt[n]{\\frac{R_n}{A}}\\right)$",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 70"
+    },
+    {
+      "id": "irw-0107",
+      "front": "Formel und Beispiel der **arithmetisch-steigenden** Abschreibung (A = 10.000, n = 4)?",
+      "back": "$$a_t = \\frac{2A}{n(n+1)} \\cdot t$$\n\n- Jahr 1: 1.000 × 1 = 1.000 → $R_1$ = 9.000\n- Jahr 2: 1.000 × 2 = 2.000 → $R_2$ = 7.000\n- Jahr 3: 1.000 × 3 = 3.000 → $R_3$ = 4.000\n- Jahr 4: 1.000 × 4 = 4.000 → $R_4$ = 0",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 71"
+    },
+    {
+      "id": "irw-0108",
+      "front": "Wie funktioniert die **geometrisch-steigende** Abschreibung?",
+      "back": "Die Abschreibungsbeträge steigen in jedem Jahr; es werden die Beträge der **geometrisch-degressiven** Methode in **umgekehrter Reihenfolge** verrechnet.\n\nBeispiel (A = 10.000, n = 4): 1.055 → 1.406 → 1.875 → 2.500; Restwert 3.164.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 72"
+    },
+    {
+      "id": "irw-0109",
+      "front": "Wie berechnet man die **Leistungsabschreibung** (nach Maßgabe der Inanspruchnahme)? Beispiel Pkw.",
+      "back": "$$a_t = \\frac{A}{L} \\cdot L_t$$\n$L$ = geschätzte Gesamtleistungsmenge, $L_t$ = Leistungsmenge der Periode\n\nBeispiel: Pkw, 200.000 km Gesamtleistung, WBK 50.000 €, im Monat 2.000 km:\n$$a_t = \\frac{50.000\\,€}{200.000\\ \\text{km}} \\cdot 2.000\\ \\text{km} = 500\\,€$$",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 73"
+    },
+    {
+      "id": "irw-0110",
+      "front": "Was ist der wesentliche Unterschied der leistungsbezogenen Abschreibung gegenüber der Abschreibung nach Maßgabe der Zeit?",
+      "back": "- **Leistungsabschreibung** variiert mit der Inanspruchnahme → **variable (proportionale) Kosten**\n- **Zeitabschreibung** ist unabhängig von der Leistungsmenge → **fixe Kosten**\n\nBei periodisch gleichbleibenden Leistungsmengen macht die Leistungsabschreibung keinen Sinn.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 73"
+    },
+    {
+      "id": "irw-0111",
+      "front": "Welche Argumente sprechen für degressive bzw. lineare Abschreibung, und welche Methode setzt sich in der Praxis durch?",
+      "back": "- Grundsätzlich: Methode, die dem **vermuteten Entwertungsverlauf** am besten entspricht; **steigende** Beträge sind selten anwendbar.\n- **Fallende** Beträge: Vorsichtsprinzip (Risiko durch technischen Fortschritt früh berücksichtigt) + mit steigenden Instandhaltungskosten gleichmäßige Gesamtbelastung.\n- **Konstante** Beträge: rechnerisch einfach, Stetigkeit/Vergleichbarkeit; Nutzungsdauer bestimmt das Entwertungsrisiko.\n\n→ In der Praxis hat sich die **lineare Abschreibung** weitgehend durchgesetzt. Leistungsabschreibung nur bei quantifizierbarem Nutzungsvorrat (Abbaugrundstücke, Kfz, Maschinen), wegen Aufwand eher selten.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 74"
+    },
+    {
+      "id": "irw-0112",
+      "front": "Was ist eine **gebrochene Abschreibung**, und warum wird die lineare ungebrochene Abschreibung bevorzugt?",
+      "back": "**Gebrochene Abschreibung**: Abschreibung teils **variabel**, teils **fix** – denn z.B. **Gebrauchsverschleiß** führt zu variablen, **technischer Fortschritt** zu fixen Kosten.\n\nKritik: Die Abschreibungsursachen wirken **simultan** und lassen sich nicht aufteilen. Wegen der Dominanz zeitabhängiger Entwertungsursachen ist die **lineare ungebrochene** Abschreibung vorzuziehen.",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 75"
+    },
+    {
+      "id": "irw-0113",
+      "front": "Maschine 24.000 €, leistungsbezogene Abschreibung, Kapazität 1.000.000 Stück; Jahre 1–3 je 150.000 Stück, ab Jahr 4 je 50.000. Buchwert Ende Jahr 2 und Ende Jahr 6?",
+      "back": "Abschreibung je Stück: $24.000 / 1.000.000 = 0{,}024\\,€$\n\n**a) Ende Jahr 2:** 300.000 Stück → 7.200 € → Buchwert **16.800 €**\n\n**b) Ende Jahr 6:** 3 · 150.000 + 3 · 50.000 = 600.000 Stück → 14.400 € → Buchwert **9.600 €**",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 76"
+    },
+    {
+      "id": "irw-0114",
+      "front": "Maschine 24.000 €, leistungsbezogen, Kapazität 1.000.000 Stück; Jahre 1–3 je 150.000, danach 50.000/Jahr. Buchwert Ende Jahr 8 bei Restwert 2.000 €?",
+      "back": "$A = 24.000 - 2.000 = 22.000\\,€$\n\nMenge bis Ende Jahr 8: 450.000 + 5 · 50.000 = 700.000 Stück\n\n$$\\frac{22.000\\,€}{1.000.000} \\cdot 700.000 = 15.400\\,€$$\n\nBuchwert: $24.000 - 15.400 =$ **8.600 €**",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 76"
+    },
+    {
+      "id": "irw-0115",
+      "front": "Maschine: AK 150.000 € (2014, Index 125), WBK-Index 175 (2024), n = 10, Restwert 10.000 €. 60 % zeitlich-linear, 40 % nach Inanspruchnahme (800.000 Stück). Wie heißt die Form, und wie hoch ist der Restbuchwert nach 6 Jahren bei 525.000 Stück?",
+      "back": "**a)** **Gebrochene Abschreibung**\n\n**b)** WBK $= 150.000 \\cdot \\frac{175}{125} = 210.000$; $A = 210.000 - 10.000 = 200.000$\n- Zeitanteil (60 %): $120.000 / 10 = 12.000$/Jahr → 6 Jahre = 72.000\n- Leistungsanteil (40 %): $80.000 / 800.000 = 0{,}10$/Stk. → 525.000 · 0,10 = 52.500\n- Summe: 124.500\n\nRestbuchwert: $210.000 - 124.500 =$ **85.500 €** (davon 10.000 € Restwert)",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 77"
+    },
+    {
+      "id": "irw-0116",
+      "front": "Maschine 60.000 €, 10 Jahre nutzbar. Abschreibungsprozentsatz (linear), jährlicher Betrag und Betrag bei 20 % höherem Wiederbeschaffungspreis?",
+      "back": "- **Prozentsatz**: $100\\,\\% / 10 = 10\\,\\%$\n- **jährlicher Betrag**: $60.000 / 10 = 6.000\\,€$\n- **bei WBK +20 %**: $72.000 / 10 = 7.200\\,€$ (kalkulatorisch vom Wiederbeschaffungswert)",
+      "topic": "Kalkulatorische Abschreibungen",
+      "source": "Skript Internes ReWe (Richter), Folie 77"
+    },
+    {
+      "id": "irw-0117",
+      "front": "Was sind **kalkulatorische Zinsen**?",
+      "back": "Die in der Kostenrechnung anzusetzenden Zinsen auf das **Eigen- und Fremdkapital**, das in Vermögensgegenständen investiert ist, die während der Abrechnungsperiode **zur Leistungserstellung eingesetzt** sind.\n\nEigen- und Fremdkapital werden mit einem **einheitlichen Zinssatz** verzinst – unabhängig von den tatsächlich gezahlten Fremdkapitalzinsen.",
+      "topic": "Kalkulatorische Zinsen",
+      "source": "Skript Internes ReWe (Richter), Folie 78"
+    },
+    {
+      "id": "irw-0118",
+      "front": "Wie werden kalkulatorische Zinsen begründet, und wonach richtet sich der Zinssatz?",
+      "back": "**Opportunitätskosten**: Durch den Einsatz des Kapitals im Unternehmen entgeht die bei **anderweitiger Kapitalverwendung** erzielbare Verzinsung. Diese Mindestverzinsung muss das Unternehmen erzielen, erst darüber entsteht ein Gewinn.\n\nRichtschnur: Effektivverzinsung einer relativ **risikolosen, langfristigen Anlage am Kapitalmarkt** (z.B. Pfandbriefe, Kommunalobligationen).\n\nZudem gleichen sie bei **Betriebsvergleichen** Unterschiede in der Finanzstruktur aus.",
+      "topic": "Kalkulatorische Zinsen",
+      "source": "Skript Internes ReWe (Richter), Folie 78"
+    },
+    {
+      "id": "irw-0119",
+      "front": "Wovon geht man bei der Bestimmung der Höhe der kalkulatorischen Zinsen aus, und warum?",
+      "back": "Von den **konkreten Vermögensgegenständen**, in denen das Kapital investiert ist.\n\nDas abstrakte Kapital lässt nicht erkennen, ob es zur Leistungserstellung eingesetzt ist – das ist nur bei den Vermögensgegenständen möglich (→ **betriebsnotwendiges Vermögen**).",
+      "topic": "Kalkulatorische Zinsen",
+      "source": "Skript Internes ReWe (Richter), Folie 78"
+    }
+  ]
 }
