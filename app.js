@@ -1068,6 +1068,38 @@ document.addEventListener('visibilitychange', () => {
   else syncAndRefresh();
 });
 
+// ---------- Neue Version erkennen ----------
+// Eine installierte App wird beim Zurückwechseln nicht neu geladen. Deshalb prüfen, ob sich App-Dateien
+// oder Karten geändert haben, und dann neu laden (nicht mitten in einer Lernrunde).
+
+const VERSION_CHECK_INTERVAL = 2 * 60 * 1000;
+let loadedVersion = null;
+let lastVersionCheck = 0;
+
+async function currentVersion() {
+  const files = ['index.html', 'app.js', 'config.js', 'style.css', 'decks/index.json', ...DECKS.map((d) => `decks/${d.id}.json`)];
+  const texts = await Promise.all(files.map((f) => fetch(f, { cache: 'no-cache' }).then((r) => (r.ok ? r.text() : ''))));
+  let h = 5381; // djb2
+  for (const t of texts) for (let i = 0; i < t.length; i++) h = ((h * 33) ^ t.charCodeAt(i)) >>> 0;
+  return h;
+}
+
+async function checkForUpdate() {
+  if (loadedVersion === null || Date.now() - lastVersionCheck < VERSION_CHECK_INTERVAL) return;
+  if (location.hash.startsWith('#/lernen/')) return;
+  lastVersionCheck = Date.now();
+  try {
+    if ((await currentVersion()) !== loadedVersion) {
+      if (syncTimer) await runSync();
+      location.reload();
+    }
+  } catch { /* offline: nichts tun */ }
+}
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') checkForUpdate();
+});
+
 // ---------- Router ----------
 
 function route() {
@@ -1088,7 +1120,12 @@ window.addEventListener('hashchange', route);
 renderUserBadge();
 
 loadDecks()
-  .then(() => { route(); syncAndRefresh(); })
+  .then(() => {
+    route();
+    syncAndRefresh();
+    lastVersionCheck = Date.now();
+    currentVersion().then((v) => { loadedVersion = v; }).catch(() => {});
+  })
   .catch((e) => {
     app.innerHTML = `<div class="panel"><p><b>Karten konnten nicht geladen werden.</b></p>
       <p class="small muted">${esc(e.message)}</p>
