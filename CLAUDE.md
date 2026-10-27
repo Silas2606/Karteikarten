@@ -1,6 +1,6 @@
 # Karteikarten – Anleitung für Claude
 
-Dieses Repo ist eine statische Lern-App (`index.html`, `app.js`, `style.css`). Die Karten liegen als JSON in `decks/`, der Lernfortschritt im Browser (localStorage) – Claude ändert nur die Karten.
+Dieses Repo ist eine statische Lern-App (`index.html`, `app.js`, `style.css`). Die Karten liegen als JSON in `decks/`, der Lernfortschritt im Browser (localStorage) und – mit Logins (`config.js` + `supabase/setup.sql`) – pro Person in Supabase. Logins legt der Nutzer selbst in Supabase an (siehe README); Claude hat keinen Zugriff auf die Datenbank. Beim Kartenerstellen ändert Claude nur die Karten.
 
 ## Pull Requests
 

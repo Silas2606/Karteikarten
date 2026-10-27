@@ -3,6 +3,8 @@
 // ---------- Konstanten & Speicher ----------
 
 const STORAGE_KEY = 'karteikarten-progress-v1';
+const SESSION_KEY = 'karteikarten-session';
+const MIGRATED_KEY = 'karteikarten-progress-v1-uebernommen';
 const DAY = 24 * 60 * 60 * 1000;
 
 const app = document.getElementById('app');
@@ -13,9 +15,59 @@ function defaultProgress() {
   return { version: 1, cards: {}, log: {}, otherLogs: {}, newIntroduced: {}, settings: { updatedAt: 0 } };
 }
 
-function loadProgress() {
+// ---------- Logins (Supabase) ----------
+// Mit config.js (Supabase-URL + öffentlicher Schlüssel) braucht jede Person einen Login-Code,
+// den der Admin in der Datenbank anlegt. Der Fortschritt liegt dann pro Login auf dem Server
+// (Cache pro Login im Browser). Ohne config.js läuft die App ohne Login.
+
+const CONFIG = window.KK_CONFIG || {};
+const ACCOUNTS = !!(CONFIG.supabaseUrl && CONFIG.supabaseKey);
+
+function loadSession() {
+  try { return JSON.parse(localStorage.getItem(SESSION_KEY)); } catch { return null; }
+}
+
+let session = ACCOUNTS ? loadSession() : null; // { code, name }
+
+function setSession(s) {
+  session = s;
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
+    if (s) localStorage.setItem(SESSION_KEY, JSON.stringify(s));
+    else localStorage.removeItem(SESSION_KEY);
+  } catch (e) { console.warn(e); }
+  renderUserBadge();
+}
+
+function normalizeCode(code) { return String(code || '').trim().toLowerCase(); }
+
+function progressKey() { return session ? `${STORAGE_KEY}:${session.code}` : STORAGE_KEY; }
+
+async function rpc(fn, args) {
+  const headers = { 'Content-Type': 'application/json', apikey: CONFIG.supabaseKey };
+  // Ältere "anon"-Schlüssel sind JWTs und gehören zusätzlich in den Authorization-Header
+  if (!CONFIG.supabaseKey.startsWith('sb_')) headers.Authorization = `Bearer ${CONFIG.supabaseKey}`;
+  let res;
+  try {
+    res = await fetch(`${CONFIG.supabaseUrl.replace(/\/+$/, '')}/rest/v1/rpc/${fn}`, {
+      method: 'POST', headers, body: JSON.stringify(args), cache: 'no-store',
+    });
+  } catch {
+    throw new Error('Keine Verbindung zum Server');
+  }
+  if (!res.ok) throw new Error(`Server antwortet mit HTTP ${res.status}`);
+  return res.json();
+}
+
+function renderUserBadge() {
+  const el = document.getElementById('user-badge');
+  if (!el) return;
+  el.hidden = !session;
+  el.textContent = session ? `👤 ${session.name}` : '';
+}
+
+function loadProgress(key = progressKey()) {
+  try {
+    const raw = localStorage.getItem(key);
     if (!raw) return defaultProgress();
     const p = JSON.parse(raw);
     const d = defaultProgress();
@@ -30,7 +82,7 @@ let progress = loadProgress();
 
 function saveProgress() {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    localStorage.setItem(progressKey(), JSON.stringify(progress));
   } catch (e) {
     console.warn('Fortschritt konnte nicht gespeichert werden', e);
   }
@@ -563,10 +615,20 @@ function deletedCards() {
 }
 
 function viewSettings() {
-  const sync = syncConfig();
+  const sync = !!syncTarget();
   app.innerHTML = `
     <h1>Einstellungen</h1>
 
+    ${ACCOUNTS ? `
+    <h2>Konto</h2>
+    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+      <p style="margin:0">Angemeldet als <b>${esc(session.name)}</b>. Dein Fortschritt wird automatisch gespeichert und ist auf jedem Gerät verfügbar, auf dem du dich anmeldest.</p>
+      <p class="small muted" style="margin:0" id="syncInfo">${esc(syncStatusText())}</p>
+      <div class="toolbar" style="margin:0">
+        <button class="primary" id="syncNow">Jetzt synchronisieren</button>
+        <button id="logout">Abmelden</button>
+      </div>
+    </div>` : `
     <h2>Synchronisierung zwischen Geräten</h2>
     <div class="panel" style="display:flex;flex-direction:column;gap:12px">
       ${sync ? `
@@ -586,7 +648,7 @@ function viewSettings() {
             style="flex:1;min-width:200px;font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text)">
           <button class="primary" id="syncOn">Verbinden</button>
         </div>`}
-    </div>
+    </div>`}
 
     <h2>Gelöschte Karten</h2>
     <div class="panel" style="display:flex;flex-direction:column;gap:10px">
@@ -599,7 +661,7 @@ function viewSettings() {
 
     <h2>Sicherung</h2>
     <div class="panel" style="display:flex;flex-direction:column;gap:12px">
-      <p class="small muted" style="margin:0">Fortschritt als Datei sichern oder wiederherstellen.${sync ? ' Import und Zurücksetzen gelten wegen der Synchronisierung für alle Geräte.' : ''}</p>
+      <p class="small muted" style="margin:0">Fortschritt${ACCOUNTS ? ' deines Logins' : ''} als Datei sichern oder wiederherstellen.${sync ? ' Import und Zurücksetzen gelten wegen der Synchronisierung für alle Geräte.' : ''}</p>
       <div class="toolbar" style="margin:0">
         <button id="export">Fortschritt exportieren</button>
         <label class="btn">Fortschritt importieren<input type="file" id="import" accept="application/json" hidden></label>
@@ -637,6 +699,7 @@ function viewSettings() {
     const info = app.querySelector('#syncInfo');
     if (info) info.textContent = syncStatusText();
   });
+  app.querySelector('#logout')?.addEventListener('click', logout);
   app.querySelector('#syncOff')?.addEventListener('click', () => {
     if (!confirm('Sync auf diesem Gerät beenden? Der Fortschritt bleibt hier und im Gist erhalten.')) return;
     setSyncConfig(null);
@@ -659,19 +722,116 @@ function viewSettings() {
       if (!data.cards || !data.log) throw new Error('Unbekanntes Format');
       progress = { ...defaultProgress(), ...data };
       saveProgress();
-      if (syncConfig()) await runSync({ overwrite: true });
+      if (syncTarget()) await runSync({ overwrite: true });
       say('Fortschritt importiert.');
     } catch (err) {
       say(`Import fehlgeschlagen: ${err.message}`);
     }
   });
   app.querySelector('#reset').addEventListener('click', async () => {
-    if (!confirm(`Wirklich den gesamten Lernfortschritt löschen?${syncConfig() ? ' Das gilt für alle synchronisierten Geräte.' : ''}`)) return;
+    if (!confirm(`Wirklich den gesamten Lernfortschritt löschen?${syncTarget() ? ' Das gilt für alle synchronisierten Geräte.' : ''}`)) return;
     progress = defaultProgress();
     saveProgress();
-    if (syncConfig()) await runSync({ overwrite: true });
+    if (syncTarget()) await runSync({ overwrite: true });
     say('Fortschritt zurückgesetzt.');
   });
+}
+
+function hasProgress(p) {
+  return ['cards', 'log', 'logs'].some((k) => Object.keys(p[k] || {}).length > 0);
+}
+
+function viewLogin() {
+  app.innerHTML = `
+    <div class="panel login">
+      <h1>Anmelden</h1>
+      <p class="muted small" style="margin:0">Gib deinen Login-Code ein. Zugänge vergibt der Admin.</p>
+      <form id="loginForm" class="toolbar" style="margin:0">
+        <input id="code" class="text-input" placeholder="Login-Code" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+        <button class="primary">Anmelden</button>
+      </form>
+      <p class="small" id="loginMsg" style="margin:0"></p>
+    </div>`;
+  const msg = app.querySelector('#loginMsg');
+  const input = app.querySelector('#code');
+  input.focus();
+  app.querySelector('#loginForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const code = normalizeCode(input.value);
+    if (!code) return;
+    msg.textContent = 'Prüfe …';
+    msg.style.color = '';
+    try {
+      const account = await rpc('kk_login', { p_code: code });
+      if (!account) {
+        msg.textContent = 'Unbekannter Login-Code.';
+        msg.style.color = 'var(--again)';
+        return;
+      }
+      await completeLogin(code, account);
+    } catch (err) {
+      msg.textContent = `Anmeldung fehlgeschlagen: ${err.message}`;
+      msg.style.color = 'var(--again)';
+    }
+  });
+}
+
+async function completeLogin(code, account) {
+  setSession({ code, name: account.name });
+  progress = loadProgress();
+  const legacy = loadProgress(STORAGE_KEY);
+  let alreadyMigrated = false;
+  try { alreadyMigrated = !!localStorage.getItem(MIGRATED_KEY); } catch { /* ignorieren */ }
+  // Fortschritt aus der Zeit ohne Login anbieten – nur für Konten, die noch leer sind
+  if (!alreadyMigrated && hasProgress(legacy) && !hasProgress(account.progress || {}) && !hasProgress(progress)) {
+    const take = await askMigration(account.name, Object.keys(legacy.cards).length);
+    if (take) await migrateLegacy(legacy);
+  }
+  await runSync();
+  location.hash = '#/';
+  route();
+}
+
+function askMigration(name, count) {
+  return new Promise((resolve) => {
+    app.innerHTML = `
+      <div class="panel login">
+        <h1>Bisherigen Fortschritt übernehmen?</h1>
+        <p style="margin:0">Auf diesem Gerät gibt es Fortschritt aus der Zeit ohne Login (${count} Karten bearbeitet).</p>
+        <p class="small muted" style="margin:0">Übernimm ihn nur, wenn es <b>deiner</b> ist – er wird dann dem Login <b>${esc(name)}</b> zugeordnet.</p>
+        <div class="toolbar" style="margin:0">
+          <button class="primary" id="take">Übernehmen</button>
+          <button id="skip">Nicht übernehmen</button>
+        </div>
+      </div>`;
+    app.querySelector('#take').addEventListener('click', () => resolve(true));
+    app.querySelector('#skip').addEventListener('click', () => resolve(false));
+  });
+}
+
+async function migrateLegacy(legacy) {
+  let merged = legacy;
+  // War die Gist-Synchronisierung aktiv, auch den Stand der anderen Geräte mitnehmen
+  const cfg = syncConfig();
+  if (cfg) {
+    try {
+      const remote = await readGist(cfg.token, cfg.gistId);
+      if (remote) merged = mergeRemote(legacy, remote);
+    } catch (e) {
+      console.warn('Gist konnte nicht gelesen werden', e);
+    }
+  }
+  progress = { ...defaultProgress(), ...merged };
+  saveProgress();
+  try { localStorage.setItem(MIGRATED_KEY, session.code); } catch { /* ignorieren */ }
+}
+
+async function logout() {
+  if (syncTimer) await runSync();
+  setSession(null);
+  progress = loadProgress();
+  renderSyncBadge();
+  route();
 }
 
 function viewNotFound() {
@@ -810,10 +970,38 @@ async function connectSync(token) {
   if (syncState.error) throw new Error(syncState.error);
 }
 
+// Wohin synchronisiert wird: mit Logins auf den Server (pro Login), sonst in den Gist
+function syncTarget() {
+  if (ACCOUNTS) {
+    if (!session) return null;
+    const code = session.code;
+    return {
+      read: async () => {
+        const account = await rpc('kk_login', { p_code: code });
+        if (!account) throw Object.assign(new Error('Login existiert nicht mehr'), { noAccount: true });
+        return hasProgress(account.progress || {}) ? account.progress : null;
+      },
+      write: async (data) => {
+        const ok = await rpc('kk_save', { p_code: code, p_progress: data });
+        if (!ok) throw Object.assign(new Error('Login existiert nicht mehr'), { noAccount: true });
+      },
+    };
+  }
+  const cfg = syncConfig();
+  if (!cfg) return null;
+  return {
+    read: () => readGist(cfg.token, cfg.gistId),
+    write: (data) => gh(cfg.token, `/gists/${cfg.gistId}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ files: { [GIST_FILE]: { content: JSON.stringify(data) } } }),
+    }),
+  };
+}
+
 // overwrite: lokalen Stand ohne Zusammenführen hochladen (nach Import/Zurücksetzen)
 function runSync({ overwrite = false } = {}) {
-  const cfg = syncConfig();
-  if (!cfg) return Promise.resolve(false);
+  const target = syncTarget();
+  if (!target) return Promise.resolve(false);
   if (syncState.running) return syncState.running.then(() => runSync({ overwrite }));
   clearTimeout(syncTimer);
   syncTimer = null;
@@ -822,22 +1010,21 @@ function runSync({ overwrite = false } = {}) {
     const before = JSON.stringify(progress);
     try {
       if (!overwrite) {
-        const remote = await readGist(cfg.token, cfg.gistId);
+        const remote = await target.read();
         if (remote) progress = mergeRemote(progress, remote);
       } else {
         progress.otherLogs = {};
         progress.epoch = Date.now();
       }
       saveProgress();
-      await gh(cfg.token, `/gists/${cfg.gistId}`, {
-        method: 'PATCH',
-        body: JSON.stringify({ files: { [GIST_FILE]: { content: JSON.stringify(toRemote(progress)) } } }),
-      });
+      await target.write(toRemote(progress));
       syncState.last = Date.now();
       syncState.error = '';
     } catch (e) {
       console.warn('Sync fehlgeschlagen', e);
       syncState.error = e.message;
+      // Der Admin hat den Login entfernt: abmelden
+      if (e.noAccount) setTimeout(() => { setSession(null); route(); });
     } finally {
       syncState.running = null;
       renderSyncBadge();
@@ -849,7 +1036,7 @@ function runSync({ overwrite = false } = {}) {
 
 // nach dem Lernen gebündelt synchronisieren statt nach jeder Karte
 function scheduleSync() {
-  if (!syncConfig()) return;
+  if (!syncTarget()) return;
   clearTimeout(syncTimer);
   syncTimer = setTimeout(runSync, 5000);
 }
@@ -863,7 +1050,7 @@ function syncStatusText() {
 function renderSyncBadge(state) {
   const el = document.getElementById('sync-badge');
   if (!el) return;
-  if (!syncConfig()) { el.textContent = ''; return; }
+  if (!syncTarget()) { el.textContent = ''; return; }
   el.textContent = state === 'läuft' ? '⟳ Sync …' : syncState.error ? '⚠ Sync-Fehler' : syncState.last ? '✓ Synchron' : '';
   el.title = syncStatusText();
   el.style.color = syncState.error ? 'var(--again)' : 'var(--muted)';
@@ -876,7 +1063,7 @@ async function syncAndRefresh() {
 }
 
 document.addEventListener('visibilitychange', () => {
-  if (!syncConfig()) return;
+  if (!syncTarget()) return;
   if (document.visibilityState === 'hidden') { if (syncTimer) runSync(); }
   else syncAndRefresh();
 });
@@ -888,6 +1075,7 @@ function route() {
   const path = location.hash.replace(/^#/, '').split('?')[0] || '/';
   const parts = path.split('/').filter(Boolean);
   window.scrollTo(0, 0);
+  if (ACCOUNTS && !session) return viewLogin();
   if (parts.length === 0) return viewOverview();
   if (parts[0] === 'deck' && parts[1]) return viewDeck(parts[1]);
   if (parts[0] === 'lernen' && parts[1]) return viewStudy(parts[1]);
@@ -897,6 +1085,7 @@ function route() {
 }
 
 window.addEventListener('hashchange', route);
+renderUserBadge();
 
 loadDecks()
   .then(() => { route(); syncAndRefresh(); })

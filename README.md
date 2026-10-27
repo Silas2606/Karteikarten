@@ -25,7 +25,24 @@ Lern-App für meine Module – die Karten erstellt Claude aus hochgeladenen Doku
 - **Fortschritt:** pro Modul und Thema *neu / wiederholen / gekonnt*, Markierungen, Tagesserie, Aktivitäts-Heatmap und „Kann ich“-Quote.
 - Der Fortschritt liegt im Browser und lässt sich unter *Einstellungen* als Datei exportieren/importieren.
 
-## Synchronisierung zwischen Geräten
+## Logins für mehrere Personen
+
+Jede Person meldet sich mit ihrem eigenen **Login-Code** an (z. B. ihrem Namen) und hat ihren eigenen Fortschritt – auf jedem Gerät, auf dem sie sich anmeldet. Logins vergibt nur der Admin; über die App kann niemand selbst ein Konto anlegen. Gespeichert wird in einer kostenlosen [Supabase](https://supabase.com)-Datenbank. Solange `config.js` leer ist, läuft die App ohne Login (mit der Gist-Synchronisierung unten).
+
+**Einrichten (einmalig, ca. 5 Minuten):**
+1. Auf [supabase.com](https://supabase.com) kostenlos registrieren und ein neues Projekt anlegen (Region z. B. Frankfurt).
+2. Im Projekt links **SQL Editor** öffnen, den Inhalt von [`supabase/setup.sql`](supabase/setup.sql) einfügen und **Run** klicken. Das legt die Tabelle und den Login `silas` an.
+3. Unter **Project Settings → API Keys** die **Project URL** und den öffentlichen Schlüssel (**publishable** bzw. **anon**) kopieren und in [`config.js`](config.js) eintragen – oder Claude schicken. Diese beiden Werte dürfen öffentlich sein; der geheime **secret/service_role**-Schlüssel gehört **nicht** in die App.
+4. Nach dem Merge die App öffnen und mit `Silas` anmelden. Beim ersten Login fragt die App, ob der bisherige Fortschritt dieses Geräts übernommen werden soll (inkl. dem Stand aus der Gist-Synchronisierung).
+
+**Logins verwalten** (Supabase → **Table Editor** → Tabelle `kk_accounts`):
+- *Neuer Login:* **Insert row** → `code` = Login-Code in Kleinbuchstaben (z. B. `anna`), `name` = Anzeigename (z. B. `Anna`). Alternativ im SQL Editor: `insert into kk_accounts (code, name) values ('anna', 'Anna');`
+- *Login entfernen:* Zeile löschen – die Person wird beim nächsten Abgleich abgemeldet, ihr Fortschritt ist weg.
+- Beim Anmelden spielen Groß-/Kleinschreibung und Leerzeichen keine Rolle.
+
+**Sicherheit:** Der Login-Code ist zugleich das Passwort. Wer den Code einer Person kennt oder errät, kann deren Fortschritt sehen und verändern – mehr nicht (keine Konten anlegen, keine Liste der Logins abrufen). Für eine Lern-App reicht das meist; wer es sicherer will, vergibt Codes wie `anna-7k3p` statt nur des Namens.
+
+## Synchronisierung zwischen Geräten (ohne Logins)
 
 Der Fortschritt wird automatisch über einen **privaten GitHub Gist** abgeglichen (nach dem Lernen, beim Öffnen der App und beim Zurückwechseln in den Tab).
 
@@ -39,6 +56,8 @@ Beim Zusammenführen gewinnt pro Karte der zuletzt gelernte Stand; die Lernstati
 
 ```
 index.html, app.js, style.css   Lern-App (ohne Build-Schritt)
+config.js                       Supabase-Zugang für Logins (leer = ohne Login)
+supabase/setup.sql              Datenbank für Logins und Fortschritt
 manifest.webmanifest, sw.js     Installierbar als App, offline nutzbar
 icons/                          App-Symbol
 decks/index.json                Liste der Module

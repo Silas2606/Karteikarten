@@ -170,3 +170,10 @@ button.small { font-size: 0.85rem; padding: 4px 10px; }
 .modal p { margin: 0; }
 .front-preview { font-weight: 600; }
 .deleted-row { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+
+.login { max-width: 420px; margin: 40px auto; display: flex; flex-direction: column; gap: 14px; }
+.login h1 { margin: 0; }
+.text-input {
+  flex: 1; min-width: 180px; font: inherit; padding: 8px 10px; border-radius: 8px;
+  border: 1px solid var(--border); background: var(--surface); color: var(--text);
+}
