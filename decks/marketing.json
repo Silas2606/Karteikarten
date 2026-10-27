@@ -421,6 +421,412 @@
       "back": "- **Einführung** → Question Marks\n- **Wachstum und Reife** → Stars\n- **Sättigung** → Cash Cows\n- **Degeneration** → Poor Dogs",
       "topic": "Produktlebenszyklus",
       "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 30"
+    },
+    {
+      "id": "mkt-0061",
+      "front": "Was ist die **Balanced Scorecard (BSC)**?",
+      "back": "Ein Konzept zur **Messung, Dokumentation und Steuerung** der Aktivitäten eines Unternehmens/einer Organisation im Hinblick auf seine **Vision und Strategie**.\n\nDabei wird das Unternehmen **aus verschiedenen Blickwinkeln (Perspektiven)** betrachtet – nicht nur finanziell.",
+      "topic": "Balanced Scorecard",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 33"
+    },
+    {
+      "id": "mkt-0062",
+      "front": "Welche vier Perspektiven betrachtet die Balanced Scorecard, und welche Leitfrage gehört jeweils dazu?",
+      "back": "1. **Finanzperspektive** – Wie sehen uns unsere Geldgeber?\n2. **Kundenperspektive** – Wie sehen uns unsere Kunden?\n3. **Prozessperspektive** – In welchen Prozessen müssen wir uns auszeichnen, um Erfolg zu haben?\n4. **Lern- und Innovationsperspektive** – Wie stärken wir unsere Fähigkeit, uns zu verändern und zu verbessern?",
+      "topic": "Balanced Scorecard",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 34"
+    },
+    {
+      "id": "mkt-0063",
+      "front": "Wie ist eine Balanced Scorecard von der Vision bis zu den Aktivitäten aufgebaut?",
+      "back": "**Vision** (z. B. „Wir werden den Markt dominieren …“)\n→ **Strategie** (z. B. Kosteneffizienz + hohe Qualität, Investition in neue Technologien)\n→ **Perspektiven** (Finanzen, Kunden, Prozesse, Entwicklung, Mitarbeiter)\n→ je Perspektive **kritische Erfolgsfaktoren**\n→ messbare **Kennzahlen (KPIs)**\n→ **Aktivitäten**: Verantwortlichkeiten und Aktivitätspläne zum Erreichen der Ziele",
+      "topic": "Balanced Scorecard",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 35"
+    },
+    {
+      "id": "mkt-0064",
+      "front": "Nenne Beispiele für kritische Erfolgsfaktoren und Kennzahlen der **Kunden-** und der **Entwicklungsperspektive** einer BSC.",
+      "back": "**Kunden**\n- Erfolgsfaktoren: pünktliche Zustellung, zufriedene Kunden\n- Kennzahlen: % pünktliche Zustellung, Kundenorientierung\n\n**Entwicklung**\n- Erfolgsfaktoren: neue Produkte (rechtzeitig), Innovation\n- Kennzahlen: Anzahl neuer Prototypen, Anzahl Ideen/Woche\n\nTypischer Marketing-KPI: **Net Promoter Score** → Kundenzufriedenheit.",
+      "topic": "Balanced Scorecard",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 35"
+    },
+    {
+      "id": "mkt-0065",
+      "front": "Nenne Beispiele für Erfolgsfaktoren und Kennzahlen der **Finanz-, Prozess- und Mitarbeiterperspektive** einer BSC.",
+      "back": "- **Finanzen**: Profitabilität, Kosteneffizienz → Kennzahl: Kosten/Produkt\n- **Prozesse**: richtige Technologie, Prozessorientierung → Qualitätskosten, Lead-Zeiten\n- **Mitarbeiter**: Haltung, relevante Kompetenz → Know-how, Haltung",
+      "topic": "Balanced Scorecard",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 35"
+    },
+    {
+      "id": "mkt-0066",
+      "front": "Wie wird der **Net Promoter Score (NPS)** erhoben?",
+      "back": "**Frage:** „Würden Sie einem Freund/Kollegen die Marke empfehlen?“ – Skala **0–10** (0 = höchst unwahrscheinlich, 10 = höchst wahrscheinlich)\n\n**Zusatzfrage:** „Was ist für Sie der wichtigste Bewertungsgrund?“\n\nDer NPS ist ein KPI für die **Kundenzufriedenheit**.",
+      "topic": "Balanced Scorecard",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 36"
+    },
+    {
+      "id": "mkt-0067",
+      "front": "Welche Gruppen unterscheidet der Net Promoter Score nach der vergebenen Punktzahl?",
+      "back": "- **9–10**: Förderer/**Promotoren** – nur diese zählen als Förderer!\n- **7–8**: **passiv Zufriedene**\n- **0–6**: **Kritiker** (Detraktoren)\n\n(Grenze 0–6 für Kritiker: Standard-NPS-Definition, im Skript nur als „Kritiker“ genannt)",
+      "topic": "Balanced Scorecard",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 36"
+    },
+    {
+      "id": "mkt-0068",
+      "front": "**Rechenaufgabe:** 200 Kunden werden befragt: 90 geben 9–10 Punkte, 60 geben 7–8 Punkte, 50 geben 0–6 Punkte. Berechne den Net Promoter Score.",
+      "back": "$$NPS = \\%\\,\\text{Promotoren} - \\%\\,\\text{Kritiker}$$\n\n- Promotoren: $90/200 = 45\\,\\%$\n- Kritiker: $50/200 = 25\\,\\%$\n- passiv Zufriedene (30 %) zählen nicht\n\n$NPS = 45 - 25 = \\mathbf{+20}$\n\n(Formel: Standard-NPS-Definition, Ergänzung zum Skript)",
+      "topic": "Balanced Scorecard",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 36"
+    },
+    {
+      "id": "mkt-0069",
+      "front": "Welche Vor- und Nachteile hat der Net Promoter Score?",
+      "back": "**Vorteile**\n- einfache Handhabung\n- hoher Response (z. B. bei Telefonbefragung)\n- agil, schnell, kundenorientiert\n- Wünsche erfragen (bei passiv Zufriedenen/Kritikern)\n\n**Nachteile**\n- nur **Augenblicksaufnahme** (aktuelle Einflüsse)\n- unklar, ob **tatsächlich eine Empfehlung folgt**",
+      "topic": "Balanced Scorecard",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 37"
+    },
+    {
+      "id": "mkt-0070",
+      "front": "Wie ist **Kundenzufriedenheit** definiert, und wie hängt sie mit der Kundenloyalität zusammen?",
+      "back": "**Kundenzufriedenheit** = Differenz zwischen der **erwarteten** und der **tatsächlichen Leistung** (Soll-Ist-Vergleich aus Kundensicht).\n\nDie **Kundenloyalität hängt von der Kundenzufriedenheit ab**.",
+      "topic": "Kundenzufriedenheit",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 38"
+    },
+    {
+      "id": "mkt-0071",
+      "front": "Durch welche zwei Ansätze lässt sich Kundenzufriedenheit erreichen?",
+      "back": "1. **Zufriedenheitsmanagement** (Kundendialog-Konzepte)\n2. **Beschwerdemanagement**",
+      "topic": "Kundenzufriedenheit",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 38"
+    },
+    {
+      "id": "mkt-0072",
+      "front": "Warum sind Beschwerden eine Chance für die Kundenbindung?",
+      "back": "- Beschwerdefälle sind eine **Bewährungsprobe** für das Unternehmen.\n- Eine **gelungene Lösung** von Beschwerden führt zu **Kundenbindung**.\n- Das Negativ-Erlebnis kann durch gutes Krisen-Management **„überblendet“** werden, sodass eine **positive Wahrnehmung überwiegt**.",
+      "topic": "Kundenzufriedenheit",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 39"
+    },
+    {
+      "id": "mkt-0073",
+      "front": "Was ist die **Customer Journey**, und was sind **Touchpoints**?",
+      "back": "**Customer Journey**: bildet die „Reise“ des Kunden nach – vom **ersten Kontakt** (Wodurch aufmerksam geworden?) bis zur **Handlung** (Kauf/Nichtkauf).\n\n**Touchpoints**: alle Kontaktpunkte mit dem Kunden, auf einer Art **Map** dargestellt (online z. B. Banner, Newsletter, Landing Page, Website; offline z. B. Plakat, TV, Filiale, Print).\n\nLeitfrage: Wie kann der Interessent zum Kunden werden und langfristig gebunden werden?",
+      "topic": "Kundenzufriedenheit",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 40"
+    },
+    {
+      "id": "mkt-0074",
+      "front": "Wozu dient die Analyse der Customer Journey, und wie kann man sie nachvollziehen?",
+      "back": "**Ziele**\n- Erkennen: Wo sind Verbesserungen möglich? Wo „steigt“ der Interessent aus? Wo verweilt er?\n- **Verhaltensmuster und Motive** für Handlungen aufdecken\n- **Kommunikationskonzept optimieren**\n\n**Werkzeug:** Web-Controlling-Tools wie z. B. **Google Analytics**",
+      "topic": "Kundenzufriedenheit",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 40–41"
+    },
+    {
+      "id": "mkt-0075",
+      "front": "Was ist ein **Marketing-Funnel** (Trichter)?",
+      "back": "Ziel: aus einem **Interessenten einen wertvollen Kunden** machen, indem er mehrere **Touchpoints** durchläuft und am Ende eine Aktion ausführt (z. B. Bestellung).\n\nBildlich: Oben kommen durch Anzeigen etc. viele Interessenten in den Trichter; während des Kaufprozesses **springen einige ab**. Wer bestellt, kommt unten als **Kunde** heraus.\n\nDer Funnel basiert auf dem **AIDA-Modell**.",
+      "topic": "Kundenzufriedenheit",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 42"
+    },
+    {
+      "id": "mkt-0076",
+      "front": "Wofür steht **AIDA**, und was bedeuten die Stufen im Funnel konkret? (inkl. Ergänzungen aus der Vorlesung)",
+      "back": "- **A**wareness/Attention – Aufmerksamkeit erzeugen → *Vertrautheit*\n- **I**nterest – Interesse wecken\n- **D**esire – Verlangen hervorrufen → *Angebot einholen*\n- **A**ction – Handlungsaufforderung → *Kauf*\n\nNach der Action folgen (Notiz): **Wiederkauf** und **Empfehlung**.\n\nAIDA beschreibt die **Werbewirkung** auf den Kunden.",
+      "topic": "Kundenzufriedenheit",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 42 + Notiz"
+    },
+    {
+      "id": "mkt-0077",
+      "front": "Welche Stufen hat der **Marketing-Funnel** laut Skript, und wie verhält er sich zur AIDA-Formel?",
+      "back": "**Funnel:** Bekanntheit → Aufmerksamkeit → Interesse → Kaufabsicht → Kauf → **Wiederkauf** → **Empfehlung**\n\n**AIDA:** Attention – Interest – Desire – Action\n\nDer Funnel geht über AIDA hinaus: Er endet nicht beim Kauf, sondern umfasst auch Wiederkauf und Empfehlung (Kundenbindung).",
+      "topic": "Kundenzufriedenheit",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 73"
+    },
+    {
+      "id": "mkt-0078",
+      "front": "Wozu dient die Wettbewerbsanalyse nach **Porter (Five Forces)**?",
+      "back": "Instrument zur Bestimmung der **Attraktivität bzw. Struktur einer Branche**.\n\n- gibt Aufschluss über das allgemeine **Profitniveau einer Branche**\n- unterstützt Entscheidungen über den **Eintritt oder Verbleib** in einem Marktsegment (→ neue Märkte erschließen)",
+      "topic": "Wettbewerbsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 43"
+    },
+    {
+      "id": "mkt-0079",
+      "front": "Welche **fünf Kräfte** umfasst das Five-Forces-Modell nach Porter?",
+      "back": "1. Wahrscheinlichkeit, dass **neue Konkurrenten** den Markt betreten\n2. **Verhandlungsstärke der Lieferanten**\n3. **Macht der Abnehmer**\n4. Wahrscheinlichkeit, dass es **Ersatzprodukte** gibt\n5. **Aktivität im Markt** (Rivalität der bestehenden Wettbewerber)\n\n→ Diese Kräfte bestimmen die **Attraktivität und Rentabilität** eines Marktes bzw. einer Branche.",
+      "topic": "Wettbewerbsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 44"
+    },
+    {
+      "id": "mkt-0080",
+      "front": "Wie kann ein Unternehmen nach Porter die **Verhandlungsstärke der Lieferanten** bzw. **der Kunden** reduzieren?",
+      "back": "**Lieferanten:** z. B. Abhängigkeit der Lieferanten (vom eigenen Unternehmen) erhöhen, Lieferanten übernehmen\n\n**Kunden:** z. B. Kundenloyalität erhöhen, Zusatznutzen bieten, Kaufentscheidungen **nicht über den Preis** führen",
+      "topic": "Wettbewerbsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 45"
+    },
+    {
+      "id": "mkt-0081",
+      "front": "Wie kann ein Unternehmen nach Porter die **Stärke der Wettbewerber** und die **Gefahr von Ersatzprodukten** reduzieren?",
+      "back": "**Wettbewerber:** Markteintritt erschweren, eigenes **Markenimage stärken**, Marktsegmente besetzen\n\n**Ersatzprodukte:** Marktforschung, **Umstellungen erschweren** (Wechselkosten), **USP** kreieren, Allianzen",
+      "topic": "Wettbewerbsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 45"
+    },
+    {
+      "id": "mkt-0082",
+      "front": "In welchen **vier Schritten** läuft die Wettbewerbsanalyse für **bestehende Märkte** ab?",
+      "back": "1. **Direkte Wettbewerber identifizieren**\n2. Direkte Wettbewerber **aus Kundensicht vergleichen**\n3. **Eigenes Unternehmen** im Vergleich zu den Wettbewerbern **bewerten**\n4. **Wettbewerbsvorteile ausbauen** und **Wettbewerbsnachteile ausgleichen/kompensieren**",
+      "topic": "Wettbewerbsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 46–48"
+    },
+    {
+      "id": "mkt-0083",
+      "front": "Woran erkennt man **direkte Wettbewerber**, und warum konzentriert man sich auf sie?",
+      "back": "Direkte Wettbewerber …\n- bieten **aus Kundensicht vergleichbare** Produkte/Leistungen an\n- sprechen **dieselbe Zielgruppe** an\n- agieren im **gleichen Markt**\n\nMan sammelt gezielt zu diesen Informationen, um den **Informationsaufwand zu minimieren**.",
+      "topic": "Wettbewerbsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 46"
+    },
+    {
+      "id": "mkt-0084",
+      "front": "Nach welchen Kriterien werden direkte Wettbewerber aus Kundensicht verglichen?",
+      "back": "- Kapazitäten\n- Image/Ruf\n- Qualität der Produkte\n- Servicequalität\n- Preise/Preisgestaltung",
+      "topic": "Wettbewerbsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 47"
+    },
+    {
+      "id": "mkt-0085",
+      "front": "Was ist eine **Zielgruppe**? (klausurrelevant)",
+      "back": "Eine **homogene Personengruppe**, die das Unternehmen mit seinem Angebot **erreichen möchte**.",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 49"
+    },
+    {
+      "id": "mkt-0086",
+      "front": "Anhand welcher Merkmale wird eine Zielgruppe definiert? (klausurrelevant)",
+      "back": "- **demografische** Merkmale: Alter, Geschlecht, Familienstand\n- **sozioökonomische** Merkmale: Bildung, Einkommen\n- **psychografische** Merkmale: Einstellungen, Motivation, Werte\n- **Kaufverhalten**: z. B. Wechselkäufer, preisbewusste Käufer",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 49"
+    },
+    {
+      "id": "mkt-0087",
+      "front": "Was sind **Sinus-Milieus**, und wozu nutzt man sie in der Zielgruppenanalyse? (klausurrelevant)",
+      "back": "Ein Zielgruppenmodell des **SINUS-Instituts**, das die Gesellschaft in Gruppen Gleichgesinnter (**Milieus**) einteilt – nach zwei Dimensionen:\n- **soziale Lage** (Bildung, Einkommen, Beruf → Unter-/Mittel-/Oberschicht)\n- **Grundorientierung/Werte** (von traditionell über modern bis Neuorientierung)\n\nDargestellt als „Kartoffelgrafik“. Nutzen: Zielgruppen nicht nur demografisch, sondern nach **Lebenswelt, Werten und Einstellungen** beschreiben → passgenauere Ansprache.\n\n(Im Skript nur per Video-Link; Inhalt aus Allgemeinwissen)",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 49 (Notiz: klausurrelevant)"
+    },
+    {
+      "id": "mkt-0088",
+      "front": "Welche Daten nutzt man für die **Markt- und Branchenanalyse**? Nenne Beispiele.",
+      "back": "- **Marktdaten** zur Entwicklung des Marktes (z. B. Deutschland), z. B. **ifo Geschäftsklimaindex**\n- **Branchenzahlen**, z. B. für die Automobilindustrie vom **VDA** (Verband der Automobilindustrie)",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 50"
+    },
+    {
+      "id": "mkt-0089",
+      "front": "Welche Teilanalysen umfasst die Situationsanalyse (Überblick)?",
+      "back": "- **SWOT-Analyse** (inkl. PESTEL)\n- **Portfolio-Analyse** und **Produktlebenszyklus**\n- **Balanced Scorecard** (z. B. KPI NPS)\n- **Wettbewerbsanalyse** (Porter Five Forces; bestehende Märkte in 4 Schritten)\n- **Zielgruppenanalyse**\n- **Markt- und Branchenanalyse**\n\n→ Sie betrachten zusammen das **strategische Dreieck** (Unternehmen, Markt/Branche, Wettbewerber, Zielgruppe).",
+      "topic": "Situationsanalyse",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 51"
+    },
+    {
+      "id": "mkt-0090",
+      "front": "Wofür steht die **SMART**-Formel bei Zielen?",
+      "back": "- **S**pezifisch – so präzise wie möglich und widerspruchsfrei formuliert\n- **M**essbar – v. a. durch quantifizierbare Größen\n- **A**nspruchsvoll (Accepted) – von den Adressaten als Herausforderung empfunden\n- **R**ealistisch – erreichbar, weder Über- noch Unterforderung\n- **T**erminierbar – eindeutige Zeitvorgabe, bis wann das Ziel erreicht sein soll",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 52"
+    },
+    {
+      "id": "mkt-0091",
+      "front": "Welche drei Dimensionen muss ein Ziel kurz gesagt enthalten – und warum?",
+      "back": "**Inhalt, Ausmaß und Zeitbezug**\n\n→ sonst ist das Ziel **nicht nach dem Zielerreichungsgrad messbar**.\n\nBeispiel: „Umsatz (Inhalt) um 10 % steigern (Ausmaß) bis 31.12.2027 (Zeitbezug).“",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 52"
+    },
+    {
+      "id": "mkt-0092",
+      "front": "Nach welchen drei Kriterien lassen sich Marketingziele einteilen, und woraus werden sie abgeleitet?",
+      "back": "- **Zielbeziehungen**: komplementär, neutral, konfliktär\n- **Zeithorizont**: strategische, (taktische) und operative Ziele\n- **Ausdrucksform/Zielart**: quantitative und qualitative Ziele\n\n→ Marketingziele werden aus den **Unternehmenszielen abgeleitet**.",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 53"
+    },
+    {
+      "id": "mkt-0093",
+      "front": "Welche drei **Zielbeziehungen** gibt es?",
+      "back": "- **komplementär**: Das Verfolgen von Ziel $Z_1$ **fördert** das Erreichen von $Z_2$ (steigende Gerade)\n- **neutral (indifferent)**: $Z_1$ hat **keine Auswirkung** auf $Z_2$ (senkrechte Linie)\n- **konfliktär**: $Z_1$ **behindert** das Erreichen von $Z_2$ (fallende Gerade)",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 54"
+    },
+    {
+      "id": "mkt-0094",
+      "front": "Ordne zu: Welche Zielbeziehung liegt jeweils vor?\n1. Werbebudget erhöhen ↔ Kosten senken\n2. Kundenzufriedenheit steigern ↔ Wiederkaufrate steigern\n3. Bekanntheit in DE steigern ↔ Kantinenessen verbessern",
+      "back": "1. **konfliktär** – mehr Werbung erhöht die Kosten\n2. **komplementär** – zufriedene Kunden kaufen eher wieder\n3. **neutral** – keine Wechselwirkung",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 54"
+    },
+    {
+      "id": "mkt-0095",
+      "front": "Welche Zielebenen gibt es nach dem **Zeithorizont**? (Klausur-Tipp beachten!)",
+      "back": "- **strategisch** → langfristig (über 4 bis 10 Jahre)\n- **taktisch/strukturell** → mittelfristig (1 bis 4, evtl. 5 Jahre)\n- **operativ** → kurzfristig (bis max. 1 Jahr)\n\n⚠️ **In der Klausur bei einer Zieldefinition immer den Zeithorizont nennen!**",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 55 + Notiz"
+    },
+    {
+      "id": "mkt-0096",
+      "front": "Wie werden Marketingziele nach der **Ausdrucksform** eingeteilt? Nenne jeweils Beispiele.",
+      "back": "**Ökonomische (quantitative) Ziele**\n- Umsatzziele, Marktanteilsziele, Deckungsbeitragsziele, Sonstige\n\n**Psychologische (qualitative) Ziele**\n- Bekanntheitsgradziele, Imageziele, Einstellungsziele, Sonstige",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 56"
+    },
+    {
+      "id": "mkt-0097",
+      "front": "Welche drei Wirkungsebenen von Marketingzielen unterscheidet Bruhn? Nenne je Beispiele.",
+      "back": "- **Kognitive Wirkungen** (Wissen): Markenbekanntheit, Informationsstand, Kenntnisse über Produkte/Preise\n- **Affektive Wirkungen** (Gefühl/Einstellung): Einstellungen, Image, Kundenzufriedenheit, Kaufpräferenzen\n- **Konative Wirkungen** (Verhalten): Absatz, Umsatz, Marktanteil, Gewinn, Kaufabsicht, Kundenbindung, Webseiten-Reaktionen",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 57"
+    },
+    {
+      "id": "mkt-0098",
+      "front": "Mit welchen **Kontrollinstrumenten** misst man kognitive, affektive und konative Wirkungen?",
+      "back": "- **kognitiv**: Recognitiontest, Recalltest, Evoked-Set-Analyse, projektive Techniken\n- **affektiv**: Einstellungsmessung, Imageprofile, Zufriedenheitsmessung, Präferenzstudien\n- **konativ**: Daten des Rechnungswesens, Umsatz-/Absatzstatistiken, Paneldaten, Branchendaten, Daten der Beschwerde-/Vertriebsabteilung, Kundenbefragungen, Online-Recherchen",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 57"
+    },
+    {
+      "id": "mkt-0099",
+      "front": "Aus welchen Fragestellungen können sich Marketingziele ergeben? Nenne Beispiele.",
+      "back": "- Welches **Image** soll aufgebaut bzw. verändert werden?\n- Welche **Umsatzziele** in welchen Zeiträumen?\n- Muss die Marke **verjüngt** werden (Phase im Produktlebenszyklus)?\n- Sind **neue Technologien** zu beachten?\n- Wie kann das Unternehmen **wachsen**?\n- Wie soll mit **Wettbewerbern** verfahren werden?\n- Welche **Preisspielräume** haben wir?",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 58"
+    },
+    {
+      "id": "mkt-0100",
+      "front": "Wie ist die **Zielhierarchie** im Marketing aufgebaut?",
+      "back": "**Unternehmensziele** + **Ziele aus der Situationsanalyse**\n↓\n**Marketingziele**\n↓\n**Strategie zur Zielerreichung**",
+      "topic": "Marketingziele",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 59"
+    },
+    {
+      "id": "mkt-0101",
+      "front": "Was legen **Marketingstrategien** fest, und welchen Zeithorizont haben sie?",
+      "back": "Sie legen fest, **wie die Marketingziele grundsätzlich erreicht werden** können.\n\n- spiegeln die **mittel- und langfristigen** Ziele wider\n- sind noch eher **grob definiert**\n- Leitfrage: **Welche Zielgruppe soll mit welchen Leistungen angesprochen werden?**\n\nArten: Produkt-, Preis-, Wettbewerbs-, Kommunikations-, Wachstumsstrategien …",
+      "topic": "Marketingstrategie",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 60"
+    },
+    {
+      "id": "mkt-0102",
+      "front": "Nenne Beispiele für Marketingstrategien (Wettbewerb, Kunden, Shareholder, Markt, eigenes Portfolio).",
+      "back": "- **Wettbewerbsstrategie**: Verdrängung (Instrument: Preispolitik), Kooperationsstrategie\n- **Kundenstrategie**: Imagestrategie (Instrument: Kommunikationspolitik), Kunden zu Fans machen\n- **Shareholderstrategie**: innovatives Unternehmen – Invest-Bereich\n- **Marktstrategie**: neue Segmente gewinnen – Markterschließung\n- **Eigenes Portfolio**: Produktinnovationen, Kostenstrategie, Erreichen des Break-even-Points",
+      "topic": "Marketingstrategie",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 61"
+    },
+    {
+      "id": "mkt-0103",
+      "front": "Wie unterscheiden sich **Marketingstrategie** und **Marketingmaßnahmen**? (Effektivität vs. Effizienz)",
+      "back": "**Marketingstrategie → Effektivität**\n- die **richtigen Strategien** festlegen („die richtigen Dinge tun“)\n- strategisches Marketing, **mittel- und langfristig**\n\n**Marketingmaßnahmen → Effizienz**\n- die **Strategie richtig umsetzen** („die Dinge richtig tun“)\n- operatives Marketing, **kurzfristig**",
+      "topic": "Marketingstrategie",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 65"
+    },
+    {
+      "id": "mkt-0104",
+      "front": "Wie unterscheiden sich **Marketingziele** und **Marketingstrategie**?",
+      "back": "- **Marketingziele** legen fest, **was** erreicht werden soll (Inhalt, Ausmaß, Zeitbezug – SMART); abgeleitet aus Unternehmenszielen und Situationsanalyse.\n- **Marketingstrategie** legt fest, **wie** die Ziele grundsätzlich erreicht werden (mittel-/langfristig, grob; z. B. welche Zielgruppe mit welchen Leistungen).",
+      "topic": "Marketingstrategie",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 53, 60"
+    },
+    {
+      "id": "mkt-0105",
+      "front": "Was sind **Marketingmaßnahmen**, und welche Instrumente umfasst das **absatzpolitische Instrumentarium**?",
+      "back": "Umsetzung der Marketingstrategie in **konkrete Maßnahmen** mithilfe des absatzpolitischen Instrumentariums (Marketing-Mix, 4 P):\n- **Produktpolitik**\n- **Preispolitik**\n- **Kommunikationspolitik**\n- **Distributionspolitik**",
+      "topic": "Marketingmaßnahmen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 62"
+    },
+    {
+      "id": "mkt-0106",
+      "front": "Was ist der Unterschied zwischen **Inside-out-** und **Outside-in-Perspektive**?",
+      "back": "**Inside-out:** Aus **Unternehmensperspektive** wird ein Mix (4 P) erstellt, um den Markt zu bearbeiten.\n\n**Outside-in:** stellt die **Beziehung zum Kunden** noch stärker in den Vordergrund.\nStichwort: **Relationship-Marketing / Customer-Relationship-Marketing (CRM)**.\n\nHäufig werden beide kombiniert.",
+      "topic": "Marketingmaßnahmen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 62–63"
+    },
+    {
+      "id": "mkt-0107",
+      "front": "Welche **drei Phasen der Outside-in-Perspektive** gibt es, und mit welchen Mitteln arbeitet man jeweils?",
+      "back": "1. **Recruitment** (Kundengewinnung) – Wie gewinnt man Kunden?\n   Mittel: Akquise durch **Dialog** fördern (Social Media)\n2. **Retention** (Kundenbindung) – Wie bindet man Kunden?\n   Mittel: Zufriedenheit steigern, z. B. **Kundenclubs, -karten, Newsletter** (Achtung **DSGVO und UWG**)\n3. **Recovery** (Kunden halten/zurückgewinnen)\n   Mittel: Abwanderung verhindern durch **persönlichen Kontakt**, **Wertschätzung** der Kunden",
+      "topic": "Marketingmaßnahmen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 63–64"
+    },
+    {
+      "id": "mkt-0108",
+      "front": "Wie unterscheiden sich **operatives** und **strategisches Marketingcontrolling**?",
+      "back": "**Operatives Marketingcontrolling**\n- **Ergebnis- und Planfortschrittskontrolle** mithilfe von **Kennzahlen (KPI)**\n\n**Strategisches Marketingcontrolling**\n- **Marketing-Audit**: Überprüfung der Ziele, Strategien und der kompletten Organisation; Einsatz von Beurteilungsinstrumenten",
+      "topic": "Marketingcontrolling",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 66"
+    },
+    {
+      "id": "mkt-0109",
+      "front": "Nenne die fünf Stufen des Marketingkonzepts in der richtigen Reihenfolge. Welche Funktion begleitet alle Stufen?",
+      "back": "1. Situationsanalyse\n2. Marketingziele\n3. Marketingstrategie\n4. Marketingmaßnahmen\n5. Marketingcontrolling\n\nDie **Marktforschung** begleitet den gesamten Prozess (von der Situationsanalyse bis zum Controlling).",
+      "topic": "Marketingcontrolling",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 67"
+    },
+    {
+      "id": "mkt-0110",
+      "front": "In welchen **fünf Phasen** läuft eine Kaufentscheidung ab?",
+      "back": "1. **Problem/Bedürfnis**\n2. **Informationsbeschaffung und Bewertung** (abhängig vom Gut) → vgl. Customer Journey\n3. **Entscheidung für eine Marke** → Warum diese Marke?\n4. **Nachkaufphase** (kognitive Dissonanz) → War es die richtige Entscheidung?\n5. **Wiederkauf/Empfehlung** (Empfehlungsmarketing und Recovery)",
+      "topic": "Kaufentscheidungen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 69"
+    },
+    {
+      "id": "mkt-0111",
+      "front": "Was ist **kognitive Dissonanz** in der Nachkaufphase, und warum ist sie fürs Marketing relevant?",
+      "back": "Nach dem Kauf zweifelt der Käufer: **„War es die richtige Marke/Entscheidung?“** – ein unangenehmer innerer Spannungszustand.\n\nRelevanz: Das Marketing sollte den Kunden in seiner Entscheidung **bestätigen** (Nachbetreuung, Kommunikation), denn nur zufriedene Kunden führen zu **Wiederkauf und Empfehlung**.",
+      "topic": "Kaufentscheidungen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 69"
+    },
+    {
+      "id": "mkt-0112",
+      "front": "Wie nutzt das Marketing die **Bedürfnispyramide nach Maslow**?",
+      "back": "**Appelliere an ein Bedürfnis und zeige, dass die Marke besonders geeignet ist, es zu befriedigen.**\n\nStufen (von unten nach oben):\n1. Physiologische Bedürfnisse\n2. Sicherheitsbedürfnisse\n3. Soziale Bedürfnisse\n4. Individuelle Bedürfnisse\n5. Selbstverwirklichung\n\nStufen 1–4 = **Defizitbedürfnisse**, Stufe 5 = **Wachstumsbedürfnis**.",
+      "topic": "Kaufentscheidungen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 71"
+    },
+    {
+      "id": "mkt-0113",
+      "front": "Ordne den Stufen der Maslow-Pyramide typische Produkte und Werbebeispiele zu.",
+      "back": "- **Physiologisch** (Wasser, Schlaf, Nahrung): Medizin, Grundnahrungsmittel – Fanta: „Durst macht Spaß mit Fanta.“\n- **Sicherheit**: Versicherung, Alarmanlagen, Pensionen – Aachen Münchener: „Träume brauchen Sicherheit.“\n- **Sozial** (Liebe, Freundschaft): Kleidung, Vereine, Getränke – Holsten: „Auf die Freundschaft.“\n- **Individuell** (Prestige, Status): Autos, Kreditkarten, Clubs – Mastercard: „Es gibt Dinge, die kann man nicht kaufen …“\n- **Selbstverwirklichung**: Hobbys, Reisen, Bildung – Adidas: „Impossible is nothing.“",
+      "topic": "Kaufentscheidungen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 71"
+    },
+    {
+      "id": "mkt-0114",
+      "front": "Welche vier **Arten von Kaufentscheidungen** gibt es? (klausurrelevant)",
+      "back": "- **Extensiv** = ausführlich informiert (insb. Investitionsgüter, hochpreisige Güter)\n- **Limitiert** = begrenzt informiert\n- **Habituell** = gewohnheitsmäßig\n- **Impulsiv** = reizgesteuert",
+      "topic": "Kaufentscheidungen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 74"
+    },
+    {
+      "id": "mkt-0115",
+      "front": "Wie lassen sich die vier Kaufentscheidungsarten über **Kaufrisiko, kognitive Kontrolle, Kaufhäufigkeit und externen Anreiz** herleiten? (klausurrelevant)",
+      "back": "**Kaufrisiko hoch → kognitive Kontrolle stark**\n- Kaufhäufigkeit **selten** → **extensiv**\n- Kaufhäufigkeit **häufig** → **limitiert**\n\n**Kaufrisiko gering → kognitive Kontrolle schwach**\n- **kein** externer Anreiz → **habituell**\n- **mit** externem Anreiz → **impulsiv**",
+      "topic": "Kaufentscheidungen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 75 (Notiz: kann in Klausur drankommen)"
+    },
+    {
+      "id": "mkt-0116",
+      "front": "Nenne für jede Kaufentscheidungsart Beispiele und den jeweiligen **Erfolgsfaktor** fürs Marketing. (klausurrelevant)",
+      "back": "- **extensiv**: Pkw, PC, Urlaub, Solaranlage, Maschine → **Produktinformationen**\n- **limitiert**: Kleidung, kleinere technische Geräte → **Schlüsselinformationen** (u. a. Preis)\n- **habituell**: Lebensmittel, Wasch-, Putz-, Reinigungsmittel → **Markierung**\n- **impulsiv**: vorportioniertes Obst in der Frischetheke → **Stimulation** (u. a. Optik, Preis)",
+      "topic": "Kaufentscheidungen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 75 (Notiz: kann in Klausur drankommen)"
+    },
+    {
+      "id": "mkt-0117",
+      "front": "Welche **Phasen des organisationalen Kaufprozesses** (B2B/Investitionsgüter) gibt es?",
+      "back": "1. Bedarfserkennung\n2. Festlegung von Produkteigenschaften\n3. Anbietersuche und -beurteilung\n4. Angebotseinholung und -bewertung\n5. Anbietervorauswahl\n6. Verhandlungsphase\n7. Anbieterendauswahl und Vertragsschluss\n8. Leistungserbringung und -bewertung",
+      "topic": "Kaufentscheidungen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 77"
+    },
+    {
+      "id": "mkt-0118",
+      "front": "Welche **Kaufklassen** gibt es im B2B-Bereich, und wie unterscheiden sie sich (Neuheit, Informationsbedarf, Alternativen)?",
+      "back": "- **Neukauf** (≈ extensiv): Neuheit **hoch**, Informationsbedarf **maximal**, neue Alternativen **bedeutend**\n- **Modifizierter Wiederkauf** (≈ limitiert): Neuheit **mittel**, Informationsbedarf **eingeschränkt**, Alternativen **begrenzt**\n- **Identischer Wiederkauf** (≈ habitualisiert): Neuheit **gering**, Informationsbedarf **minimal**, Alternativen **keine**",
+      "topic": "Kaufentscheidungen",
+      "source": "Marketing-Skript WS 2026/27 (Jopp-Michel), Folie 78"
     }
   ]
 }
