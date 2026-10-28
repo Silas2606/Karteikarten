@@ -62,7 +62,7 @@ function renderUserBadge() {
   const el = document.getElementById('user-badge');
   if (!el) return;
   el.hidden = !session;
-  el.textContent = session ? `👤 ${session.name}` : '';
+  el.innerHTML = session ? `<span class="avatar">${esc(session.name.charAt(0).toUpperCase())}</span><span>${esc(session.name)}</span>` : '';
 }
 
 function loadProgress(key = progressKey()) {
@@ -181,10 +181,10 @@ function confirmDelete(deckId, card, onDeleted) {
       <p class="front-preview">${esc(card.front.split('\n')[0])}</p>
       <p class="small muted">${n === 1
         ? 'Die Karte verschwindet aus allen Lernmodi, der Kartenliste und der Statistik.'
-        : 'Bitte bestätige ein zweites Mal. Die Löschung gilt auch auf deinen anderen Geräten. Wiederherstellen kannst du sie nur noch unter Einstellungen → Gelöschte Karten.'}</p>
-      <div class="toolbar" style="justify-content:flex-end;margin:0">
+        : `Bitte bestätige ein zweites Mal. Die Löschung gilt auch auf deinen anderen Geräten. Wiederherstellen kannst du sie nur noch unter ${ACCOUNTS ? 'Konto' : 'Einstellungen'} → Gelöschte Karten.`}</p>
+      <div class="toolbar" style="justify-content:flex-end;margin-top:4px">
         <button id="cancel">Abbrechen</button>
-        <button class="danger" id="confirm">${n === 1 ? 'Löschen' : 'Endgültig löschen'}</button>
+        <button class="danger" id="confirm">${icon('trash')}${n === 1 ? 'Löschen' : 'Endgültig löschen'}</button>
       </div>
     </div>`;
     overlay.querySelector('#cancel').addEventListener('click', close);
@@ -236,15 +236,28 @@ function md(text) {
     .replace(/`([^`]+)`/g, '<code>$1</code>')
     .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
     .replace(/(^|[^*])\*([^*\n]+)\*/g, '$1<em>$2</em>');
+  // Absätze; innerhalb eines Absatzes werden aufeinanderfolgende "- " / "1. "-Zeilen zu Listen
   const blocks = s.split(/\n{2,}/).map((block) => {
-    const lines = block.split('\n');
-    if (lines.every((l) => /^\s*[-•]\s+/.test(l))) {
-      return `<ul>${lines.map((l) => `<li>${l.replace(/^\s*[-•]\s+/, '')}</li>`).join('')}</ul>`;
+    const out = [];
+    let para = [];
+    let list = null;
+    const flushPara = () => { if (para.length) out.push(`<p>${para.join('<br>')}</p>`); para = []; };
+    const flushList = () => { if (list) out.push(`<${list.tag}>${list.items.map((i) => `<li>${i}</li>`).join('')}</${list.tag}>`); list = null; };
+    for (const line of block.split('\n')) {
+      const m = line.match(/^\s*(?:([-•])|\d+[.)])\s+(.*)$/);
+      if (m) {
+        const tag = m[1] ? 'ul' : 'ol';
+        flushPara();
+        if (list?.tag !== tag) { flushList(); list = { tag, items: [] }; }
+        list.items.push(m[2]);
+      } else {
+        flushList();
+        para.push(line);
+      }
     }
-    if (lines.every((l) => /^\s*\d+[.)]\s+/.test(l))) {
-      return `<ol>${lines.map((l) => `<li>${l.replace(/^\s*\d+[.)]\s+/, '')}</li>`).join('')}</ol>`;
-    }
-    return `<p>${lines.join('<br>')}</p>`;
+    flushPara();
+    flushList();
+    return out.join('');
   });
   return blocks.join('').replace(/\u0000(\d+)\u0000/g, (_, i) => math[i]);
 }
@@ -295,8 +308,8 @@ function studyHref(deckId, topic, mode) {
   return `#/lernen/${deckId}${q ? `?${q}` : ''}`;
 }
 
-function linkBtn(href, label, { primary = false, disabled = false } = {}) {
-  return `<a class="btn${primary ? ' primary' : ''}" href="${href}"${disabled ? ' aria-disabled="true" style="opacity:.45;pointer-events:none"' : ''}>${label}</a>`;
+function linkBtn(href, label, { primary = false, disabled = false, iconName = '', cls = '' } = {}) {
+  return `<a class="btn${primary ? ' primary' : ''}${cls ? ` ${cls}` : ''}" href="${href}"${disabled ? ' aria-disabled="true" tabindex="-1"' : ''}>${iconName ? icon(iconName) : ''}${label}</a>`;
 }
 
 function topicsOf(deck) {
@@ -312,6 +325,76 @@ function streak() {
   return n;
 }
 
+// ---------- Symbole & kleine Effekte ----------
+
+// Strich-Symbole im Stil von Lucide (24er Raster)
+const ICONS = {
+  home: '<path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V9.5"/>',
+  chart: '<path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/>',
+  user: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>',
+  settings: '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>',
+  star: '<path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9z"/>',
+  trash: '<path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1L5 6"/><path d="M10 11v6M14 11v6"/>',
+  back: '<path d="m15 18-6-6 6-6"/>',
+  close: '<path d="M18 6 6 18M6 6l12 12"/>',
+  check: '<path d="M20 6 9 17l-5-5"/>',
+  repeat: '<path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/>',
+  play: '<path d="m7 4 13 8-13 8z"/>',
+  layers: '<path d="m12 2 10 5-10 5L2 7z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/>',
+  flame: '<path d="M12 22c4 0 7-2.7 7-7 0-4-3-6-4-10-2 2-3 4-3 6-1-1-2-2-2-4-2 2-5 5-5 8 0 4.3 3 7 7 7z"/>',
+  target: '<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/>',
+  inbox: '<path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13L22 12v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6z"/>',
+  cloud: '<path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6 1.5A4 4 0 0 0 6 19z"/>',
+  alert: '<path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/>',
+  logout: '<path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/>',
+  download: '<path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>',
+  upload: '<path d="M12 21V9"/><path d="m7 14 5-5 5 5"/><path d="M5 3h14"/>',
+  undo: '<path d="M9 14 4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 0 10h-1"/>',
+  key: '<circle cx="7.5" cy="15.5" r="4.5"/><path d="m21 2-9.6 9.6"/><path d="m15.5 7.5 3 3L22 7l-3-3"/>',
+  hand: '<path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-6-2.4l-3.6-3.6a2 2 0 0 1 2.8-2.8L7 15"/>',
+};
+
+function icon(name, cls = '') {
+  return `<svg class="icon ${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICONS[name] || ''}</svg>`;
+}
+
+const REDUCED_MOTION = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+// Kurzes haptisches Feedback (Android/Chrome; iOS ignoriert es)
+function haptic(pattern) {
+  try { navigator.vibrate?.(pattern); } catch { /* nicht unterstützt */ }
+}
+
+// Zahlen mit data-count beim Anzeigen hochzählen
+function countUp(root) {
+  root.querySelectorAll('[data-count]').forEach((el) => {
+    const target = Number(el.dataset.count);
+    const suffix = el.dataset.suffix || '';
+    if (REDUCED_MOTION || !target) { el.textContent = target + suffix; return; }
+    const start = performance.now();
+    const dur = 700;
+    const step = (now) => {
+      const t = Math.min(1, (now - start) / dur);
+      el.textContent = Math.round(target * (1 - Math.pow(1 - t, 3))) + suffix;
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  });
+}
+
+function tile(iconName, label, value, { suffix = '', extra = '', cls = '' } = {}) {
+  return `<div class="tile ${cls}">
+    <span class="tile-label">${icon(iconName)}${label}</span>
+    <b><span data-count="${value}" data-suffix="${suffix}">${value}${suffix}</span>${extra}</b>
+  </div>`;
+}
+
+function pct(n, total) { return total ? Math.round((n / total) * 100) : 0; }
+
+function deckInitials(name) {
+  return name.split(/\s+/).filter(Boolean).map((w) => w[0]).join('').slice(0, 2).toUpperCase();
+}
+
 // ---------- Seiten ----------
 
 function viewOverview() {
@@ -321,33 +404,49 @@ function viewOverview() {
     for (const k in s) acc[k] = (acc[k] || 0) + s[k];
     return acc;
   }, {});
+  const hour = new Date().getHours();
+  const greet = hour < 11 ? 'Guten Morgen' : hour < 18 ? 'Hallo' : 'Guten Abend';
 
   app.innerHTML = `
-    <h1>Deine Module</h1>
-    <div class="panel stats" style="margin-bottom:18px">
-      <div class="stat"><b>${totals.open || 0}</b><span>offen</span></div>
-      <div class="stat"><b>${today.reviews}</b><span>heute gelernt</span></div>
-      <div class="stat"><b>${streak()}</b><span>Tage Serie</span></div>
-      <div class="stat"><b>${totals.mastered || 0} / ${totals.total || 0}</b><span>Karten gekonnt</span></div>
+    <div class="page-head">
+      <h1>${session ? `${greet}, ${esc(session.name)}` : 'Deine Module'}</h1>
+      <p>${totals.open ? `${totals.open} Karten warten auf dich.` : totals.total ? 'Alles gekonnt – stark!' : 'Noch keine Karten vorhanden.'}</p>
+    </div>
+    <div class="tiles">
+      ${tile('inbox', 'Offen', totals.open || 0)}
+      ${tile('check', 'Heute gelernt', today.reviews)}
+      ${tile('flame', 'Tage Serie', streak(), { cls: 'flame' })}
+      ${tile('target', 'Gekonnt', pct(totals.mastered || 0, totals.total || 0), { suffix: ' %', extra: ` <small>${totals.mastered || 0}/${totals.total || 0}</small>` })}
     </div>
     <div class="grid">
       ${DECKS.map((d) => {
         const s = deckStats(d);
         return `<div class="panel deck" style="--deck:${d.color}">
-          <h3>${esc(d.name)}</h3>
-          ${d.error ? `<p class="small" style="color:var(--again)">Fehler beim Laden: ${esc(d.error)}</p>` : ''}
+          <div class="deck-head">
+            <div class="deck-icon">${deckInitials(d.name)}</div>
+            <div>
+              <h3>${esc(d.name)}</h3>
+              <div class="sub">${s.total} Karten</div>
+            </div>
+            ${s.total ? `<div class="deck-pct">${pct(s.mastered, s.total)} %<small>gekonnt</small></div>` : ''}
+          </div>
+          ${d.error ? `<p class="small" style="color:var(--again);margin:0">Fehler beim Laden: ${esc(d.error)}</p>` : ''}
           ${s.total === 0
-            ? '<p class="muted small">Noch keine Karten. Lade ein Dokument bei Claude hoch, um Karten zu erzeugen.</p>'
-            : `<div class="small muted">${s.total} Karten · ${s.open} offen · ${s.mastered} gekonnt${s.marked ? ` · ★ ${s.marked}` : ''}</div>${progressBar(s)}`}
+            ? '<p class="empty">Noch keine Karten. Lade ein Dokument bei Claude hoch, um Karten zu erzeugen.</p>'
+            : `${progressBar(s)}
+              <div class="deck-meta">
+                <span>${s.open} offen</span><span>${s.mastered} gekonnt</span>${s.marked ? `<span class="star">${icon('star', 'fill')}${s.marked}</span>` : ''}
+              </div>`}
           <div class="actions">
-            ${linkBtn(studyHref(d.id), `Lernen${s.open ? ` (${s.open})` : ''}`, { primary: true, disabled: !s.open })}
-            ${linkBtn(`#/deck/${d.id}`, 'Karten')}
+            ${linkBtn(studyHref(d.id), `Lernen${s.open ? ` · ${s.open}` : ''}`, { primary: true, disabled: !s.open, iconName: 'play' })}
+            ${linkBtn(`#/deck/${d.id}`, 'Karten', { iconName: 'layers' })}
           </div>
         </div>`;
       }).join('')}
     </div>
-    <p style="margin-top:14px">${legend()}</p>
+    ${legend()}
   `;
+  countUp(app);
 }
 
 const FILTERS = { '': 'Alle Karten', offen: 'Offen', gekonnt: 'Gekonnt', markiert: 'Markiert' };
@@ -377,32 +476,32 @@ function viewDeck(deckId) {
   };
 
   app.innerHTML = `
-    <h1>${esc(deck.name)}</h1>
-    <div class="toolbar">
-      <label>Thema:
-        <select id="topic">
-          <option value="">Alle Themen</option>
-          ${topics.map((t) => `<option ${t === topic ? 'selected' : ''}>${esc(t)}</option>`).join('')}
-        </select>
-      </label>
+    <a class="back-link" href="#/">${icon('back')}Übersicht</a>
+    <div class="page-head">
+      <h1>${esc(deck.name)}</h1>
+      <p>${s.total} Karten${topic ? ` im Thema „${esc(topic)}“` : ''}</p>
     </div>
-    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
-      <div class="stats">
-        <div class="stat"><b>${s.total}</b><span>Karten</span></div>
-        <div class="stat"><b>${s.open}</b><span>offen</span></div>
-        <div class="stat"><b>${s.mastered}</b><span>gekonnt</span></div>
-        <div class="stat"><b>${s.marked}</b><span>markiert</span></div>
+    <div class="panel deck-hero" style="--deck:${deck.color}">
+      <div class="row">
+        <label class="field">Thema
+          <select id="topic">
+            <option value="">Alle Themen</option>
+            ${topics.map((t) => `<option ${t === topic ? 'selected' : ''}>${esc(t)}</option>`).join('')}
+          </select>
+        </label>
+        <div class="deck-pct">${pct(s.mastered, s.total)} %<small>gekonnt</small></div>
       </div>
       ${progressBar(s)}
-      <div class="toolbar" style="margin:0">
-        ${linkBtn(studyHref(deck.id, topic), `Offene lernen (${s.open})`, { primary: true, disabled: !s.open })}
-        ${linkBtn(studyHref(deck.id, topic, 'alle'), `Alle Karten lernen (${s.total})`, { disabled: !s.total })}
-        ${linkBtn(studyHref(deck.id, topic, 'markiert'), `★ Markierte lernen (${s.marked})`, { disabled: !s.marked })}
+      <div class="deck-meta"><span>${s.open} offen</span><span>${s.mastered} gekonnt</span><span class="star">${icon('star', 'fill')}${s.marked} markiert</span></div>
+      <div class="study-actions">
+        ${linkBtn(studyHref(deck.id, topic), `Offene lernen · ${s.open}`, { primary: true, disabled: !s.open, iconName: 'play' })}
+        ${linkBtn(studyHref(deck.id, topic, 'alle'), `Alle Karten · ${s.total}`, { disabled: !s.total, iconName: 'layers' })}
+        ${linkBtn(studyHref(deck.id, topic, 'markiert'), `Markierte · ${s.marked}`, { disabled: !s.marked, iconName: 'star' })}
       </div>
     </div>
-    <div class="toolbar" style="margin:28px 0 12px;justify-content:space-between">
-      <h2 style="margin:0">Karten</h2>
-      <select id="filter">
+    <div class="list-head">
+      <h2>Karten</h2>
+      <select id="filter" aria-label="Filter">
         ${Object.entries(FILTERS).map(([k, v]) => `<option value="${k}" ${k === filter ? 'selected' : ''}>${v}</option>`).join('')}
       </select>
     </div>
@@ -411,13 +510,13 @@ function viewDeck(deckId) {
         const st = stateOf(deck.id, c.id);
         const stat = status(st);
         return `<details data-id="${esc(c.id)}">
-          <summary><span>${st?.marked ? '<span class="star">★</span> ' : ''}${esc(c.front.split('\n')[0])}</span><span class="pill ${stat}">${STATUS_LABEL[stat]}</span></summary>
+          <summary><span class="q">${st?.marked ? `<span class="star">${icon('star', 'fill')}</span>` : ''}<span>${esc(c.front.split('\n')[0])}</span></span><span class="pill ${stat}">${STATUS_LABEL[stat]}</span></summary>
           <div class="content">${md(c.back)}
-            <p class="small muted" style="margin-top:8px">${esc([c.topic, c.source].filter(Boolean).join(' · '))}</p>
-            <div class="toolbar" style="margin:8px 0 0">
-              <button class="small" data-action="mark">${st?.marked ? 'Markierung entfernen' : '☆ Markieren'}</button>
-              ${isKnown(st) ? '<button class="small" data-action="relearn">Wieder in den Zyklus</button>' : ''}
-              <button class="small danger-outline" data-action="delete">🗑 Löschen</button>
+            <p class="small muted" style="margin:10px 0 0">${esc([c.topic, c.source].filter(Boolean).join(' · '))}</p>
+            <div class="toolbar" style="margin-top:12px">
+              <button class="small" data-action="mark">${icon('star', st?.marked ? 'fill' : '')}${st?.marked ? 'Markierung entfernen' : 'Markieren'}</button>
+              ${isKnown(st) ? `<button class="small" data-action="relearn">${icon('repeat')}Wieder in den Zyklus</button>` : ''}
+              <button class="small danger-outline" data-action="delete">${icon('trash')}Löschen</button>
             </div>
           </div>
         </details>`;
@@ -469,92 +568,200 @@ function viewStudy(deckId) {
   const topic = params.get('thema') || '';
   const mode = params.get('modus') || 'offen';
   const queue = buildQueue(deck, topic, mode);
+  const initial = queue.length;
   let knewCount = 0;
   let repeatCount = 0;
   let revealed = false;
+  let busy = false;
 
   const backHref = `#/deck/${deck.id}${topic ? `?thema=${encodeURIComponent(topic)}` : ''}`;
 
   function finish() {
     const s = deckStats(deck, topic);
-    app.innerHTML = `<div class="panel done">
-      <h1>${knewCount + repeatCount ? 'Runde geschafft! 🎉' : 'Nichts zu lernen'}</h1>
-      <p class="muted">${knewCount + repeatCount
-        ? `${knewCount} Karten gekonnt, ${repeatCount}× wiederholt.`
+    const did = knewCount + repeatCount > 0;
+    app.innerHTML = `<div class="done">
+      <div class="done-badge${did ? '' : ' neutral'}">${icon(did ? 'check' : 'inbox')}</div>
+      <h1>${did ? 'Runde geschafft' : 'Nichts zu lernen'}</h1>
+      <p class="muted" style="margin:0">${did ? `${esc(deck.name)}${topic ? ` · ${esc(topic)}` : ''}`
         : mode === 'markiert' ? 'Keine markierten Karten.' : 'Alle Karten sind als „Kann ich“ markiert.'}</p>
-      <p class="muted small">${s.mastered} von ${s.total} Karten gekonnt${topic ? ` (${esc(topic)})` : ''}.</p>
-      <p class="toolbar" style="justify-content:center">
-        ${s.total ? linkBtn(studyHref(deck.id, topic, 'alle'), 'Alle Karten lernen') : ''}
-        ${linkBtn(backHref, 'Zum Modul')}
-        ${linkBtn('#/', 'Zur Übersicht', { primary: true })}
-      </p>
+      ${did ? `<div class="tiles">
+        ${tile('check', 'Gekonnt', knewCount)}
+        ${tile('repeat', 'Wiederholt', repeatCount)}
+        ${tile('target', 'Modul gekonnt', pct(s.mastered, s.total), { suffix: ' %' })}
+      </div>` : ''}
+      <div class="toolbar">
+        ${linkBtn(backHref, 'Zum Modul', { iconName: 'layers' })}
+        ${s.total ? linkBtn(studyHref(deck.id, topic, 'alle'), 'Alle Karten lernen', { iconName: 'repeat' }) : ''}
+        ${linkBtn('#/', 'Zur Übersicht', { primary: true, iconName: 'home' })}
+      </div>
     </div>`;
+    countUp(app);
+    if (did) haptic([12, 80, 12]);
   }
 
   function show() {
     if (queue.length === 0) return finish();
+    busy = false;
+    revealed = false;
     const card = queue[0];
     const st = stateOf(deck.id, card.id);
     app.innerHTML = `
-      <div class="study-head">
-        <a href="${backHref}">← ${esc(deck.name)}${topic ? ` · ${esc(topic)}` : ''}</a>
-        <span class="muted small">${MODE_LABEL[mode] || ''} · noch ${queue.length} · ${knewCount} gekonnt</span>
-      </div>
-      <div class="card" style="border-top:4px solid ${deck.color}">
-        <div class="card-top">
-          <div class="topic">${esc(card.topic || '')}</div>
-          <div class="card-actions">
-            <button class="mark ${st?.marked ? 'on' : ''}" id="mark" title="Markieren (Taste M)">${st?.marked ? '★ Markiert' : '☆ Markieren'}</button>
-            <button class="mark danger-outline" id="delete" title="Karte löschen" aria-label="Karte löschen">🗑</button>
+      <div class="study" style="--deck:${deck.color}">
+        <div class="study-head">
+          <a class="btn ghost icon-btn" href="${backHref}" aria-label="Lernrunde beenden">${icon('close')}</a>
+          <div class="title">
+            <b>${esc(deck.name)}${topic ? ` · ${esc(topic)}` : ''}</b>
+            <span>${MODE_LABEL[mode] || ''}</span>
+          </div>
+          <span class="counter">${knewCount} / ${initial} gekonnt</span>
+        </div>
+        <div class="study-progress"><span style="width:${pct(knewCount, initial)}%"></span></div>
+
+        <div class="card-tools">
+          <span class="topic">${esc(card.topic || '')}</span>
+          <div class="tools">
+            <button class="small mark-btn ${st?.marked ? 'on' : ''}" id="mark" title="Markieren (Taste M)">${icon('star', st?.marked ? 'fill' : '')}<span>${st?.marked ? 'Markiert' : 'Markieren'}</span></button>
+            <button class="small icon-btn danger-outline" id="delete" title="Karte löschen" aria-label="Karte löschen">${icon('trash')}</button>
           </div>
         </div>
-        <div class="front">${md(card.front)}</div>
-        ${revealed ? `<div class="back">${md(card.back)}</div>` : ''}
-        ${revealed && card.source ? `<div class="source">Quelle: ${esc(card.source)}</div>` : ''}
-      </div>
-      ${revealed ? `
-        <div class="answer-row">
-          <button class="r-again" data-knew="0">Wiederholen</button>
-          <button class="r-good" data-knew="1">Kann ich</button>
+
+        <div class="swipe enter" id="swipe">
+          <span class="swipe-hint again">Wiederholen</span>
+          <span class="swipe-hint good">Kann ich</span>
+          <div class="flip-scene">
+            <div class="flip-card" id="flip" role="button" tabindex="0" aria-label="Karte umdrehen">
+              <div class="face front">
+                <div class="q">${md(card.front)}</div>
+                <div class="hint">${icon('hand')}Tippen zum Umdrehen</div>
+              </div>
+              <div class="face back">
+                <div class="q-small">${md(card.front)}</div>
+                <div class="a">${md(card.back)}</div>
+                ${card.source ? `<div class="source">Quelle: ${esc(card.source)}</div>` : ''}
+              </div>
+            </div>
+          </div>
         </div>
-        <p class="kbd-hint muted small">Tasten 1 / 2 · M = markieren</p>`
-      : `<button class="primary reveal" id="reveal">Antwort zeigen</button>
-         <p class="kbd-hint muted small">Leertaste · M = markieren</p>`}
+
+        <div class="answer-area">
+          <button class="primary reveal" id="reveal">Antwort zeigen <kbd>Leertaste</kbd></button>
+          <div class="answer-row">
+            <button class="r-again" data-knew="0">${icon('repeat')}Wiederholen <kbd>1</kbd></button>
+            <button class="r-good" data-knew="1">${icon('check')}Kann ich <kbd>2</kbd></button>
+          </div>
+        </div>
+        <p class="kbd-hint">Nach dem Umdrehen wischen: → Kann ich · ← Wiederholen</p>
+      </div>
     `;
     renderMath(app);
-    app.querySelector('#reveal')?.addEventListener('click', () => { revealed = true; show(); });
-    app.querySelector('#mark').addEventListener('click', mark);
+    const root = app.querySelector('.study');
+    const flip = app.querySelector('#flip');
+    const swipe = app.querySelector('#swipe');
+    swipe.addEventListener('animationend', () => swipe.classList.remove('enter'), { once: true });
+
+    const setRevealed = (v) => {
+      revealed = v;
+      flip.classList.toggle('flipped', v);
+      if (v) root.classList.add('revealed');
+    };
+    const toggleFlip = () => { if (!busy) setRevealed(!revealed); };
+
+    app.querySelector('#reveal').addEventListener('click', () => setRevealed(true));
+    flip.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); e.stopPropagation(); toggleFlip(); } });
+    app.querySelector('#mark').addEventListener('click', () => {
+      const on = toggleMark(deck.id, card.id);
+      const b = app.querySelector('#mark');
+      b.classList.toggle('on', on);
+      b.innerHTML = `${icon('star', on ? 'fill' : '')}<span>${on ? 'Markiert' : 'Markieren'}</span>`;
+      haptic(8);
+    });
     app.querySelector('#delete').addEventListener('click', () => confirmDelete(deck.id, card, () => {
       queue.shift(); // samt evtl. weiterer Vorkommen in der Runde entfernen
       for (let i = queue.length - 1; i >= 0; i--) if (queue[i].id === card.id) queue.splice(i, 1);
-      revealed = false;
       show();
     }));
     app.querySelectorAll('[data-knew]').forEach((b) => b.addEventListener('click', () => answer(b.dataset.knew === '1')));
-  }
 
-  function mark() {
-    toggleMark(deck.id, queue[0].id);
-    show();
+    // Wischen: erst nach dem Umdrehen; ein Tippen ohne Bewegung dreht die Karte
+    const hints = { good: swipe.querySelector('.swipe-hint.good'), again: swipe.querySelector('.swipe-hint.again') };
+    let drag = null;
+    const setDrag = (dx) => {
+      swipe.style.transform = dx ? `translateX(${dx}px) rotate(${dx / 28}deg)` : '';
+      hints.good.style.opacity = revealed ? Math.max(0, Math.min(1, dx / 110)) : 0;
+      hints.again.style.opacity = revealed ? Math.max(0, Math.min(1, -dx / 110)) : 0;
+    };
+    swipe.addEventListener('pointerdown', (e) => {
+      if (busy || (e.pointerType === 'mouse' && e.button !== 0)) return;
+      drag = { id: e.pointerId, x: e.clientX, y: e.clientY, dx: 0, moving: false };
+    });
+    swipe.addEventListener('pointermove', (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      const mx = e.clientX - drag.x;
+      const my = e.clientY - drag.y;
+      if (!drag.moving) {
+        if (Math.abs(mx) < 8 && Math.abs(my) < 8) return;
+        if (Math.abs(my) > Math.abs(mx)) { drag = null; return; } // senkrecht: Seite scrollen
+        drag.moving = true;
+        swipe.setPointerCapture(e.pointerId);
+        swipe.classList.remove('animating', 'enter');
+      }
+      drag.dx = revealed ? mx : mx * 0.2; // vor dem Umdrehen nur leicht nachgeben
+      setDrag(drag.dx);
+    });
+    const release = (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      const { moving, dx } = drag;
+      drag = null;
+      if (!moving) {
+        if (e.type === 'pointerup' && !e.target.closest('a')) toggleFlip();
+        return;
+      }
+      if (revealed && Math.abs(dx) > Math.min(140, swipe.offsetWidth * 0.25)) {
+        answer(dx > 0);
+      } else {
+        swipe.classList.add('animating');
+        setDrag(0);
+      }
+    };
+    swipe.addEventListener('pointerup', release);
+    swipe.addEventListener('pointercancel', release);
   }
 
   function answer(knew) {
-    const card = queue.shift();
+    if (busy || !revealed) return;
+    busy = true;
+    const card = queue[0];
     recordAnswer(deck.id, card, knew);
-    if (knew) knewCount += 1;
-    else {
-      repeatCount += 1;
-      queue.splice(Math.min(queue.length, 4), 0, card); // kommt in dieser Runde bald wieder
-    }
-    revealed = false;
-    show();
+    haptic(knew ? 15 : [8, 50, 8]);
+    const swipe = app.querySelector('#swipe');
+    const next = () => {
+      queue.shift();
+      if (knew) knewCount += 1;
+      else {
+        repeatCount += 1;
+        queue.splice(Math.min(queue.length, 4), 0, card); // kommt in dieser Runde bald wieder
+      }
+      show();
+    };
+    if (REDUCED_MOTION || !swipe) return next();
+    const dir = knew ? 1 : -1;
+    swipe.classList.add('animating');
+    swipe.style.transform = `translateX(${dir * Math.max(window.innerWidth, 600)}px) rotate(${dir * 14}deg)`;
+    swipe.style.opacity = '0';
+    const bar = app.querySelector('.study-progress span');
+    if (bar && knew) bar.style.width = `${pct(knewCount + 1, initial)}%`;
+    setTimeout(next, 260);
   }
 
   keyHandler = (e) => {
     if (queue.length === 0 || e.ctrlKey || e.metaKey || e.altKey) return;
-    if (e.key === 'm' || e.key === 'M') mark();
-    else if (!revealed && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); revealed = true; show(); }
-    else if (revealed && (e.key === '1' || e.key === '2')) answer(e.key === '2');
+    if (e.target.closest?.('select, input, textarea')) return;
+    if (e.key === 'm' || e.key === 'M') app.querySelector('#mark')?.click();
+    else if (e.key === ' ' || (e.key === 'Enter' && !e.target.closest?.('button, a'))) {
+      e.preventDefault();
+      if (!revealed) app.querySelector('#reveal')?.click();
+      else app.querySelector('#flip')?.classList.toggle('flipped');
+    } else if (revealed && (e.key === '1' || e.key === '2')) answer(e.key === '2');
   };
   document.addEventListener('keydown', keyHandler);
   show();
@@ -578,34 +785,40 @@ function viewStats() {
   }
 
   app.innerHTML = `
-    <h1>Fortschritt</h1>
-    <div class="panel stats">
-      <div class="stat"><b>${streak()}</b><span>Tage Serie</span></div>
-      <div class="stat"><b>${rev30}</b><span>Antworten (30 T)</span></div>
-      <div class="stat"><b>${rev30 ? Math.round((cor30 / rev30) * 100) : '–'}%</b><span>„Kann ich“ (30 T)</span></div>
+    <div class="page-head">
+      <h1>Fortschritt</h1>
+      <p>Deine Lernaktivität und der Stand pro Modul.</p>
     </div>
-    <h2>Aktivität (20 Wochen)</h2>
+    <div class="tiles">
+      ${tile('flame', 'Tage Serie', streak(), { cls: 'flame' })}
+      ${tile('repeat', 'Antworten · 30 Tage', rev30)}
+      ${tile('check', '„Kann ich“ · 30 Tage', pct(cor30, rev30), { suffix: ' %' })}
+    </div>
+    <h2>Aktivität · 20 Wochen</h2>
     <div class="panel"><div class="heatmap">${cells.join('')}</div></div>
     <h2>Pro Modul</h2>
     <div class="grid">
       ${DECKS.map((d) => {
         const s = deckStats(d);
-        const pct = s.total ? Math.round((s.mastered / s.total) * 100) : 0;
         return `<div class="panel deck" style="--deck:${d.color}">
-          <h3>${esc(d.name)}</h3>
-          <div class="small muted">${s.total} Karten · ${pct}% gekonnt</div>
+          <div class="deck-head">
+            <div class="deck-icon">${deckInitials(d.name)}</div>
+            <div><h3>${esc(d.name)}</h3><div class="sub">${s.total} Karten</div></div>
+            <div class="deck-pct">${pct(s.mastered, s.total)} %<small>gekonnt</small></div>
+          </div>
           ${progressBar(s)}
-          <div class="small">${s.new} neu · ${s.learning} wiederholen · ${s.mastered} gekonnt · ★ ${s.marked} markiert</div>
+          <div class="deck-meta"><span>${s.new} neu</span><span>${s.learning} wiederholen</span><span>${s.mastered} gekonnt</span><span class="star">${icon('star', 'fill')}${s.marked}</span></div>
           ${topicsOf(d).length ? `<details class="small"><summary>Nach Thema</summary>
-            <table style="width:100%;margin-top:6px">${topicsOf(d).map((t) => {
+            <table class="topic-table">${topicsOf(d).map((t) => {
               const ts = deckStats(d, t);
-              return `<tr><td>${esc(t)}</td><td style="text-align:right">${ts.mastered}/${ts.total}</td></tr>`;
+              return `<tr><td>${esc(t)}</td><td>${ts.mastered}/${ts.total} · ${pct(ts.mastered, ts.total)} %</td></tr>`;
             }).join('')}</table></details>` : ''}
         </div>`;
       }).join('')}
     </div>
-    <p style="margin-top:14px">${legend()}</p>
+    ${legend()}
   `;
+  countUp(app);
 }
 
 function deletedCards() {
@@ -617,55 +830,59 @@ function deletedCards() {
 function viewSettings() {
   const sync = !!syncTarget();
   app.innerHTML = `
-    <h1>Einstellungen</h1>
+    <div class="page-head">
+      <h1>${ACCOUNTS ? 'Konto' : 'Einstellungen'}</h1>
+      <p>${ACCOUNTS ? 'Login, Synchronisierung und Sicherung.' : 'Synchronisierung und Sicherung.'}</p>
+    </div>
 
     ${ACCOUNTS ? `
-    <h2>Konto</h2>
-    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
-      <p style="margin:0">Angemeldet als <b>${esc(session.name)}</b>. Dein Fortschritt wird automatisch gespeichert und ist auf jedem Gerät verfügbar, auf dem du dich anmeldest.</p>
-      <p class="small muted" style="margin:0" id="syncInfo">${esc(syncStatusText())}</p>
-      <div class="toolbar" style="margin:0">
-        <button class="primary" id="syncNow">Jetzt synchronisieren</button>
-        <button id="logout">Abmelden</button>
+    <div class="panel stack">
+      <div class="account-head">
+        <span class="avatar">${esc(session.name.charAt(0).toUpperCase())}</span>
+        <div><b>${esc(session.name)}</b><div class="small muted">Dein Fortschritt wird automatisch gespeichert und ist auf jedem Gerät verfügbar, auf dem du dich anmeldest.</div></div>
+      </div>
+      <p class="small muted" id="syncInfo">${esc(syncStatusText())}</p>
+      <div class="toolbar">
+        <button class="primary" id="syncNow">${icon('cloud')}Jetzt synchronisieren</button>
+        <button id="logout">${icon('logout')}Abmelden</button>
       </div>
     </div>` : `
     <h2>Synchronisierung zwischen Geräten</h2>
-    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
+    <div class="panel stack">
       ${sync ? `
-        <p style="margin:0">Aktiv – der Fortschritt wird in einem privaten GitHub Gist gespeichert und nach dem Lernen automatisch abgeglichen.</p>
-        <p class="small muted" style="margin:0" id="syncInfo">${esc(syncStatusText())}</p>
-        <div class="toolbar" style="margin:0">
-          <button class="primary" id="syncNow">Jetzt synchronisieren</button>
+        <p>Aktiv – der Fortschritt wird in einem privaten GitHub Gist gespeichert und nach dem Lernen automatisch abgeglichen.</p>
+        <p class="small muted" id="syncInfo">${esc(syncStatusText())}</p>
+        <div class="toolbar">
+          <button class="primary" id="syncNow">${icon('cloud')}Jetzt synchronisieren</button>
           <button id="syncOff">Sync auf diesem Gerät beenden</button>
         </div>`
       : `
-        <p class="small muted" style="margin:0">Einmal pro Gerät einrichten: Erstelle auf GitHub einen
+        <p class="small muted">Einmal pro Gerät einrichten: Erstelle auf GitHub einen
           <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">Fine-grained Token</a>
           mit der Berechtigung <b>Account permissions → Gists: Read and write</b> (sonst nichts) und füge ihn hier ein.
           Auf allen Geräten denselben Token (oder je Gerät einen eigenen) verwenden – der Fortschritt landet im selben privaten Gist.</p>
-        <div class="toolbar" style="margin:0">
-          <input type="password" id="token" placeholder="github_pat_…" autocomplete="off"
-            style="flex:1;min-width:200px;font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text)">
+        <div class="toolbar">
+          <input type="password" id="token" class="text-input" placeholder="github_pat_…" autocomplete="off">
           <button class="primary" id="syncOn">Verbinden</button>
         </div>`}
     </div>`}
 
     <h2>Gelöschte Karten</h2>
-    <div class="panel" style="display:flex;flex-direction:column;gap:10px">
+    <div class="panel">
       ${deletedCards().length === 0 ? '<p class="small muted" style="margin:0">Keine gelöschten Karten.</p>'
         : deletedCards().map(({ deck, card }) => `<div class="deleted-row">
           <span><span class="small muted">${esc(deck.name)} · </span>${esc(card.front.split('\n')[0])}</span>
-          <button class="small" data-restore="${esc(deck.id)}/${esc(card.id)}">Wiederherstellen</button>
+          <button class="small" data-restore="${esc(deck.id)}/${esc(card.id)}">${icon('undo')}Wiederherstellen</button>
         </div>`).join('')}
     </div>
 
     <h2>Sicherung</h2>
-    <div class="panel" style="display:flex;flex-direction:column;gap:12px">
-      <p class="small muted" style="margin:0">Fortschritt${ACCOUNTS ? ' deines Logins' : ''} als Datei sichern oder wiederherstellen.${sync ? ' Import und Zurücksetzen gelten wegen der Synchronisierung für alle Geräte.' : ''}</p>
-      <div class="toolbar" style="margin:0">
-        <button id="export">Fortschritt exportieren</button>
-        <label class="btn">Fortschritt importieren<input type="file" id="import" accept="application/json" hidden></label>
-        <button id="reset" style="color:var(--again)">Fortschritt zurücksetzen</button>
+    <div class="panel stack">
+      <p class="small muted">Fortschritt${ACCOUNTS ? ' deines Logins' : ''} als Datei sichern oder wiederherstellen.${sync ? ' Import und Zurücksetzen gelten wegen der Synchronisierung für alle Geräte.' : ''}</p>
+      <div class="toolbar">
+        <button id="export">${icon('download')}Exportieren</button>
+        <label class="btn">${icon('upload')}Importieren<input type="file" id="import" accept="application/json" hidden></label>
+        <button id="reset" class="danger-outline">${icon('trash')}Zurücksetzen</button>
       </div>
     </div>
     <p class="small muted" id="msg"></p>
@@ -743,14 +960,18 @@ function hasProgress(p) {
 
 function viewLogin() {
   app.innerHTML = `
-    <div class="panel login">
-      <h1>Anmelden</h1>
-      <p class="muted small" style="margin:0">Gib deinen Login-Code ein. Zugänge vergibt der Admin.</p>
-      <form id="loginForm" class="toolbar" style="margin:0">
-        <input id="code" class="text-input" placeholder="Login-Code" autocomplete="username" autocapitalize="none" spellcheck="false" required>
-        <button class="primary">Anmelden</button>
-      </form>
-      <p class="small" id="loginMsg" style="margin:0"></p>
+    <div class="login-wrap">
+      <div class="panel login">
+        <img class="login-logo" src="icons/icon.svg" alt="">
+        <h1>Karteikarten</h1>
+        <p class="lead">Melde dich mit deinem Login-Code an.</p>
+        <form id="loginForm">
+          <div class="input-icon">${icon('key')}<input id="code" class="text-input" placeholder="Login-Code" aria-label="Login-Code" autocomplete="username" autocapitalize="none" spellcheck="false" required></div>
+          <button class="primary">Anmelden</button>
+        </form>
+        <p class="login-msg" id="loginMsg"></p>
+        <p class="note">Zugänge vergibt der Admin.</p>
+      </div>
     </div>`;
   const msg = app.querySelector('#loginMsg');
   const input = app.querySelector('#code');
@@ -760,18 +981,18 @@ function viewLogin() {
     const code = normalizeCode(input.value);
     if (!code) return;
     msg.textContent = 'Prüfe …';
-    msg.style.color = '';
+    msg.className = 'login-msg muted';
     try {
       const account = await rpc('kk_login', { p_code: code });
       if (!account) {
         msg.textContent = 'Unbekannter Login-Code.';
-        msg.style.color = 'var(--again)';
+        msg.className = 'login-msg error';
         return;
       }
       await completeLogin(code, account);
     } catch (err) {
       msg.textContent = `Anmeldung fehlgeschlagen: ${err.message}`;
-      msg.style.color = 'var(--again)';
+      msg.className = 'login-msg error';
     }
   });
 }
@@ -795,13 +1016,16 @@ async function completeLogin(code, account) {
 function askMigration(name, count) {
   return new Promise((resolve) => {
     app.innerHTML = `
-      <div class="panel login">
-        <h1>Bisherigen Fortschritt übernehmen?</h1>
-        <p style="margin:0">Auf diesem Gerät gibt es Fortschritt aus der Zeit ohne Login (${count} Karten bearbeitet).</p>
-        <p class="small muted" style="margin:0">Übernimm ihn nur, wenn es <b>deiner</b> ist – er wird dann dem Login <b>${esc(name)}</b> zugeordnet.</p>
-        <div class="toolbar" style="margin:0">
-          <button class="primary" id="take">Übernehmen</button>
-          <button id="skip">Nicht übernehmen</button>
+      <div class="login-wrap">
+        <div class="panel login">
+          <img class="login-logo" src="icons/icon.svg" alt="">
+          <h1>Fortschritt übernehmen?</h1>
+          <p class="lead">Auf diesem Gerät gibt es Fortschritt aus der Zeit ohne Login (${count} Karten bearbeitet).</p>
+          <p class="note">Übernimm ihn nur, wenn es <b>deiner</b> ist – er wird dann dem Login <b>${esc(name)}</b> zugeordnet.</p>
+          <div class="actions">
+            <button class="primary" id="take">Übernehmen</button>
+            <button id="skip">Nicht übernehmen</button>
+          </div>
         </div>
       </div>`;
     app.querySelector('#take').addEventListener('click', () => resolve(true));
@@ -1051,9 +1275,11 @@ function renderSyncBadge(state) {
   const el = document.getElementById('sync-badge');
   if (!el) return;
   if (!syncTarget()) { el.textContent = ''; return; }
-  el.textContent = state === 'läuft' ? '⟳ Sync …' : syncState.error ? '⚠ Sync-Fehler' : syncState.last ? '✓ Synchron' : '';
+  el.innerHTML = state === 'läuft' ? `${icon('cloud')}Sync …`
+    : syncState.error ? `${icon('alert')}Sync-Fehler`
+    : syncState.last ? `${icon('cloud')}Synchron` : '';
   el.title = syncStatusText();
-  el.style.color = syncState.error ? 'var(--again)' : 'var(--muted)';
+  el.style.color = syncState.error ? 'var(--again)' : '';
 }
 
 // Nach einem Sync mit neuen Daten neu zeichnen – aber nie mitten in einer Lernrunde
@@ -1102,12 +1328,31 @@ document.addEventListener('visibilitychange', () => {
 
 // ---------- Router ----------
 
+const TABS = [
+  { href: '#/', icon: 'home', label: 'Übersicht', match: (p) => !p[0] || p[0] === 'deck' },
+  { href: '#/statistik', icon: 'chart', label: 'Fortschritt', match: (p) => p[0] === 'statistik' },
+  { href: '#/einstellungen', icon: ACCOUNTS ? 'user' : 'settings', label: ACCOUNTS ? 'Konto' : 'Einstellungen', match: (p) => p[0] === 'einstellungen' },
+];
+
+function renderTabbar(parts) {
+  const nav = document.getElementById('tabbar');
+  if (!nav) return;
+  nav.innerHTML = TABS.map((t) => `<a href="${t.href}" class="${t.match(parts) ? 'active' : ''}"${t.match(parts) ? ' aria-current="page"' : ''}>${icon(t.icon)}<span>${t.label}</span></a>`).join('');
+}
+
 function route() {
   if (keyHandler) { document.removeEventListener('keydown', keyHandler); keyHandler = null; }
   const path = location.hash.replace(/^#/, '').split('?')[0] || '/';
   const parts = path.split('/').filter(Boolean);
   window.scrollTo(0, 0);
-  if (ACCOUNTS && !session) return viewLogin();
+  const view = ACCOUNTS && !session ? 'login' : parts[0] === 'lernen' ? 'study' : 'page';
+  document.body.dataset.view = view;
+  renderTabbar(parts);
+  // Seitenübergang neu starten
+  app.classList.remove('page');
+  void app.offsetWidth;
+  app.classList.add('page');
+  if (view === 'login') return viewLogin();
   if (parts.length === 0) return viewOverview();
   if (parts[0] === 'deck' && parts[1]) return viewDeck(parts[1]);
   if (parts[0] === 'lernen' && parts[1]) return viewStudy(parts[1]);
