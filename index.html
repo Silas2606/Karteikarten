@@ -7,7 +7,8 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
-  <meta name="theme-color" content="#2563eb">
+  <meta name="theme-color" content="#f4f5f8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0f17" media="(prefers-color-scheme: dark)">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Karteikarten">
@@ -15,20 +16,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
   <script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <a href="#/" class="brand">Karteikarten</a>
-    <span id="sync-badge" class="small"></span>
-    <nav>
-      <a href="#/">Übersicht</a>
-      <a href="#/statistik">Fortschritt</a>
-      <a href="#/einstellungen">Einstellungen</a>
+  <header class="topbar">
+    <a href="#/" class="brand"><img src="icons/icon.svg" alt="">Karteikarten</a>
+    <div class="topbar-right">
+      <span id="sync-badge"></span>
       <a href="#/einstellungen" id="user-badge" hidden></a>
-    </nav>
+    </div>
   </header>
-  <main id="app"><p class="muted">Lade …</p></main>
+  <main id="app"></main>
+  <nav class="tabbar" id="tabbar" aria-label="Navigation"></nav>
   <script src="config.js"></script>
   <script src="app.js"></script>
 </body>

@@ -18,7 +18,7 @@ Lern-App für meine Module – die Karten erstellt Claude aus hochgeladenen Doku
 
 ## Lernen & Fortschritt
 
-- **Lernen:** Antwort aufdecken (Leertaste) und mit *Wiederholen* oder *Kann ich* bewerten (Tasten 1 / 2). *Kann ich* nimmt die Karte aus dem Zyklus, *Wiederholen* lässt sie in der Runde bald wiederkommen.
+- **Lernen:** Karte antippen (oder Leertaste), sie dreht sich um. Dann mit *Wiederholen* / *Kann ich* bewerten – per Knopf, Taste 1 / 2 oder Wischen (rechts = *Kann ich*, links = *Wiederholen*). *Kann ich* nimmt die Karte aus dem Zyklus, *Wiederholen* lässt sie in der Runde bald wiederkommen. Auf Android vibriert das Gerät kurz als Rückmeldung.
 - **Markieren:** Jede Karte lässt sich beim Lernen (Taste M) oder in der Kartenliste mit ★ markieren.
 - **Löschen:** Unwichtige Karten beim Lernen (🗑) oder in der Kartenliste löschen – mit doppelter Bestätigung. Sie verschwinden auf allen Geräten aus Lernen, Liste und Statistik und lassen sich unter *Einstellungen → Gelöschte Karten* wiederherstellen.
 - **Modi:** offene Karten (Standard), alle Karten (auch gekonnte) und markierte Karten; jeweils filterbar nach Thema. Wer eine gekonnte Karte im Modus „Alle“ mit *Wiederholen* bewertet, holt sie zurück in den Zyklus – oder in der Kartenliste über *Wieder in den Zyklus*.

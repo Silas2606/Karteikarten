@@ -24,7 +24,8 @@ self.addEventListener('fetch', (e) => {
   const req = e.request;
   const url = new URL(req.url);
   const cacheable = req.method === 'GET'
-    && (url.origin === self.location.origin || url.hostname === 'cdnjs.cloudflare.com');
+    && (url.origin === self.location.origin
+      || ['cdnjs.cloudflare.com', 'fonts.googleapis.com', 'fonts.gstatic.com'].includes(url.hostname));
   if (!cacheable) return; // z. B. Sync mit api.github.com nie cachen
   // cache: 'no-cache' fragt immer beim Server nach (GitHub Pages erlaubt sonst 10 Min. Browser-Cache)
   e.respondWith(
