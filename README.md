@@ -2,7 +2,7 @@
 
 Lern-App für meine Module – die Karten erstellt Claude aus hochgeladenen Dokumenten.
 
-**Module:** Internes Rechnungswesen · Externes Rechnungswesen · Marketing · Analogtechnik
+**Module:** Internes Rechnungswesen · Externes Rechnungswesen · Marketing · Analogtechnik (aufgeteilt in Messtechnik und Analoge Elektronik)
 
 ## So funktioniert's
 
@@ -66,4 +66,4 @@ scripts/validate.mjs            Prüft Format, IDs und Duplikate
 CLAUDE.md                       Anleitung für Claude zum Erstellen der Karten
 ```
 
-Ein neues Modul anlegen: Eintrag in `decks/index.json` ergänzen und `decks/<id>.json` mit `{"deck": "<id>", "name": "…", "cards": []}` anlegen (oder Claude darum bitten).
+Ein neues Modul anlegen: Eintrag in `decks/index.json` ergänzen (optional `short` = zweistelliges Kürzel fürs Symbol) und `decks/<id>.json` mit `{"deck": "<id>", "name": "…", "cards": []}` anlegen (oder Claude darum bitten).

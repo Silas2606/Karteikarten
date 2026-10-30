@@ -13,11 +13,12 @@ Nach **jeder** Änderung (Karten, App, Doku) ohne Nachfrage einen Pull Request n
 | Internes Rechnungswesen | `decks/internes-rechnungswesen.json` | `irw` |
 | Externes Rechnungswesen | `decks/externes-rechnungswesen.json` | `erw` |
 | Marketing | `decks/marketing.json` | `mkt` |
-| Analogtechnik | `decks/analogtechnik.json` | `ana` |
+| Messtechnik (Teil von Analogtechnik) | `decks/messtechnik.json` | `mtk` |
+| Analoge Elektronik (Teil von Analogtechnik) | `decks/analoge-elektronik.json` | `ael` |
 
 ## Ablauf, wenn der Nutzer ein Dokument hochlädt
 
-1. **Modul bestimmen.** Nennt der Nutzer es nicht, aus dem Inhalt ableiten und kurz sagen, welches gewählt wurde. Passt das Dokument zu keinem Modul, nachfragen.
+1. **Modul bestimmen.** Nennt der Nutzer es nicht, aus dem Inhalt ableiten und kurz sagen, welches gewählt wurde. Passt das Dokument zu keinem Modul, nachfragen. Analogtechnik ist in **Messtechnik** und **Analoge Elektronik** aufgeteilt (getrennte Skripte) – bei „Analogtechnik“ ohne Angabe am Skript erkennen oder nachfragen.
 2. **Dokument vollständig lesen** und die prüfungsrelevanten Inhalte herausarbeiten: Definitionen, Abgrenzungen, Formeln, Rechenschemata, Ablaufschritte, Vor-/Nachteile, typische Klausurfragen.
 3. **Bestehendes Set lesen**, damit keine Frage doppelt entsteht. Vorhandene Karten nicht verändern oder löschen (ihre IDs hängen am Lernfortschritt), außer der Nutzer bittet ausdrücklich darum.
 4. **Karten erstellen** und ans Ende von `cards` anhängen. IDs fortlaufend weiterzählen (höchste vorhandene Nummer + 1, vierstellig: `irw-0001`, `irw-0002`, …).
