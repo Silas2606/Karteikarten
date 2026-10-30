@@ -1,5 +1,440 @@
 {
   "deck": "messtechnik",
   "name": "Messtechnik",
-  "cards": []
+  "cards": [
+    {
+      "id": "mtk-0001",
+      "front": "Was bedeutet **Messen**?",
+      "back": "Messen ist der **Vergleich** einer quantitativ unbekannten Größe mit einer **Maßverkörperung** einer festgelegten Einheit.\n\nKurz: „Messen heißt vergleichen.“",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 7"
+    },
+    {
+      "id": "mtk-0002",
+      "front": "Nenne die drei Gruppen von Ursachen für Messabweichungen mit Beispielen.",
+      "back": "1. **Unvollkommenheit der Geräte**: Rückwirkung des Messgeräts auf das Messobjekt, Drift (langsame Änderung von Geräteeigenschaften, z. B. der Justierung)\n2. **Unvollkommenheit des Bedieners**: Bedienungs- und Ablesefehler, ungeeignete Wahl der Messmethode\n3. **Umwelteinflüsse**: Temperatur, Erschütterungen, elektromagnetische Einstrahlung\n\nFolge: Jedes Messergebnis ist mit systematischen und/oder zufälligen Abweichungen behaftet.",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 7"
+    },
+    {
+      "id": "mtk-0003",
+      "front": "Warum reicht ein Messwert ohne weitere Angabe für eine quantitative Bewertung nicht aus?",
+      "back": "Messen erfolgt nie vollständig fehlerfrei – jeder Messwert ist mit systematischen und/oder zufälligen Abweichungen behaftet.\n\nDaher sind Messergebnisse **ohne Angabe von Fehlergrenzen oder Unsicherheiten** für eine quantitative Bewertung nicht ausreichend.",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 7"
+    },
+    {
+      "id": "mtk-0004",
+      "front": "Definiere **Messgröße**, **Messeinrichtung**, **Messwert** und **wahrer Wert**.",
+      "back": "- **Messgröße**: die zu messende physikalische Größe des Messobjekts (z. B. Spannung, Strom, Widerstand, Temperatur)\n- **Messeinrichtung**: System zur Erfassung der Messgröße (ein oder mehrere Messgeräte + weitere Komponenten)\n- **Messwert** $x_A$: gemessener/angezeigter Wert, bestehend aus **Zahlenwert und Einheit** (z. B. $U = 5{,}23\\,\\text{V}$)\n- **Wahrer Wert** $x_W$: der eindeutig existierende Wert der Messgröße – Ziel der Messung",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 7"
+    },
+    {
+      "id": "mtk-0005",
+      "front": "Wie ist die **absolute Messabweichung** definiert und was sagt ihr Vorzeichen aus?",
+      "back": "Differenz von Messwert und wahrem Wert:\n$$\\Delta x = x_A - x_W$$\n\n- $\\Delta x > 0$: Messwert zu groß ($x_A > x_W$)\n- $\\Delta x < 0$: Messwert zu klein ($x_A < x_W$)",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 8"
+    },
+    {
+      "id": "mtk-0006",
+      "front": "Wie ist die **relative Abweichung** definiert?",
+      "back": "$$\\delta_x = \\frac{\\Delta x}{x_W}$$\n\nDimensionslos; in Prozent wird mit 100 % multipliziert.",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 8"
+    },
+    {
+      "id": "mtk-0007",
+      "front": "Worin besteht das **grundlegende Problem der Messtechnik** bei der Messabweichung?",
+      "back": "Der Messwert $x_A$ ist bekannt (angezeigt), der **wahre Wert $x_W$ ist unbekannt** – ihn zu bestimmen ist ja gerade das Ziel der Messung.\n\nDaher kann die tatsächlich aufgetretene Messabweichung **nicht unmittelbar berechnet** werden. Stattdessen gibt man Fehlergrenzen an.",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 8"
+    },
+    {
+      "id": "mtk-0008",
+      "front": "Was sind **Fehlergrenzen** und was sagen sie über den wahren Wert aus?",
+      "back": "**Abweichungsgrenzbeträge** für Messabweichungen eines Messgeräts (vom Hersteller angegeben). Sie geben nicht die tatsächliche Abweichung an, sondern **begrenzen deren möglichen Betrag**; als Beträge **ohne Vorzeichen**.\n\n$$|\\Delta x| \\le G \\;\\Rightarrow\\; x_A - G \\le x_W \\le x_A + G$$\n\nDer wahre Wert liegt also (soll liegen) in einem Intervall um den Messwert.",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 8–9"
+    },
+    {
+      "id": "mtk-0009",
+      "front": "Ein Voltmeter zeigt $U_A = 5{,}23\\,\\text{V}$, die Fehlergrenze ist $G = 0{,}05\\,\\text{V}$. In welchem Bereich liegt der wahre Wert?",
+      "back": "$$U_A - G \\le U_W \\le U_A + G$$\n$$5{,}18\\,\\text{V} \\le U_W \\le 5{,}28\\,\\text{V}$$\n\nDie tatsächliche Abweichung bleibt unbekannt – man weiß nur, in welchem Bereich der wahre Wert liegen soll.",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 9"
+    },
+    {
+      "id": "mtk-0010",
+      "front": "Was gehört zu einem **vollständigen Messergebnis**?",
+      "back": "Anzeigewert **mit Einheit** + eine **quantitative Aussage über die mögliche Abweichung** (Fehlergrenze oder Messunsicherheit):\n$$x = x_A \\pm G \\quad\\text{z. B. } U = (5{,}23 \\pm 0{,}05)\\,\\text{V}$$\n\nLeitgedanke: Messgröße → Messung → Messwert → tatsächliche Abweichung unbekannt → Fehlergrenze → vollständiges Messergebnis",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 9–10"
+    },
+    {
+      "id": "mtk-0011",
+      "front": "Was ist der Unterschied zwischen **Kalibrieren**, **Justieren** und **Eichen**?",
+      "back": "- **Kalibrieren**: Ermitteln des Zusammenhangs zwischen Messwert und richtigem/wahrem Wert, **ohne Eingriff** ins Gerät, ohne staatliche Reglementierung\n- **Justieren**: Einstellen/Abgleichen des Messsystems zur Korrektur von Abweichungen – **mit Eingriff** ins Gerät\n- **Eichen**: **amtliche** Feststellung der Konformität mit der Eichordnung bzw. den Anforderungen der PTB (o. europ. Institution); nur durch eine **Eichbehörde** (inkl. Stempelung)",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 10"
+    },
+    {
+      "id": "mtk-0012",
+      "front": "Welche sprachlichen Hinweise gelten für die Begriffe „Fehler“, „Genauigkeit“ und „Eichen“?",
+      "back": "- **Fehler**: möglichst vermeiden, besser „**Abweichung**“\n- **Genauigkeit**: nicht mit Zahlen verwenden („1 % genau“ ist missverständlich) – stattdessen Fehlergrenzen, Messabweichungen oder Messunsicherheiten angeben\n- **Eichen**: nicht mit Justieren oder Kalibrieren verwechseln",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.1, S. 10"
+    },
+    {
+      "id": "mtk-0013",
+      "front": "Was ist das **SI-System** und was ist eine **Einheit**?",
+      "back": "- **Einheit**: Bezugsgröße zur quantitativen Bestimmung eines Messwertes\n- **SI-System** („Système International d'Unités“): seit **1960** international gültiges und verbindliches Basis-Einheitensystem",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.2, S. 11"
+    },
+    {
+      "id": "mtk-0014",
+      "front": "Nenne die **7 SI-Basisgrößen** mit Basiseinheit und Einheitenzeichen.",
+      "back": "- Länge: Meter (m)\n- Masse: Kilogramm (kg)\n- Zeit: Sekunde (s)\n- Stromstärke: Ampere (A)\n- Temperatur: Kelvin (K)\n- Lichtstärke: Candela (cd)\n- Stoffmenge: Mol (mol)",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.2, S. 11"
+    },
+    {
+      "id": "mtk-0015",
+      "front": "Nenne die genormten Vorsätze von $10^{-24}$ bis $10^{24}$ (Zeichen und Name).",
+      "back": "- $10^{24}$ Y Yotta, $10^{21}$ Z Zetta, $10^{18}$ E Exa, $10^{15}$ P Peta, $10^{12}$ T Tera, $10^{9}$ G Giga, $10^{6}$ M Mega, $10^{3}$ k Kilo\n- $10^{-3}$ m Milli, $10^{-6}$ µ Mikro, $10^{-9}$ n Nano, $10^{-12}$ p Piko, $10^{-15}$ f Femto, $10^{-18}$ a Atto, $10^{-21}$ z Zepto, $10^{-24}$ y Yocto\n\nAchtung: Kilo und alle Verkleinerungen werden **klein** geschrieben (die Tabelle im Skript ist hier fehlerhaft).",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.2, S. 11"
+    },
+    {
+      "id": "mtk-0016",
+      "front": "Wie ist die **elektrische Spannung** als abgeleitete Größe definiert?",
+      "back": "Die Spannung ist ein Maß für die **Arbeit**, die aufgewendet werden muss, um eine **Ladung** im elektrischen Feld von einem Ort zu einem anderen zu bewegen:\n$$W = \\int \\vec F \\cdot d\\vec s = \\int Q\\,\\vec E \\cdot d\\vec s = Q \\int \\vec E \\cdot d\\vec s = Q \\cdot U$$\n\nEinheit: $1\\,\\text{V} = 1\\,\\text{W/A} = 1\\,\\text{J/C}$",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.3, S. 12"
+    },
+    {
+      "id": "mtk-0017",
+      "front": "Gib Symbol, Einheit und Zusammenhang mit SI-Einheiten an: **Ladung, Leistung, Spannung, Widerstand, Leitwert**.",
+      "back": "- Elektrizitätsmenge $Q$: Coulomb, $1\\,\\text{C} = 1\\,\\text{A·s}$\n- Leistung $P$: Watt, $1\\,\\text{W} = 1\\,\\text{J/s} = 1\\,\\text{V·A}$\n- Spannung $U$: Volt, $1\\,\\text{V} = 1\\,\\text{W/A} = 1\\,\\text{J/C}$\n- Widerstand $R$: Ohm, $1\\,\\Omega = 1\\,\\text{V/A}$\n- Leitwert $G$: Siemens, $1\\,\\text{S} = 1/\\Omega$",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.3, S. 12"
+    },
+    {
+      "id": "mtk-0018",
+      "front": "Gib Symbol, Einheit und Zusammenhang an: **Kapazität, magnetischer Fluss, Flussdichte, Induktivität**.",
+      "back": "- Kapazität $C$: Farad, $1\\,\\text{F} = 1\\,\\text{A·s/V} = 1\\,\\text{C/V}$\n- Magnetischer Fluss $\\Phi$: Weber, $1\\,\\text{Wb} = 1\\,\\text{V·s}$\n- Magnetische Flussdichte $B$: Tesla, $1\\,\\text{T} = 1\\,\\text{V·s/m}^2 = 1\\,\\text{Wb/m}^2$\n- Induktivität $L$: Henry, $1\\,\\text{H} = 1\\,\\Omega\\text{·s} = 1\\,\\text{V·s/A}$",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.3, S. 12"
+    },
+    {
+      "id": "mtk-0019",
+      "front": "Gib Einheit und Zusammenhang mit SI-Einheiten an: **Frequenz, Kraft, Druck, Energie**.",
+      "back": "- Frequenz $f$: Hertz, $1\\,\\text{Hz} = 1/\\text{s}$\n- Kraft $F$: Newton, $1\\,\\text{N} = 1\\,\\text{kg·m/s}^2$\n- Druck $p$: Pascal, $1\\,\\text{Pa} = 1\\,\\text{N/m}^2$\n- Energie $W$: Joule, $1\\,\\text{J} = 1\\,\\text{N·m} = 1\\,\\text{W·s}$",
+      "topic": "Grundlagen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.3, S. 12"
+    },
+    {
+      "id": "mtk-0020",
+      "front": "Wie werden physikalische Größen korrekt dargestellt und was ist die **Einheitenprobe**?",
+      "back": "**Physikalische Größe = Zahlenwert × Einheit** – Einheiten werden immer mitgeführt, auch in der Rechnung.\n\n**Einheitenprobe**: Die Einheiten auf beiden Seiten einer Gleichung müssen übereinstimmen.\n\nFalsch: Einheit in eckigen Klammern (2,56 [mA]), Einheit weglassen, Einheiten in der Rechnung weglassen und erst im Ergebnis wieder einfügen.",
+      "topic": "Darstellung von Messergebnissen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.4.1, S. 13"
+    },
+    {
+      "id": "mtk-0021",
+      "front": "Welche zwei Schreibweisen gibt es für ein Messergebnis?",
+      "back": "1. Mit **absoluter** Abweichung: $x = x_A \\pm \\Delta x$\n2. Mit **relativer** Abweichung: $x = x_A\\,(1 \\pm \\delta_x)$\n\nz. B. $U = 2{,}347\\,\\text{V} \\pm 0{,}004\\,\\text{V} = 2{,}347\\,\\text{V}\\cdot(1 \\pm 0{,}17\\,\\%)$",
+      "topic": "Darstellung von Messergebnissen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.4.2, S. 13"
+    },
+    {
+      "id": "mtk-0022",
+      "front": "Wie wird ein Messergebnis nach **DIN 1333** gerundet?",
+      "back": "1. **Zuerst die Abweichung/Unsicherheit runden**: Die erste von null verschiedene Ziffer bestimmt die Rundestelle.\n   - erste Ziffer **1 oder 2** → **2** signifikante Stellen\n   - sonst → **1** signifikante Stelle\n2. **Messwert auf dieselbe Dezimalstelle** runden.\n3. Ergebnis: $X \\pm \\Delta X$\n\nSo werden keine Stellen angegeben, die durch die Messung nicht abgesichert sind.",
+      "topic": "Darstellung von Messergebnissen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.4.3, S. 15"
+    },
+    {
+      "id": "mtk-0023",
+      "front": "Runde nach DIN 1333: $U = 2{,}34678\\,\\text{V} \\pm 0{,}004256\\,\\text{V}$ und $U = 2{,}34678\\,\\text{V} \\pm 0{,}001256\\,\\text{V}$",
+      "back": "1. Erste Ziffer der Abweichung ist **4** (3. Nachkommastelle) → 1 signifikante Stelle:\n$$U = 2{,}347\\,\\text{V} \\pm 0{,}004\\,\\text{V}$$\n2. Erste Ziffer ist **1** → 2 signifikante Stellen (4. Nachkommastelle):\n$$U = 2{,}3468\\,\\text{V} \\pm 0{,}0013\\,\\text{V}$$",
+      "topic": "Darstellung von Messergebnissen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.4.3, S. 15"
+    },
+    {
+      "id": "mtk-0024",
+      "front": "Was besagt die **Kosten-Nutzen-Betrachtung** bei Messungen?",
+      "back": "Bei jeder Messung ist abzuschätzen, welcher **Aufwand (Gerät, Ort, Zeit)** für die geforderten Fehlergrenzen nötig ist. Kosten steigen stark mit sinkender Messabweichung.\n\nGrundsatz: **So genau wie nötig, nicht so genau wie möglich messen.**\n\nExtremfälle:\n- **Massenkontrolle** (Produktion, Toleranzprüfung): einfache, schnelle Messung genügt\n- **Präzisionsmessung** (Kalibrierlabor, Referenzwerte): genauere Geräte, kontrollierte Umgebung, mehr Messzeit",
+      "topic": "Darstellung von Messergebnissen",
+      "source": "Skript Messtechnik (Frey), Kap. 2.5, S. 16"
+    },
+    {
+      "id": "mtk-0025",
+      "front": "Welche **statischen** und welche **dynamischen** Eigenschaften von Messsystemen werden unterschieden?",
+      "back": "**Statisch** (zeitlich konstante bzw. quasistatische Eingangsgrößen):\n- Kennlinie\n- systematische Abweichungen\n- zufällige Abweichungen\n\n**Dynamisch** (in der Vorlesung nicht weiter behandelt):\n- Einschwingverhalten\n- Totzeiten",
+      "topic": "Statische Kennlinien",
+      "source": "Skript Messtechnik (Frey), Kap. 3, S. 17"
+    },
+    {
+      "id": "mtk-0026",
+      "front": "Was beschreibt die **statische Kennlinie** eines Messgeräts und wofür nutzt man sie?",
+      "back": "Den Zusammenhang zwischen **Eingangsgröße $x$** und **Ausgangsgröße $y$**: $y = f(x)$.\n\nSie zeigt, welchen Ausgangswert ein Messgerät bei einem bestimmten Eingangswert liefert, beschreibt das statische Verhalten übersichtlich und ermöglicht den **Vergleich** von Messgeräten.",
+      "topic": "Statische Kennlinien",
+      "source": "Skript Messtechnik (Frey), Kap. 3.1, S. 18"
+    },
+    {
+      "id": "mtk-0027",
+      "front": "Wie lautet die Kennliniengleichung eines **ideal linearen** Messsystems?",
+      "back": "$$y(x) = y_0 + \\frac{\\Delta y}{\\Delta x}\\,(x - x_0)$$\n\n- $x_0$ / $x_e$: Anfangs-/Endmesswert\n- $y_0$ / $y_e$: Ausgangsanfangs-/-endwert\n- $\\frac{\\Delta y}{\\Delta x} = s$: **Steigung**, auch **Empfindlichkeit $E$**",
+      "topic": "Statische Kennlinien",
+      "source": "Skript Messtechnik (Frey), Kap. 3.1, S. 18"
+    },
+    {
+      "id": "mtk-0028",
+      "front": "Was ist der Unterschied zwischen **Soll-** und **Ist-Kennlinie** und welche Abweichungen fallen beim Vergleich typischerweise auf?",
+      "back": "- **Soll-Kennlinie**: gewünschtes, ideales Verhalten\n- **Ist-Kennlinie**: tatsächlich gemessenes Verhalten des realen Geräts\n\nTypische (auch gleichzeitig auftretende) Abweichungen:\n- anderer **Nullpunkt** (Ausgangswert)\n- andere mittlere **Steigung**\n- **nicht exakt linearer** Verlauf\n\nBei nichtlinearer Kennlinie ist die Steigung nicht konstant; die Nichtlinearität wird meist **nach Korrektur von Anfangswert und Steigung durch die Endwerte** angegeben.",
+      "topic": "Statische Kennlinien",
+      "source": "Skript Messtechnik (Frey), Kap. 3.1, S. 18–19"
+    },
+    {
+      "id": "mtk-0029",
+      "front": "Welche Eigenschaften haben **systematische** Messabweichungen?",
+      "back": "- besitzen ein **bestimmtes Vorzeichen** (Abweichung in eine Richtung)\n- treten bei gleichen Messbedingungen **reproduzierbar** auf\n- sind häufig messtechnisch **erfassbar** (z. B. durch Kalibrierung oder Regressionsanalyse) und können dann **korrigiert** werden",
+      "topic": "Systematische Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.2, S. 20"
+    },
+    {
+      "id": "mtk-0030",
+      "front": "Nenne die fünf Arten systematischer Kennlinienfehler.",
+      "back": "1. **Steigungsfehler** $F_{st}$\n2. **Nullpunktfehler** $F_0$\n3. **Nichtlinearität** $F_{nl}$\n4. **Hysterese** $F_{hy}$\n5. **Begrenzung**\n\nIn der Praxis treten oft mehrere überlagert auf, wobei eine Fehlerart dominieren kann.",
+      "topic": "Systematische Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.2, S. 20"
+    },
+    {
+      "id": "mtk-0031",
+      "front": "Was kennzeichnet einen **Steigungsfehler**?",
+      "back": "- Die Steigung der realen Kennlinie weicht von der idealen ab.\n- Die **absolute Abweichung wächst mit zunehmender Messgröße**.\n- Ursache z. B. fehlerhafte Verstärkung oder falsche Kalibrierung.",
+      "topic": "Systematische Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.2, S. 20"
+    },
+    {
+      "id": "mtk-0032",
+      "front": "Was kennzeichnet einen **Nullpunktfehler** und wie korrigiert man ihn?",
+      "back": "- Kennlinie ist um einen **konstanten Betrag verschoben**.\n- Auch bei Eingangsgröße null zeigt das Gerät einen Wert ≠ 0 an.\n- Korrektur häufig durch einen **Nullpunktabgleich**.",
+      "topic": "Systematische Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.2, S. 20"
+    },
+    {
+      "id": "mtk-0033",
+      "front": "Was kennzeichnet die **Nichtlinearität** als systematischen Fehler?",
+      "back": "- Die reale Kennlinie weicht von der angenommenen linearen Kennlinie ab.\n- Die Abweichung **hängt vom Messwert ab** und ist über den Messbereich unterschiedlich groß.\n- Häufig wird die **maximale Abweichung von einer Referenzgeraden** angegeben.\n- **Start- und Endwert liegen auf der Soll-Kennlinie.**",
+      "topic": "Systematische Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.2, S. 20"
+    },
+    {
+      "id": "mtk-0034",
+      "front": "Was ist **Hysterese** und welche Ursachen kann sie haben?",
+      "back": "Der angezeigte Wert hängt nicht nur von der aktuellen Eingangsgröße, sondern auch von deren **Vorgeschichte** ab: Für denselben Wert ergeben sich unterschiedliche Anzeigen, je nachdem, ob die Messgröße zuvor **erhöht oder verringert** wurde.\n\nUrsachen: mechanische Reibung, magnetische Effekte, Materialverformungen.",
+      "topic": "Systematische Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.2, S. 20"
+    },
+    {
+      "id": "mtk-0035",
+      "front": "Was versteht man unter **Begrenzung** einer Kennlinie? Nenne ein Beispiel.",
+      "back": "Der Messbereich ist begrenzt: Wird eine obere oder untere Grenze überschritten, kann das Ausgangssignal der Eingangsgröße **nicht mehr folgen**.\n\nBeispiel: **Sättigung eines Verstärkers** – eine weitere Erhöhung der Eingangsspannung erhöht die Ausgangsspannung nicht mehr entsprechend.",
+      "topic": "Systematische Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.2, S. 21"
+    },
+    {
+      "id": "mtk-0036",
+      "front": "Wie werden die Kennlinieneigenschaften eines Messgeräts bestimmt und was schreibt ISO 9000 vor?",
+      "back": "Durch **Vergleich mit einem Messnormal oder Referenzgerät**.\n\nBei der Messmittelüberwachung nach **ISO 9000** (Qualitätssicherung) ist eine **regelmäßige Kalibrierung** der eingesetzten Geräte vorgeschrieben.",
+      "topic": "Fehlergrenzen von Messgeräten",
+      "source": "Skript Messtechnik (Frey), Kap. 3.3, S. 22"
+    },
+    {
+      "id": "mtk-0037",
+      "front": "Wie werden Fehlergrenzen bei **analogen** Messgeräten angegeben?",
+      "back": "Über die **Geräteklasse $k$**: relative Fehlergrenze in %, bezogen auf den **Messbereichsendwert $x_E$** („normierter“ Anzeigefehler):\n$$\\delta = \\pm k\\,\\% \\qquad \\Delta x = \\pm(k\\,\\% \\cdot x_E)$$\n\nÜbliche Klassen: 0,1 / 0,2 / 0,5 / 1 / 2 / 5\n\n(Bei vielen Sensoren wird die Abweichung genauso angegeben, heißt dort aber nicht Geräteklasse.)",
+      "topic": "Fehlergrenzen von Messgeräten",
+      "source": "Skript Messtechnik (Frey), Kap. 3.3.1, S. 22"
+    },
+    {
+      "id": "mtk-0038",
+      "front": "Ein Spannungsmesser der Klasse 1 hat den Messbereichsendwert 10 V. Wie groß sind die zulässige absolute Abweichung und die relative Abweichung bei 5 V bzw. 1 V Anzeige?",
+      "back": "$$\\Delta U = \\pm(1\\,\\% \\cdot 10\\,\\text{V}) = \\pm 0{,}1\\,\\text{V}$$ (für alle Messwerte im Bereich)\n\n- bei 5 V: $\\delta = \\pm\\frac{0{,}1\\,\\text{V}}{5\\,\\text{V}} = \\pm 2\\,\\%$\n- bei 1 V: $\\delta = \\pm\\frac{0{,}1\\,\\text{V}}{1\\,\\text{V}} = \\pm 10\\,\\%$",
+      "topic": "Fehlergrenzen von Messgeräten",
+      "source": "Skript Messtechnik (Frey), Kap. 3.3.1, S. 22"
+    },
+    {
+      "id": "mtk-0039",
+      "front": "Warum sollte ein analoges Messgerät durch die Messbereichswahl möglichst **weit ausgesteuert** werden?",
+      "back": "Die Geräteklasse bezieht sich auf den **Messbereichsendwert**: Die zulässige **absolute** Abweichung ist im ganzen Bereich gleich groß.\n\nBei kleinem Ausschlag (Nicht-Vollausschlag) wird die **relative** Abweichung daher deutlich größer.\n\n→ Messbereich immer **so klein wie möglich** wählen (Messwert nahe am Endwert).",
+      "topic": "Fehlergrenzen von Messgeräten",
+      "source": "Skript Messtechnik (Frey), Kap. 3.3.1, S. 22–23"
+    },
+    {
+      "id": "mtk-0040",
+      "front": "Wie werden Fehlergrenzen bei **digitalen** Messgeräten angegeben und warum zweiteilig?",
+      "back": "$$\\delta = \\pm(\\delta_M + m)$$\n\n- $\\delta_M$: **Steigungs- und Nichtlinearitätsfehler** in %, bezogen auf den Messwert (**rdg**, reading) oder seltener auf den Messbereichsendwert (**range**) – steht im Datenblatt\n- $m$: **digitaler Zählfehler**, Anzahl unsicherer Zählschritte (**digits**) wegen begrenzter Auflösung der Anzeige\n\nZweiteilig, weil die Anteile unterschiedlich vom Messwert abhängen. Bei **kleinen Messwerten** kann der Digit-Anteil die relative Abweichung dominieren.",
+      "topic": "Fehlergrenzen von Messgeräten",
+      "source": "Skript Messtechnik (Frey), Kap. 3.3.2, S. 23"
+    },
+    {
+      "id": "mtk-0041",
+      "front": "Wie berechnet man $\\delta_x$ und $\\Delta x$ bei einem Digitalmessgerät, wenn sich $\\delta_M$ auf den **Messwert [rdg]** bezieht?",
+      "back": "$$\\delta_x = \\pm\\left(\\delta_M + \\frac{m \\cdot x_D}{x_A}\\right)$$\n$$\\Delta x = \\pm(\\delta_M \\cdot x_A + m \\cdot x_D)$$\n\n$x_D$: Auflösung der Anzeige (Wert eines Digits), $x_A$: Messwert",
+      "topic": "Fehlergrenzen von Messgeräten",
+      "source": "Skript Messtechnik (Frey), Kap. 3.3.2, S. 23"
+    },
+    {
+      "id": "mtk-0042",
+      "front": "Wie berechnet man $\\delta_x$ und $\\Delta x$ bei einem Digitalmessgerät, wenn sich $\\delta_M$ auf den **Messbereichsendwert [range]** bezieht?",
+      "back": "$$\\delta_x = \\pm\\left(\\frac{\\delta_M \\cdot x_E}{x_A} + \\frac{m \\cdot x_D}{x_A}\\right)$$\n$$\\Delta x = \\pm(\\delta_M \\cdot x_E + m \\cdot x_D)$$\n\n$x_E$: Messbereichsendwert, $x_D$: Auflösung, $x_A$: Messwert",
+      "topic": "Fehlergrenzen von Messgeräten",
+      "source": "Skript Messtechnik (Frey), Kap. 3.3.2, S. 23"
+    },
+    {
+      "id": "mtk-0043",
+      "front": "Ein DMM (4-stellig, Messbereich 10 V, Auflösung 1 mV) zeigt 1,274 V. Fehlergrenze: ±(0,2 % rdg + 4 digits). Berechne $\\delta_U$ und $\\Delta U$.",
+      "back": "$$\\delta_U = \\pm\\left(0{,}2\\,\\% + \\frac{4 \\cdot 1\\,\\text{mV}}{1{,}274\\,\\text{V}}\\cdot 100\\,\\%\\right) = \\pm 0{,}514\\,\\%$$\n$$\\Delta U = \\pm(0{,}2\\,\\% \\cdot 1{,}274\\,\\text{V} + 4 \\cdot 1\\,\\text{mV}) = \\pm 6{,}55\\,\\text{mV}$$\n\nDer Digit-Anteil (0,31 %) ist hier größer als der rdg-Anteil.",
+      "topic": "Fehlergrenzen von Messgeräten",
+      "source": "Skript Messtechnik (Frey), Kap. 3.3.2, S. 23–24"
+    },
+    {
+      "id": "mtk-0044",
+      "front": "Was sind **Einfügungsfehler** und wodurch entstehen sie?",
+      "back": "Systematische Abweichungen, die durch das **Einfügen nichtidealer Messgeräte** in die Schaltung entstehen: Jedes reale Messgerät hat einen **endlichen Innenwiderstand** und verändert dadurch die Schaltung.",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4, S. 25"
+    },
+    {
+      "id": "mtk-0045",
+      "front": "Welchen Innenwiderstand hat ein ideales bzw. reales **Voltmeter** und wie wirkt er sich aus?",
+      "back": "- Ideal: $R_{VM} = \\infty$ → es fließt kein Strom ins Gerät\n- Real: $R_{VM} \\ll \\infty$ → das Voltmeter **belastet die Quelle**, es fließt ein Strom, der ohne Messgerät nicht existierte\n\nDigitalmessgeräte haben meist einen konstanten, vom Messbereich unabhängigen Innenwiderstand, typisch **$R_{VM} = 10\\,\\text{M}\\Omega$**.",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.1, S. 25"
+    },
+    {
+      "id": "mtk-0046",
+      "front": "Welchen Innenwiderstand hat ein ideales bzw. reales **Amperemeter** und wie hängt er vom Messbereich ab?",
+      "back": "- Ideal: $R_{AM} = 0\\,\\Omega$ → keine Spannung fällt am Gerät ab\n- Real: $R_{AM} \\gg 0\\,\\Omega$ → **reduziert den Strom** im Kreis, Spannung fällt am Gerät ab\n\nDigitalmessgeräte: je **höher der maximale Strom** des Messbereichs, desto **kleiner der Innenwiderstand** – so werden hohe Spannungen am Geräteeingang vermieden.",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.2, S. 25"
+    },
+    {
+      "id": "mtk-0047",
+      "front": "Wie groß ist der Einfügungsfehler bei der **Spannungsmessung** und wie korrigiert man ihn?",
+      "back": "Quelleninnenwiderstand $R_i$ und $R_{VM}$ bilden einen Spannungsteiler:\n$$U_A = U_r \\cdot \\frac{R_{VM}}{R_{VM} + R_i}$$\n$$\\delta_U = \\frac{U_A - U_r}{U_A} = -\\frac{R_i}{R_{VM}}$$\nKorrektur: $U_{A,korr} = U_A\\,(1 - \\delta_U) = U_A\\left(1 + \\frac{R_i}{R_{VM}}\\right) \\approx U_r$\n\nEs gilt $U_A < U_r$ (Anzeige zu klein).",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.3, S. 26"
+    },
+    {
+      "id": "mtk-0048",
+      "front": "Wie groß ist der Einfügungsfehler bei der **Strommessung** und wie korrigiert man ihn?",
+      "back": "$R_{AM}$ erhöht den Widerstand im Kreis (Maschenumlauf):\n$$U_0 = I_A\\,(R_{AM} + R_i + R_L) = I_r\\,(R_i + R_L)$$\n$$\\delta_I = \\frac{I_A - I_r}{I_A} = -\\frac{R_{AM}}{R_i + R_L}$$\nKorrektur: $I_{A,korr} = I_A\\,(1 - \\delta_I) = I_r$\n\nIndex r: richtiger Wert, A: angezeigter Wert.",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.3, S. 26"
+    },
+    {
+      "id": "mtk-0049",
+      "front": "Was ist der **Methodenfehler** bei der Widerstandsbestimmung aus Spannung und Strom?",
+      "back": "$R_A = U_A / I_A$ – reale Volt- und Amperemeter haben endliche Innenwiderstände, daher wird je nach Schaltung **nicht nur der gesuchte Widerstand** erfasst → **systematischer Methodenfehler**.\n\nDie Fehlergrenzen der Messgeräte kommen **zusätzlich** hinzu.",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.4, S. 27"
+    },
+    {
+      "id": "mtk-0050",
+      "front": "Wie funktioniert die **spannungsrichtige** Widerstandsmessung und welcher Fehler entsteht?",
+      "back": "Voltmeter direkt **parallel zum Widerstand**: $U_A = U_R$, aber das Amperemeter misst zusätzlich den Voltmeterstrom: $I_A = I_R + I_{VM}$.\n$$R_A = R \\parallel R_{VM} = \\frac{R \\cdot R_{VM}}{R + R_{VM}}$$\n$$\\delta_R = \\frac{R_A - R}{R} = \\frac{-R}{R + R_{VM}}$$\n\n→ Widerstand wird **zu klein** bestimmt; geeignet für **kleine Widerstände**.",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.4, S. 27"
+    },
+    {
+      "id": "mtk-0051",
+      "front": "Wie korrigiert man den Methodenfehler der **spannungsrichtigen** Schaltung?",
+      "back": "Leitwert des Voltmeters vom Gesamtleitwert abziehen:\n$$R_{A,korr} = \\left(\\frac{I_A}{U_A} - \\frac{1}{R_{VM}}\\right)^{-1}$$",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.4, S. 27"
+    },
+    {
+      "id": "mtk-0052",
+      "front": "Wie funktioniert die **stromrichtige** Widerstandsmessung und welcher Fehler entsteht?",
+      "back": "Amperemeter **in Reihe** mit dem Widerstand: $I_A = I_R$, aber das Voltmeter misst zusätzlich den Spannungsabfall am Amperemeter: $U_A = U_R + U_{AM}$.\n$$R_A = R + R_{AM}$$\n$$\\delta_R = \\frac{R_A - R}{R} = \\frac{R_{AM}}{R}$$\n\n→ Widerstand wird **zu groß** bestimmt; geeignet für **große Widerstände**.",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.4, S. 28"
+    },
+    {
+      "id": "mtk-0053",
+      "front": "Wie korrigiert man den Methodenfehler der **stromrichtigen** Schaltung?",
+      "back": "Widerstand des Amperemeters vom Gesamtwiderstand abziehen:\n$$R_{A,korr} = \\frac{U_A}{I_A} - R_{AM}$$",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.4, S. 28"
+    },
+    {
+      "id": "mtk-0054",
+      "front": "Warum eignet sich die spannungsrichtige Schaltung für **kleine**, die stromrichtige für **große** Widerstände?",
+      "back": "- **Spannungsrichtig**: Bei kleinem $R$ ist der Strom durch das Voltmeter ($R_{VM}$ groß) gegenüber dem Strom durch $R$ vernachlässigbar.\n- **Stromrichtig**: Bei großem $R$ ist der Innenwiderstand des Amperemeters $R_{AM}$ gegenüber $R$ vernachlässigbar.",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.4, S. 27"
+    },
+    {
+      "id": "mtk-0055",
+      "front": "Was ist der **Grenzwiderstand** bei der Widerstandsmessung und wie nutzt man ihn?",
+      "back": "Näherung für den Übergangsbereich:\n$$R_G \\approx \\sqrt{R_{AM} \\cdot R_{VM}}$$\n\n- $R \\ll R_G$ → **spannungsrichtige** Schaltung\n- $R \\gg R_G$ → **stromrichtige** Schaltung",
+      "topic": "Einfügungs- und Methodenfehler",
+      "source": "Skript Messtechnik (Frey), Kap. 3.4.4, S. 29"
+    },
+    {
+      "id": "mtk-0056",
+      "front": "Worum geht es bei der **Fehlerfortpflanzung** und warum betrachtet man den „worst case“?",
+      "back": "Ein Ergebnis wird oft aus mehreren Messwerten berechnet: $y_A = f(x_{1A}, x_{2A}, \\dots, x_{nA})$. Die systematischen Abweichungen der Einzelgrößen wirken sich auf das Ergebnis aus – je nachdem, wie stark $y$ von der jeweiligen Größe abhängt.\n\nJe nach Vorzeichen können sich Abweichungen verstärken oder kompensieren. Da die Vorzeichen bei bekannten Fehlergrenzen meist **unbekannt** sind, betrachtet man den **ungünstigsten Fall**: alle Abweichungen verstärken sich maximal → Abschätzung des **maximalen Fehlers**.",
+      "topic": "Fehlerfortpflanzung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.5, S. 31"
+    },
+    {
+      "id": "mtk-0057",
+      "front": "Wie berechnet man die **absolute Abweichung** eines berechneten Ergebnisses (Fehlerfortpflanzung)?",
+      "back": "Über das **totale Differential**:\n$$\\Delta y = \\frac{\\partial y}{\\partial x_1}\\Delta x_1 + \\frac{\\partial y}{\\partial x_2}\\Delta x_2 + \\dots + \\frac{\\partial y}{\\partial x_n}\\Delta x_n$$\n\nDie partiellen Ableitungen geben an, wie **empfindlich** das Ergebnis auf die jeweilige Messgröße reagiert; mal $\\Delta x_i$ ergibt den Beitrag zur Gesamtabweichung.",
+      "topic": "Fehlerfortpflanzung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.5.1, S. 32"
+    },
+    {
+      "id": "mtk-0058",
+      "front": "Wie berechnet man die **relative Abweichung** eines berechneten Ergebnisses (Fehlerfortpflanzung)?",
+      "back": "$$\\delta_y = \\frac{\\Delta y}{y} = \\sum_i \\frac{\\partial y}{\\partial x_i}\\cdot\\frac{x_i}{y}\\cdot\\delta_{x_i}$$\n\nJeder Summand = **Änderungstendenz × (Messwert / Messergebnis) × relative Abweichung**.",
+      "topic": "Fehlerfortpflanzung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.5.2, S. 32"
+    },
+    {
+      "id": "mtk-0059",
+      "front": "Welche Fehlerfortpflanzungsregeln gelten für **Multiplikation, Division und Potenz**?",
+      "back": "**Multiplikation** $y = x_1 x_2$:\n- $\\Delta y = x_2\\Delta x_1 + x_1\\Delta x_2$\n- $\\delta_y = \\delta_{x1} + \\delta_{x2}$\n\n**Division** $y = x_1/x_2$:\n- $\\Delta y = \\frac{1}{x_2}\\Delta x_1 - \\frac{x_1}{x_2^2}\\Delta x_2$\n- $\\delta_y = \\delta_{x1} - \\delta_{x2}$\n\n**Potenz** $y = k\\,x^h$:\n- $\\Delta y = h\\,k\\,x^{h-1}\\Delta x$\n- $\\delta_y = h\\cdot\\delta_x$\n\nMerke: Bei Multiplikation/Division addieren bzw. subtrahieren sich die **relativen** Abweichungen.",
+      "topic": "Fehlerfortpflanzung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.5.3, S. 33"
+    },
+    {
+      "id": "mtk-0060",
+      "front": "Welche Fehlerfortpflanzungsregeln gelten für **Addition und Subtraktion**?",
+      "back": "**Addition** $y = x_1 + x_2$:\n- $\\Delta y = \\Delta x_1 + \\Delta x_2$\n- $\\delta_y = \\frac{x_1\\delta_{x1} + x_2\\delta_{x2}}{x_1 + x_2}$\n\n**Subtraktion** $y = x_1 - x_2$:\n- $\\Delta y = \\Delta x_1 - \\Delta x_2$\n- $\\delta_y = \\frac{x_1\\delta_{x1} - x_2\\delta_{x2}}{x_1 - x_2}$\n\nMerke: Bei Addition/Subtraktion addieren bzw. subtrahieren sich die **absoluten** Abweichungen. Bei unbestimmten Vorzeichen sind die **Beträge** zu verwenden.",
+      "topic": "Fehlerfortpflanzung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.5.3, S. 33"
+    },
+    {
+      "id": "mtk-0061",
+      "front": "Wie geht man bei **komplizierteren Ausdrücken** in der Fehlerfortpflanzung vor (4 Schritte)?",
+      "back": "Ausdruck in Addition, Subtraktion, Multiplikation, Division und Potenz zerlegen und je Teilschritt die Regel anwenden:\n\n1. **Formel aufstellen**\n2. **Schrittweise mit der Tabelle** bestimmen – Reihenfolge wie beim Kopfrechnen, **keine Werte einsetzen**, Minus bleibt Minus\n3. **Term umformen**, bis jedes Delta nur noch **1×** vorkommt\n4. **Werte einsetzen**: ± vor den Term ziehen, Beträge der Deltas einsetzen, aus „−“ zwischen Delta-Ausdrücken wird „+“",
+      "topic": "Fehlerfortpflanzung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.5.3, S. 32–33"
+    },
+    {
+      "id": "mtk-0062",
+      "front": "Wie groß ist die relative Fehlergrenze einer **Parallelschaltung** $R_1 = 1{,}0\\,\\text{k}\\Omega$ (±1,0 %) und $R_2 = 1{,}8\\,\\text{k}\\Omega$ (±0,5 %)?",
+      "back": "Mit $R_P = \\frac{R_1 R_2}{R_1 + R_2}$ ergibt die schrittweise Fehlerfortpflanzung:\n$$\\delta_{R_P} = \\frac{R_2\\,\\delta_{R1} + R_1\\,\\delta_{R2}}{R_1 + R_2}$$\n$$\\delta_{R_P} = \\pm\\frac{1{,}8\\,\\text{k}\\Omega \\cdot 1{,}0\\,\\% + 1{,}0\\,\\text{k}\\Omega \\cdot 0{,}5\\,\\%}{2{,}8\\,\\text{k}\\Omega} = \\pm 0{,}82\\,\\%$$\n\n(Gleiches Ergebnis über $R_P = 1/(1/R_1 + 1/R_2)$.)",
+      "topic": "Fehlerfortpflanzung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.5.3, S. 34–35"
+    }
+  ]
 }
