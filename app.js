@@ -423,7 +423,7 @@ function viewOverview() {
         const s = deckStats(d);
         return `<div class="panel deck" style="--deck:${d.color}">
           <div class="deck-head">
-            <div class="deck-icon">${deckInitials(d.name)}</div>
+            <div class="deck-icon">${esc(d.short || deckInitials(d.name))}</div>
             <div>
               <h3>${esc(d.name)}</h3>
               <div class="sub">${s.total} Karten</div>
@@ -802,7 +802,7 @@ function viewStats() {
         const s = deckStats(d);
         return `<div class="panel deck" style="--deck:${d.color}">
           <div class="deck-head">
-            <div class="deck-icon">${deckInitials(d.name)}</div>
+            <div class="deck-icon">${esc(d.short || deckInitials(d.name))}</div>
             <div><h3>${esc(d.name)}</h3><div class="sub">${s.total} Karten</div></div>
             <div class="deck-pct">${pct(s.mastered, s.total)} %<small>gekonnt</small></div>
           </div>

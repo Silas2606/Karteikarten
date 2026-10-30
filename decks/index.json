@@ -1,8 +1,9 @@
 {
   "decks": [
-    { "id": "internes-rechnungswesen", "name": "Internes Rechnungswesen", "prefix": "irw", "color": "#2563eb" },
-    { "id": "externes-rechnungswesen", "name": "Externes Rechnungswesen", "prefix": "erw", "color": "#059669" },
-    { "id": "marketing", "name": "Marketing", "prefix": "mkt", "color": "#d97706" },
-    { "id": "analogtechnik", "name": "Analogtechnik", "prefix": "ana", "color": "#7c3aed" }
+    {"id": "internes-rechnungswesen", "name": "Internes Rechnungswesen", "prefix": "irw", "color": "#2563eb"},
+    {"id": "externes-rechnungswesen", "name": "Externes Rechnungswesen", "prefix": "erw", "color": "#059669"},
+    {"id": "marketing", "name": "Marketing", "prefix": "mkt", "color": "#d97706"},
+    {"id": "messtechnik", "name": "Messtechnik", "short": "MT", "prefix": "mtk", "color": "#7c3aed"},
+    {"id": "analoge-elektronik", "name": "Analoge Elektronik", "short": "AE", "prefix": "ael", "color": "#0891b2"}
   ]
 }
