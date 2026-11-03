@@ -596,6 +596,153 @@
       "back": "- Bei jedem Geschäftsfall mit USt den Steuerbetrag separat auf **VSt** (Einkauf, auch Anlagen/Reparaturen) bzw. **USt** (Verkauf) buchen; Erfolgs- und Sachkonten nur **netto**.\n- VSt und USt sind **Bestandskonten** – sie gehen nicht in die G+V.\n- Am Jahresende: kleineres Steuerkonto über das größere abschließen, Saldo ins **SBK** (Zahllast auf der Habenseite bzw. VSt-Überhang auf der Sollseite).",
       "topic": "Umsatzsteuer",
       "source": "REWE Vorlesung 3, Übungsaufgabe Umsatzsteuer, S. 6–11"
+    },
+    {
+      "id": "erw-0086",
+      "front": "Wie werden die Anschaffungskosten ermittelt (Schema)?",
+      "back": "Anschaffungspreis\n+ Aufwendungen für die Versetzung in den **Zustand der Betriebsbereitschaft**\n+ **Anschaffungsnebenkosten**\n+ **nachträgliche** Anschaffungskosten\n− **Anschaffungspreisminderungen**\n= **Anschaffungskosten**",
+      "topic": "Anschaffungskosten",
+      "source": "REWE Vorlesung 4, Kap. 7.1, S. 1"
+    },
+    {
+      "id": "erw-0087",
+      "front": "Gehören Finanzierungskosten (z. B. Kreditzinsen) zu den Anschaffungskosten?",
+      "back": "**Nein.** Kosten der Finanzierung sind **keine** Anschaffungskosten – sie werden als Aufwand (z. B. Zinsaufwand) gebucht.",
+      "topic": "Anschaffungskosten",
+      "source": "REWE Vorlesung 4, Kap. 7.1, S. 1"
+    },
+    {
+      "id": "erw-0088",
+      "front": "Dürfen Gemeinkosten in die Anschaffungskosten eingerechnet werden?",
+      "back": "**Nein.** Keine Verrechnung von Gemeinkosten – **nur Einzelkosten**, die dem Vermögensgegenstand direkt zugerechnet werden können, zählen zu den Anschaffungskosten.",
+      "topic": "Anschaffungskosten",
+      "source": "REWE Vorlesung 4, Kap. 7.1, S. 1"
+    },
+    {
+      "id": "erw-0089",
+      "front": "Was zählt zu den Anschaffungspreisminderungen?",
+      "back": "Alles, was den Anschaffungspreis nachträglich oder sofort mindert, z. B.:\n- **Rabatte**\n- **Skonti**\n- **Boni**\n- Preisnachlässe aufgrund von Mängelrügen\n\nSie werden von den Anschaffungskosten **abgezogen**.",
+      "topic": "Anschaffungskosten",
+      "source": "REWE Vorlesung 4, Kap. 7.1, S. 1"
+    },
+    {
+      "id": "erw-0090",
+      "front": "Gehört die Umsatzsteuer zu den Anschaffungskosten?",
+      "back": "Kommt auf den Käufer an:\n- **Vorsteuerabzugsberechtigt** (z. B. AG): **nein** – die USt wird als Vorsteuer gebucht und vom Finanzamt erstattet.\n- **Nicht vorsteuerabzugsberechtigt** (z. B. eine Stadt): **ja** – die nicht abziehbare USt erhöht die Anschaffungskosten.",
+      "topic": "Anschaffungskosten",
+      "source": "REWE Vorlesung 4, Kap. 7.1, S. 1"
+    },
+    {
+      "id": "erw-0091",
+      "front": "Nenne typische Anschaffungsnebenkosten und typische Posten, die **nicht** zu den Anschaffungskosten gehören.",
+      "back": "**Nebenkosten (aktivieren):** Transport-/Überführungskosten, Zulassungsgebühren, Montage/Fundament, Transportversicherung, bei Grundstücken: Grunderwerbsteuer (eigener Anteil), Makler, Notar (Kaufvertrag), Grundbucheintragung (Eigentum).\n\n**Keine AK:** Finanzierungskosten (Zinsen, Grundschuldeintragung), laufende Kosten nach Inbetriebnahme (Personal, Feuerversicherung, Grundsteuer), Reparaturen nach Unfall, Gemeinkosten, abziehbare Vorsteuer.",
+      "topic": "Anschaffungskosten",
+      "source": "REWE Vorlesung 4, Kap. 7.1, S. 1"
+    },
+    {
+      "id": "erw-0092",
+      "front": "Welche nachträglichen Preisnachlässe gibt es (im Beschaffungs- wie im Absatzbereich)?",
+      "back": "- Preisnachlässe aufgrund von **Mängelrügen**\n- **Boni** (Treue- und Umsatzrabatte)\n- **Skonti**",
+      "topic": "Preisnachlässe",
+      "source": "REWE Vorlesung 4, Kap. 7.2.1, S. 5"
+    },
+    {
+      "id": "erw-0093",
+      "front": "Beispiel Beschaffung: Wolle für 10.000 + 19 % USt auf Ziel gekauft, Zahlung unter Abzug von 3 % Skonto per Bank. Wie wird gebucht?",
+      "back": "**Eingangsrechnung:**\nVorräte 10.000; VSt 1.900 **an** Verbindlichkeiten 11.900\n\n**Überweisung** (3 % von 11.900 = 357):\nVerbindlichkeiten 11.900 **an** Bank 11.543; Nachlässe 300; VSt 57\n\n**Umbuchung:**\nNachlässe **an** Vorräte 300",
+      "topic": "Preisnachlässe",
+      "source": "REWE Vorlesung 4, Kap. 7.2.1, S. 5–6"
+    },
+    {
+      "id": "erw-0094",
+      "front": "Warum muss beim Lieferantenskonto auch die Vorsteuer korrigiert werden?",
+      "back": "Der Skonto mindert das **Entgelt** und damit die Bemessungsgrundlage der USt. Der Bruttoskonto wird aufgeteilt in den Nettonachlass und den darauf entfallenden **Vorsteueranteil**, der im Haben des VSt-Kontos gebucht wird.\n\nBsp.: 357 brutto = 300 Nachlass + 57 VSt.",
+      "topic": "Preisnachlässe",
+      "source": "REWE Vorlesung 4, Kap. 7.2.1, S. 6"
+    },
+    {
+      "id": "erw-0095",
+      "front": "Wozu dient das Konto „Nachlässe“ im Beschaffungsbereich und wie wird es abgeschlossen?",
+      "back": "Nachträgliche Preisnachlässe (Skonto, Boni, Mängelnachlass) werden zunächst auf dem **Unterkonto Nachlässe** (Haben) gesammelt.\n\nDa sie die **Anschaffungskosten mindern**, wird das Konto über das Bestandskonto abgeschlossen:\n**Nachlässe an Vorräte**",
+      "topic": "Preisnachlässe",
+      "source": "REWE Vorlesung 4, Kap. 7.2.1, S. 6"
+    },
+    {
+      "id": "erw-0096",
+      "front": "Beispiel Absatz: Wollmützen für 20.000 + 19 % USt auf Ziel verkauft, Kunde zahlt unter Abzug von 2 % Skonto. Wie wird gebucht?",
+      "back": "**Ausgangsrechnung:**\nFord LL 23.800 **an** Umsatzerlöse 20.000; USt 3.800\n\n**Zahlungseingang** (2 % von 23.800 = 476):\nBank 23.324; Erlösberichtigung 400; USt 76 **an** Ford LL 23.800\n\n**Umbuchung:**\nUmsatzerlöse **an** Erlösberichtigung 400\n\n*(Im Skript steht Bank 23.334 – richtig ist 23.800 − 476 = 23.324.)*",
+      "topic": "Preisnachlässe",
+      "source": "REWE Vorlesung 4, Kap. 7.2.2, S. 7–8"
+    },
+    {
+      "id": "erw-0097",
+      "front": "Wozu dient das Konto „Erlösberichtigung“ und wie wird es abgeschlossen?",
+      "back": "Gewährte nachträgliche Preisnachlässe an Kunden (Kundenskonto, Boni, Mängelnachlass) werden im **Soll** des Unterkontos **Erlösberichtigung** gesammelt.\n\nSie mindern die Umsatzerlöse, daher Abschluss:\n**Umsatzerlöse an Erlösberichtigung**",
+      "topic": "Preisnachlässe",
+      "source": "REWE Vorlesung 4, Kap. 7.2.2, S. 8"
+    },
+    {
+      "id": "erw-0098",
+      "front": "Vergleiche Lieferantenskonto und Kundenskonto: Welche Konten werden berührt?",
+      "back": "**Lieferantenskonto (Beschaffung):** Haben auf *Nachlässe* + Korrektur **Vorsteuer** (Haben) → Umbuchung *Nachlässe an Vorräte* (mindert AK).\n\n**Kundenskonto (Absatz):** Soll auf *Erlösberichtigung* + Korrektur **Umsatzsteuer** (Soll) → Umbuchung *Umsatzerlöse an Erlösberichtigung* (mindert Erlöse).",
+      "topic": "Preisnachlässe",
+      "source": "REWE Vorlesung 4, Kap. 7.2, S. 5–8"
+    },
+    {
+      "id": "erw-0099",
+      "front": "Beispiel: Wolle für 5.000 + USt auf Ziel gekauft; mangelhafte Ware wird zurückgeschickt, Gutschrift 1.000 + USt. Wie wird gebucht?",
+      "back": "**Eingangsrechnung:**\nVorräte 5.000; VSt 950 **an** Verbindlichkeiten 5.950\n\n**Rücksendung:**\nVerbindlichkeiten 1.190 **an** Vorräte 1.000; VSt 190\n\n→ Die ursprüngliche Buchung wird anteilig **storniert** (umgekehrt gebucht).",
+      "topic": "Rücksendungen",
+      "source": "REWE Vorlesung 4, Kap. 7.3.1, S. 8"
+    },
+    {
+      "id": "erw-0100",
+      "front": "Beispiel: Wollmützen für 20.000 + USt auf Ziel verkauft; Kunde sendet mangelhafte Ware über 4.000 + USt zurück (Gutschrift). Wie wird gebucht?",
+      "back": "**Ausgangsrechnung:**\nFord LL 23.800 **an** Umsatzerlöse 20.000; USt 3.800\n\n**Rücksendung:**\nUmsatzerlöse 4.000; USt 760 **an** Ford LL 4.760\n\n*(Im Skript steht bei der Ausgangsrechnung USt 2.380 – richtig sind 19 % von 20.000 = 3.800.)*",
+      "topic": "Rücksendungen",
+      "source": "REWE Vorlesung 4, Kap. 7.3.2, S. 9"
+    },
+    {
+      "id": "erw-0101",
+      "front": "Wie unterscheidet sich die Buchung einer Rücksendung von der eines nachträglichen Preisnachlasses?",
+      "back": "- **Rücksendung:** Die Ware geht zurück – die ursprüngliche Buchung wird **direkt storniert** (Vorräte bzw. Umsatzerlöse und VSt/USt werden direkt gemindert, kein Unterkonto).\n- **Preisnachlass** (Skonto, Bonus, Mängelnachlass): Die Ware bleibt – Buchung über ein **Unterkonto** (*Nachlässe* bzw. *Erlösberichtigung*), das am Ende umgebucht wird.\n\nIn beiden Fällen wird die **Steuer anteilig korrigiert**.",
+      "topic": "Rücksendungen",
+      "source": "REWE Vorlesung 4, Kap. 7.2–7.3"
+    },
+    {
+      "id": "erw-0102",
+      "front": "Welche Konten werden für Bestandsveränderungen an unfertigen und fertigen Erzeugnissen geführt?",
+      "back": "- **Unfertige Erzeugnisse** und **Fertige Erzeugnisse**: Bestandskonten (Aktiva)\n- **Bestandsveränderungen**: Erfolgskonto, wird über das **G+V-Konto** abgeschlossen\n\nDer Schlussbestand laut Inventur wird mit dem Anfangsbestand verglichen; die Differenz geht über *Bestandsveränderungen* in die G+V.",
+      "topic": "Bestandsveränderungen",
+      "source": "REWE Vorlesung 4, Kap. 7.4, S. 9"
+    },
+    {
+      "id": "erw-0103",
+      "front": "Wie wird eine **Bestandsmehrung** (SB > AB) bei Erzeugnissen gebucht und wie wirkt sie auf den Erfolg?",
+      "back": "Buchung (Mehrung = SB − AB):\n**Unfertige/Fertige Erzeugnisse an Bestandsveränderungen**\n\nBestandsveränderungen stehen dann im **Haben** der G+V → wirken wie ein **Ertrag** und **erhöhen** den Jahresüberschuss.",
+      "topic": "Bestandsveränderungen",
+      "source": "REWE Vorlesung 4, Kap. 7.4, S. 9–10"
+    },
+    {
+      "id": "erw-0104",
+      "front": "Wie wird eine **Bestandsminderung** (SB < AB) bei Erzeugnissen gebucht und wie wirkt sie auf den Erfolg?",
+      "back": "Buchung (Minderung = AB − SB):\n**Bestandsveränderungen an Unfertige/Fertige Erzeugnisse**\n\nBestandsveränderungen stehen dann im **Soll** der G+V → wirken wie ein **Aufwand** und **mindern** den Jahresüberschuss.",
+      "topic": "Bestandsveränderungen",
+      "source": "REWE Vorlesung 4, Kap. 7.4, S. 9–10"
+    },
+    {
+      "id": "erw-0105",
+      "front": "Warum müssen Bestandsveränderungen in der G+V berücksichtigt werden?",
+      "back": "In der G+V stehen **alle Aufwendungen der Periode** (Material, Löhne …), auch für Erzeugnisse, die noch **nicht verkauft** wurden. Die Umsatzerlöse erfassen aber nur Verkauftes.\n\n- Auf Lager produziert (Mehrung) → Ertrag ausgleichend ergänzen.\n- Mehr verkauft als produziert, Lager abgebaut (Minderung) → zusätzlicher Aufwand.\n\nSo stimmen Aufwand und Leistung der Periode überein.",
+      "topic": "Bestandsveränderungen",
+      "source": "REWE Vorlesung 4, Kap. 7.4, S. 9"
+    },
+    {
+      "id": "erw-0106",
+      "front": "Wie berechnet man den Jahresüberschuss, wenn Bestandsveränderungen vorliegen?",
+      "back": "$$\\text{JÜ} = \\text{Umsatzerlöse} \\pm \\text{Bestandsveränderungen} - \\text{Aufwendungen}$$\n\n- Bestandsmehrung: **+** (Haben G+V)\n- Bestandsminderung: **−** (Soll G+V)\n\nDie Bestandsveränderung ergibt sich je Konto als Schlussbestand laut Inventur − Anfangsbestand.",
+      "topic": "Bestandsveränderungen",
+      "source": "REWE Vorlesung 4, Kap. 7.4, S. 9"
     }
   ]
 }
