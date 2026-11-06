@@ -1,5 +1,307 @@
 {
   "deck": "analoge-elektronik",
   "name": "Analoge Elektronik",
-  "cards": []
+  "cards": [
+    {
+      "id": "ael-0001",
+      "front": "Nach welchem Kriterium werden Festkörpermaterialien in Isolatoren, Halbleiter und Leiter eingeteilt – und mit welchen Grenzen?",
+      "back": "Nach dem **spezifischen Widerstand** $\\rho$ mit $[\\rho] = \\Omega \\cdot m$:\n\n- **Isolatoren**: $\\rho > 10^{5}\\,\\Omega m$\n- **Halbleiter**: $10^{-3} < \\rho < 10^{5}\\,\\Omega m$\n- **Leiter**: $\\rho < 10^{-3}\\,\\Omega m$",
+      "topic": "Halbleitermaterialien",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.1, S. 8"
+    },
+    {
+      "id": "ael-0002",
+      "front": "Wo im Periodensystem findet man Element-Halbleiter, und wie entstehen Verbindungshalbleiter?",
+      "back": "- **Element-Halbleiter**: in der **IV. Hauptgruppe** (z. B. Si, Ge)\n- **Verbindungshalbleiter**: Kombination von Elementen der Gruppen **III und V** (z. B. GaAs)\n\nWichtigste Halbleitermaterialien: **Silizium (Si)** und **Germanium (Ge)**.",
+      "topic": "Halbleitermaterialien",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.1.1, S. 8"
+    },
+    {
+      "id": "ael-0003",
+      "front": "Wie ist ein Siliziumkristall aufgebaut?",
+      "back": "- Ein Si-Atom hat **4 Elektronen auf der äußeren Schale** (Valenzelektronen).\n- Es geht mit Nachbaratomen **kovalente Bindungen** (Elektronenpaarbindungen) ein.\n- Im Kristall ist jedes Atom an **vier andere Si-Atome** gebunden.",
+      "topic": "Halbleitermaterialien",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.1, S. 8"
+    },
+    {
+      "id": "ael-0004",
+      "front": "Wie unterscheiden sich Leiter, Halbleiter und Isolatoren im Energiebändermodell?",
+      "back": "- **Leiter**: Valenz- und Leitungsband überlappen – bei Raumtemperatur ist keine zusätzliche Energie für Leitung nötig.\n- **Halbleiter**: kleine **Bandlücke** $E_G$ zwischen Valenz- und Leitungsband.\n- **Isolator**: große Bandlücke; Leitung erst bei sehr hoher Spannung durch **elektrischen Durchbruch**.",
+      "topic": "Halbleitermaterialien",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.1.2, S. 9"
+    },
+    {
+      "id": "ael-0005",
+      "front": "Wie groß ist die Bandlücke $E_G$ von Silizium und Germanium?",
+      "back": "- Silizium: $E_{G,Si} = 1{,}12\\,eV$\n- Germanium: $E_{G,Ge} = 0{,}66\\,eV$",
+      "topic": "Halbleitermaterialien",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.1.2, S. 9"
+    },
+    {
+      "id": "ael-0006",
+      "front": "Welcher Zusammenhang besteht zwischen Leitfähigkeit und Bandlücke?",
+      "back": "Je **geringer die Leitfähigkeit**, desto **größer der Energiebedarf**, um Elektronen vom Valenzband ins Leitungsband zu befördern.\n\nDer Energiebedarf ist proportional zur **Bandlücke** $E_G$.",
+      "topic": "Halbleitermaterialien",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.1.2, S. 9 (Notiz)"
+    },
+    {
+      "id": "ael-0007",
+      "front": "Wie sieht das Energiebändermodell von intrinsischem (reinem) Silizium bei $T = 0\\,K$ und bei $T \\neq 0\\,K$ aus?",
+      "back": "- **$T = 0\\,K$**: **Alle Elektronen bleiben im Valenzband** – das Leitungsband ist leer, keine Leitung.\n- **$T \\neq 0\\,K$**: Durch thermische Energie springen einzelne Elektronen über die Bandlücke ins Leitungsband und hinterlassen **Löcher** (+) im Valenzband → Elektron-Loch-Paare.",
+      "topic": "Halbleitermaterialien",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.1.3, S. 9"
+    },
+    {
+      "id": "ael-0008",
+      "front": "Was passiert im Bindungsmodell (kovalente Bindungen) von reinem Silizium, wenn die Temperatur über 0 K steigt?",
+      "back": "- Bei $T = 0\\,K$ sind alle Valenzelektronen in den kovalenten Bindungen gebunden.\n- Bei $T > 0\\,K$ brechen einzelne Bindungen auf: ein **freies Elektron** ($e^-$) entsteht und hinterlässt ein **Loch** ($q^+$).\n- Elektronen und Löcher entstehen also immer **paarweise** (Eigenleitung).",
+      "topic": "Halbleitermaterialien",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.1.4, S. 10"
+    },
+    {
+      "id": "ael-0009",
+      "front": "Wie lautet die Formel für die intrinsische Ladungsträgerdichte $n_i$, und wie groß ist sie bei Raumtemperatur in Silizium?",
+      "back": "$$n_i = \\sqrt{B \\cdot T^3} \\cdot e^{\\frac{-E_G}{2kT}}$$\n\n- **exponentielle** Abhängigkeit von der Temperatur $T$\n- bei Raumtemperatur in Si: $n_i \\approx 10^{10}\\,cm^{-3}$",
+      "topic": "Halbleitermaterialien",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.1.5, S. 10"
+    },
+    {
+      "id": "ael-0010",
+      "front": "Was versteht man unter Dotierung, und wie funktioniert eine **Donator**-Dotierung von Silizium?",
+      "back": "**Dotierung** = gezielte „Verunreinigung“ des Siliziums mit Fremdatomen.\n\n**Donatoren**:\n- aus der **V. Hauptgruppe** (z. B. Phosphor P), **5 Valenzelektronen**\n- 4 Elektronen binden mit den Si-Nachbarn, das **5. Elektron** steht für den Stromfluss zur Verfügung\n- verlässt das freie Elektron die äußere Schale, ist das Donatoratom **ionisiert** (positiv geladen)",
+      "topic": "Dotierung",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.2.1, S. 11"
+    },
+    {
+      "id": "ael-0011",
+      "front": "Wie funktioniert eine **Akzeptor**-Dotierung von Silizium?",
+      "back": "**Akzeptoren**:\n- aus der **III. Hauptgruppe** (z. B. Bor B), nur **3 Valenzelektronen**\n- eine Bindung zum Si-Nachbarn bleibt unbesetzt → **Loch** (Fehlstelle)\n- wandert das Loch vom Bor-Atom weg (ein Nachbarelektron füllt es), ist das Akzeptoratom **ionisiert** (negativ geladen)",
+      "topic": "Dotierung",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.2.1, S. 11"
+    },
+    {
+      "id": "ael-0012",
+      "front": "Wie bewegen sich Elektronen und Löcher in einem dotierten Halbleiter unter einem elektrischen Feld $\\vec{E}$?",
+      "back": "- **Elektronen** (n-Dotierung): driften als freie Ladungsträger durch das Gitter entlang des Feldes.\n- **Löcher** (p-Dotierung): bewegen sich nicht selbst – sie „wandern“ durch **Sprünge von Valenzelektronen** benachbarter Bindungen in die Fehlstelle.",
+      "topic": "Dotierung",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.2.1, S. 11 (Notiz)"
+    },
+    {
+      "id": "ael-0013",
+      "front": "Wie wirkt sich Dotierung im Energiebändermodell aus?",
+      "back": "Dotierung erzeugt **zusätzliche Energieniveaus** in der Bandlücke:\n\n- **Donatorniveau** $E_D$ dicht **unter dem Leitungsband** $E_C$ → Elektronen gelangen mit wenig Energie ins Leitungsband.\n- **Akzeptorniveau** $E_A$ dicht **über dem Valenzband** $E_V$ → Elektronen aus dem Valenzband besetzen es leicht und hinterlassen Löcher im Valenzband.",
+      "topic": "Dotierung",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.2.2, S. 12"
+    },
+    {
+      "id": "ael-0014",
+      "front": "Welche Ladung tragen Elektronen und Löcher, und in welcher Einheit werden Elektronendichte $n$ und Löcherdichte $p$ angegeben?",
+      "back": "- Elektron: $q_- = -1{,}602 \\cdot 10^{-19}\\,As$\n- Loch: $q_+ = +1{,}602 \\cdot 10^{-19}\\,As$\n\n- Elektronendichte $n$: $[n] = \\frac{\\text{Elektronen}}{cm^3}$\n- Löcherdichte $p$: $[p] = \\frac{\\text{Löcher}}{cm^3}$",
+      "topic": "Dotierung",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.2.3, S. 13"
+    },
+    {
+      "id": "ael-0015",
+      "front": "Welche Beziehung gilt zwischen $n$ und $p$ bei intrinsischem Silizium, bei n-Material und bei p-Material?",
+      "back": "- **intrinsisch** (undotiert): $n = p = n_i$\n- **n-Material**: $n > p$\n- **p-Material**: $p > n$",
+      "topic": "Dotierung",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.2.3, S. 13"
+    },
+    {
+      "id": "ael-0016",
+      "front": "Was sind Majoritäts- und Minoritätsladungsträger? Wofür stehen $N_A$ und $N_D$?",
+      "back": "- **Majoritätsträger**: die größere Ladungsträgerpopulation (Elektronen oder Löcher), die durch **Dotierung** entsteht.\n- **Minoritätsträger**: die kleinere Population, bedingt durch das Halbleitermaterial selbst.\n\n- $N_A$ = **Akzeptorkonzentration**\n- $N_D$ = **Donatorkonzentration**",
+      "topic": "Dotierung",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.2.3, S. 13"
+    },
+    {
+      "id": "ael-0017",
+      "front": "Wie hängt die Ladungsträgerdichte von dotiertem Silizium von der Temperatur ab (Freeze-out, extrinsischer und intrinsischer Bereich)?",
+      "back": "- **Freeze-out-Bereich** ($T < T_{Si,min} \\approx 175\\,K$): Ladungsträgerdichte nimmt ab (Dotieratome nicht mehr ionisiert).\n- **Extrinsischer Bereich** (dazwischen): Ladungsträgerdichte nahezu **konstant** = Dotierkonzentration → temperaturunabhängig.\n- **Intrinsischer Bereich** ($T > T_{Si,max} \\approx 450\\,K$): starker Anstieg durch die Eigenleitung $n_i$.\n\n**Voraussetzung**: hohe Dotierung (z. B. $10^{15}\\,cm^{-3}$), viel größer als $n_i \\approx 10^{10}\\,cm^{-3}$ bei Raumtemperatur.",
+      "topic": "Dotierung",
+      "source": "Skript Analog Electronics (Leitis), Kap. 1.2.4, S. 13"
+    },
+    {
+      "id": "ael-0018",
+      "front": "Wie entsteht ein PN-Übergang und die Raumladungszone (RLZ / SCR)?",
+      "back": "- p-dotiertes (Akzeptoren) und n-dotiertes (Donatoren) Material werden verbunden → **PN-Übergang**.\n- Am Übergang **diffundieren** Elektronen aus dem n-Gebiet ins p-Gebiet und rekombinieren mit Löchern.\n- Zurück bleiben **ortsfeste ionisierte Atome**: negative Akzeptorionen auf der p-Seite, positive Donatorionen auf der n-Seite.\n- Diese an freien Ladungsträgern verarmte Zone heißt **Raumladungszone** (space charge region, SCR).",
+      "topic": "PN-Übergang",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.1, S. 14"
+    },
+    {
+      "id": "ael-0019",
+      "front": "Welche Seite der PN-Diode ist Anode, welche Kathode, und wie sind Fluss- und Sperrrichtung definiert?",
+      "back": "- **Anode** = p-Seite, **Kathode** = n-Seite (Kontakte z. B. aus Aluminium)\n- **Flussrichtung**: Plus an der Anode, $V_D$ von Anode nach Kathode positiv → Strom $I_D$ fließt in Pfeilrichtung des Symbols.\n- **Sperrrichtung**: umgekehrte Polung (Kathode positiver als Anode).",
+      "topic": "PN-Übergang",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.1, S. 14"
+    },
+    {
+      "id": "ael-0020",
+      "front": "Wie hängen Raumladungsdichte $\\rho(x)$, elektrisches Feld $E(x)$ und Potential $\\varphi(x)$ am PN-Übergang zusammen?",
+      "back": "Durch **Integration**:\n\n$$E(x) = \\int \\rho(x)\\,dx \\qquad \\varphi(x) = \\int E(x)\\,dx$$\n\n- $\\rho(x)$: rechteckig – negativ auf der p-Seite, positiv auf der n-Seite der RLZ\n- $E(x)$: dreieckförmig, Betragsmaximum am Übergang\n- $\\varphi(x)$: S-förmiger Anstieg von p nach n → **Diffusionsspannung** (Build-in-Potential)",
+      "topic": "PN-Übergang",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.1, S. 14"
+    },
+    {
+      "id": "ael-0021",
+      "front": "Wie berechnet man das Build-in-Potential (Diffusionsspannung) $\\varphi$ eines PN-Übergangs?",
+      "back": "$$\\varphi = V_T \\cdot \\ln\\left(\\frac{N_A \\cdot N_D}{n_i^2}\\right)$$\n\n- $V_T$: Temperaturspannung\n- $N_A$, $N_D$: Akzeptor- bzw. Donatorkonzentration\n- $n_i$: intrinsische Ladungsträgerdichte",
+      "topic": "PN-Übergang",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.1, S. 14 (Notiz)"
+    },
+    {
+      "id": "ael-0022",
+      "front": "Wie groß ist das Build-in-Potential $\\varphi$ typischerweise für Ge, Si und GaAs?",
+      "back": "- Germanium: $\\varphi \\approx 0{,}3\\,V$\n- Silizium: $\\varphi \\approx 0{,}7\\,V$\n- Galliumarsenid: $\\varphi \\approx 0{,}9\\,V$",
+      "topic": "PN-Übergang",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.1, S. 14 (Notiz)"
+    },
+    {
+      "id": "ael-0023",
+      "front": "Wie ist die Temperaturspannung $V_T$ definiert?",
+      "back": "$$V_T = T \\cdot \\frac{k}{q}$$\n\n- Boltzmann-Konstante $k = 1{,}380649 \\cdot 10^{-23}\\,VAs/K$\n- Elementarladung $q = 1{,}602 \\cdot 10^{-19}\\,As$\n- $T$ in Kelvin\n\nDer Quotient $k/q$ ist die Steigung bzw. **Temperaturempfindlichkeit** $S_T$.",
+      "topic": "PN-Übergang",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.2, S. 15"
+    },
+    {
+      "id": "ael-0024",
+      "front": "Berechne die Temperaturempfindlichkeit $S_T$ und die Temperaturspannung $V_T$ bei Raumtemperatur ($23\\,°C \\approx 297\\,K$).",
+      "back": "$$S_T = \\frac{k}{q} = \\frac{1{,}38065 \\cdot 10^{-23}\\,VAs/K}{1{,}602 \\cdot 10^{-19}\\,As} \\approx 86{,}18\\,\\mu V/K$$\n\n$$V_T = 297\\,K \\cdot 86{,}18\\,\\mu V/K \\approx 25{,}6\\,mV$$",
+      "topic": "PN-Übergang",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.2, S. 15"
+    },
+    {
+      "id": "ael-0025",
+      "front": "Wie ist eine planare PN-Diode auf einem Siliziumwafer aufgebaut und wie wird sie hergestellt?",
+      "back": "- **Bulk/Body**: schwach p-dotiert ($p^-$)\n- Durch **Implantation** von Akzeptoren und Donatoren über die Oberfläche entstehen n-Wanne, $p^+$- und $n^+$-Gebiet → PN-Übergang.\n- **Produktionsmasken** öffnen „Fenster“ für die gewünschten Bereiche und decken alle anderen ab (mehrere Schritte).\n- **Kontakte**: meist Aluminium (Anode, Kathode)\n- **Isolation**: Siliziumoxid $SiO_2$ (Feldoxid), erzeugt durch Oxidation des Siliziums",
+      "topic": "PN-Übergang",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.3, S. 15"
+    },
+    {
+      "id": "ael-0026",
+      "front": "Wie lautet die Shockley-Gleichung (Großsignalmodell der Diode) und was bedeuten die Größen?",
+      "back": "$$I_D = I_S \\cdot \\left(e^{\\frac{V_D}{n \\cdot V_T}} - 1\\right)$$\n\n- $I_D$: Diodenstrom\n- $I_S$: temperaturabhängiger (Sperr-)**Sättigungsstrom**, ca. $10^{-18}$ bis $10^{-6}\\,A$\n- $V_T$: Temperaturspannung (≈ 25,6 mV)\n- $n$: **Nichtidealitätsfaktor**, typ. 1…2, vereinfacht oft $n = 1$\n- $V_D$: Spannung über der Diode",
+      "topic": "Diodenmodell & Kennlinie",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.4, S. 16"
+    },
+    {
+      "id": "ael-0027",
+      "front": "Wie vereinfacht sich die Shockley-Gleichung in Flussrichtung für $V_D > 100\\,mV$?",
+      "back": "Mit $n = 1$: $I_D = I_S \\cdot e^{V_D/V_T} - I_S$\n\nDer Term $-I_S$ ist **vernachlässigbar**, also:\n\n$$I_D \\approx I_S \\cdot e^{\\frac{V_D}{V_T}}$$\n\n(Für $V_D < 100\\,mV$ muss die volle Gleichung $I_D = I_S(e^{V_D/V_T} - 1)$ verwendet werden.)",
+      "topic": "Diodenmodell & Kennlinie",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.4, S. 16"
+    },
+    {
+      "id": "ael-0028",
+      "front": "Welcher Diodenstrom fließt bei $V_D = 0$ und welcher in Sperrrichtung (laut Shockley-Gleichung)?",
+      "back": "**$V_D = 0$**: $I_D = I_S(e^0 - 1) = 0$\n\n**Sperrrichtung** ($V_D = -V_R$, aber oberhalb der Durchbruchspannung $V_{br}$):\n$$I_D = I_S\\left(e^{-V_R/V_T} - 1\\right)$$\nDie e-Funktion wird vernachlässigbar → $I_D \\approx -I_S \\approx 0$ (für $V_R \\to \\infty$ genau $-I_S$).",
+      "topic": "Diodenmodell & Kennlinie",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.4, S. 16"
+    },
+    {
+      "id": "ael-0029",
+      "front": "Beschreibe die lineare IV-Kennlinie einer Diode: Was sind $V_{th}$ und $V_{br}$?",
+      "back": "- **Schwellspannung** $V_{th}$ (Si ≈ 0,7 V): ab hier leitet die Diode in Flussrichtung, der Strom steigt exponentiell.\n- **Durchbruchspannung** $V_{br}$: maximale Sperrspannung; darüber steigt der Sperrstrom steil an.\n- Zwischen $V_{br}$ und $V_{th}$ fließt nur ein sehr, sehr kleiner Strom → Diode ist **aus**.",
+      "topic": "Diodenmodell & Kennlinie",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.5, S. 17"
+    },
+    {
+      "id": "ael-0030",
+      "front": "Was zeigt die halblogarithmische IV-Kennlinie einer Diode, was in der linearen Darstellung nicht sichtbar ist?",
+      "back": "- Nur bei **$V_D = 0$** fließt wirklich **kein** Strom.\n- In Sperrrichtung fließt ein winziger negativer Strom, der gegen $-I_S$ geht.\n- Der Sperrsättigungsstrom $I_S$ wird üblicherweise bei $V_D = -0{,}1\\,V$ angegeben.",
+      "topic": "Diodenmodell & Kennlinie",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.5, S. 17"
+    },
+    {
+      "id": "ael-0031",
+      "front": "Warum lässt sich der Arbeitspunkt einer Reihenschaltung aus Spannungsquelle $V_{DD}$, Widerstand $R$ und Diode nicht direkt per Netzwerkanalyse berechnen?",
+      "back": "Masche: $V_{DD} = R \\cdot I_D + V_D$\n\nMit $I_D = I_S e^{V_D/V_T}$ bzw. $V_D = V_T \\ln\\frac{I_D}{I_S}$:\n\n$$V_{DD} = R \\cdot I_D + V_T \\cdot \\ln\\frac{I_D}{I_S}$$\n\n→ **transzendente (implizite) Gleichung**: nicht analytisch nach $V_D$ oder $I_D$ auflösbar. Lösung grafisch, mit vereinfachten Modellen oder numerisch.",
+      "topic": "Arbeitspunkt",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.6.1, S. 18"
+    },
+    {
+      "id": "ael-0032",
+      "front": "Wie bestimmt man den Arbeitspunkt (OP) einer Dioden-Widerstands-Schaltung grafisch?",
+      "back": "1. Diodenkennlinie $I_D(V_D)$ zeichnen.\n2. **Widerstandsgerade** (Arbeitsgerade) einzeichnen über ihre Endpunkte:\n   - $V_D = 0$: $I_{D,max} = \\frac{V_{DD}}{R}$\n   - $I_D = 0$: $V_D = V_{DD}$\n3. **Schnittpunkt** von Gerade und Kennlinie = Arbeitspunkt (DC-Strom und -Spannung).\n\nAllgemein: $I_D = \\frac{V_{DD} - V_D}{R}$",
+      "topic": "Arbeitspunkt",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.6.2, S. 19"
+    },
+    {
+      "id": "ael-0033",
+      "front": "Wie verändert sich der Arbeitspunkt, wenn $V_{DD}$ bzw. der Strom durch die Schaltung steigt? Wer nimmt die zusätzliche Spannung auf?",
+      "back": "Der Strom wird über den **Widerstand** eingestellt.\n\nDie Diodenspannung bleibt wegen der steilen Kennlinie nahezu konstant (≈ 0,7…1 V). Bei höherer Versorgungsspannung muss daher der **Widerstand die überschüssige Spannung aufnehmen** ($V_R = V_{DD} - V_D$) – der Strom steigt deutlich, $V_D$ nur minimal.",
+      "topic": "Arbeitspunkt",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.6.2, S. 19"
+    },
+    {
+      "id": "ael-0034",
+      "front": "Was ist das Modell der **idealen** Diode? Berechne $I_D$ für $V_{CC} = 12\\,V$ und $R = 1\\,k\\Omega$.",
+      "back": "**Ideale Diode**: kein Spannungsabfall ($V_D = 0$), nur ein elektrisches **Ventil** – sperrt in Rückwärtsrichtung ($R_D = \\infty$), leitet in Flussrichtung ohne Spannungsabfall ($R_D = 0$). Einfach, aber unrealistisch.\n\n$$I_D = \\frac{V_{CC}}{R} = \\frac{12\\,V}{1000\\,\\Omega} = 12\\,mA$$",
+      "topic": "Arbeitspunkt",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.6.3, S. 21"
+    },
+    {
+      "id": "ael-0035",
+      "front": "Was ist das Modell der **idealisierten** Diode (konstanter Spannungsabfall)? Berechne $I_D$ für $V_{CC} = 12\\,V$, $R = 1\\,k\\Omega$ (Si-Diode).",
+      "back": "**Idealisierte Diode**: konstanter Spannungsabfall unabhängig vom Strom:\n- Si: $V_D = 0{,}7\\,V$\n- Ge: $V_D = 0{,}3\\,V$\n- andere z. B. $\\approx 0{,}9\\,V$\n\n$$I_D = \\frac{V_{CC} - V_D}{R} = \\frac{11{,}3\\,V}{1000\\,\\Omega} = 11{,}3\\,mA$$",
+      "topic": "Arbeitspunkt",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.6.3, S. 21"
+    },
+    {
+      "id": "ael-0036",
+      "front": "Wie funktioniert das Newton-Raphson-Verfahren zur Arbeitspunktbestimmung?",
+      "back": "Iterative Näherung der Nullstelle einer nichtlinearen Gleichung:\n\n$$x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)}$$\n\n- Mit jedem Schritt wird der Wert genauer, erreicht das exakte Ergebnis aber **nie ganz**.\n- Mehr Iterationen → höhere Genauigkeit.",
+      "topic": "Arbeitspunkt",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.6.4, S. 22"
+    },
+    {
+      "id": "ael-0037",
+      "front": "Wie sehen $f(V_D)$ und $f'(V_D)$ aus, wenn man den Arbeitspunkt einer R-Dioden-Schaltung mit Newton-Raphson berechnet? Welcher Startwert bietet sich an?",
+      "back": "Aus der Masche $V_{CC} = R \\cdot I_D + V_D$:\n\n$$f(V_D) = V_{CC} - R \\cdot I_S \\cdot e^{V_D/V_T} - V_D$$\n$$f'(V_D) = -\\frac{R \\cdot I_S}{V_T} \\cdot e^{V_D/V_T} - 1$$\n\n**Startwert**: $V_D = 0{,}7\\,V$ (Si). Im Skriptbeispiel konvergiert die Iteration nach ca. 8 Schritten auf $V_D \\approx 0{,}7444\\,V$.",
+      "topic": "Arbeitspunkt",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.6.4, S. 22"
+    },
+    {
+      "id": "ael-0038",
+      "front": "Was ist SPICE und wie berechnet es Schaltungen?",
+      "back": "**SPICE** ist ein Simulationsprogramm für elektronische Schaltungen (verschiedene Varianten am Markt).\n\nAlle wenden **Netzwerkanalyse-Methoden** an, um Spannungen und Ströme zu berechnen, und nutzen dabei **iterative Algorithmen** wie Newton-Raphson.",
+      "topic": "Arbeitspunkt",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.6.5, S. 22"
+    },
+    {
+      "id": "ael-0039",
+      "front": "Was ist die Idee des Kleinsignalmodells einer Diode?",
+      "back": "- Die Shockley-Gleichung ist **nichtlinear** und gilt im Großsignalbereich.\n- Das Kleinsignalmodell **linearisiert** die Kennlinie im **DC-Arbeitspunkt** (Tangente).\n- Kleine Spannungsänderungen $\\Delta V_D$ um den Arbeitspunkt bewirken große Stromänderungen $\\Delta I_D$.\n- Für Signale mit **kleiner Amplitude** ist das eine sehr gute Näherung und vereinfacht das Lösen der Gleichungen – die Diode wird zu einem Widerstand $r_D$.",
+      "topic": "Kleinsignalmodell",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.7, S. 25"
+    },
+    {
+      "id": "ael-0040",
+      "front": "Wie ist der Kleinsignal- bzw. differentielle Widerstand $r_D$ einer Diode definiert?",
+      "back": "$$r_D \\approx \\frac{\\Delta V_D}{\\Delta I_D}$$\n\noder genauer:\n\n$$r_D^{-1} = \\frac{dI_D}{dV_D}$$\n\n(Kehrwert der Steigung der Kennlinie im Arbeitspunkt)",
+      "topic": "Kleinsignalmodell",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.7, S. 25"
+    },
+    {
+      "id": "ael-0041",
+      "front": "Leite den differentiellen Widerstand $r_D$ aus der Shockley-Gleichung her.",
+      "back": "$$r_D = \\left(\\frac{dI_D}{dV_D}\\right)^{-1} = \\left(\\frac{d}{dV_D} I_S \\cdot e^{V_D/V_T}\\right)^{-1} = \\left(\\frac{1}{V_T} \\cdot \\underbrace{I_S \\cdot e^{V_D/V_T}}_{I_D}\\right)^{-1}$$\n\n$$\\boxed{r_D = \\frac{V_T}{I_D}}$$",
+      "topic": "Kleinsignalmodell",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.7, S. 25"
+    },
+    {
+      "id": "ael-0042",
+      "front": "Eine Diode arbeitet bei $I_D = 1\\,mA$, $V_D = 0{,}7\\,V$ ($V_T = 25{,}6\\,mV$). Berechne DC-Widerstand und Kleinsignalwiderstand.",
+      "back": "**DC-Widerstand**:\n$$R = \\frac{V_D}{I_D} = \\frac{0{,}7\\,V}{1\\,mA} = 700\\,\\Omega$$\n\n**Kleinsignalwiderstand**:\n$$r_D = \\frac{V_T}{I_D} = \\frac{25{,}6\\,mV}{1\\,mA} = 25{,}6\\,\\Omega$$\n\n→ $r_D$ ist viel kleiner als der DC-Widerstand, weil die Kennlinie im Arbeitspunkt steil ist.",
+      "topic": "Kleinsignalmodell",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.7, S. 25"
+    },
+    {
+      "id": "ael-0043",
+      "front": "Wie hängt der Kleinsignalwiderstand $r_D$ vom Arbeitspunktstrom ab?",
+      "back": "$r_D = \\frac{V_T}{I_D}$ ist **umgekehrt proportional** zum DC-Strom im Arbeitspunkt:\n\n- größerer $I_D$ → steilere Kennlinie → kleineres $r_D$\n- doppelter Strom → halber Kleinsignalwiderstand\n\nDer Arbeitspunkt (DC-Spannung über der Diode) legt also das Kleinsignalverhalten fest.",
+      "topic": "Kleinsignalmodell",
+      "source": "Skript Analog Electronics (Leitis), Kap. 2.7, S. 25"
+    }
+  ]
 }
