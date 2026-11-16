@@ -435,6 +435,342 @@
       "back": "Mit $R_P = \\frac{R_1 R_2}{R_1 + R_2}$ ergibt die schrittweise Fehlerfortpflanzung:\n$$\\delta_{R_P} = \\frac{R_2\\,\\delta_{R1} + R_1\\,\\delta_{R2}}{R_1 + R_2}$$\n$$\\delta_{R_P} = \\pm\\frac{1{,}8\\,\\text{k}\\Omega \\cdot 1{,}0\\,\\% + 1{,}0\\,\\text{k}\\Omega \\cdot 0{,}5\\,\\%}{2{,}8\\,\\text{k}\\Omega} = \\pm 0{,}82\\,\\%$$\n\n(Gleiches Ergebnis über $R_P = 1/(1/R_1 + 1/R_2)$.)",
       "topic": "Fehlerfortpflanzung",
       "source": "Skript Messtechnik (Frey), Kap. 3.5.3, S. 34–35"
+    },
+    {
+      "id": "mtk-0063",
+      "front": "Was sind **zufällige Messabweichungen** und wodurch entstehen sie?",
+      "back": "Wird eine unveränderte Messgröße unter möglichst gleichen Bedingungen mehrfach gemessen, erhält man nicht immer denselben Wert – die Messwerte **streuen** um einen bestimmten Wert.\n\n**Ursachen**: zahlreiche kleine, nicht vollständig kontrollierbare Einflüsse, die sich von Messung zu Messung ändern, z. B.\n- elektrisches Rauschen\n- Reibung\n- Temperaturschwankungen\n- Erschütterungen, äußere Störeinflüsse",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6, S. 36"
+    },
+    {
+      "id": "mtk-0064",
+      "front": "Welche drei Eigenschaften haben **zufällige** Messabweichungen?",
+      "back": "- in **Größe und Vorzeichen nicht vorhersagbar**\n- durch eine einzelne Korrektur **nicht beseitigbar**\n- bei wiederholten Messungen jedoch **statistisch beschreibbar**",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6, S. 36"
+    },
+    {
+      "id": "mtk-0065",
+      "front": "Warum verwendet man bei einer Messreihe den **arithmetischen Mittelwert** als Messwert?",
+      "back": "Zufällige positive und negative Abweichungen **gleichen sich bei der Mittelwertbildung teilweise aus**. Der Mittelwert liefert daher in der Regel eine **bessere Schätzung** für den Wert der Messgröße als eine einzelne Messung.",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6, S. 36"
+    },
+    {
+      "id": "mtk-0066",
+      "front": "Wie unterscheidet sich der Umgang mit **systematischen** und **zufälligen** Abweichungen?",
+      "back": "**Systematisch**: Ursache erkennen und Messwerte entsprechend **korrigieren**.\n\n**Zufällig**: **statistische Auswertung der Messreihe** – zuerst die **Häufigkeitsverteilung** untersuchen, daraus Kennwerte ableiten, die **Lage und Streuung** der Messwerte beschreiben.",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6, S. 36"
+    },
+    {
+      "id": "mtk-0067",
+      "front": "Wozu dient ein **Histogramm** und welche Formelzeichen werden dabei verwendet?",
+      "back": "Messwerte werden in **Klassen** eingeteilt und im Histogramm dargestellt, um zu erkennen, **wie häufig bestimmte Werte bzw. Wertebereiche vorkommen**.\n\n- $n$: Gesamtzahl der Messwerte\n- $K$: Anzahl der Klassen\n- $k = 1, \\dots, K$: Index einer Klasse\n- $x_k$: repräsentativer Wert bzw. Klassenmitte der Klasse $k$\n- $n_k$: absolute Häufigkeit in Klasse $k$\n- $\\Delta x$: Klassenbreite",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.1, S. 37"
+    },
+    {
+      "id": "mtk-0068",
+      "front": "Wie wählt man **Klassenbreite** und **Klassenanzahl** für ein Histogramm (Daumenregel)?",
+      "back": "Bei gleich breiten Klassen: $\\Delta x = x_{k+1} - x_k$\n\nIst die Auflösung des Messgeräts wesentlich feiner als eine sinnvolle Klassenbreite, fasst man mehrere Messwerte zu einer Klasse zusammen. Daumenregel:\n$$K \\approx \\sqrt{n} \\quad\\Rightarrow\\quad \\Delta x \\approx \\frac{x_{\\max} - x_{\\min}}{\\sqrt{n}}$$\nDen Wert anschließend auf eine gut handhabbare Klassenbreite **runden**.",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.1, S. 38"
+    },
+    {
+      "id": "mtk-0069",
+      "front": "Was ist der Unterschied zwischen **absoluter** und **relativer Häufigkeit**?",
+      "back": "**Absolute Häufigkeit** $n_k$: Anzahl der Messwerte in Klasse $k$.\n\n**Relative Häufigkeit**: bezogen auf die Gesamtzahl $n$\n$$H_k = \\frac{n_k}{n}$$\nBeispiel: 11 von 75 Werten in einer Klasse → $H_k \\approx 0{,}147 = 14{,}7\\,\\%$",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.1, S. 38"
+    },
+    {
+      "id": "mtk-0070",
+      "front": "Welcher Zusammenhang besteht zwischen **relativer Häufigkeit** und **Wahrscheinlichkeit**?",
+      "back": "Bei ausreichend großer Stichprobe ist die relative Häufigkeit ein **Schätzwert für die Wahrscheinlichkeit** $W_k$, dass ein weiterer Messwert in diesen Bereich fällt: $W_k \\approx H_k$\n\nMehrere benachbarte Klassen: Summe\n$$W = \\sum_k W_k = \\frac{1}{n}\\sum_k n_k$$\nÜber alle besetzten Klassen gilt $\\sum_k n_k = n$, also $W = 1$.",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.1, S. 39"
+    },
+    {
+      "id": "mtk-0071",
+      "front": "Warum und wie bildet man die **Häufigkeitsdichte** $h_k$?",
+      "back": "Die relative Häufigkeit $H_k$ **hängt von der Klassenbreite ab** (breitere Klasse → mehr Werte → größeres $H_k$). Um Verteilungen mit unterschiedlichen Klassenbreiten vergleichen zu können, bezieht man sie auf die Klassenbreite:\n$$h_k = \\frac{H_k}{\\Delta x} = \\frac{n_k}{n\\,\\Delta x}$$\nEinheit: 1/Einheit des Messwerts (z. B. $\\Omega^{-1}$).",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.1, S. 39"
+    },
+    {
+      "id": "mtk-0072",
+      "front": "Was entspricht im Häufigkeitsdichte-Histogramm der **Fläche eines Balkens**?",
+      "back": "Die Fläche entspricht der **relativen Häufigkeit** der Klasse:\n$$h_k\\,\\Delta x = H_k$$\nMehrere benachbarte Klassen: Flächen addieren, $H = \\sum_k h_k\\,\\Delta x$\n\nGesamtfläche des Histogramms:\n$$\\sum_{k=1}^{K} h_k\\,\\Delta x = 1$$",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.1, S. 40"
+    },
+    {
+      "id": "mtk-0073",
+      "front": "Wie gelangt man vom Histogramm zur **kontinuierlichen Häufigkeitsdichtefunktion** $h(x)$?",
+      "back": "Bei sehr vielen Messwerten können die Klassen immer feiner gewählt werden; das Histogramm nähert sich einer **kontinuierlichen Kurve** $h(x)$.\n\nAus der Summe der Balkenflächen wird ein **Integral**:\n$$H(x_1, x_2) \\approx \\int_{x_1}^{x_2} h(x)\\,\\mathrm{d}x$$\nNormierung:\n$$\\int_{-\\infty}^{+\\infty} h(x)\\,\\mathrm{d}x = 1$$",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.1, S. 41"
+    },
+    {
+      "id": "mtk-0074",
+      "front": "Ist der Funktionswert $h(x)$ einer Häufigkeitsdichtefunktion eine Wahrscheinlichkeit?",
+      "back": "**Nein.** Erst die **Fläche unter $h(x)$ innerhalb eines Wertebereichs** beschreibt die relative Häufigkeit bzw. – bei einem zugrunde gelegten Verteilungsmodell – die Wahrscheinlichkeit für diesen Bereich.",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.1, S. 41"
+    },
+    {
+      "id": "mtk-0075",
+      "front": "Welche **Kennwerte** beschreiben eine Verteilung und was charakterisieren sie jeweils?",
+      "back": "- **Mittelwert**: Lage bzw. typischer Wert der Messwerte\n- **Standardabweichung** und **Varianz**: Streuung um den Mittelwert\n- **Variationskoeffizient**: Standardabweichung bezogen auf den Mittelwert → relativer Vergleich der Streuung verschiedener Messreihen\n\nNutzen: Messreihen **kompakt beschreiben, vergleichen und statistisch weiterverarbeiten**; die Standardabweichung wird später für die **Messunsicherheit** gebraucht.",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.2, S. 42"
+    },
+    {
+      "id": "mtk-0076",
+      "front": "Warum sollte man trotz Kennwerten immer auch das **Histogramm** betrachten?",
+      "back": "Kennwerte beschreiben die **Form einer Verteilung nicht vollständig** – unterschiedliche Verteilungen können ähnliche Mittelwerte und Standardabweichungen haben.\n\nBesonders wichtig bei:\n- **asymmetrischen** Verteilungen\n- **Ausreißern**\n- **mehreren Häufungsbereichen**\n\n(im Gegensatz zur unproblematischen **glockenförmigen** Verteilung)",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.2, S. 42–43"
+    },
+    {
+      "id": "mtk-0077",
+      "front": "Wie berechnet man den **Mittelwert** einer Messreihe?",
+      "back": "$$\\bar{x} = \\frac{1}{n}\\sum_{i=1}^{n} x_i$$\nGleiche Einheit wie der Messwert.",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.2, S. 43"
+    },
+    {
+      "id": "mtk-0078",
+      "front": "Wie berechnet man den **Schätzwert der Standardabweichung** $s$?",
+      "back": "$$s = \\sqrt{\\frac{1}{n-1}\\sum_{i=1}^{n}(x_i - \\bar{x})^2} \\qquad \\text{für } n > 1$$\nGleiche Einheit wie der Messwert; beschreibt die Streuung der Einzelwerte um den Mittelwert.",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.2, S. 43"
+    },
+    {
+      "id": "mtk-0079",
+      "front": "Warum teilt man bei der Standardabweichung einer Stichprobe durch $n-1$ statt durch $n$?",
+      "back": "Der wahre Mittelwert $\\mu$ ist unbekannt und wird durch $\\bar{x}$ geschätzt → es geht ein **Freiheitsgrad** verloren: Sind $n-1$ Abweichungen $x_i - \\bar{x}$ bekannt, ist die letzte festgelegt, da ihre Summe null sein muss.\n\nDie Korrektur verhindert, dass die Standardabweichung der Grundgesamtheit **systematisch zu klein** geschätzt wird.\n\nSind Mittelwert und alle Werte der **Grundgesamtheit** bekannt, gilt der Faktor $1/n$.",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.2, S. 43–44"
+    },
+    {
+      "id": "mtk-0080",
+      "front": "Wie sind **Variationskoeffizient** und **Varianz** definiert?",
+      "back": "**Variationskoeffizient** (Relativgröße, ermöglicht den Vergleich der Streuung verschiedener Messreihen):\n$$v = \\frac{s}{\\bar{x}}$$\n**Varianz** (Quadrat der Standardabweichung):\n$$s^2 = \\frac{1}{n-1}\\sum_{i=1}^{n}(x_i - \\bar{x})^2$$",
+      "topic": "Zufällige Messabweichungen",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.2, S. 44"
+    },
+    {
+      "id": "mtk-0081",
+      "front": "Wann entsteht eine **Gaußsche Normalverteilung** und warum ist sie für die Messtechnik wichtig?",
+      "back": "**Entstehung**: wenn **viele kleine, voneinander weitgehend unabhängige zufällige Einflüsse** gemeinsam auf das Messergebnis wirken → glockenförmige Verteilung.\n\n**Bedeutung**: Ihre Form ist **vollständig durch Mittelwert und Standardabweichung** bestimmt. Damit lassen sich Lage und Streuung beschreiben und die **Wahrscheinlichkeit** abschätzen, mit der Messwerte in bestimmten Bereichen um den Mittelwert liegen.",
+      "topic": "Normalverteilung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.6.1 / 3.7, S. 41, 45"
+    },
+    {
+      "id": "mtk-0082",
+      "front": "Wie berechnet man die Wahrscheinlichkeit $W(x_1, x_2)$ bei Gaußscher Normalverteilung?",
+      "back": "Integral über die Häufigkeitsdichtefunktion:\n$$W(x_1,x_2) = \\int_{x_1}^{x_2} \\frac{1}{s\\sqrt{2\\pi}}\\, e^{-\\frac{(x-\\bar{x})^2}{2s^2}}\\,\\mathrm{d}x$$\nFür $x_1 = -\\infty$, $x_2 = +\\infty$ ist $W = 1$; für alle anderen Grenzen liegt $W$ zwischen 0 und 1.",
+      "topic": "Normalverteilung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.7, S. 45"
+    },
+    {
+      "id": "mtk-0083",
+      "front": "Nenne die **Eigenschaften der Normalverteilung**.",
+      "back": "- **symmetrisch** zum Mittelwert $\\bar{x}$\n- **Maximum** bei $x = \\bar{x}$: $h_{\\max} = \\frac{1}{s\\sqrt{2\\pi}}$\n- **Wendepunkte** bei $\\bar{x} \\pm s$\n- gilt für große Stichprobenzahlen ($n > 1000$)\n- je **größer $s$**, desto **breiter** (und flacher) die Verteilung",
+      "topic": "Normalverteilung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.7, S. 45"
+    },
+    {
+      "id": "mtk-0084",
+      "front": "Was ist die **Standard-Normalverteilung**?",
+      "back": "Normalverteilung mit $\\bar{x} = 0$ und $s = 1$.\n\nMaximum: $h_{\\max} = \\frac{1}{\\sqrt{2\\pi}} \\approx 0{,}4$; Wendepunkte bei $x = \\pm 1$; praktisch null außerhalb von etwa $\\pm 3$.",
+      "topic": "Normalverteilung",
+      "source": "Skript Messtechnik (Frey), Kap. 3.7, S. 45–46"
+    },
+    {
+      "id": "mtk-0085",
+      "front": "Warum braucht man bei einer Mehrfachmessung einen **Vertrauensbereich** bzw. eine **Messunsicherheit**?",
+      "back": "Der Mittelwert der Messreihe ist selbst **nur eine Schätzung**: Würde man die Messreihe (Stichprobe aus der **Grundgesamtheit** aller möglichen Messungen) wiederholen, ergäben sich etwas andere Mittelwerte – umso stärker, je **kleiner die Stichprobe** und je **stärker die Streuung**.\n\nVertrauensbereich und Messunsicherheit beschreiben, **wie sicher der Stichprobenmittelwert den unbekannten Mittelwert der Grundgesamtheit** wiedergibt.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8, S. 47"
+    },
+    {
+      "id": "mtk-0086",
+      "front": "Was ist der Unterschied zwischen der Streuung der **Einzelwerte** und der Streuung des **Mittelwerts**?",
+      "back": "- $s$ beschreibt die Streuung der **einzelnen Werte** einer Stichprobe.\n- Für den **Mittelwert** interessiert, wie stark er bei wiederholter Stichprobenziehung schwankt. Diese Streuung nimmt mit wachsendem Stichprobenumfang etwa mit dem Faktor $1/\\sqrt{n}$ ab.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.1, S. 47"
+    },
+    {
+      "id": "mtk-0087",
+      "front": "Warum verwendet man zur Bestimmung der Unsicherheit die **Student- bzw. t-Verteilung**?",
+      "back": "Bei einer endlichen Stichprobe ist die Standardabweichung der Grundgesamtheit **nicht bekannt**, sondern wird durch $s$ **geschätzt**. Besonders bei **kleinen Stichproben** muss diese zusätzliche Unsicherheit berücksichtigt werden.\n\nDer Student-Faktor $t_{p,n}$ hängt vom **Vertrauensniveau $p$** und vom **Stichprobenumfang $n$** ab.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.1, S. 47"
+    },
+    {
+      "id": "mtk-0088",
+      "front": "Wie berechnet man die **Unsicherheit $u_p$ des Mittelwerts**? Erkläre die Größen.",
+      "back": "$$u_p = t_{p,n} \\cdot \\frac{s}{\\sqrt{n}}$$\n- $u_p$: Unsicherheit des geschätzten Mittelwerts für Vertrauensniveau $p$\n- $t_{p,n}$: Student-Faktor für $p$ und $n$ Messungen\n- $s$: Schätzwert der Standardabweichung der Stichprobe\n- $n$: Anzahl der Werte\n\n$u_p$ ist eine **absolute** Größe mit der Einheit der Messgröße.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.1, S. 48"
+    },
+    {
+      "id": "mtk-0089",
+      "front": "Welche Werte hat der Student-Faktor $t$ für **große Stichproben** ($n > 200$)?",
+      "back": "- $p = 68{,}26\\,\\%$: $t = 1{,}00$\n- $p = 90\\,\\%$: $t = 1{,}64$\n- $p = 95\\,\\%$: $t = 1{,}96$\n- $p = 99\\,\\%$: $t = 2{,}58$\n- $p = 99{,}73\\,\\%$: $t = 3{,}00$\n\nFür kleine $n$ ist $t$ deutlich größer (z. B. $p = 95\\,\\%$: $n = 10 \\to t = 2{,}26$; $n = 2 \\to t = 12{,}71$).",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.1, S. 48 (t-Tabelle)"
+    },
+    {
+      "id": "mtk-0090",
+      "front": "Wie ist die **relative Unsicherheit** $\u000barepsilon_p$ definiert?",
+      "back": "$$\\varepsilon_p = \\frac{u_p}{|\\bar{x}|}$$\nFür eine Angabe in Prozent mit 100 % multiplizieren.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.1, S. 48"
+    },
+    {
+      "id": "mtk-0091",
+      "front": "Wie lautet der **Vertrauensbereich** für den Mittelwert der Grundgesamtheit und was sagt er aus?",
+      "back": "$$\\bar{x} - u_p \\le \\mu \\le \\bar{x} + u_p$$\nEr beschreibt, in welchem Intervall der **unbekannte Mittelwert $\\mu$** der Grundgesamtheit für das gewählte **Vertrauensniveau $p$** aus der Stichprobe geschätzt wird.\n\nGrößeres Vertrauensniveau → größerer Student-Faktor → **breiterer** Vertrauensbereich.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.2, S. 48"
+    },
+    {
+      "id": "mtk-0092",
+      "front": "Was beschreibt der Vertrauensbereich **nicht**?",
+      "back": "Er ist **nicht** der Bereich, in dem derselbe prozentuale Anteil der **einzelnen Mess- oder Bauteilwerte** liegen muss.\n\nEr beschreibt nur die **Unsicherheit des geschätzten Mittelwerts**.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.2, S. 48"
+    },
+    {
+      "id": "mtk-0093",
+      "front": "Wovon hängt die Unsicherheit $u_p$ ab und wie?",
+      "back": "- Standardabweichung $s$ größer → $u_p$ wird **größer**\n- Stichprobenumfang $n$ größer → $u_p$ wird **kleiner**\n- Vertrauensniveau $p$ größer → $u_p$ wird **größer**\n\nDer Stichprobenumfang wirkt **doppelt**: direkt über $1/\\sqrt{n}$ und über den Student-Faktor $t_{p,n}$. Für große $n$ nähert sich die t-Verteilung der Normalverteilung.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.2, S. 49"
+    },
+    {
+      "id": "mtk-0094",
+      "front": "Welche Bedeutung haben $s$ und $u_p$, wenn **dasselbe Messobjekt mehrfach** gemessen wird bzw. wenn **verschiedene Bauteile einer Produktion** gemessen werden?",
+      "back": "Rechenweg identisch – entscheidend ist, **was wiederholt untersucht wird**.\n\n**1. Dasselbe Objekt mehrfach (Messunsicherheit)**\n- $s$: Streuung der wiederholten Messwerte durch zufällige Einflüsse\n- $u_p$: Unsicherheit des Mittelwerts als Schätzer der Messgröße\n- systematische Abweichungen ggf. zusätzlich berücksichtigen\n\n**2. Verschiedene Bauteile (Bauteilstreuung)**\n- $s$: Bauteil- bzw. Produktionsstreuung\n- $u_p$: Unsicherheit des aus der Stichprobe geschätzten **Produktionsmittelwerts**",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.3, S. 49–50"
+    },
+    {
+      "id": "mtk-0095",
+      "front": "Was bewirkt eine **größere Stichprobe** – und was nicht? (Merksatz)",
+      "back": "Eine größere Stichprobe **verkleinert die Unsicherheit des geschätzten Mittelwertes**, aber **nicht die tatsächliche Streuung** der einzelnen Bauteile oder Messwerte.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.3, S. 50"
+    },
+    {
+      "id": "mtk-0096",
+      "front": "Welche **Voraussetzungen** gelten für die Auswertung mit Vertrauensbereich und t-Verteilung?",
+      "back": "- Stichprobenwerte sind **unabhängig**\n- zugrunde liegende Verteilung ist näherungsweise **normalverteilt**\n\nKritisch zu prüfen bei stark **asymmetrischen** Verteilungen, deutlichen **Ausreißern** oder **mehreren Häufungsbereichen**.",
+      "topic": "Vertrauensbereich und Messunsicherheit",
+      "source": "Skript Messtechnik (Frey), Kap. 3.8.3, S. 50"
+    },
+    {
+      "id": "mtk-0097",
+      "front": "Welche zwei Fragestellungen unterscheidet man, wenn **zwei Größen gleichzeitig** erfasst werden?",
+      "back": "Die Wertepaare $(x_i, y_i)$ werden zunächst in einem **Streudiagramm** dargestellt.\n\n- **Korrelation**: *Wie stark* hängen die beiden Größen zusammen? → Stärke und Richtung des Zusammenhangs\n- **Regression**: *Durch welche mathematische Funktion* lässt sich der Zusammenhang beschreiben? → Gleichung zur quantitativen Beschreibung\n\nBeispiele: Ausgangsspannung eines Temperatursensors vs. Temperatur; Umgebungstemperatur vs. Nullpunkt eines Messgeräts; Kraftsensor-Spannung vs. Kraft.",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9, S. 51"
+    },
+    {
+      "id": "mtk-0098",
+      "front": "Was versteht man unter **positiver** und **negativer Korrelation**?",
+      "back": "- **positiv**: große $x$-Werte überwiegend mit **großen** $y$-Werten verbunden (Punktwolke steigt)\n- **negativ**: große $x$-Werte überwiegend mit **kleinen** $y$-Werten verbunden (Punktwolke fällt)\n- **keine Korrelation**: Punkte ohne erkennbare Richtung verteilt",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9 / 3.9.1, S. 51–52"
+    },
+    {
+      "id": "mtk-0099",
+      "front": "Welchen Wertebereich hat der **Korrelationskoeffizient $r$** und was bedeuten typische Werte?",
+      "back": "$r$ ist ein Maß für die Stärke des **linearen** Zusammenhangs:\n$$-1 \\le r \\le 1$$\n- $r \\to +1$: starker **positiver** linearer Zusammenhang\n- $r \\to -1$: starker **negativer** linearer Zusammenhang\n- $r \\to 0$: kein bzw. nur schwacher **linearer** Zusammenhang",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.1, S. 52–53"
+    },
+    {
+      "id": "mtk-0100",
+      "front": "Bedeutet ein Korrelationskoeffizient $r \u0007pprox 0$, dass kein Zusammenhang besteht?",
+      "back": "**Nein.** $r$ erfasst nur **lineare** Zusammenhänge. Ein ausgeprägter **nichtlinearer Zusammenhang** kann ebenfalls zu einem kleinen $r$ führen.",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.1, S. 53"
+    },
+    {
+      "id": "mtk-0101",
+      "front": "Wofür nutzt man die Korrelation in der Messtechnik und was muss man bei der Interpretation beachten?",
+      "back": "**Nutzen**: mögliche **Einflussgrößen auf ein Messergebnis erkennen** – z. B. deutlich positives $r$ zwischen Umgebungstemperatur $T$ und Nullpunktspannung $U_0$ eines Messverstärkers → $U_0$ steigt tendenziell mit $T$.\n\n**Achtung**: Korrelation bedeutet **nicht automatisch Ursache und Wirkung**. Beide Größen können z. B. von einer **dritten Größe** beeinflusst werden.",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.1, S. 53"
+    },
+    {
+      "id": "mtk-0102",
+      "front": "Was ist das Prinzip der **linearen Regression nach der Methode der kleinsten Quadrate**?",
+      "back": "Gesucht ist die Gerade $y = ax + b$, die die Messpunkte **möglichst gut beschreibt** (sie liegen wegen Messabweichungen nicht exakt darauf).\n\nDie Gerade wird so gewählt, dass die **Summe der Quadrate der vertikalen Abstände** der Messpunkte von der Geraden **minimal** wird. Diese Abstände heißen **Residuen**.",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.2, S. 53"
+    },
+    {
+      "id": "mtk-0103",
+      "front": "Wie berechnet man **Steigung $a$** und **Achsenabschnitt $b$** der Regressionsgeraden?",
+      "back": "$$a = \\frac{\\sum x_i y_i - \\frac{1}{n}\\sum x_i \\sum y_i}{\\sum x_i^2 - \\frac{1}{n}\\left(\\sum x_i\\right)^2}$$\n$$b = \\frac{\\sum y_i - a\\sum x_i}{n}$$\nDamit kann jedem $x$-Wert über $y = ax + b$ ein $y$-Wert zugeordnet werden.",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.2, S. 53"
+    },
+    {
+      "id": "mtk-0104",
+      "front": "Welche messtechnische Bedeutung haben $a$ und $b$ bei der **Kalibrierung eines Sensors** per Regression?",
+      "back": "Kraftsensor: bekannte Kräfte aufbringen, Spannungen messen, Regression liefert $U = aF + b$.\n\n- $a$ = **Empfindlichkeit** des Sensors\n- $b$ = **Nullpunktoffset**\n\nDie Regression liefert also **Kenngrößen des Messsystems**. Eine gemessene **Ist-Kennlinie** kann so beschrieben und mit der **Soll-Kennlinie** verglichen werden.",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.2, S. 54"
+    },
+    {
+      "id": "mtk-0105",
+      "front": "Nenne typische messtechnische **Anwendungen der Regression**.",
+      "back": "- Empfindlichkeit eines Temperatur- oder Drucksensors bestimmen\n- Nullpunkt- oder Steigungsfehler bei einer Kalibrierung bestimmen\n- Widerstand aus einer Strom-Spannungs-Messreihe bestimmen\n- Temperaturabhängigkeit eines Messsystems untersuchen",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.2, S. 54"
+    },
+    {
+      "id": "mtk-0106",
+      "front": "Was ist der Unterschied zwischen **Interpolation** und **Extrapolation**?",
+      "back": "Mit der Regressionsgleichung lassen sich nicht gemessene Werte berechnen:\n\n- **Interpolation**: Wert **innerhalb** des Bereichs der vorhandenen Messdaten\n- **Extrapolation**: Wert **außerhalb** des Bereichs der vorhandenen Messdaten",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.3, S. 54"
+    },
+    {
+      "id": "mtk-0107",
+      "front": "Warum ist **Extrapolation** kritischer als Interpolation?",
+      "back": "**Interpolation** ist meist unkritisch, sofern das Modell die Messdaten gut beschreibt.\n\nBei **Extrapolation** ist nicht sichergestellt, dass der gefundene Zusammenhang **außerhalb des untersuchten Bereichs weiterhin gilt**. Eine Regressionsgerade sollte daher nicht beliebig weit über den untersuchten Datenbereich hinaus verwendet werden.",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.3, S. 55"
+    },
+    {
+      "id": "mtk-0108",
+      "front": "Wann verwendet man **nichtlineare Regression**? Nenne Beispiele.",
+      "back": "Wenn das Streudiagramm eine deutlich **gekrümmte Kennlinie** zeigt: statt $y = ax + b$ wird eine geeignete Funktion $y = f(x)$ angepasst.\n\nBeispiele:\n- Widerstand eines **NTC-Sensors** über der Temperatur\n- **Diodenkennlinie**\n- nichtlineares Sensorverhalten über einen großen Messbereich\n- Brückenspannung einer Widerstandsmessbrücke bei größeren Widerstandsänderungen",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.4, S. 55–56"
+    },
+    {
+      "id": "mtk-0109",
+      "front": "Wie geht man bei der **nichtlinearen Regression** vor und welche Regressionsfunktion sollte man wählen?",
+      "back": "Gleiche Idee wie bei der linearen Regression: Parameter so bestimmen, dass die Funktion die Messwerte **möglichst gut beschreibt**.\n\nIst ein **physikalisches Modell** des Messsystems bekannt, sollte es als Regressionsfunktion verwendet werden – die Parameter haben dann oft eine **direkte physikalische Bedeutung**.\n\nBei umfangreichen Messreihen in der Praxis mit **Software** (z. B. Tabellenkalkulation).",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.4, S. 56"
+    },
+    {
+      "id": "mtk-0110",
+      "front": "Vergleiche **Korrelation** und **Regression** (Frage, Ergebnis, Anwendung).",
+      "back": "**Korrelation**\n- Frage: Besteht ein linearer Zusammenhang und wie stark ist er?\n- Ergebnis: Korrelationskoeffizient $r$\n- Anwendung: Einflussgrößen erkennen (z. B. Temperatur ↔ Nullpunktdrift)\n\n**Regression**\n- Frage: Durch welche Funktion lässt sich der Zusammenhang beschreiben?\n- Ergebnis: Funktion, z. B. $y = ax + b$\n- Anwendung: Kennlinien und Kalibrierfunktionen bestimmen (Empfindlichkeit, Offset)\n\n**Merksatz**: Korrelation **bewertet** einen Zusammenhang – Regression **beschreibt** ihn.",
+      "topic": "Korrelation und Regression",
+      "source": "Skript Messtechnik (Frey), Kap. 3.9.5, S. 56"
     }
   ]
 }
