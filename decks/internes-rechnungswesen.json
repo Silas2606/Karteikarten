@@ -834,6 +834,461 @@
       "back": "Von den **konkreten Vermögensgegenständen**, in denen das Kapital investiert ist.\n\nDas abstrakte Kapital lässt nicht erkennen, ob es zur Leistungserstellung eingesetzt ist – das ist nur bei den Vermögensgegenständen möglich (→ **betriebsnotwendiges Vermögen**).",
       "topic": "Kalkulatorische Zinsen",
       "source": "Skript Internes ReWe (Richter), Folie 78"
+    },
+    {
+      "id": "irw-0120",
+      "front": "Warum braucht man bei **Mehrproduktfertigung** eine Kostenstellenrechnung, bei Einproduktfertigung aber nicht unbedingt?",
+      "back": "**Einproduktfertigung**: sämtliche Kosten lassen sich direkt dem einen Kostenträger zurechnen.\n\n**Mehrproduktfertigung**: nur die **Kostenträgereinzelkosten** (z.B. Rohstoffe, Akkordlöhne) sind direkt zurechenbar. Die **Kostenträgergemeinkosten** (z.B. Abschreibungen, Steuern) werden zuerst auf die **Kostenstellen** (Orte der Kostenentstehung) verteilt. Die Kostenstellen verrechnen ihre Kosten dann proportional zur Inanspruchnahme weiter auf andere Kostenstellen und/oder die Erzeugnisse.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 103"
+    },
+    {
+      "id": "irw-0121",
+      "front": "Was sind **Kostenstellen**, und wo steht die Kostenstellenrechnung im Ablauf der Betriebsabrechnung?",
+      "back": "**Kostenstellen** = betriebliche Teilbereiche (Orte der Kostenentstehung), die kostenrechnerisch **selbständig abgerechnet** werden.\n\nDie Kostenstellenrechnung folgt auf die Erfassung in der **Kostenartenrechnung**; mit ihr beginnt die **Kostenverteilung**, die in der **Kostenträgerzeitrechnung** endet.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 103"
+    },
+    {
+      "id": "irw-0122",
+      "front": "Warum müssen Kostenstellen nach **Verantwortungsbereichen** gebildet werden?",
+      "back": "Wegen der **zweiten, eigenständigen Aufgabe** der Kostenstellenrechnung: der **Kostenkontrolle** (Kontrolle der Wirtschaftlichkeit der Leistungserstellung). Kontrolle setzt voraus, dass für jede Kostenstelle jemand verantwortlich ist.\n\n(Erste Aufgabe: Zurechnung der Kostenträgergemeinkosten entsprechend der Inanspruchnahme der Kostenstellen.)",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 103"
+    },
+    {
+      "id": "irw-0123",
+      "front": "Nach welchen **Kriterien** können Kostenstellen gebildet werden?",
+      "back": "Grundlage sind meist die organisatorischen Gegebenheiten (Abteilungsstruktur). Kriterien:\n\n1. **Funktionen** (Tätigkeitsbereiche)\n2. **Verantwortungsbereiche**\n3. **Art der Weiterverrechnung** der Kostenstellenkosten (Vor- und Endkostenstellen)",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 104"
+    },
+    {
+      "id": "irw-0124",
+      "front": "Welche **Kostenstellenbereiche** werden bei funktionaler Gliederung meist unterschieden? Nennen Sie je Beispiele.",
+      "back": "- **Allgemeine Kostenstellen**: Grundstücke und Gebäude, Wasser-/Stromversorgung, Wohlfahrtseinrichtungen, F&E\n- **Materialstellen**: Einkauf, Fuhrpark, Annahme und Prüfung, Lager\n- **Fertigungsstellen**: Gießerei, Schweißerei, Montage, Lackiererei; Hilfsstellen wie Arbeitsvorbereitung, Lohnbüro\n- **Verwaltungsstellen**: Geschäftsleitung, Rechnungswesen, interne Revision, Poststelle\n- **Vertriebsstellen**: Auftragsbearbeitung, Werbeabteilung, Lager, Fuhrpark",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 105"
+    },
+    {
+      "id": "irw-0125",
+      "front": "Was ist der Unterschied zwischen **Fertigungshauptstellen** und **Fertigungshilfsstellen**? Beispiele?",
+      "back": "**Fertigungshauptstellen** führen den Fertigungsprozess unmittelbar durch: z.B. Gießerei, Schweißerei, Montage, Lackiererei.\n\n**Fertigungshilfsstellen** unterstützen die Fertigung nur: z.B. Arbeitsvorbereitung, Terminüberwachung, Lohnbüro, Werkzeugmacherei, Reparatur.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 105"
+    },
+    {
+      "id": "irw-0126",
+      "front": "Wie verhält sich die Einteilung nach **Verantwortungsbereichen** zur Gliederung nach **Funktionen**?",
+      "back": "Im **Regelfall decken** sich beide Einteilungen. Die Einteilung nach Verantwortungsbereichen ist für die Kostenkontrolle ohnehin unverzichtbar.\n\nBei **stark verfeinerter** Kostenstellenrechnung (für Kalkulationsgenauigkeit bei sehr heterogenen Verrichtungen/Produkten) umfasst ein Verantwortungsbereich allerdings **mehrere Kostenstellen**.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 106"
+    },
+    {
+      "id": "irw-0127",
+      "front": "Was unterscheidet **Vorkostenstellen** von **Endkostenstellen**? (klausurrelevant)",
+      "back": "**Vorkostenstellen** erbringen Leistungen für **andere Kostenstellen** und rechnen ihre Kosten deshalb proportional zur Leistungsabgabe den **empfangenden Kostenstellen** zu (innerbetriebliche Leistungsverrechnung).\n\n**Endkostenstellen** erbringen Leistungen **direkt für die Kostenträger** und rechnen ihre Kosten proportional zur Leistungsabgabe **unmittelbar den Kostenträgern** zu. Sie liefern selbständige **Zuschlagssätze** für die Erzeugnisse.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 107"
+    },
+    {
+      "id": "irw-0128",
+      "front": "Welche funktionalen Kostenstellen werden üblicherweise als **Vorkostenstellen** eingerichtet?",
+      "back": "- die **Allgemeinen Kostenstellen**\n- Teile der Fertigungsstellen, die **Fertigungshilfsstellen** (z.B. Lohnbüro)\n\nAlle anderen Kostenstellen sind Endkostenstellen.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 107"
+    },
+    {
+      "id": "irw-0129",
+      "front": "Warum ist die Einteilung in Vor- und Endkostenstellen nur **idealtypisch**? Nennen Sie Beispiele.",
+      "back": "In der Praxis gibt es Überschneidungen:\n\n- **Vorkostenstellen**, die auch direkt absatzbestimmte Leistungen erbringen, z.B. Vorkostenstelle „Stromerzeugung“ gibt Stromspitzen an das öffentliche Netz ab.\n- **Endkostenstellen**, die innerbetriebliche Leistungen erbringen, z.B. eine Fertigungskostenstelle stellt ein Erzeugnis für den Eigenbedarf einer anderen Kostenstelle her.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 107"
+    },
+    {
+      "id": "irw-0130",
+      "front": "Was sind **Haupt-** und **Hilfskostenstellen**, und decken sie sich mit Vor- und Endkostenstellen?",
+      "back": "Einteilung aus **erzeugungstechnischer** Sicht:\n\n- **Hauptkostenstellen** führen den Fertigungsprozess unmittelbar durch; bei funktionaler Einteilung nur unter den Fertigungsstellen (z.B. Gießerei, Schweißerei, Montage).\n- **Hilfskostenstellen** wirken nur mittelbar an der Erstellung absatzbestimmter Leistungen mit (alle anderen).\n\n**Nein**: Sie folgen einem anderen Kriterium und decken sich **nicht** mit Vor-/Endkostenstellen (z.B. Verwaltung = Hilfs-, aber Endkostenstelle). Für die Kostenrechnung ist Vor-/End maßgeblich.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 108"
+    },
+    {
+      "id": "irw-0131",
+      "front": "Wovon hängt der **Feinheitsgrad** der Kostenstelleneinteilung ab?",
+      "back": "Von unternehmensindividuellen Bestimmungsgründen, v.a.:\n\n- Unternehmensgröße\n- Fertigungsprogramm\n- Fertigungsverfahren\n- Organisation\n- angestrebte **Kalkulationsgenauigkeit**\n- angestrebte Güte der **Kostenkontrolle**",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 109"
+    },
+    {
+      "id": "irw-0132",
+      "front": "Welche Vorteile hat eine **feine** Kostenstelleneinteilung, und wo liegt ihre Grenze?",
+      "back": "**Vorteile**:\n- genauere Gemeinkostenzurechnung, im Fertigungsbereich bis zu einzelnen Maschinen/Arbeitsplätzen (**Platzkostenrechnung**)\n- homogenere Kostenstellenleistung; unterschiedliche Kostenintensität (Hand- vs. Maschinenarbeitsplätze) besser berücksichtigt\n- für externe **Betriebsvergleiche** zweckmäßig: zusammenfassen ist leichter als nachträglich untergliedern\n\n**Grenze**: Mit dem Feinheitsgrad steigen die Kosten der Betriebsabrechnung → gesucht ist ein (nicht exakt bestimmbares) **Optimum** zwischen Informationsgehalt (verursachungsgerechter Zurechnung) und Rechenaufwand.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 109"
+    },
+    {
+      "id": "irw-0133",
+      "front": "Was ist ein **Kostenstellenplan**?",
+      "back": "Analog zum Kostenartenplan werden darin die **Kostenstellen festgelegt** (systematisch gegliedert und nummeriert). In mittleren bis größeren Unternehmen umfasst er oft **mehrere hundert** Kostenstellen.\n\nBeispiel Nummerierung: 1 Allgemeine Bereiche → 11 Gruppe F&E/Konstruktion → 111 Leitung, 112 Zentrallabor …; 5 Verwaltungsbereich → 511 Geschäftsleitung, 521 Buchhaltung …",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 109"
+    },
+    {
+      "id": "irw-0134",
+      "front": "Welche Schritte gehören zur **Einrichtung der Kostenstellen**?",
+      "back": "1. Für jede Kostenstelle einen verantwortlichen **Kostenstellenleiter** bestimmen (ausgehend von der Aufbauorganisation).\n2. Alle **Räumlichkeiten** den Kostenstellen zuordnen, mit Schlüsselgrößen je Raum; für Großverbraucher eigene **Zähler** (Strom, Gas, Wasser, Heizung).\n3. Gesamtes **Personal** zuordnen; wer für mehrere Kostenstellen arbeitet, wird nach zeitlichem Einsatz aufgeteilt (1/4 „Kopf“, 1/2 „Kopf“).\n4. Gesamtes **Betriebsvermögen** aufteilen.\n5. Die zu erbringenden **Einzelleistungen** nach Art festlegen und mengenmäßig festhalten.\n6. Jede Kostenstelle erhält eine **Identifizierungsnummer**.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 110"
+    },
+    {
+      "id": "irw-0135",
+      "front": "Was gilt als eine der **schwierigsten Aufgaben** bei der Einrichtung von Kostenstellen, und warum ist sie wichtig?",
+      "back": "Die Festlegung der in der Kostenstelle zu erbringenden **Einzelleistungen der Art nach**, die während der Abrechnungsperioden **der Menge nach** festgehalten werden müssen.\n\nSie sind Grundlage für die **innerbetriebliche Leistungsverrechnung** und für die **Kalkulation**.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 110"
+    },
+    {
+      "id": "irw-0136",
+      "front": "Wann ist es sinnvoll, dass ein Mitarbeiter für **mehrere Kostenstellen** verantwortlich ist?",
+      "back": "Kann bei starker Funktions- und Arbeitsteilung vorkommen. Sinnvoll ist das aber nur, wenn der Kostenstellenverantwortliche die **Mehrzahl der Kostenarten** dieser Kostenstellen auch **beeinflussen** kann.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 110"
+    },
+    {
+      "id": "irw-0137",
+      "front": "Wie kann die Kostenstellenrechnung **innerhalb** bzw. **außerhalb** der Buchhaltung durchgeführt werden? Was spricht gegen die kontenmäßige Form?",
+      "back": "**Innerhalb** der doppelten Buchhaltung: je Kostenstelle ein **Konto** für die Kostenträgergemeinkosten. Kostenstelleneinzelkosten werden direkt bei Erfassung kontiert, Kostenstellengemeinkosten erst am Periodenende per Schlüssel belastet; für die innerbetriebliche Leistungsverrechnung sind Nebenrechnungen nötig.\n\n**Einwand**: zu schwerfällig und aufwendig wegen vieler Buchungen (bei EDV weniger relevant). Vor allem die **Kontrollaufgabe** lässt sich in **statistisch-tabellarischer Form außerhalb der Buchhaltung** besser verwirklichen.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 112"
+    },
+    {
+      "id": "irw-0138",
+      "front": "Was ist der **Betriebsabrechnungsbogen (BAB)**, und wann werden stattdessen **Kostenstellenblätter** verwendet?",
+      "back": "**BAB**: tabellarisches Hilfsmittel zur Durchführung der Kostenstellenrechnung in **kleineren** Unternehmen mit begrenzter Anzahl an Kostenstellen/-arten (auch per Excel). Vorteil: Kostensituation aller Kostenstellen auf **einem Blatt**.\n\nIn **größeren** Unternehmen (etwa **ab 50 Kostenstellen**) wird er unhandlich → Auflösung in **Kostenstellenblätter**, die um Spalten für Ist-Ist- und Soll-Ist-Vergleiche ergänzt werden können.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 112"
+    },
+    {
+      "id": "irw-0139",
+      "front": "In welchen **vier Stufen** läuft die Kostenstellenrechnung ab? (klausurrelevant)",
+      "back": "Unabhängig von Form (Buchhaltung/BAB/EDV):\n\n1. **Verteilung der primären Kostenträgergemeinkosten** auf die Kostenstellen (evtl. auch Übernahme der Kostenträgereinzelkosten)\n2. Durchführung der **innerbetrieblichen Leistungsverrechnung**\n3. Bildung von **Kalkulationssätzen** (Verrechnungssätzen)\n4. Vorbereitung der kostenstellenweisen **Kostenkontrolle**",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 113"
+    },
+    {
+      "id": "irw-0140",
+      "front": "Wie ist der **BAB** aufgebaut, und welche Kosten nimmt er auf?",
+      "back": "Kostenverteilungsblatt: **senkrecht** die **Kostenarten**, **waagerecht** die **Kostenstellen** (Vorkostenstellen, dann Endkostenstellen). Er verbindet Kostenarten- und Kostenträgerrechnung.\n\nFür die Kostenzurechnung nimmt er **nur die Kostenträgergemeinkosten** auf. Die **Kostenträgereinzelkosten** gehen **außerhalb** des BAB direkt in die Kostenträgerrechnung.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 114"
+    },
+    {
+      "id": "irw-0141",
+      "front": "Beschreiben Sie den **Rechengang im BAB** von den primären Kosten bis zu den Endkosten.",
+      "back": "1. Kostenträgergemeinkosten aus der Kostenartenrechnung übernehmen und auf die Kostenstellen verteilen → **Summe der primären Gemeinkosten** je Kostenstelle (Gesamtsumme = übernommener Betrag).\n2. **Innerbetriebliche Leistungsverrechnung**: Liefernde Stellen belasten empfangende proportional zur Leistung → dort entstehen **sekundäre** Kostenarten.\n3. Primäre + sekundäre Kosten = **Gesamtkosten** der Kostenstelle.\n4. Vorkostenstellen haben ihre Gesamtkosten danach an andere Stellen abgegeben; primäre + sekundäre Kosten der Endkostenstellen = **Endkosten**.\n5. Daraus **Kalkulationssätze** der Endkostenstellen.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 114"
+    },
+    {
+      "id": "irw-0142",
+      "front": "Wie hängen **Endkosten** und **Gesamtkosten** einer Kostenstelle zusammen? Was gilt für Vorkostenstellen?",
+      "back": "**Endkosten = Gesamtkosten − Kosten für an andere Kostenstellen abgegebene Leistungen**\n\n- Endkosten von **Vorkostenstellen** sind definitionsgemäß **= 0**.\n- **Summe aller Endkosten = Summe der aus der Kostenartenrechnung übernommenen Beträge** (es wird nur umverteilt).\n\nHier endet der eigentliche BAB.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 115"
+    },
+    {
+      "id": "irw-0143",
+      "front": "Wie kommt allgemein ein **Kalkulationssatz** (Verrechnungssatz) zustande?",
+      "back": "**Endkosten der Kostenstelle ÷ Bezugsgröße**\n\nDie Bezugsgröße soll sich **proportional zu den Endkosten** entwickeln, aber (anders als diese) direkt am einzelnen Kostenträger feststellbar sein, z.B. Kosten des **Fertigungsmaterials** oder der **Fertigungslöhne**.\n\nMit dem Kalkulationssatz werden die Endkosten der Endkostenstellen den Kostenträgern zugerechnet.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 115"
+    },
+    {
+      "id": "irw-0144",
+      "front": "Wie werden die **Kostenträgereinzelkosten** erfasst und zugeordnet?",
+      "back": "Kostenträgereinzelkosten (**Fertigungsmaterial** und **Fertigungslöhne**) werden mithilfe der **Entnahmescheine** und der **Lohnscheine** verteilt, auf denen die Kostenträger angegeben sind.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 118"
+    },
+    {
+      "id": "irw-0145",
+      "front": "Was unterscheidet **Kostenstelleneinzelkosten** von **Kostenstellengemeinkosten**? Beispiele?",
+      "back": "**Kostenstelleneinzelkosten**: aus den Belegen ist ersichtlich, welche Kostenstelle sie verbraucht hat → direkte Zurechnung. Beispiele: Gehälter, Betriebsstoffe, Büromaterial, Fremdreparaturen.\n\n**Kostenstellengemeinkosten**: aus den Belegen nicht ersichtlich, welche Stelle in welcher Höhe verbraucht hat → **Verteilungsrechnung/Kostenschlüsselung** nötig. Beispiele: Sozialkosten, Steuern, Mieten, Versicherungen, Zinsen und Abschreibungen für Gebäude mit mehreren Kostenstellen.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 118"
+    },
+    {
+      "id": "irw-0146",
+      "front": "Was bedeutet **Kostenschlüsselung**, und mit welcher Grundformel wird der Kostenanteil einer Kostenstelle berechnet?",
+      "back": "Kosten werden den Kostenstellen **proportional zu Bezugsgrößen (Schlüsselgrößen)** zugerechnet. Zuerst wird je Kostenstelle der Betrag der Schlüsselgröße festgestellt, dann proportional dazu verteilt.\n\n$$KA = \\frac{\\text{zu verteilende Kostensumme} \\cdot \\text{Schlüsselzahl der Kst. A}}{\\text{Summe der Schlüsselzahlen aller Kst.}}$$",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 119"
+    },
+    {
+      "id": "irw-0147",
+      "front": "Welche **vier rechentechnischen Formen** der Kostenschlüsselung gibt es?",
+      "back": "1. über **Schlüsseleinheitskosten**\n2. über einen **Zuschlagsprozentsatz**\n3. über einen **Anteilsfaktor**\n4. über einen **Anteilsprozentsatz**",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 119"
+    },
+    {
+      "id": "irw-0148",
+      "front": "Wie funktioniert die Schlüsselung über **Schlüsseleinheitskosten**? Beispiel: 7.200 € freiwillige Sozialkosten im Verhältnis der Beschäftigten 20 : 30 : 40.",
+      "back": "Schlüsseleinheitskosten = Kostensumme ÷ Summe der Schlüsselzahlen\nKostenanteil = Schlüsselzahl · Schlüsseleinheitskosten\n\n7.200 € ÷ 90 Beschäftigte = **80 €** je Beschäftigtem\n\n- 20 · 80 = **1.600 €**\n- 30 · 80 = **2.400 €**\n- 40 · 80 = **3.200 €**\n\nSumme 7.200 € ✓",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 120"
+    },
+    {
+      "id": "irw-0149",
+      "front": "Wie funktioniert die Schlüsselung über einen **Zuschlagsprozentsatz**? Beispiel: 10.000 € gesetzliche Sozialkosten nach Löhnen/Gehältern (gesamt 100.000 €), Kostenstelle mit 20.000 €.",
+      "back": "Zuschlagsprozentsatz = Kostensumme · 100 ÷ Summe der Schlüsselzahlen\nKostenanteil = Schlüsselzahl · Zuschlagsprozentsatz ÷ 100\n\n10.000 · 100 ÷ 100.000 = **10 %**\n20.000 € · 10 % = **2.000 €**\n\nUnterschied zu den Schlüsseleinheitskosten: man verwendet deren **Hundertfaches** als Prozentsatz.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 121"
+    },
+    {
+      "id": "irw-0150",
+      "front": "Wie funktioniert die Schlüsselung über einen **Anteilsfaktor**? Beispiel: 6.000 € Heizkosten nach Heizkörperfläche (gesamt 20 m², Kostenstelle A 5 m²).",
+      "back": "Anteilsfaktor = Schlüsselzahl der Kst. A ÷ Summe der Schlüsselzahlen aller Kst.\nKostenanteil = Kostensumme · Anteilsfaktor\n\n5 m² ÷ 20 m² = **0,25**\n6.000 € · 0,25 = **1.500 €**",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 122"
+    },
+    {
+      "id": "irw-0151",
+      "front": "Wie funktioniert die Schlüsselung über einen **Anteilsprozentsatz**? Beispiel: 8.000 € Miete nach Fläche (gesamt 4.000 m², Kostenstelle A 800 m²).",
+      "back": "Anteilsprozentsatz = Schlüsselzahl der Kst. A · 100 ÷ Summe der Schlüsselzahlen aller Kst.\nKostenanteil = Kostensumme · Anteilsprozentsatz ÷ 100\n\n800 · 100 ÷ 4.000 = **20 %**\n8.000 € · 20 % = **1.600 €**",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 123"
+    },
+    {
+      "id": "irw-0152",
+      "front": "Wann verwendet man welche Form der Kostenschlüsselung?",
+      "back": "- **Schlüsseleinheitskosten**: vorwiegend bei **mengenmäßigen** Schlüsseln (kWh Strom, t Dampf, m³ Wasser/Gas, m² Fläche)\n- **Zuschlagsprozentsätze**: vorwiegend bei **wertmäßigen** Schlüsseln (Löhne und Gehälter, Versicherungssummen, investiertes Kapital)\n- **Anteilsfaktoren / Anteilsprozentsätze**: wenn die Schlüsselgrößen **für einige Zeit festliegen** (m² Fläche, installierte kW, Heizkörperfläche) – also ebenfalls mengenmäßig",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 124"
+    },
+    {
+      "id": "irw-0153",
+      "front": "Übung: 12.000 € Miete sind nach Fläche auf drei Kostenstellen zu verteilen (300 m², 500 m², 200 m²). Berechnen Sie die Kostenanteile über Schlüsseleinheitskosten.",
+      "back": "Summe der Schlüsselzahlen: 300 + 500 + 200 = 1.000 m²\nSchlüsseleinheitskosten: 12.000 € ÷ 1.000 m² = **12 €/m²**\n\n- Kst. 1: 300 · 12 = **3.600 €**\n- Kst. 2: 500 · 12 = **6.000 €**\n- Kst. 3: 200 · 12 = **2.400 €**\n\nKontrolle: 12.000 € ✓",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 120"
+    },
+    {
+      "id": "irw-0154",
+      "front": "Worin liegt das **Problem der Kostenschlüsselung**, und warum ist die Schlüsselung **echter Gemeinkosten** kritisch?",
+      "back": "Man muss Schlüsselgrößen finden, die sich tatsächlich **proportional** zu den verteilten Kosten verhalten (doppelte Schlüsselgröße → doppelte Kosten).\n\n- **Unechte Gemeinkosten**: Proportionalität ist nachprüfbar → nur ein Problem der **Genauigkeit**.\n- **Echte Gemeinkosten**: Schlüsselung verstößt gegen das **Prinzip der Richtigkeit**, weil es keine richtigen Kostenträger gibt. Man muss sich des **statistischen Charakters** und der **Willkür** der Aufteilung bewusst sein.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 125"
+    },
+    {
+      "id": "irw-0155",
+      "front": "In welche Arten lassen sich Schlüsselgrößen einteilen, und warum sind **Wertschlüssel** kritisch?",
+      "back": "**Mengen-**, **Zeit-** und **Wertschlüssel**.\n\nWertschlüssel sind kritisch, weil sie von **Preisänderungen** abhängen können, die die **Kostenproportionalität stören**.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 125"
+    },
+    {
+      "id": "irw-0156",
+      "front": "Wovon hängt ab, ob primäre Kostenarten als Stelleneinzel- oder Stellengemeinkosten verrechnet werden?",
+      "back": "Nicht zuletzt von der **Messtechnik** und der **Belegorganisation**.\n\nHäufig verzichtet man aus **Wirtschaftlichkeitsgründen** auf eine mögliche direkte Zurechnung und schlüsselt kostengünstiger unter Inkaufnahme unwesentlicher Ungenauigkeiten → **unechte Gemeinkosten**.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 125"
+    },
+    {
+      "id": "irw-0157",
+      "front": "Was sind **innerbetriebliche Leistungen**, und welche Arten gibt es?",
+      "back": "Im Unterschied zu Absatzleistungen **nicht abgesetzte** und als solche **nicht absatzbestimmte** Leistungen, die für die Erstellung anderer Leistungen eingesetzt werden → daher auch **Einsatzleistungen**.\n\n- **Sachgüter**: z.B. Strom, Dampf, Gas, Anlagen, Werkzeuge, Modelle, Gebäude, unfertige Erzeugnisse\n- **Dienstleistungen**: z.B. Reparaturen, Transport-, Sozial-, Verwaltungs- und Vertriebsleistungen",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 126"
+    },
+    {
+      "id": "irw-0158",
+      "front": "Welche Kostenstellen erbringen in einer Industrieunternehmung **Absatzleistungen**, und wann ist eine **innerbetriebliche Leistungsverrechnung** erforderlich?",
+      "back": "Absatzleistungen erbringen nur die **Fertigungshauptstellen** (absatzbestimmte Endprodukte). Alle anderen (Teile der Fertigungshaupt- und alle Hilfskostenstellen) erbringen innerbetriebliche Leistungen.\n\nIBLV ist nur nötig, wenn Leistungen **nicht direkt auf Kostenträger** zugerechnet werden können, sondern erst in die Leistungen **anderer Kostenstellen** eingehen. Obwohl alle Kostenstellen innerbetriebliche Leistungen erbringen können, tritt sie hauptsächlich bei den **Vorkostenstellen** auf.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 126"
+    },
+    {
+      "id": "irw-0159",
+      "front": "Wie werden **aktivierte** und **nicht aktivierte** innerbetriebliche Leistungen behandelt?",
+      "back": "**Aktiviert** (langlebige Wirtschaftsgüter, z.B. Maschinen): wie Absatzleistungen kalkuliert; sie gehen über die **Abschreibungen (und Zinsen)** als Kosten in die damit erstellten Leistungen ein.\n\n**Nicht aktivierbar/aktiviert** (z.B. Strom): Verrechnung zwischen leistender und empfangender Kostenstelle **in der Periode ihrer Erstellung**.\n\nBei auch fremd beschaffbaren Leistungen (Energie, unfertige Erzeugnisse, Zubehör) empfiehlt sich von Zeit zu Zeit ein Wirtschaftlichkeitsvergleich **Selbsterstellung vs. Fremdbezug**.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 127"
+    },
+    {
+      "id": "irw-0160",
+      "front": "Wie werden **Leistungen** insgesamt gegliedert, und welche gehen in die innerbetriebliche Leistungsverrechnung ein?",
+      "back": "- **Abgesetzte** Leistungen\n- **Nicht abgesetzte** Leistungen\n  - **absatzbestimmte** (z.B. lagernde selbsterstellte Produkte für Dritte)\n  - **nicht absatzbestimmte** = innerbetriebliche Leistungen i.e.S.\n    - **Dienstleistungen** → innerbetriebliche Leistungsverrechnung\n    - **Sachgüter**: Verbrauchsgüter → innerbetriebliche Leistungsverrechnung; Gebrauchs- und Anlagegüter → **Aktivierung**",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 128"
+    },
+    {
+      "id": "irw-0161",
+      "front": "Wie können innerbetriebliche Leistungen **bewertet** werden?",
+      "back": "1. **Kosten**: Summe der zur Erstellung verbrauchten primären und sekundären Kosten – je nach System Istkosten (zu Anschaffungs-, Fest- oder Tagespreisen), Normal- oder Plankosten, Voll- oder Teilkosten.\n2. **Festpreise** (auf Basis Normal-/Plankosten): löst das Problem gegenseitiger Leistungen zunächst ohne Gleichungssystem; Abweichung von den tatsächlichen Kosten aber nur per Gleichungssystem feststellbar.\n3. **Innerbetriebliche Verrechnungspreise** mit Lenkungsfunktion, z.B. fremdbeziehbare Leistungen zu **Beschaffungsmarktpreisen** – v.a. in **Konzernen** (ökonomisches Verhalten anregen, internationale Gewinnverschiebung zur Steuerersparnis).",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 129"
+    },
+    {
+      "id": "irw-0162",
+      "front": "Welche drei **Arten von Leistungsbeziehungen** zwischen Kostenstellen gibt es?",
+      "back": "Stehen Kostenstellen, die innerbetriebliche Leistungen erbringen, miteinander in Verbindung, spricht man von leistungsmäßiger **„Verflechtung“**:\n\n1. **keine** Verflechtung\n2. **einseitige** Verflechtung\n3. **gegenseitige** Verflechtung",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 130"
+    },
+    {
+      "id": "irw-0163",
+      "front": "Welche **vereinfachenden Annahmen** gelten für die Darstellung der Leistungsbeziehungen in **Verflechtungsmatrizen**, und was geben deren Elemente an?",
+      "back": "Annahmen:\n- jede Kostenstelle erzeugt nur **eine Leistungsart**, kann aber mehrere empfangen\n- keine Kostenstelle verbraucht **eigene Leistungen**\n- eine Kostenstelle gibt an höchstens zwei andere ab\n\nElemente = **relativer Anteil** (< 1) der Gesamtleistung der leistenden Kostenstelle, der an die empfangende Stelle geht. Erst am Periodenende ermittelbar (Mengen messen, sonst leistungsproportionale Schlüssel) → die Elemente sind **Anteilsfaktoren**.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 131"
+    },
+    {
+      "id": "irw-0164",
+      "front": "Wodurch ist der Fall **keine Verflechtung** gekennzeichnet?",
+      "back": "Die **Vorkostenstellen** (die ausschließlich innerbetriebliche Leistungen erbringen) liefern ihre sämtlichen Leistungen **direkt an Endkostenstellen**, die selbst **keine** innerbetrieblichen Leistungen erzeugen.\n\nIn der Matrix stehen Werte nur in den Spalten der Vorkostenstellen und den Zeilen der Endkostenstellen.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 133"
+    },
+    {
+      "id": "irw-0165",
+      "front": "Wodurch ist der Fall **einseitige Verflechtung** gekennzeichnet?",
+      "back": "Es gibt Leistungsbeziehungen **zwischen** leistenden Kostenstellen (z.B. K2 liefert 1/4 an K1), aber die Kostenstellen lassen sich so **anordnen**, dass vorgelagerte Stellen **nur an nachgelagerte** leisten (K3 → K2 → K1), nie zurück.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 135"
+    },
+    {
+      "id": "irw-0166",
+      "front": "Wodurch ist der Fall **gegenseitige Verflechtung** gekennzeichnet?",
+      "back": "Mindestens zwei Kostenstellen **beliefern sich gegenseitig** (z.B. K1 ↔ K2).\n\nEs ist unerheblich, welche: Es können sich Vorkostenstellen untereinander, Endkostenstellen untereinander oder Vor- und Endkostenstellen gegenseitig beliefern.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 137"
+    },
+    {
+      "id": "irw-0167",
+      "front": "Welches Verfahren der innerbetrieblichen Leistungsverrechnung gehört zu welcher Art der Leistungsbeziehung?",
+      "back": "- **keine** Verflechtung → **direkte** Verrechnung\n- **einseitige** Verflechtung → **sukzessive** Verrechnung (Treppen-/Stufenleiterverfahren)\n- **gegenseitige** Verflechtung → **simultane** Verrechnung\n\nDirekte und sukzessive Verrechnung sind **Spezialfälle der simultanen** Verrechnung.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 138"
+    },
+    {
+      "id": "irw-0168",
+      "front": "Welche **Voraussetzung** liegt allen Verfahren der innerbetrieblichen Leistungsverrechnung zugrunde?",
+      "back": "**Proportionalität**: Kosten werden proportional zu den gelieferten/empfangenen Leistungen verrechnet (für 1/3 der Leistungen auch 1/3 der Kosten). Das setzt voraus, dass **jede Leistungseinheit mit den gleichen Kosten** produziert wurde.\n\nDiese Voraussetzung gilt rechnungspraktisch als notwendig und kostentheoretisch als zulässig.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 138"
+    },
+    {
+      "id": "irw-0169",
+      "front": "Wie lautet die **Grundgleichung der innerbetrieblichen Leistungsverrechnung**? (Wichtig!)",
+      "back": "Primäre Kosten einer Kostenstelle\n**+** sekundäre Kosten für von anderen Kostenstellen **empfangene** Leistungen\n**= Gesamtkosten**\n**−** sekundäre Kosten für an andere Kostenstellen **abgegebene** Leistungen\n**= Endkosten**\n\nEndkosten = die den **Absatzleistungen** zuzurechnenden Kosten.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 139"
+    },
+    {
+      "id": "irw-0170",
+      "front": "Wie läuft die **direkte Verrechnung** ab, und was gilt für die Endkosten?",
+      "back": "Anwendbar bei **keiner Verflechtung**: Die Vorkostenstellen geben ihre Gesamtkosten im Verhältnis der abgegebenen Leistungen **direkt** an die empfangenden Endkostenstellen ab.\n\n- Zu verteilende Gesamtkosten der Vorkostenstellen = ihre **primären Kosten** (sie empfangen selbst nichts).\n- Endkosten der Vorkostenstellen = **0**.\n- Summe der Endkosten der Endkostenstellen = Gesamtsumme der primären Kosten.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 140"
+    },
+    {
+      "id": "irw-0171",
+      "front": "Direkte Verrechnung: Primärkosten K1 = 800, K2 = 600, K3 = 600, K4 = 10.000, K5 = 8.000, K6 = 11.000. K1 liefert je 1/2 an K5 und K6, K2 1/4 an K5 und 3/4 an K6, K3 4/5 an K5 und 1/5 an K6. Endkosten?",
+      "back": "Entlastungen/Belastungen:\n- K1: 400 → K5, 400 → K6\n- K2: 150 → K5, 450 → K6\n- K3: 480 → K5, 120 → K6\n\nEndkosten:\n- K1, K2, K3 = **0**\n- K4 = **10.000**\n- K5 = 8.000 + 400 + 150 + 480 = **9.030**\n- K6 = 11.000 + 400 + 450 + 120 = **11.970**\n\nSumme = 31.000 ✓",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 141"
+    },
+    {
+      "id": "irw-0172",
+      "front": "Wie läuft die **sukzessive Verrechnung** (Treppen-/Stufenleiterverfahren) ab, und wo liegt ihre Grenze? (klausurrelevant)",
+      "back": "Bei **einseitiger Verflechtung**: Die Verrechnung folgt dem **Leistungsfluss**. Zuerst wird die am weitesten vorgelagerte Stelle umgelegt; die empfangende Stelle addiert die erhaltenen sekundären zu ihren primären Kosten und verteilt die Summe weiter usw.\n\nName: Im BAB entstehen **Treppen/Stufen**. Wegen seiner **Einfachheit** häufig angewendet.\n\n**Grenze**: Lassen sich die Kostenstellen **nicht** so anordnen, dass Leistungen nur von vor- zu nachgelagerten Stellen fließen (gegenseitige Lieferungen), führt das Verfahren **nicht mehr zu einer leistungsproportionalen** Kostenverrechnung.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 142"
+    },
+    {
+      "id": "irw-0173",
+      "front": "Sukzessive Verrechnung (klausurrelevant): Primärkosten K1 = 800, K2 = 600, K3 = 600, K4 = 10.000, K5 = 8.000, K6 = 11.000. K3 liefert je 1/2 an K2 und K5; K2 liefert 1/4 an K1 und 3/4 an K4; K1 liefert alles an K6. Endkosten?",
+      "back": "Reihenfolge nach Leistungsfluss: K3 → K2 → K1.\n\n1. **K3** (600): 300 → K2, 300 → K5\n2. **K2**: 600 + 300 = 900 → 225 an K1, 675 an K4\n3. **K1**: 800 + 225 = 1.025 → 1.025 an K6\n\nEndkosten:\n- K1, K2, K3 = **0**\n- K4 = 10.000 + 675 = **10.675**\n- K5 = 8.000 + 300 = **8.300**\n- K6 = 11.000 + 1.025 = **12.025**\n\nSumme = 31.000 ✓",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 143"
+    },
+    {
+      "id": "irw-0174",
+      "front": "Wann wird welches Verfahren der innerbetrieblichen Leistungsverrechnung benutzt? (Klausur: beschreiben können)",
+      "back": "Entscheidend ist die **Art der Leistungsbeziehungen**:\n\n- **Direkte** Verrechnung: Vorkostenstellen liefern nur an Endkostenstellen, keine Lieferungen zwischen Vorkostenstellen (keine Verflechtung).\n- **Sukzessive** Verrechnung (Treppenverfahren): Lieferungen zwischen Vorkostenstellen, aber nur in eine Richtung – Stellen lassen sich in eine Reihenfolge bringen (einseitige Verflechtung). Einfach, daher in der Praxis häufig.\n- **Simultane** Verrechnung: Stellen beliefern sich gegenseitig (gegenseitige Verflechtung) → Gleichungssystem nötig; einziges exaktes Verfahren für diesen Fall.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 142"
+    },
+    {
+      "id": "irw-0175",
+      "front": "Welches Problem entsteht bei **gegenseitiger Verflechtung**, und welche zwei Auswege gibt es?",
+      "back": "**Kreislauf**: Beliefern sich K1 und K2 gegenseitig, kann keine zuerst abrechnen – K1 kennt ihre Gesamtkosten erst nach der Belastung durch K2 und umgekehrt.\n\n1. **Feste Verrechnungspreise** für die Leistungen – führt i.A. **nicht** zu exakter Verrechnung der Istkosten; Genauigkeit nur durch Vergleich mit dem exakten Verfahren kontrollierbar.\n2. **Mathematische Gleichungssysteme**: Gesamtkosten werden **simultan** errechnet – daher von vornherein empfehlenswert (mit Software problemlos lösbar).",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 144"
+    },
+    {
+      "id": "irw-0176",
+      "front": "Simultane Verrechnung: K1 liefert 1/2 ihrer Leistung an K2, K2 liefert 2/5 an K1. Primärkosten K1 = 800 €, K2 = 600 €. Wie hoch sind die **Gesamtkosten** k1 und k2?",
+      "back": "Gleichungen (Gesamtkosten = primäre + empfangene sekundäre Kosten):\n\n$$k_1 = 800 + \\tfrac{2}{5}k_2 \\qquad k_2 = 600 + \\tfrac{1}{2}k_1$$\n\nEinsetzen: $k_1 = 800 + \\tfrac{2}{5}(600 + 0{,}5k_1) = 1.040 + 0{,}2k_1$\n\n→ 0,8 k1 = 1.040 → **k1 = 1.300 €**\n→ k2 = 600 + 650 = **1.250 €**\n\nAuf dieser Basis werden die leistungsentsprechenden Be- und Entlastungen vorgenommen.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 145"
+    },
+    {
+      "id": "irw-0177",
+      "front": "Wie wird die simultane Verrechnung bei **n** sich gegenseitig beliefernden Kostenstellen durchgeführt?",
+      "back": "Für die **n unbekannten Gesamtkosten** werden **n Gleichungen** aufgestellt:\n\n$$k_j = \\text{primäre Kosten}_j + \\sum_i \\alpha_{ji}\\, k_i$$\n\n(z.B. k1 = 800 + 2/5 k2 + 1/4 k3)\n\nDie Darstellung der Leistungsbeziehungen (Verflechtungsmatrix) ist nichts anderes als die **Koeffizientenmatrix** des Gleichungssystems.\n\nLösungsverfahren (auch als EDV-Programme): **Gauß-Algorithmus**, modifizierter Gauß, **Cramersche Regel**, Inversionsverfahren, Iterationsverfahren.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 146"
+    },
+    {
+      "id": "irw-0178",
+      "front": "Wie lassen sich bei der simultanen Verrechnung die **Endkosten direkt aus den Gesamtkosten** berechnen?",
+      "back": "Man braucht den relativen Anteil $d_j$ der Gesamtleistung einer Stelle, der auf **absatzbestimmte** Leistungen entfällt:\n\n$$d_j = 1 - \\sum_{i=1}^{n} \\alpha_{ij} \\qquad E_j = d_j \\cdot k_j$$\n\n($\\alpha_{ij}$ = Elemente der Verflechtungsmatrix)\n\nBeispiel: K4 liefert 1/5 an K6 → d4 = 4/5; E4 = 4/5 · 14.491,36 = **11.593,09 €**.\nReine Vorkostenstellen: d = 0 → E = 0.",
+      "topic": "Innerbetriebliche Leistungsverrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 148"
+    },
+    {
+      "id": "irw-0179",
+      "front": "Wie wird ein **Kalkulationssatz** einer Endkostenstelle gebildet? Beispiel: Endkosten Fertigungsstelle A 50.000 €, 1.000 Fertigungsstunden.",
+      "back": "Am Periodenende: **Endkosten ÷ Anzahl der Bezugsgrößeneinheiten** (Vorgehen wie bei Schlüsseleinheitskosten; statt Schlüsselzahlen „Bezugsgrößeneinheiten“).\n\n50.000 € ÷ 1.000 h = **50 €/Fertigungsstunde**\n\nGemeinkostenanteil eines Kostenträgers = am Kostenträger festgestellte Bezugsgrößeneinheiten · Kalkulationssatz (z.B. 3 h · 50 € = 150 €).",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 150"
+    },
+    {
+      "id": "irw-0180",
+      "front": "Unter welcher Voraussetzung ist ein Kalkulationssatz richtig, und was tut man, wenn sich die Gemeinkosten einer Stelle nicht zu **einer** Bezugsgröße proportional verhalten?",
+      "back": "Die Kosten müssen sich **tatsächlich proportional** zur Bezugsgröße entwickeln – das Finden solcher Bezugsgrößen ist die eigentliche Schwierigkeit.\n\nSonst:\n- mit **mehreren Bezugsgrößen je Kostenstelle** rechnen (z.B. Lager: Volumen, Gewicht, Wert der Güter), oder\n- einfacher: Endkostenstellen **stärker differenzieren** und je Kostenstelle nur **eine** Bezugsgröße verwenden.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 151"
+    },
+    {
+      "id": "irw-0181",
+      "front": "Welche **Bezugsgrößen** werden typischerweise für Fertigungs-, Material- sowie Verwaltungs- und Vertriebsbereich verwendet?",
+      "back": "- **Fertigungsbereich**: Fertigungslöhne\n- **Materialbereich**: Fertigungsmaterial\n- **Verwaltungs- und Vertriebsbereich**: Herstellkosten",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 151"
+    },
+    {
+      "id": "irw-0182",
+      "front": "Warum werden im **Verwaltungs- und Vertriebsbereich** globale Bezugsgrößen akzeptiert, und wie lässt sich die Gemeinkostenzurechnung verfeinern?",
+      "back": "Dort ist es schwierig, Bezugsgrößen mit Zusammenhang zu den Produkten zu finden → globale Bezugsgrößen (Herstellkosten) sind ein gangbarer Ausweg, **solange** der Anteil dieser Gemeinkosten an den Gesamtkosten **gering** ist.\n\nVerfeinerung:\n- stärkere Differenzierung der Kalkulationssätze, im Fertigungsbereich bis zum einzelnen Kostenplatz (**Platzkostenrechnung, Maschinenstundensatzkalkulation**)\n- **Prozesskostenrechnung** für indirekte Bereiche über **Cost Driver**",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 152"
+    },
+    {
+      "id": "irw-0183",
+      "front": "Warum erlaubt die beschriebene Kostenstellenrechnung nur eine **schwache Kostenkontrolle**, und welche Instrumente helfen?",
+      "back": "Möglich ist nur ein **Zeitvergleich** der Kennzahl „Kosten pro Leistungseinheit“ einer Kostenstelle. Es fehlt ein echter **Vergleichsmaßstab** und ein Instrument, das **Ursachen und Verantwortlichkeit** für Abweichungen zwischen **Soll- und Istkosten** aufdeckt.\n\nNötig: (externe) **Betriebsvergleiche** oder **Plankostenrechnung**; neuere Instrumente: Benchmarking, Target Costing, Zero-Base-Budgeting, Gemeinkostenwertanalyse, Prozesskostenrechnung.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 153"
+    },
+    {
+      "id": "irw-0184",
+      "front": "Was weisen **Kostenstellenüber- und -unterdeckungen** aus, und dienen sie der Kostenkontrolle?",
+      "back": "Sie sind die Differenz zwischen **Normal- und Istgemeinkosten** und zeigen nur, inwieweit die in der **Vorkalkulation** (mangels aktueller Zahlen) verwendeten **Normal-Zuschlagssätze** mit den Istkosten übereinstimmen.\n\nDen Anspruch der **Kostenkontrolle erfüllen sie nicht**.",
+      "topic": "Kostenstellenrechnung",
+      "source": "Skript Internes ReWe (Richter), Folie 153"
     }
   ]
 }
