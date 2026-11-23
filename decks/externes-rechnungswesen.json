@@ -743,6 +743,279 @@
       "back": "$$\\text{JÜ} = \\text{Umsatzerlöse} \\pm \\text{Bestandsveränderungen} - \\text{Aufwendungen}$$\n\n- Bestandsmehrung: **+** (Haben G+V)\n- Bestandsminderung: **−** (Soll G+V)\n\nDie Bestandsveränderung ergibt sich je Konto als Schlussbestand laut Inventur − Anfangsbestand.",
       "topic": "Bestandsveränderungen",
       "source": "REWE Vorlesung 4, Kap. 7.4, S. 9"
+    },
+    {
+      "id": "erw-0107",
+      "front": "Womit werden im Unternehmen selbst erstellte Vermögensgegenstände des Anlagevermögens bewertet (Rechtsgrundlage)?",
+      "back": "Mit den **Herstellungskosten** (§ 255 Abs. 2 HGB).",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1"
+    },
+    {
+      "id": "erw-0108",
+      "front": "Welche drei wirtschaftlichen Vorgänge führen nach HGB zu einer Bewertung mit Herstellungskosten?",
+      "back": "1. die **erstmalige Herstellung** eines Vermögensgegenstandes\n2. die **Erweiterung** eines Vermögensgegenstandes\n3. die **wesentliche Verbesserung** über den ursprünglichen Zustand hinaus",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1"
+    },
+    {
+      "id": "erw-0109",
+      "front": "Wie ist das Schema der Herstellungskosten nach HGB aufgebaut (Mindest- bis Höchstwert)?",
+      "back": "  Materialeinzelkosten\n+ Fertigungseinzelkosten\n+ Sondereinzelkosten der Fertigung\n+ Materialgemeinkosten\n+ Fertigungsgemeinkosten\n**= Mindest-Herstellungskosten**\n+ Verwaltungsgemeinkosten\n+ Fremdkapitalzinsen (Zeitraum der Herstellung)\n**= Höchst-Herstellungskosten**",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1"
+    },
+    {
+      "id": "erw-0110",
+      "front": "Für welche Bestandteile der Herstellungskosten besteht eine Aktivierungs**pflicht**, für welche ein Aktivierungs**wahlrecht**?",
+      "back": "- **Pflicht**: Mindest-Herstellungskosten (MEK, FEK, SEKF, MGK, FGK)\n- **Wahlrecht**: Verwaltungsgemeinkosten und Fremdkapitalzinsen im Herstellungszeitraum (bis zu den Höchst-Herstellungskosten)",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1"
+    },
+    {
+      "id": "erw-0111",
+      "front": "Dürfen Vertriebsgemeinkosten in die Herstellungskosten einbezogen werden?",
+      "back": "**Nein.** Vertriebskosten gehören nicht zu den Herstellungskosten (Aktivierungsverbot, § 255 Abs. 2 S. 4 HGB).\n\nIn Aufgabe 13 wird der Vertriebsgemeinkostenzuschlag (30 %) daher bei der Berechnung **nicht** berücksichtigt.",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1, Aufgabe 13"
+    },
+    {
+      "id": "erw-0112",
+      "front": "Wie lautet der Buchungssatz, wenn eine selbst erstellte technische Anlage aktiviert wird?",
+      "back": "**Technische Anlagen an aktivierte Eigenleistungen**\n\n(in Höhe des gewählten Herstellungskosten-Wertansatzes)",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1"
+    },
+    {
+      "id": "erw-0113",
+      "front": "Was für ein Konto ist „aktivierte Eigenleistungen“ – und warum wird es benötigt?",
+      "back": "Ein **Ertragskonto**.\n\nDie Kosten der Eigenherstellung (Material, Löhne …) sind bereits als **Aufwand** gebucht. Die aktivierte Eigenleistung neutralisiert diesen Aufwand in der G+V, weil ein Vermögensgegenstand entstanden ist (kein Werteverzehr, sondern Vermögensumschichtung).",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1"
+    },
+    {
+      "id": "erw-0114",
+      "front": "Welcher Herstellungskosten-Ansatz führt zu einem möglichst **hohen** bzw. möglichst **niedrigen** Jahresüberschuss – und warum?",
+      "back": "- **hoher JÜ** → **Höchst**-Herstellungskosten ansetzen\n- **niedriger JÜ** → **Mindest**-Herstellungskosten ansetzen\n\nGrund: Die aktivierte Eigenleistung ist ein **Ertrag**. Je höher der aktivierte Wert, desto größer der Ertrag, der die bereits gebuchten Aufwendungen ausgleicht.",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1, Aufgabe 12"
+    },
+    {
+      "id": "erw-0115",
+      "front": "Aufgabe 12 (Peter Wollmützen AG): MEK 200.000, FEK 600.000, SEKF 50.000, MGK 36 %, FGK 90 %, VwGK 70 %. Berechne Mindest- und Höchst-Herstellungskosten.",
+      "back": "  MEK 200.000\n+ MGK 200.000 × 0,36 = 72.000\n+ FEK 600.000\n+ FGK 600.000 × 0,9 = 540.000\n+ SEKF 50.000\n**= Mindest-HK 1.462.000**\n+ VwGK 1.462.000 × 0,7 = 1.023.400\n+ FKZ 0\n**= Höchst-HK 2.485.400**",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1, Aufgabe 12"
+    },
+    {
+      "id": "erw-0116",
+      "front": "Aufgabe 12: Mindest-HK 1.462.000, Höchst-HK 2.485.400. Der Jahresüberschuss soll **möglichst hoch** ausfallen. Wie lautet der Buchungssatz?",
+      "back": "Höchst-Herstellungskosten ansetzen (Wahlrecht ausnutzen):\n\n**Technische Anlagen an aktivierte Eigenleistungen 2.485.400**",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1, Aufgabe 12"
+    },
+    {
+      "id": "erw-0117",
+      "front": "Aufgabe 13 (Peter AG): MEK 20.000, FEK 23.000, SEKF 5.000, MGK 16 %, FGK 64 %, VwGK 30 %, VtGK 30 %, FK-Zinsen (Herstellungszeitraum) 3.000. Berechne Mindest- und Höchst-HK.",
+      "back": "  MEK 20.000\n+ MGK 20.000 × 0,16 = 3.200\n+ FEK 23.000\n+ FGK 23.000 × 0,64 = 14.720\n+ SEKF 5.000\n**= Mindest-HK 65.920**\n+ VwGK 65.920 × 0,3 = 19.776\n+ FKZ 3.000\n**= Höchst-HK 88.696**\n\nVertriebsgemeinkosten: **nicht** einbeziehen (Verbot).",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1, Aufgabe 13"
+    },
+    {
+      "id": "erw-0118",
+      "front": "Aufgabe 13: Mindest-HK 65.920, Höchst-HK 88.696. Der Jahresüberschuss soll **möglichst niedrig** ausfallen. Buchungssatz und Wirkung in der G+V?",
+      "back": "Mindest-HK ansetzen:\n**Technische Anlage an aktivierte Eigenleistungen 65.920**\n\nG+V: Aufwand insgesamt 88.696 (MEK 20.000, MGK 3.200, FEK 23.000, FGK 14.720, SEK 5.000, VwGK 19.776, FKZ 3.000) steht nur ein Ertrag von 65.920 gegenüber → JÜ sinkt um 22.776.\n\n(Mit Höchst-HK wäre der Ertrag 88.696 → erfolgsneutral.)",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1, Aufgabe 13"
+    },
+    {
+      "id": "erw-0119",
+      "front": "Wie wird der Verwaltungsgemeinkostenzuschlag bei der Herstellungskostenberechnung (laut Skript) angewendet?",
+      "back": "Auf die **Mindest-Herstellungskosten** (Summe aus MEK, MGK, FEK, FGK, SEKF).\n\nBeispiel Aufgabe 12: 1.462.000 × 0,7 = 1.023.400.",
+      "topic": "Herstellungskosten",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.1"
+    },
+    {
+      "id": "erw-0120",
+      "front": "In welchen Fällen werden in der Regel Anzahlungen vereinbart?",
+      "back": "- **Sonderanfertigungen** von Anlagegütern mit langer Fertigungszeit (teilweise Vorfinanzierung der Planungs- und Herstellkosten)\n- **Großaufträge**\n- **unbekannte und unsichere** Auftraggeber",
+      "topic": "Anzahlungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.2"
+    },
+    {
+      "id": "erw-0121",
+      "front": "Was ist der Unterschied zwischen geleisteten und erhaltenen Anzahlungen?",
+      "back": "- **Geleistete Anzahlungen**: wir zahlen als **Käufer** vorab → Aktivkonto (Forderungscharakter)\n- **Erhaltene Anzahlungen**: wir erhalten als **Lieferer** vorab Geld → Passivkonto (Verbindlichkeitscharakter)\n\nDie Buchungen sind spiegelbildlich.",
+      "topic": "Anzahlungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.2"
+    },
+    {
+      "id": "erw-0122",
+      "front": "Rohstoffbestellung 80.000 + USt, wir leisten 25 % Anzahlung per Bank. Wie wird die **Anzahlung** gebucht?",
+      "back": "Anzahlung = 25 % × 80.000 = 20.000 netto\n\n**Geleistete Anzahlungen 20.000\nVorsteuer 3.800\nan Bank 23.800**",
+      "topic": "Anzahlungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.2 a)"
+    },
+    {
+      "id": "erw-0123",
+      "front": "Rohstoffbestellung 80.000 + USt mit geleisteter Anzahlung 20.000 + USt. Wie werden **Eingang der Rohstoffe** und **Endabrechnung** gebucht?",
+      "back": "Eingangsrechnung:\n**Rohstoffe 80.000, Vorsteuer 15.200 an Verbindlichkeiten 95.200**\n\nEndabrechnung:\n**Verbindlichkeiten 95.200 an geleistete Anzahlungen 20.000, Vorsteuer 3.800, Bank 71.400**\n\nDie Vorsteuer auf die Anzahlung wird storniert, weil die volle Vorsteuer bereits mit der Rechnung erfasst wurde.",
+      "topic": "Anzahlungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.2 a)"
+    },
+    {
+      "id": "erw-0124",
+      "front": "Warum wird bei der Endabrechnung einer geleisteten Anzahlung die Vorsteuer im **Haben** gebucht?",
+      "back": "Die Vorsteuer auf die Anzahlung (3.800) wurde schon bei der Anzahlung gebucht. Mit der Schlussrechnung wird die **gesamte** Vorsteuer (15.200) erfasst. Ohne Korrektur wäre die Vorsteuer doppelt erfasst → Auflösung der Anzahlungs-Vorsteuer im Haben.",
+      "topic": "Anzahlungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.2 a)"
+    },
+    {
+      "id": "erw-0125",
+      "front": "Aus Sicht des Lieferers: Anzahlung 20.000 + USt geht per Bank ein, Lieferung 80.000 + USt auf Ziel. Wie lauten die drei Buchungen?",
+      "back": "1. Anzahlung: **Bank 23.800 an erhaltene Anzahlungen 20.000, USt 3.800**\n2. Lieferung: **Forderungen 95.200 an Umsatzerlöse 80.000, USt 15.200**\n3. Endabrechnung: **erhaltene Anzahlungen 20.000, USt 3.800, Bank 71.400 an Forderungen 95.200**",
+      "topic": "Anzahlungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.2 b)"
+    },
+    {
+      "id": "erw-0126",
+      "front": "Aufgabe 14: Rohstoffbestellung 100.000 + USt, 20 % Anzahlung per Bank. Buche Anzahlung, Eingangsrechnung und Rechnungsausgleich.",
+      "back": "1. **Geleistete Anzahlungen 20.000, VSt 3.800 an Bank 23.800**\n2. **Rohstoffe 100.000, VSt 19.000 an Verbindlichkeiten 119.000**\n3. **Verbindlichkeiten 119.000 an geleistete Anzahlungen 20.000, VSt 3.800, Bank 95.200**",
+      "topic": "Anzahlungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.2, Aufgabe 14"
+    },
+    {
+      "id": "erw-0127",
+      "front": "Aufgabe 15: Sonderanfertigung 2,5 Mio. + USt, wir erhalten Anzahlung 500.000 + USt. Buche Anzahlung, Ausgangsrechnung und Zahlungseingang.",
+      "back": "1. **Bank 595.000 an erhaltene Anzahlungen 500.000, USt 95.000**\n2. **Forderungen 2.975.000 an Umsatzerlöse 2.500.000, USt 475.000**\n3. **Erhaltene Anzahlungen 500.000, USt 95.000, Bank 2.380.000 an Forderungen 2.975.000**",
+      "topic": "Anzahlungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.2, Aufgabe 15"
+    },
+    {
+      "id": "erw-0128",
+      "front": "Was sind Abschreibungen und welche Ursachen der Wertminderung werden unterschieden?",
+      "back": "Abschreibungen sind **Wertminderungen bei Vermögensgegenständen**.\n\nUrsachen:\n- natürlicher Verschleiß\n- einsatzbedingter Verschleiß\n- technischer Fortschritt\n- Katastrophenverschleiß",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3"
+    },
+    {
+      "id": "erw-0129",
+      "front": "Welche Abschreibungsarten sind bei abnutzbarem und nicht abnutzbarem Anlagevermögen sowie beim Umlaufvermögen möglich?",
+      "back": "**Anlagevermögen**\n- abnutzbar (Gebäude, Fuhrpark): **planmäßige** und **außerplanmäßige** Abschreibung\n- nicht abnutzbar (Grundstücke, Wertpapiere): **nur außerplanmäßige** Abschreibung\n\n**Umlaufvermögen**: **nur außerplanmäßige** Abschreibung (z. B. Diebstahl, Wertverlust bei Rohstoffen, Forderungsausfall)",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3"
+    },
+    {
+      "id": "erw-0130",
+      "front": "Was besagt das Abschreibungsprinzip und für welche Vermögensgegenstände gilt es?",
+      "back": "Gilt nur für **abnutzbare Vermögensgegenstände des Anlagevermögens**.\n\nAusgehend von den Anschaffungs- bzw. Herstellungskosten wird der Werteverzehr durch **planmäßige Abschreibungen** berücksichtigt. Dazu ist zu Beginn der Nutzung ein **Abschreibungsplan** aufzustellen.",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.1"
+    },
+    {
+      "id": "erw-0131",
+      "front": "Welche drei Komponenten enthält ein Abschreibungsplan?",
+      "back": "1. **Abschreibungssumme**\n2. **Nutzungsdauer**\n3. **Abschreibungsmethode**",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.1"
+    },
+    {
+      "id": "erw-0132",
+      "front": "Welche Abschreibungsmethoden werden im Skript genannt?",
+      "back": "- lineare Abschreibung\n- geometrisch-degressive Abschreibung\n- arithmetisch-degressive Abschreibung\n- Kombination aus geometrisch-degressiver und linearer Abschreibung\n- leistungsabhängige Abschreibung",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.2"
+    },
+    {
+      "id": "erw-0133",
+      "front": "Wie wird der jährliche Abschreibungsbetrag bei **linearer** Abschreibung berechnet? (Beispiel: AK 84.000, ND 7 Jahre)",
+      "back": "$$\\text{AfA} = \\frac{\\text{Anschaffungskosten}}{\\text{Nutzungsdauer}}$$\n\n84.000 / 7 = **12.000 pro Jahr**, gleichbleibend über alle 7 Jahre (Summe 84.000).",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.2, Aufgabe 16"
+    },
+    {
+      "id": "erw-0134",
+      "front": "Wie funktioniert die **geometrisch-degressive** Abschreibung? (Beispiel: AK 84.000, 20 %)",
+      "back": "Ein **fester Prozentsatz vom jeweiligen Restbuchwert** (Restwertabschreibung) → fallende Beträge.\n\n- Jahr 1: 84.000 × 0,2 = 16.800\n- Jahr 2: 67.200 × 0,2 = 13.440\n- Jahr 3: 53.760 × 0,2 = 10.752\n- Jahr 4: 43.008 × 0,2 = 8.602\n- …",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.2, Aufgabe 16"
+    },
+    {
+      "id": "erw-0135",
+      "front": "Welchen Nachteil zeigt die rein geometrisch-degressive Abschreibung in Aufgabe 16 (AK 84.000, 20 %, ND 7 Jahre)?",
+      "back": "Der Vermögensgegenstand wird **nie vollständig abgeschrieben**: Nach 7 Jahren sind nur **66.385** abgeschrieben, ein Restbuchwert von rund 17.615 bleibt.\n\nDeshalb wird mit der linearen Methode kombiniert (Wechsel).",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.2, Aufgabe 16"
+    },
+    {
+      "id": "erw-0136",
+      "front": "Wie funktioniert die **arithmetisch-degressive** Abschreibung? (Beispiel: AK 84.000, ND 7 Jahre)",
+      "back": "Die Beträge sinken jährlich um denselben Betrag (digitale Abschreibung).\n\n1. Summe der Jahresziffern: 7+6+5+4+3+2+1 = **28**\n2. Jahr $t$: (verbleibende Jahre / 28) × AK\n\n- Jahr 1: 7/28 × 84.000 = 21.000\n- Jahr 2: 6/28 × 84.000 = 18.000\n- Jahr 3: 15.000 … Jahr 7: 1/28 × 84.000 = 3.000\n\nSumme = 84.000 (vollständige Abschreibung).",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.2, Aufgabe 16"
+    },
+    {
+      "id": "erw-0137",
+      "front": "Wann wechselt man von der geometrisch-degressiven zur linearen Abschreibung, wenn die Steuerlast minimiert werden soll?",
+      "back": "Sobald die **lineare Abschreibung des Restbuchwerts über die Restnutzungsdauer ≥ degressiver Betrag** ist.\n\nSo bleibt der Abschreibungsbetrag (Aufwand) jedes Jahr so hoch wie möglich und der Gegenstand wird am Ende der Nutzungsdauer vollständig abgeschrieben.",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.2, Aufgabe 16 b)"
+    },
+    {
+      "id": "erw-0138",
+      "front": "Aufgabe 16 b): AK 84.000, ND 7 Jahre, geometrisch-degressiv 20 %. In welchem Jahr erfolgt der Wechsel zur linearen Abschreibung (Steuerlastminimierung)?",
+      "back": "Vergleich degressiv vs. linear vom Restbuchwert:\n- Jahr 1: 16.800 vs. 84.000/7 = 12.000\n- Jahr 2: 13.440 vs. 67.200/6 = 11.200\n- Jahr 3: 10.752 vs. 53.760/5 = **10.752**\n\n→ **Wechsel im Jahr 3**; Jahre 3–7 je 10.752 linear. Summe = 84.000.",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.2, Aufgabe 16 b)"
+    },
+    {
+      "id": "erw-0139",
+      "front": "Wie berechnet man die **leistungsabhängige** Abschreibung? Aufgabe 16 c): AK 84.000, Leistungspotenzial 200.000 ME, Jahr 1: 40.000 ME.",
+      "back": "$$\\text{AfA} = \\frac{\\text{Periodenleistung}}{\\text{Gesamtleistung}} \\cdot \\text{AK}$$\n\n40.000 / 200.000 × 84.000 = **16.800**",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3.2, Aufgabe 16 c)"
+    },
+    {
+      "id": "erw-0140",
+      "front": "Was ist die zeitanteilige Abschreibung? Beispiel: Transporter AK 120.000, ND 10 Jahre, Anschaffung am 11.9., linear.",
+      "back": "Im Anschaffungsjahr wird nur **monatsgenau** für die Nutzungsmonate abgeschrieben (Anschaffungsmonat zählt mit).\n\n- Jahres-AfA: 120.000 / 10 = 12.000\n- September–Dezember = 4 Monate\n- 12.000 / 12 × 4 = **4.000**",
+      "topic": "Abschreibungen",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.3, Exkurs"
+    },
+    {
+      "id": "erw-0141",
+      "front": "Was ist beim Ausscheiden (Verkauf) eines Anlageguts unterjährig als Erstes zu tun?",
+      "back": "Den **Buchwert zum Zeitpunkt des Ausscheidens** ermitteln:\n\n1. zeitanteilige Abschreibung bis zum Abgang berechnen und buchen (*Abschreibungen auf Sachanlagen an Anlagekonto*)\n2. Buchwert Jahresbeginn − zeitanteilige AfA = Restbuchwert",
+      "topic": "Ausscheiden von Anlagegütern",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.4"
+    },
+    {
+      "id": "erw-0142",
+      "front": "Transporter: Buchwert zu Jahresbeginn 24.000, lineare AfA 12.000/Jahr, Verkauf zum 8. August. Wie hoch ist der Buchwert beim Abgang und wie wird die AfA gebucht?",
+      "back": "- zeitanteilige AfA: 12.000 × 8/12 = **8.000**\n- Buchwert am 8. August: 24.000 − 8.000 = **16.000**\n\nBuchung: **Abschreibungen auf Sachanlagen an Fuhrpark 8.000**",
+      "topic": "Ausscheiden von Anlagegütern",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.4"
+    },
+    {
+      "id": "erw-0143",
+      "front": "Transporter mit Restbuchwert 16.000 wird für **17.000 + USt** auf Ziel verkauft. Buchungssatz?",
+      "back": "**Forderungen 20.230\nan Fuhrpark 16.000\nan sonstige betriebliche Erträge 1.000\nan USt 3.230**\n\nVerkauf über Buchwert → Ertrag in Höhe der Differenz (1.000).",
+      "topic": "Ausscheiden von Anlagegütern",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.4"
+    },
+    {
+      "id": "erw-0144",
+      "front": "Transporter mit Restbuchwert 16.000 wird für **14.000 + USt** auf Ziel verkauft. Buchungssatz?",
+      "back": "**Forderungen 16.660\nVerlust aus Anlagenabgang 2.000\nan Fuhrpark 16.000\nan USt 2.660**\n\nVerkauf unter Buchwert → Verlust in Höhe der Differenz (2.000).",
+      "topic": "Ausscheiden von Anlagegütern",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.4"
+    },
+    {
+      "id": "erw-0145",
+      "front": "Welche Erfolgswirkung hat der Verkauf eines Anlageguts über, unter bzw. genau zum Restbuchwert?",
+      "back": "- **über Buchwert**: Gewinn → sonstiger betrieblicher Ertrag\n- **unter Buchwert**: Verlust → sonstiger betrieblicher Aufwand (Verluste aus dem Abgang von Vermögensgegenständen)\n- **genau zum Buchwert**: **erfolgsneutral** – reiner **Aktivtausch** (Sachvermögen wird in Geldvermögen umgewandelt)",
+      "topic": "Ausscheiden von Anlagegütern",
+      "source": "REWE Vorlesung 5 (Lösung), Kap. 8.4"
     }
   ]
 }
